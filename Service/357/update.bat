@@ -1,22 +1,22 @@
 @set caller=0
-@set version2="1001285"
-@set version3="1.0.0.1285"
-@set sversion2c=1500276
+@set version2="1001297"
+@set version3="1.0.0.1297"
+@set sversion2c=1500277
 @set tam7z=200192
 CLS
 if %code%==357 (
 @set translationof="Dawn of War II - Retribution"
 @set tam="3,02"
-@set totaltam=3172932
-@set installedsize="35,98"
+@set totaltam=3172930
+@set installedsize="35,97"
 @set file=DOW2RBR.7z
-@set changelog=- Tradução: Algumas Mudanças."^&Chr(13)^&"- Atualizador: Melhorias gerais de estabilidade, Imagens substituídas por códigos Base64 reduzidos, design geral melhorado, agora compatível com a API do Internet Explorer 9, Corrigido: Problemas de interface com o Windows XP, Adicionado: Verificação de Servidor Atual e melhorias na velocidade de carregamento."^&Chr(13)^&"Instalador: Melhorias gerais de segurança e estabilidade, Novo método de instalação em VBS, melhorias na velocidade de instalação e correções gerais.
+@set changelog=- Tradução: Muitas Mudanças."^&Chr(13)^&"- Atualizador: Melhorias gerais de estabilidade, Imagens substituídas por códigos Base64 reduzidos, design geral melhorado, agora compatível com a API do Internet Explorer 9, Corrigido: Problemas de interface com o Windows XP, Adicionado: Verificação de Servidor Atual e melhorias na velocidade de carregamento."^&Chr(13)^&"Instalador: Melhorias gerais de segurança e estabilidade, Novo método de instalação em VBS, melhorias na velocidade de instalação e correções gerais."^&Chr(13)^&"Servidor: Adicionado Servidor GitHub e Removido Servidor DropBox.
 )
 CLS
-@set secundarysvr=https://dl.dropboxusercontent.com/u/57685514/%file%
+@set secundarysvr=https://github.com/TranslateGames/translategames_server/raw/master/Update/%file%
 @set primarysvr=0
 echo primarysvr=http://translategames.tk/updater/download/%code%
-@set secundarysvrS=https://dl.dropboxusercontent.com/u/57685514/%file%
+@set secundarysvrS=https://github.com/TranslateGames/translategames_server/raw/master/Update/%file%
 @set primarysvrS=0
 echo primarysvrS=http://translategames.tk/updater/download/%code%
 @set timer=%timer%%caller%
@@ -99,17 +99,17 @@ del 7z.dll
 FOR %%a in (dir "7z.exe") do (set /a tamanho=%%~za)
 if not exist "7z.exe" (
 echo 2 > "ProgressBarS.log"
-wget.exe https://dl.dropboxusercontent.com/u/57685514/Update/7z.temp --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=10 --tries=2
+wget.exe https://github.com/TranslateGames/translategames_server/raw/master/Service/7z.temp --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=10 --tries=2
 title Atualizador%code%t
 echo 90 > "ProgressBarS.log"
 ) else if %tamanho% lss %tam7z% (
 echo 2 > "ProgressBarS.log"
-wget.exe https://dl.dropboxusercontent.com/u/57685514/Update/7z.temp --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=10 --tries=2
+wget.exe https://github.com/TranslateGames/translategames_server/raw/master/Service/7z.temp --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=10 --tries=2
 title Atualizador%code%t
 echo 90 > "ProgressBarS.log"
 ) else if %tamanho% gtr %tam7z% (
 echo 2 > "ProgressBarS.log"
-wget.exe https://dl.dropboxusercontent.com/u/57685514/Update/7z.temp --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=10 --tries=2
+wget.exe https://github.com/TranslateGames/translategames_server/raw/master/Service/7z.temp --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=10 --tries=2
 title Atualizador%code%t
 echo 90 > "ProgressBarS.log"
 )
@@ -138,7 +138,7 @@ echo Atualização de Pacotes do Atualizador encontrada!
 CLS
 echo %date%-%time% Baixando Pacote... >> "UpdateLog.txt"
 echo Baixando Pacote...
-wget.exe https://dl.dropboxusercontent.com/u/57685514/Update/UpScript.temp --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=10 --tries=2
+wget.exe https://github.com/TranslateGames/translategames_server/raw/master/Service/UpScript.temp --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=10 --tries=2
 title Atualizador%code%t
 if not exist "UpScript.temp" (
 CLS
