@@ -1,2 +1,2 @@
-# translategames_server
-Servidor (GitHub) do Atualizador
+﻿# Servidor (GitHub) do Atualizador
+**Traduções de Jogos™**
