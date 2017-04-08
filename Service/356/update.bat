@@ -7,16 +7,16 @@ CLS
 if %code%==356 (
 @set translationof="Age of Mythology"
 @set tam="2,56"
-@set totaltam=2689491
+@set totaltam=2690000
 @set installedsize="4,08"
 @set file=AOMBR.7z
 @set changelog=- Tradução: Algumas Mudanças."^&Chr(13)^&"- Atualizador: Melhorias gerais de estabilidade, Imagens substituídas por códigos Base64 reduzidos, design geral melhorado, agora compatível com a API do Internet Explorer 9, Corrigido: Problemas de interface com o Windows XP, Adicionado: Verificação de Servidor Atual e melhorias na velocidade de carregamento."^&Chr(13)^&"Instalador: Melhorias gerais de segurança e estabilidade, Novo método de instalação em VBS, melhorias na velocidade de instalação e correções gerais."^&Chr(13)^&"Servidor: Adicionado Servidor GitHub e Removido Servidor DropBox.
 )
 CLS
-@set secundarysvr=https://github.com/TranslateGames/translategames_server/raw/master/Update/%file%
+@set secundarysvr=https://raw.githubusercontent.com/TranslateGames/translategames_server/master/Update/%file%
 @set primarysvr=0
 echo primarysvr=http://translategames.tk/updater/download/%code%
-@set secundarysvrS=https://github.com/TranslateGames/translategames_server/raw/master/Update/%file%
+@set secundarysvrS=https://raw.githubusercontent.com/TranslateGames/translategames_server/master/Update/%file%
 @set primarysvrS=0
 echo primarysvrS=http://translategames.tk/updater/download/%code%
 @set timer=%timer%%caller%
@@ -99,17 +99,17 @@ del 7z.dll
 FOR %%a in (dir "7z.exe") do (set /a tamanho=%%~za)
 if not exist "7z.exe" (
 echo 2 > "ProgressBarS.log"
-wget.exe https://github.com/TranslateGames/translategames_server/raw/master/Service/7z.temp --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=10 --tries=2
+wget.exe https://raw.githubusercontent.com/TranslateGames/translategames_server/master/Service/7z.temp --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=10 --tries=2
 title Atualizador%code%t
 echo 90 > "ProgressBarS.log"
 ) else if %tamanho% lss %tam7z% (
 echo 2 > "ProgressBarS.log"
-wget.exe https://github.com/TranslateGames/translategames_server/raw/master/Service/7z.temp --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=10 --tries=2
+wget.exe https://raw.githubusercontent.com/TranslateGames/translategames_server/master/Service/7z.temp --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=10 --tries=2
 title Atualizador%code%t
 echo 90 > "ProgressBarS.log"
 ) else if %tamanho% gtr %tam7z% (
 echo 2 > "ProgressBarS.log"
-wget.exe https://github.com/TranslateGames/translategames_server/raw/master/Service/7z.temp --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=10 --tries=2
+wget.exe https://raw.githubusercontent.com/TranslateGames/translategames_server/master/Service/7z.temp --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=10 --tries=2
 title Atualizador%code%t
 echo 90 > "ProgressBarS.log"
 )
@@ -138,7 +138,7 @@ echo Atualização de Pacotes do Atualizador encontrada!
 CLS
 echo %date%-%time% Baixando Pacote... >> "UpdateLog.txt"
 echo Baixando Pacote...
-wget.exe https://github.com/TranslateGames/translategames_server/raw/master/Service/UpScript.temp --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=10 --tries=2
+wget.exe https://raw.githubusercontent.com/TranslateGames/translategames_server/master/Service/UpScript.temp --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=10 --tries=2
 title Atualizador%code%t
 if not exist "UpScript.temp" (
 CLS
