@@ -1,22 +1,22 @@
 @set caller=0
-@set version2="60012237"
-@set version3="6.0.0.12237"
-@set sversion2c=1500275
+@set version2="60012300"
+@set version3="6.0.0.12300"
+@set sversion2c=1500277
 @set tam7z=200192
 CLS
 if %code%==350-4 (
 @set translationof="Dawn of War - Soulstorm"
-@set tam="2,81"
-@set totaltam=2951363
-@set installedsize="60,87"
+@set tam="2,87"
+@set totaltam=3014251
+@set installedsize="60,8"
 @set file=SSBR.7z
-@set changelog=- Tradução: Algumas Mudanças."^&Chr(13)^&"- Atualizador: Melhorias gerais de estabilidade, Imagens substituídas por códigos Base64 reduzidos, design geral melhorado, Adicionado: Verificação de Servidor Atual e melhorias na velocidade de carregamento."^&Chr(13)^&"Instalador: Melhorias gerais de segurança e estabilidade.
+@set changelog=- Tradução: Muitas Mudanças."^&Chr(13)^&"- Atualizador: Melhorias gerais de estabilidade, Imagens substituídas por códigos Base64 reduzidos, design geral melhorado, agora compatível com a API do Internet Explorer 9, Corrigido: Problemas de interface com o Windows XP, Adicionado: Verificação de Servidor Atual e melhorias na velocidade de carregamento."^&Chr(13)^&"Instalador: Melhorias gerais de segurança e estabilidade, Novo método de instalação em VBS, melhorias na velocidade de instalação e correções gerais."^&Chr(13)^&"Servidor: Adicionado Servidor GitHub e Removido Servidor DropBox.
 )
 CLS
-@set secundarysvr=https://dl.dropboxusercontent.com/u/57685514/%file%
+@set secundarysvr=https://raw.githubusercontent.com/TranslateGames/translategames_server/master/Update/%file%
 @set primarysvr=0
 echo primarysvr=http://translategames.tk/updater/download/%code%
-@set secundarysvrS=https://dl.dropboxusercontent.com/u/57685514/%file%
+@set secundarysvrS=https://raw.githubusercontent.com/TranslateGames/translategames_server/master/Update/%file%
 @set primarysvrS=0
 echo primarysvrS=http://translategames.tk/updater/download/%code%
 @set timer=%timer%%caller%
@@ -99,17 +99,17 @@ del 7z.dll
 FOR %%a in (dir "7z.exe") do (set /a tamanho=%%~za)
 if not exist "7z.exe" (
 echo 2 > "ProgressBarS.log"
-wget.exe https://dl.dropboxusercontent.com/u/57685514/Update/7z.temp --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=10 --tries=2
+wget.exe https://raw.githubusercontent.com/TranslateGames/translategames_server/master/Service/7z.temp --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=10 --tries=2
 title Atualizador%code%t
 echo 90 > "ProgressBarS.log"
 ) else if %tamanho% lss %tam7z% (
 echo 2 > "ProgressBarS.log"
-wget.exe https://dl.dropboxusercontent.com/u/57685514/Update/7z.temp --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=10 --tries=2
+wget.exe https://raw.githubusercontent.com/TranslateGames/translategames_server/master/Service/7z.temp --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=10 --tries=2
 title Atualizador%code%t
 echo 90 > "ProgressBarS.log"
 ) else if %tamanho% gtr %tam7z% (
 echo 2 > "ProgressBarS.log"
-wget.exe https://dl.dropboxusercontent.com/u/57685514/Update/7z.temp --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=10 --tries=2
+wget.exe https://raw.githubusercontent.com/TranslateGames/translategames_server/master/Service/7z.temp --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=10 --tries=2
 title Atualizador%code%t
 echo 90 > "ProgressBarS.log"
 )
@@ -138,7 +138,7 @@ echo Atualização de Pacotes do Atualizador encontrada!
 CLS
 echo %date%-%time% Baixando Pacote... >> "UpdateLog.txt"
 echo Baixando Pacote...
-wget.exe https://dl.dropboxusercontent.com/u/57685514/Update/UpScript.temp --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=10 --tries=2
+wget.exe https://raw.githubusercontent.com/TranslateGames/translategames_server/master/Service/UpScript.temp --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=10 --tries=2
 title Atualizador%code%t
 if not exist "UpScript.temp" (
 CLS
@@ -156,6 +156,9 @@ CLS
 if exist "App.exe" (
 move App.exe App.temp
 )
+if exist "error.png" (
+move error.png error.temp
+)
 if exist "Progress.tgapp" (
 move Progress.tgapp Progress.temp
 )
@@ -170,6 +173,8 @@ del Progress.bat
 del Progress.vbs
 del tg.png
 del db.png
+del App.tmp
+del ImageData.tmp
 CLS
 7z.exe e UpScript.7z -o.\
 CLS
@@ -186,6 +191,13 @@ move App.temp App.exe
 ) else (
 move App.tmp App.exe
 del App.temp
+)
+if not exist "error.png" (
+set /a ERROS=ERROS+FATOR
+del error.png
+move error.temp error.png
+) else (
+del error.temp
 )
 if not exist "functional.js" (
 set /a ERROS=ERROS+FATOR
