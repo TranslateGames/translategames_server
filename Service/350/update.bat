@@ -14,11 +14,9 @@ if %code%==350 (
 )
 CLS
 @set secundarysvr=https://raw.githubusercontent.com/TranslateGames/translategames_server/master/Update/%file%
-@set primarysvr=0
-echo primarysvr=http://translategames.tk/updater/download/%code%
+@set primarysvr=http://translategames.tk/updater/download/%code%
 @set secundarysvrS=https://raw.githubusercontent.com/TranslateGames/translategames_server/master/Update/%file%
-@set primarysvrS=0
-echo primarysvrS=http://translategames.tk/updater/download/%code%
+@set primarysvrS=http://translategames.tk/updater/download/%code%
 @set timer=%timer%%caller%
 @set limiter=%limiter%%caller%
 @set ERROS=%caller%
