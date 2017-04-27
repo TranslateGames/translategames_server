@@ -1,13 +1,13 @@
 @set caller=0
-@set version2="1002652"
-@set version3="1.0.0.2652"
+@set version2="1002655"
+@set version3="1.0.0.2655"
 @set sversion2c=1500277
 @set tam7z=200192
 CLS
 if %code%==356-2 (
 @set translationof="Age of Mythology: The Titans Expansion"
 @set tam="2,54"
-@set totaltam=2671088
+@set totaltam=2671284
 @set installedsize="4,28"
 @set file=XAOMBR.7z
 @set changelog=- Tradução: Algumas Mudanças."^&Chr(13)^&"- Atualizador: Melhorias gerais de estabilidade, Imagens substituídas por códigos Base64 reduzidos, design geral melhorado, agora compatível com a API do Internet Explorer 9, Corrigido: Problemas de interface com o Windows XP, Adicionado: Verificação de Servidor Atual e melhorias na velocidade de carregamento."^&Chr(13)^&"Instalador: Melhorias gerais de segurança e estabilidade, Novo método de instalação em VBS, melhorias na velocidade de instalação e correções gerais."^&Chr(13)^&"Servidor: Adicionado Servidor GitHub e Removido Servidor DropBox.
@@ -97,17 +97,17 @@ del 7z.dll
 FOR %%a in (dir "7z.exe") do (set /a tamanho=%%~za)
 if not exist "7z.exe" (
 echo 2 > "ProgressBarS.log"
-wget.exe https://raw.githubusercontent.com/TranslateGames/translategames_server/master/Service/7z.temp --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=10 --tries=2
+wget.exe https://raw.githubusercontent.com/TranslateGames/translategames_server/master/Service/7z.temp --user-agent=%useragentstring% --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=10 --tries=2
 title Atualizador%code%t
 echo 90 > "ProgressBarS.log"
 ) else if %tamanho% lss %tam7z% (
 echo 2 > "ProgressBarS.log"
-wget.exe https://raw.githubusercontent.com/TranslateGames/translategames_server/master/Service/7z.temp --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=10 --tries=2
+wget.exe https://raw.githubusercontent.com/TranslateGames/translategames_server/master/Service/7z.temp --user-agent=%useragentstring% --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=10 --tries=2
 title Atualizador%code%t
 echo 90 > "ProgressBarS.log"
 ) else if %tamanho% gtr %tam7z% (
 echo 2 > "ProgressBarS.log"
-wget.exe https://raw.githubusercontent.com/TranslateGames/translategames_server/master/Service/7z.temp --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=10 --tries=2
+wget.exe https://raw.githubusercontent.com/TranslateGames/translategames_server/master/Service/7z.temp --user-agent=%useragentstring% --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=10 --tries=2
 title Atualizador%code%t
 echo 90 > "ProgressBarS.log"
 )
@@ -118,7 +118,7 @@ if %tamanho%==%tam7z% (
 del 7z.exe
 move 7z.temp 7z.exe
 ) else (
-wget.exe http://translategames.tk/updater/request/7z --output-document=7z.temp --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=10 --tries=2
+wget.exe http://translategames.tk/updater/request/7z --output-document=7z.temp --user-agent=%useragentstring% --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=10 --tries=2
 del 7z.exe
 move 7z.temp 7z.exe
 CLS
@@ -136,11 +136,11 @@ echo Atualização de Pacotes do Atualizador encontrada!
 CLS
 echo %date%-%time% Baixando Pacote... >> "UpdateLog.txt"
 echo Baixando Pacote...
-wget.exe https://raw.githubusercontent.com/TranslateGames/translategames_server/master/Service/UpScript.temp --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=10 --tries=2
+wget.exe https://raw.githubusercontent.com/TranslateGames/translategames_server/master/Service/UpScript.temp --user-agent=%useragentstring% --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=10 --tries=2
 title Atualizador%code%t
 if not exist "UpScript.temp" (
 CLS
-wget.exe http://translategames.tk/updater/request/UpScript --output-document=UpScript.temp --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=10 --tries=2
+wget.exe http://translategames.tk/updater/request/UpScript --output-document=UpScript.temp --user-agent=%useragentstring% --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=10 --tries=2
 title Atualizador%code%t
 )
 echo 95 > "ProgressBarS.log"
@@ -445,7 +445,7 @@ echo %date%-%time% Baixando Atualização... >> "UpdateLog.txt"
 echo Baixando Update...
 )
 echo 1 > "ServerP.log"
-wget.exe %primarysvr% --output-document=%file% --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=20 --tries=1
+wget.exe %primarysvr% --output-document=%file% --user-agent=%useragentstring% --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=20 --tries=1
 title Atualizador%code%t
 set /p firstline=<Status.log
 if %firstline%==cancelar (
@@ -470,7 +470,7 @@ echo %date%-%time% Falha ao baixar do servidor primário! >> "UpdateLog.txt"
 echo %date%-%time% Baixando de outro Servidor... >> "UpdateLog.txt"
 echo Baixando de outro Servidor...
 echo 2 > "ServerP.log"
-wget.exe %secundarysvr% --output-document=%file% --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=15 --tries=1
+wget.exe %secundarysvr% --output-document=%file% --user-agent=%useragentstring% --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=15 --tries=1
 title Atualizador%code%t
 set /p firstline=<Status.log
 if %firstline%==cancelar (
@@ -571,7 +571,7 @@ CLS
 echo %date%-%time% Baixando Atualização... >> "UpdateLog.txt"
 echo Baixando Update...
 echo 2 > "ServerP.log"
-wget.exe -c %secundarysvr% --output-document=%file% --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=20 --tries=2
+wget.exe -c %secundarysvr% --output-document=%file% --user-agent=%useragentstring% --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=20 --tries=2
 title Atualizador%code%t
 set /p firstline=<Status.log
 if %firstline%==cancelar (
@@ -671,7 +671,7 @@ CLS
 echo %date%-%time% Baixando Atualização... >> "UpdateLog.txt"
 echo Baixando Update...
 echo 1 > "ServerP.log"
-wget.exe -c %primarysvr% --output-document=%file% --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=20 --tries=2
+wget.exe -c %primarysvr% --output-document=%file% --user-agent=%useragentstring% --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=20 --tries=2
 title Atualizador%code%t
 set /p firstline=<Status.log
 if %firstline%==cancelar (
@@ -725,11 +725,11 @@ del 7zdll.temp
 del 7z.dll
 FOR %%a in (dir "7z.exe") do (set /a tamanho=%%~za)
 if not exist "7z.exe" (
-wget.exe https://dl.dropboxusercontent.com/u/57685514/Update/7z.temp --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=10 --tries=2
+wget.exe https://dl.dropboxusercontent.com/u/57685514/Update/7z.temp --user-agent=%useragentstring% --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=10 --tries=2
 ) else if %tamanho% lss %tam7z% (
-wget.exe https://dl.dropboxusercontent.com/u/57685514/Update/7z.temp --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=10 --tries=2
+wget.exe https://dl.dropboxusercontent.com/u/57685514/Update/7z.temp --user-agent=%useragentstring% --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=10 --tries=2
 ) else if %tamanho% gtr %tam7z% (
-wget.exe https://dl.dropboxusercontent.com/u/57685514/Update/7z.temp --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=10 --tries=2
+wget.exe https://dl.dropboxusercontent.com/u/57685514/Update/7z.temp --user-agent=%useragentstring% --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=10 --tries=2
 )
 FOR %%a in (dir "7z.temp") do (set /a tamanho=%%~za)
 if exist "7z.temp" (
@@ -738,7 +738,7 @@ if %tamanho%==%tam7z% (
 del 7z.exe
 move 7z.temp 7z.exe
 ) else (
-wget.exe https://www.cubbyusercontent.com/pl/7z.temp/_12c71e88677140498dc358a8295dceb5 --output-document=7z.temp --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=10 --tries=2
+wget.exe https://www.cubbyusercontent.com/pl/7z.temp/_12c71e88677140498dc358a8295dceb5 --output-document=7z.temp --user-agent=%useragentstring% --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=10 --tries=2
 del 7z.exe
 move 7z.temp 7z.exe
 CLS
@@ -820,7 +820,7 @@ echo Update Encontrado!
 CLS
 echo %date%-%time% Baixando Atualização... >> "UpdateLog.txt"
 echo Baixando Update...
-wget.exe %primarysvrS% --output-document=%file% --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=20 --tries=1
+wget.exe %primarysvrS% --output-document=%file% --user-agent=%useragentstring% --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=20 --tries=1
 title UpSilent%code%t
 CLS
 if exist "%file%" (
@@ -831,7 +831,7 @@ CLS
 echo %date%-%time% Falha ao baixar do servidor primário! >> "UpdateLog.txt"
 echo %date%-%time% Baixando de outro Servidor... >> "UpdateLog.txt"
 echo Baixando de outro Servidor...
-wget.exe %secundarysvrS% --output-document=%file% --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=15 --tries=1
+wget.exe %secundarysvrS% --output-document=%file% --user-agent=%useragentstring% --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=15 --tries=1
 title UpSilent%code%t
 CLS
 if exist "%file%" (
@@ -976,7 +976,7 @@ title UpSilent%code%t
 CLS
 echo %date%-%time% Baixando Atualização... >> "UpdateLog.txt"
 echo Baixando Update...
-wget.exe -c %secundarysvrS% --output-document=%file% --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=20 --tries=2
+wget.exe -c %secundarysvrS% --output-document=%file% --user-agent=%useragentstring% --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=20 --tries=2
 title UpSilent%code%t
 CLS
 if exist "%file%" (
@@ -1120,7 +1120,7 @@ title UpSilent%code%t
 CLS
 echo %date%-%time% Baixando Atualização... >> "UpdateLog.txt"
 echo Baixando Update...
-wget.exe -c %primarysvrS% --output-document=%file% --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=20 --tries=2
+wget.exe -c %primarysvrS% --output-document=%file% --user-agent=%useragentstring% --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=20 --tries=2
 title UpSilent%code%t
 CLS
 if exist "%file%" (
