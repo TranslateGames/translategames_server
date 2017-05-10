@@ -1,13 +1,13 @@
 @set caller=0
-@set version2="60012306"
-@set version3="6.0.0.12306"
+@set version2="60012307"
+@set version3="6.0.0.12307"
 @set sversion2c=1500277
 @set tam7z=200192
 CLS
 if %code%==350 (
 @set translationof="Dawn of War e Winter Assault"
 @set tam="3,21"
-@set totaltam=3372034
+@set totaltam=3372286
 @set installedsize="19,98"
 @set file=W4BR.7z
 @set changelog=- Tradução: Muitas Mudanças."^&Chr(13)^&"- Atualizador: Melhorias gerais de estabilidade, Imagens substituídas por códigos Base64 reduzidos, design geral melhorado, agora compatível com a API do Internet Explorer 9, Corrigido: Problemas de interface com o Windows XP, Adicionado: Verificação de Servidor Atual e melhorias na velocidade de carregamento."^&Chr(13)^&"Instalador: Melhorias gerais de segurança e estabilidade, Novo método de instalação em VBS, melhorias na velocidade de instalação e correções gerais."^&Chr(13)^&"Servidor: Adicionado Servidor GitHub e Removido Servidor DropBox.
