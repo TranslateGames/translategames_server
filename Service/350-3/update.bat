@@ -1,14 +1,14 @@
 @set caller=0
-@set version2="60012311"
-@set version3="6.0.0.12311"
-@set sversion2c=1500277
+@set version2="60012312"
+@set version3="6.0.0.12312"
+@set sversion2c=1500278
 @set tam7z=200192
 CLS
 if %code%==350-3 (
 @set translationof="Dawn of War - Dark Crusade"
-@set tam="2,73"
-@set totaltam=2865732
-@set installedsize="35,69"
+@set tam="2,89"
+@set totaltam=3038963
+@set installedsize="36,72"
 @set file=DCBR.7z
 @set changelog=- Tradução: Muitas Mudanças."^&Chr(13)^&"- Atualizador: Melhorias gerais de estabilidade, Imagens substituídas por códigos Base64 reduzidos, design geral melhorado, agora compatível com a API do Internet Explorer 9, Corrigido: Problemas de interface com o Windows XP, Adicionado: Verificação de Servidor Atual e melhorias na velocidade de carregamento."^&Chr(13)^&"Instalador: Melhorias gerais de segurança e estabilidade, Novo método de instalação em VBS, melhorias na velocidade de instalação e correções gerais."^&Chr(13)^&"Servidor: Adicionado Servidor GitHub e Removido Servidor DropBox.
 )
@@ -270,7 +270,7 @@ echo close>"StatusPS.log"
 CLS
 echo %date%-%time% Já está Atualizado! >> "UpdateLog.txt"
 echo Atualizado!
-UpToDate.vbs
+wscript UpToDate.vbs
 goto exit
 ) else if %version% lss %version2% (
 title Atualizador%code%t
@@ -331,7 +331,7 @@ echo End If >> "EVPrompt.vbs"
 del App.temp
 CLS
 echo Aguardando...
-EVPrompt.vbs
+wscript EVPrompt.vbs
 set /p firstline=<ResultEV.txt
 if %firstline%==cancelar (
 CLS
@@ -413,7 +413,7 @@ del App.temp
 del %file%
 CLS
 echo Update Encontrado!
-UpdateFound.vbs
+wscript UpdateFound.vbs
 CLS
 set /p firstline=<Result.txt
 if %firstline%==cancelar (
@@ -499,7 +499,7 @@ echo %date%-%time% Falha ao tentar baixar tradução! >> "UpdateLog.txt"
 echo %date%-%time% Falha ao tentar baixar atualização! >> "UpdateLog.txt"
 )
 echo Falha ao tentar baixar!
-ErroDownload.vbs
+wscript ErroDownload.vbs
 goto exit
 )
 )
@@ -531,7 +531,7 @@ del UpInstalation\InstallCore-%code%.7z
 echo fail>"StatusP.log"
 echo %date%-%time% Falha ao tentar iniciar a instalação! >> "UpdateLog.txt"
 echo Falha ao tentar iniciar a instalacao!
-ErroInstall.vbs
+wscript ErroInstall.vbs
 exit
 )
 if exist "UpInstalation\Updater-%code%.temp" (
@@ -545,7 +545,7 @@ del UpInstalation\Updater-%code%.7z
 echo fail>"StatusP.log"
 echo %date%-%time% Falha ao tentar iniciar a instalação! >> "UpdateLog.txt"
 echo Falha ao tentar iniciar a instalacao!
-ErroInstall.vbs
+wscript ErroInstall.vbs
 exit
 )
 CLS
@@ -557,7 +557,7 @@ cd ..\
 echo fail>"StatusP.log"
 echo %date%-%time% Falha ao tentar iniciar a instalação! >> "UpdateLog.txt"
 echo Falha ao tentar iniciar a instalacao!
-ErroInstall.vbs
+wscript ErroInstall.vbs
 )
 goto exit
 )
@@ -600,7 +600,7 @@ echo %date%-%time% Falha ao tentar baixar tradução! >> "UpdateLog.txt"
 echo %date%-%time% Falha ao tentar baixar atualização! >> "UpdateLog.txt"
 )
 echo Falha ao tentar baixar!
-ErroDownload.vbs
+wscript ErroDownload.vbs
 goto exit
 )
 
@@ -631,7 +631,7 @@ del UpInstalation\InstallCore-%code%.7z
 echo fail>"StatusP.log"
 echo %date%-%time% Falha ao tentar iniciar a instalação! >> "UpdateLog.txt"
 echo Falha ao tentar iniciar a instalacao!
-ErroInstall.vbs
+wscript ErroInstall.vbs
 exit
 )
 if exist "UpInstalation\Updater-%code%.temp" (
@@ -645,7 +645,7 @@ del UpInstalation\Updater-%code%.7z
 echo fail>"StatusP.log"
 echo %date%-%time% Falha ao tentar iniciar a instalação! >> "UpdateLog.txt"
 echo Falha ao tentar iniciar a instalacao!
-ErroInstall.vbs
+wscript ErroInstall.vbs
 exit
 )
 CLS
@@ -657,7 +657,7 @@ cd ..\
 echo fail>"StatusP.log"
 echo %date%-%time% Falha ao tentar iniciar a instalação! >> "UpdateLog.txt"
 echo Falha ao tentar iniciar a instalacao!
-ErroInstall.vbs
+wscript ErroInstall.vbs
 )
 goto exit
 )
@@ -700,7 +700,7 @@ echo %date%-%time% Falha ao tentar baixar tradução! >> "UpdateLog.txt"
 echo %date%-%time% Falha ao tentar baixar atualização! >> "UpdateLog.txt"
 )
 echo Falha ao tentar baixar!
-ErroDownload.vbs
+wscript ErroDownload.vbs
 goto exit
 )
 
