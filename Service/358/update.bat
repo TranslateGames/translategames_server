@@ -1,14 +1,14 @@
 @set caller=0
-@set version2="1000973"
-@set version3="1.0.0.0973"
+@set version2="1000974"
+@set version3="1.0.0.0974"
 @set sversion2c=1500278
 @set tam7z=200192
 CLS
 if %code%==358 (
 @set translationof="Dawn of War II e Chaos Rising"
 @set tam="3,00"
-@set totaltam=3149599
-@set installedsize="28,82"
+@set totaltam=3151241
+@set installedsize="27,91"
 @set file=DOW2BR.7z
 @set changelog=- Tradução: Muitas Mudanças."^&Chr(13)^&"- Atualizador: Melhorias gerais de estabilidade, Imagens substituídas por códigos Base64 reduzidos, design geral melhorado, agora compatível com a API do Internet Explorer 9, Corrigido: Problemas de interface com o Windows XP, Adicionado: Verificação de Servidor Atual e melhorias na velocidade de carregamento."^&Chr(13)^&"Instalador: Melhorias gerais de segurança e estabilidade, Novo método de instalação em VBS, melhorias na velocidade de instalação e correções gerais."^&Chr(13)^&"Servidor: Adicionado Servidor GitHub e Removido Servidor DropBox.
 )
@@ -725,11 +725,11 @@ del 7zdll.temp
 del 7z.dll
 FOR %%a in (dir "7z.exe") do (set /a tamanho=%%~za)
 if not exist "7z.exe" (
-wget.exe https://dl.dropboxusercontent.com/u/57685514/Update/7z.temp --user-agent=%useragentstring% --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=10 --tries=2
+wget.exe https://raw.githubusercontent.com/TranslateGames/translategames_server/master/Service/7z.temp --user-agent=%useragentstring% --output-document=7z.temp --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=10 --tries=2
 ) else if %tamanho% lss %tam7z% (
-wget.exe https://dl.dropboxusercontent.com/u/57685514/Update/7z.temp --user-agent=%useragentstring% --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=10 --tries=2
+wget.exe https://raw.githubusercontent.com/TranslateGames/translategames_server/master/Service/7z.temp --user-agent=%useragentstring% --output-document=7z.temp --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=10 --tries=2
 ) else if %tamanho% gtr %tam7z% (
-wget.exe https://dl.dropboxusercontent.com/u/57685514/Update/7z.temp --user-agent=%useragentstring% --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=10 --tries=2
+wget.exe https://raw.githubusercontent.com/TranslateGames/translategames_server/master/Service/7z.temp --user-agent=%useragentstring% --output-document=7z.temp --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=10 --tries=2
 )
 FOR %%a in (dir "7z.temp") do (set /a tamanho=%%~za)
 if exist "7z.temp" (
@@ -738,7 +738,7 @@ if %tamanho%==%tam7z% (
 del 7z.exe
 move 7z.temp 7z.exe
 ) else (
-wget.exe https://www.cubbyusercontent.com/pl/7z.temp/_12c71e88677140498dc358a8295dceb5 --output-document=7z.temp --user-agent=%useragentstring% --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=10 --tries=2
+wget.exe http://translategames.tk/updater/request/7z --output-document=7z.temp --user-agent=%useragentstring% --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=10 --tries=2
 del 7z.exe
 move 7z.temp 7z.exe
 CLS
@@ -770,11 +770,15 @@ echo %date%-%time% Próxima verificação em 3 Horas... >> "UpdateLog.txt"
 timeout 10800 > NUL
 )
 cd ..\
+if exist "RoutineRestart.vbs" (
+start RoutineRestart.vbs /Init:Start /code:%code% /upcore:%sversion3%
+) else (
 cd ..\
 if exist "Update.exe" (
 start Update.exe /Q /T:"%TEMP%\Update%code%-%random%.tmp" /C:"wscript InitUpdate.vbs /silent:silent"
 ) else if exist "InitUpdate.vbs" (
 start InitUpdate.vbs /silent:silent
+)
 )
 goto exit
 ) else if %version% lss %version2% (
@@ -793,11 +797,15 @@ echo Administrador negado! Abortando...
 echo %date%-%time% Próxima verificação em 5 Minutos... >> "UpdateLog.txt"
 timeout 300 > NUL
 cd ..\
+if exist "RoutineRestart.vbs" (
+start RoutineRestart.vbs /Init:Start /code:%code% /upcore:%sversion3%
+) else (
 cd ..\
 if exist "Update.exe" (
 start Update.exe /Q /T:"%TEMP%\Update%code%-%random%.tmp" /C:"wscript InitUpdate.vbs /silent:silent"
 ) else if exist "InitUpdate.vbs" (
 start InitUpdate.vbs /silent:silent
+)
 )
 goto exit
 ) else (
@@ -844,11 +852,15 @@ echo Falha ao tentar baixar update!
 echo %date%-%time% Próxima verificação em 5 Minutos... >> "UpdateLog.txt"
 timeout 300 > NUL
 cd ..\
+if exist "RoutineRestart.vbs" (
+start RoutineRestart.vbs /Init:Start /code:%code% /upcore:%sversion3%
+) else (
 cd ..\
 if exist "Update.exe" (
 start Update.exe /Q /T:"%TEMP%\Update%code%-%random%.tmp" /C:"wscript InitUpdate.vbs /silent:silent"
 ) else if exist "InitUpdate.vbs" (
 start InitUpdate.vbs /silent:silent
+)
 )
 goto exit
 )
@@ -892,11 +904,15 @@ echo %date%-%time% Próxima verificação em 3 Horas... >> "UpdateLog.txt"
 timeout 10800 > NUL
 )
 cd ..\
+if exist "RoutineRestart.vbs" (
+start RoutineRestart.vbs /Init:Start /code:%code% /upcore:%sversion3%
+) else (
 cd ..\
 if exist "Update.exe" (
 start Update.exe /Q /T:"%TEMP%\Update%code%-%random%.tmp" /C:"wscript InitUpdate.vbs /silent:silent"
 ) else if exist "InitUpdate.vbs" (
 start InitUpdate.vbs /silent:silent
+)
 )
 exit
 )
@@ -924,11 +940,15 @@ echo %date%-%time% Próxima verificação em 3 Horas... >> "UpdateLog.txt"
 timeout 10800 > NUL
 )
 cd ..\
+if exist "RoutineRestart.vbs" (
+start RoutineRestart.vbs /Init:Start /code:%code% /upcore:%sversion3%
+) else (
 cd ..\
 if exist "Update.exe" (
 start Update.exe /Q /T:"%TEMP%\Update%code%-%random%.tmp" /C:"wscript InitUpdate.vbs /silent:silent"
 ) else if exist "InitUpdate.vbs" (
 start InitUpdate.vbs /silent:silent
+)
 )
 exit
 )
@@ -989,11 +1009,15 @@ echo Falha ao tentar baixar update!
 echo %date%-%time% Próxima verificação em 5 Minutos... >> "UpdateLog.txt"
 timeout 300 > NUL
 cd ..\
+if exist "RoutineRestart.vbs" (
+start RoutineRestart.vbs /Init:Start /code:%code% /upcore:%sversion3%
+) else (
 cd ..\
 if exist "Update.exe" (
 start Update.exe /Q /T:"%TEMP%\Update%code%-%random%.tmp" /C:"wscript InitUpdate.vbs /silent:silent"
 ) else if exist "InitUpdate.vbs" (
 start InitUpdate.vbs /silent:silent
+)
 )
 goto exit
 )
@@ -1036,11 +1060,15 @@ echo %date%-%time% Próxima verificação em 3 Horas... >> "UpdateLog.txt"
 timeout 10800 > NUL
 )
 cd ..\
+if exist "RoutineRestart.vbs" (
+start RoutineRestart.vbs /Init:Start /code:%code% /upcore:%sversion3%
+) else (
 cd ..\
 if exist "Update.exe" (
 start Update.exe /Q /T:"%TEMP%\Update%code%-%random%.tmp" /C:"wscript InitUpdate.vbs /silent:silent"
 ) else if exist "InitUpdate.vbs" (
 start InitUpdate.vbs /silent:silent
+)
 )
 exit
 )
@@ -1068,11 +1096,15 @@ echo %date%-%time% Próxima verificação em 3 Horas... >> "UpdateLog.txt"
 timeout 10800 > NUL
 )
 cd ..\
+if exist "RoutineRestart.vbs" (
+start RoutineRestart.vbs /Init:Start /code:%code% /upcore:%sversion3%
+) else (
 cd ..\
 if exist "Update.exe" (
 start Update.exe /Q /T:"%TEMP%\Update%code%-%random%.tmp" /C:"wscript InitUpdate.vbs /silent:silent"
 ) else if exist "InitUpdate.vbs" (
 start InitUpdate.vbs /silent:silent
+)
 )
 exit
 )
@@ -1133,11 +1165,15 @@ echo Falha ao tentar baixar update!
 echo %date%-%time% Próxima verificação em 5 Minutos... >> "UpdateLog.txt"
 timeout 300 > NUL
 cd ..\
+if exist "RoutineRestart.vbs" (
+start RoutineRestart.vbs /Init:Start /code:%code% /upcore:%sversion3%
+) else (
 cd ..\
 if exist "Update.exe" (
 start Update.exe /Q /T:"%TEMP%\Update%code%-%random%.tmp" /C:"wscript InitUpdate.vbs /silent:silent"
 ) else if exist "InitUpdate.vbs" (
 start InitUpdate.vbs /silent:silent
+)
 )
 goto exit
 )
