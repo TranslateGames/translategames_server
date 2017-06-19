@@ -1,14 +1,14 @@
 @set caller=0
-@set version2="1002671"
-@set version3="1.0.0.2671"
+@set version2="1002672"
+@set version3="1.0.0.2672"
 @set sversion2c=1500278
 @set tam7z=200192
 CLS
 if %code%==356 (
 @set translationof="Age of Mythology"
-@set tam="2.73290252685547,00"
+@set tam="2,73"
 @set totaltam=2865656
-@set installedsize=""
+@set installedsize="4.25"
 @set file=AOMBR.7z
 @set changelog=- Tradução: Algumas Mudanças."^&Chr(13)^&"- Atualizador: Melhorias gerais de estabilidade, Imagens substituídas por códigos Base64 reduzidos, design geral melhorado, agora compatível com a API do Internet Explorer 9, Corrigido: Problemas de interface com o Windows XP, Adicionado: Verificação de Servidor Atual e melhorias na velocidade de carregamento."^&Chr(13)^&"Instalador: Melhorias gerais de segurança e estabilidade, Novo método de instalação em VBS, melhorias na velocidade de instalação e correções gerais."^&Chr(13)^&"Servidor: Adicionado Servidor GitHub e Removido Servidor DropBox.
 )
