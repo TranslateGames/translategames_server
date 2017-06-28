@@ -1,15 +1,15 @@
 @set caller=0
-@set version2="60012317"
-@set version3="6.0.0.12317"
+@set version2="60012318"
+@set version3="6.0.0.12318"
 @set sversion2c=1500279
 @set tam7z=200192
 CLS
 if %code%==350 (
 @set translationof="Dawn of War e Winter Assault"
-@set tam="3,63"
-@set totaltam=3808284
-@set installedsize="20,41"
-@set hash=9A9A776CA5231A845FF3629ED3424A8D5CD62BD81DF0F95475D1C3D0F321C53B
+@set tam="3,66"
+@set totaltam=3844337
+@set installedsize="20,44"
+@set hash=0092CF78FBDB0C3A7A7F9E2B3653BB42DAF5BE584A6E9EB6C968DABBDA5C4111
 @set file=W4BR.7z
 @set changelog=- Tradução: Muitas Mudanças."^&Chr(13)^&"- Atualizador: Melhorias gerais de estabilidade, Imagens substituídas por códigos Base64 reduzidos, design geral melhorado, agora compatível com a API do Internet Explorer 9, Corrigido: Problemas de interface com o Windows XP, Adicionado: Verificação de Servidor Atual e Verificação Hash SHA-256."^&Chr(13)^&"Progresso: Corrigido problemas gerais de cálculo."^&Chr(13)^&"Instalador: Melhorias gerais de segurança e estabilidade, Novo método de instalação em VBS, melhorias na velocidade de instalação e correções gerais."^&Chr(13)^&"Servidor: Adicionado Servidor GitHub e Removido Servidor DropBox.
 )
@@ -236,9 +236,11 @@ del ImageData.temp
 )
 echo 100 > "ProgressBarS.log"
 if %ERROS% gtr 0 (
+CLS
 echo %date%-%time% Extração Interrompida. Arquivo Corrompido. >> "UpdateLog.txt"
 echo Extração Interrompida.
 ) else (
+CLS
 echo %date%-%time% Extração Concluída... >> "UpdateLog.txt"
 echo Extração Concluída...
 )

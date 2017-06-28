@@ -1,16 +1,17 @@
 @set caller=0
-@set version2="1001319"
-@set version3="1.0.0.1319"
-@set sversion2c=1500278
+@set version2="1001320"
+@set version3="1.0.0.1320"
+@set sversion2c=1500279
 @set tam7z=200192
 CLS
 if %code%==357 (
 @set translationof="Dawn of War II - Retribution"
-@set tam="3,17"
-@set totaltam=3334372
-@set installedsize="36,13"
+@set tam="3,21"
+@set totaltam=3370280
+@set installedsize="36,16"
+@set hash=727527DBE36986D475A42BDB640AAB75D87AC375C1D1C852A6D3646067FA7FA2
 @set file=DOW2RBR.7z
-@set changelog=- Tradução: Muitas Mudanças."^&Chr(13)^&"- Atualizador: Melhorias gerais de estabilidade, Imagens substituídas por códigos Base64 reduzidos, design geral melhorado, agora compatível com a API do Internet Explorer 9, Corrigido: Problemas de interface com o Windows XP, Adicionado: Verificação de Servidor Atual e melhorias na velocidade de carregamento."^&Chr(13)^&"Instalador: Melhorias gerais de segurança e estabilidade, Novo método de instalação em VBS, melhorias na velocidade de instalação e correções gerais."^&Chr(13)^&"Servidor: Adicionado Servidor GitHub e Removido Servidor DropBox.
+@set changelog=- Tradução: Muitas Mudanças."^&Chr(13)^&"- Atualizador: Melhorias gerais de estabilidade, Imagens substituídas por códigos Base64 reduzidos, design geral melhorado, agora compatível com a API do Internet Explorer 9, Corrigido: Problemas de interface com o Windows XP, Adicionado: Verificação de Servidor Atual e Verificação Hash SHA-256."^&Chr(13)^&"Progresso: Corrigido problemas gerais de cálculo."^&Chr(13)^&"Instalador: Melhorias gerais de segurança e estabilidade, Novo método de instalação em VBS, melhorias na velocidade de instalação e correções gerais."^&Chr(13)^&"Servidor: Adicionado Servidor GitHub e Removido Servidor DropBox.
 )
 CLS
 @set secundarysvr=https://raw.githubusercontent.com/TranslateGames/translategames_server/master/Update/%file%
@@ -60,6 +61,7 @@ title Atualizador%code%t
 del UpToDate.vbs
 del ErroAOpened.vbs
 del ErroDownload.vbs
+del ErroHash.vbs
 del ErroIConnection.vbs
 del ErroInstall.vbs
 del ErroVersion.vbs
@@ -68,6 +70,7 @@ del UpdateFound.vbs
 echo msgbox"A Tradução mais recente, já está instalada!",vbInformation,"A Tradução já está atualizada!" > "UpToDate.vbs"
 echo msgbox"Não foi possível obter acesso de Administrador!",vbCritical,"Acesso Negado!" > "ErroAOpened.vbs"
 echo msgbox"Ocorreu um erro ao tentar baixar a Atualização!",vbCritical,"Falha ao Baixar" > "ErroDownload.vbs"
+echo msgbox"Falha na validação da Atualização! O arquivo pode estar corrompido!",vbCritical,"Falha na validação" > "ErroHash.vbs"
 echo msgbox"Conexão Interrompida durante o download da Atualização!",vbCritical,"Conexão Perdida" > "ErroIConnection.vbs"
 echo msgbox"Arquivo necessário para iniciar a Instalação, não foi encontrado!",vbCritical,"Falha na Instalação" > "ErroInstall.vbs"
 CLS
@@ -163,6 +166,12 @@ move Progress.tgapp Progress.temp
 if exist "functional.js" (
 move functional.js functional.temp
 )
+if exist "Hash.exe" (
+move Hash.exe HashF.temp
+)
+if exist "Hash.vbs" (
+move Hash.vbs HashV.temp
+)
 if exist "ImageData.tgib64" (
 move ImageData.tgib64 ImageData.temp
 )
@@ -172,6 +181,7 @@ del Progress.vbs
 del tg.png
 del db.png
 del App.tmp
+del Hash.exe
 del ImageData.tmp
 CLS
 7z.exe e UpScript.7z -o.\
@@ -203,6 +213,18 @@ move functional.temp functional.js
 ) else (
 del functional.temp
 )
+if not exist "Hash.exe" (
+set /a ERROS=ERROS+FATOR
+move HashF.temp Hash.exe
+) else (
+del HashF.temp
+)
+if not exist "Hash.vbs" (
+set /a ERROS=ERROS+FATOR
+move HashV.temp Hash.vbs
+) else (
+del HashV.temp
+)
 if not exist "ImageData.tgib64" (
 set /a ERROS=ERROS+FATOR
 del ImageData.tgib64
@@ -214,9 +236,11 @@ del ImageData.temp
 )
 echo 100 > "ProgressBarS.log"
 if %ERROS% gtr 0 (
+CLS
 echo %date%-%time% Extração Interrompida. Arquivo Corrompido. >> "UpdateLog.txt"
 echo Extração Interrompida.
 ) else (
+CLS
 echo %date%-%time% Extração Concluída... >> "UpdateLog.txt"
 echo Extração Concluída...
 )
@@ -411,6 +435,7 @@ echo %date%-%time% Atualização Disponível! Versão: %version2% >> "UpdateLog.txt"
 del PrepareProgress.vbs
 del App.temp
 del %file%
+echo 0 > "Hash.log"
 CLS
 echo Update Encontrado!
 wscript UpdateFound.vbs
@@ -515,51 +540,7 @@ echo %date%-%time% Download Interrompido! Tentando Novamente... >> "UpdateLog.tx
 echo Download Interrompido! Tentando Novamente...
 goto initDT
 ) else (
-echo %date%-%time% Iniciando Instalação... >> "UpdateLog.txt"
-echo Iniciando Instalacao...
-echo -0-1- > "ProgressBar.log"
-CLS
-7z.exe x %file% -y -o./UpInstalation
-if exist "UpInstalation\InstallCore-%code%.temp" (
-echo -20-1- > "ProgressBar.log"
-move UpInstalation\InstallCore-%code%.temp UpInstalation\InstallCore-%code%.7z
-echo -30-1- > "ProgressBar.log"
-7z.exe x UpInstalation\InstallCore-%code%.7z -y -o./UpInstalation
-echo -50-1- > "ProgressBar.log"
-del UpInstalation\InstallCore-%code%.7z
-) else (
-echo fail>"StatusP.log"
-echo %date%-%time% Falha ao tentar iniciar a instalação! >> "UpdateLog.txt"
-echo Falha ao tentar iniciar a instalacao!
-wscript ErroInstall.vbs
-exit
-)
-if exist "UpInstalation\Updater-%code%.temp" (
-echo -70-1- > "ProgressBar.log"
-move UpInstalation\Updater-%code%.temp UpInstalation\Updater-%code%.7z
-echo -80-1- > "ProgressBar.log"
-7z.exe x UpInstalation\Updater-%code%.7z -y -o./UpInstalation
-echo -100-1- > "ProgressBar.log"
-del UpInstalation\Updater-%code%.7z
-) else (
-echo fail>"StatusP.log"
-echo %date%-%time% Falha ao tentar iniciar a instalação! >> "UpdateLog.txt"
-echo Falha ao tentar iniciar a instalacao!
-wscript ErroInstall.vbs
-exit
-)
-CLS
-cd UpInstalation
-if exist "install.exe" (
-start Install.exe /Q /T:"%TEMP%\Installer-%code%-%random%.tmp" /C:"wscript Install.vbs /Init:Start"
-) else (
-cd ..\
-echo fail>"StatusP.log"
-echo %date%-%time% Falha ao tentar iniciar a instalação! >> "UpdateLog.txt"
-echo Falha ao tentar iniciar a instalacao!
-wscript ErroInstall.vbs
-)
-goto exit
+goto checkHash
 )
 
 :initDT
@@ -615,51 +596,7 @@ echo %date%-%time% Download Interrompido! Tentando Novamente... >> "UpdateLog.tx
 echo Download Interrompido! Tentando Novamente...
 goto initDAG
 ) else (
-echo %date%-%time% Iniciando Instalação... >> "UpdateLog.txt"
-echo Iniciando Instalacao...
-echo -0-1- > "ProgressBar.log"
-CLS
-7z.exe x %file% -y -o./UpInstalation
-if exist "UpInstalation\InstallCore-%code%.temp" (
-echo -20-1- > "ProgressBar.log"
-move UpInstalation\InstallCore-%code%.temp UpInstalation\InstallCore-%code%.7z
-echo -30-1- > "ProgressBar.log"
-7z.exe x UpInstalation\InstallCore-%code%.7z -y -o./UpInstalation
-echo -50-1- > "ProgressBar.log"
-del UpInstalation\InstallCore-%code%.7z
-) else (
-echo fail>"StatusP.log"
-echo %date%-%time% Falha ao tentar iniciar a instalação! >> "UpdateLog.txt"
-echo Falha ao tentar iniciar a instalacao!
-wscript ErroInstall.vbs
-exit
-)
-if exist "UpInstalation\Updater-%code%.temp" (
-echo -70-1- > "ProgressBar.log"
-move UpInstalation\Updater-%code%.temp UpInstalation\Updater-%code%.7z
-echo -80-1- > "ProgressBar.log"
-7z.exe x UpInstalation\Updater-%code%.7z -y -o./UpInstalation
-echo -100-1- > "ProgressBar.log"
-del UpInstalation\Updater-%code%.7z
-) else (
-echo fail>"StatusP.log"
-echo %date%-%time% Falha ao tentar iniciar a instalação! >> "UpdateLog.txt"
-echo Falha ao tentar iniciar a instalacao!
-wscript ErroInstall.vbs
-exit
-)
-CLS
-cd UpInstalation
-if exist "install.exe" (
-start Install.exe /Q /T:"%TEMP%\Installer-%code%-%random%.tmp" /C:"wscript Install.vbs /Init:Start"
-) else (
-cd ..\
-echo fail>"StatusP.log"
-echo %date%-%time% Falha ao tentar iniciar a instalação! >> "UpdateLog.txt"
-echo Falha ao tentar iniciar a instalacao!
-wscript ErroInstall.vbs
-)
-goto exit
+goto checkHash
 )
 
 :initDAG
@@ -703,6 +640,101 @@ echo Falha ao tentar baixar!
 wscript ErroDownload.vbs
 goto exit
 )
+
+:checkHash
+echo -0-1- > "ProgressBar.log"
+echo 0 > "Hash.log"
+if exist "Hash.vbs" (
+CLS
+echo %date%-%time% Iniciando Verificação Hash... >> "UpdateLog.txt"
+echo Iniciando Verificação Hash...
+Hash.vbs /file:%file% /hash:%hash%
+CLS
+echo %date%-%time% Verificando Arquivo... >> "UpdateLog.txt"
+echo Verificando Arquivo...
+goto checkHash2
+) else (
+CLS
+goto VVCheck
+)
+
+
+:checkHash2
+set /p firstline=<Hash.log
+if %firstline%==Valid (
+CLS
+echo %date%-%time% Arquivo Válido: %hash% >> "UpdateLog.txt"
+echo Arquivo Válido: %hash%
+goto initInstall
+) else if %firstline%==Invalid (
+CLS
+echo %date%-%time% Arquivo Inválido! >> "UpdateLog.txt"
+echo Arquivo Inválido!
+echo fail>"StatusPS.log"
+echo fail>"StatusP.log"
+if %mode%==install (
+echo %date%-%time% Falha na validação da tradução! >> "UpdateLog.txt"
+) else (
+echo %date%-%time% Falha na validação da atualização! >> "UpdateLog.txt"
+)
+echo Falha na validação!
+wscript ErroHash.vbs
+goto exit
+) else (
+goto checkHash2
+)
+
+:initInstall
+CLS
+echo %date%-%time% Extraindo... >> "UpdateLog.txt"
+echo Extraindo...
+echo -5-1- > "ProgressBar.log"
+CLS
+7z.exe x %file% -y -o./UpInstalation
+if exist "UpInstalation\InstallCore-%code%.temp" (
+echo -20-1- > "ProgressBar.log"
+move UpInstalation\InstallCore-%code%.temp UpInstalation\InstallCore-%code%.7z
+echo -30-1- > "ProgressBar.log"
+7z.exe x UpInstalation\InstallCore-%code%.7z -y -o./UpInstalation
+echo -50-1- > "ProgressBar.log"
+del UpInstalation\InstallCore-%code%.7z
+) else (
+echo fail>"StatusP.log"
+echo %date%-%time% Falha ao tentar iniciar a instalação! >> "UpdateLog.txt"
+echo Falha ao tentar iniciar a instalacao!
+wscript ErroInstall.vbs
+exit
+)
+if exist "UpInstalation\Updater-%code%.temp" (
+echo -70-1- > "ProgressBar.log"
+move UpInstalation\Updater-%code%.temp UpInstalation\Updater-%code%.7z
+echo -80-1- > "ProgressBar.log"
+7z.exe x UpInstalation\Updater-%code%.7z -y -o./UpInstalation
+echo -100-1- > "ProgressBar.log"
+del UpInstalation\Updater-%code%.7z
+echo %date%-%time% Extração concluída! >> "UpdateLog.txt"
+echo Extração concluída!
+) else (
+echo fail>"StatusP.log"
+echo %date%-%time% Falha ao tentar iniciar a instalação! >> "UpdateLog.txt"
+echo Falha ao tentar iniciar a instalacao!
+wscript ErroInstall.vbs
+exit
+)
+CLS
+echo %date%-%time% Iniciando Instalação... >> "UpdateLog.txt"
+echo Iniciando Instalacao...
+cd UpInstalation
+if exist "install.exe" (
+start Install.exe /Q /T:"%TEMP%\Installer-%code%-%random%.tmp" /C:"wscript Install.vbs /Init:Start"
+) else (
+cd ..\
+echo fail>"StatusP.log"
+echo %date%-%time% Falha ao tentar iniciar a instalação! >> "UpdateLog.txt"
+echo Falha ao tentar iniciar a instalacao!
+wscript ErroInstall.vbs
+)
+goto exit
 
 CLS
 echo |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
