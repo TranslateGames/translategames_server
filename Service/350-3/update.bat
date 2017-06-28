@@ -1,15 +1,15 @@
 @set caller=0
-@set version2="60012318"
-@set version3="6.0.0.12318"
+@set version2="60012319"
+@set version3="6.0.0.12319"
 @set sversion2c=1500279
 @set tam7z=200192
 CLS
 if %code%==350-3 (
 @set translationof="Dawn of War - Dark Crusade"
 @set tam="3,18"
-@set totaltam=3337446
+@set totaltam=3337065
 @set installedsize="36,14"
-@set hash=BCF30BF5CE86471A705C0FBF5F0721F81A731F91350AD9804BE4802845D55FA8
+@set hash=683F78AB328B6449C1046ED006F2585A351F7178D14701900EA38E4A5E6CFB5D
 @set file=DCBR.7z
 @set changelog=- Tradução: Muitas Mudanças."^&Chr(13)^&"- Atualizador: Melhorias gerais de estabilidade, Imagens substituídas por códigos Base64 reduzidos, design geral melhorado, agora compatível com a API do Internet Explorer 9, Corrigido: Problemas de interface com o Windows XP, Adicionado: Verificação de Servidor Atual e Verificação Hash SHA-256."^&Chr(13)^&"Progresso: Corrigido problemas gerais de cálculo."^&Chr(13)^&"Instalador: Melhorias gerais de segurança e estabilidade, Novo método de instalação em VBS, melhorias na velocidade de instalação e correções gerais."^&Chr(13)^&"Servidor: Adicionado Servidor GitHub e Removido Servidor DropBox.
 )
