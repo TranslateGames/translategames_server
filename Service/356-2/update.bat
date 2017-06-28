@@ -7,9 +7,9 @@ CLS
 if %code%==356-2 (
 @set translationof="Age of Mythology: The Titans Expansion"
 @set tam="2,74"
-@set totaltam=2882770
+@set totaltam=2882769
 @set installedsize="4,48"
-@set hash=5609EDE1BA69656E5BB7D29E044E2D8F94C9161D7D35A0B7C0EB026833FD17EE
+@set hash=7F45630EA1FC07856B284909958480048B5EFF75680B5AD7DC5B02DB9733B005
 @set file=XAOMBR.7z
 @set changelog=- Tradução: Algumas Mudanças."^&Chr(13)^&"- Atualizador: Melhorias gerais de estabilidade, Imagens substituídas por códigos Base64 reduzidos, design geral melhorado, agora compatível com a API do Internet Explorer 9, Corrigido: Problemas de interface com o Windows XP, Adicionado: Verificação de Servidor Atual e Verificação Hash SHA-256."^&Chr(13)^&"Progresso: Corrigido problemas gerais de cálculo."^&Chr(13)^&"Instalador: Melhorias gerais de segurança e estabilidade, Novo método de instalação em VBS, melhorias na velocidade de instalação e correções gerais."^&Chr(13)^&"Servidor: Adicionado Servidor GitHub e Removido Servidor DropBox.
 )
@@ -983,7 +983,7 @@ echo %date%-%time% Download Interrompido! Tentando Novamente... >> "UpdateLog.tx
 echo Download Interrompido! Tentando Novamente...
 goto initDST
 ) else (
-goto initInstallS
+goto checkHashS
 )
 
 :initDST
@@ -1028,7 +1028,7 @@ echo %date%-%time% Download Interrompido! Tentando Novamente... >> "UpdateLog.tx
 echo Download Interrompido! Tentando Novamente...
 goto initDSAG
 ) else (
-goto initInstallS
+goto checkHashS
 )
 
 :initDSAG

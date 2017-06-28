@@ -9,7 +9,7 @@ if %code%==358 (
 @set tam="3,03"
 @set totaltam=3187491
 @set installedsize="27,94"
-@set hash=3DBD1B5D871F0D918BD3A6A8C9E6713687C052EDC83E8259E480867E1C3F245C
+@set hash=8C6634AC03B71CFA7825BA21809932B3B18AF41799F54344AA6844191BE2E8AF
 @set file=DOW2BR.7z
 @set changelog=- Tradução: Muitas Mudanças."^&Chr(13)^&"- Atualizador: Melhorias gerais de estabilidade, Imagens substituídas por códigos Base64 reduzidos, design geral melhorado, agora compatível com a API do Internet Explorer 9, Corrigido: Problemas de interface com o Windows XP, Adicionado: Verificação de Servidor Atual e Verificação Hash SHA-256."^&Chr(13)^&"Progresso: Corrigido problemas gerais de cálculo."^&Chr(13)^&"Instalador: Melhorias gerais de segurança e estabilidade, Novo método de instalação em VBS, melhorias na velocidade de instalação e correções gerais."^&Chr(13)^&"Servidor: Adicionado Servidor GitHub e Removido Servidor DropBox.
 )
@@ -983,7 +983,7 @@ echo %date%-%time% Download Interrompido! Tentando Novamente... >> "UpdateLog.tx
 echo Download Interrompido! Tentando Novamente...
 goto initDST
 ) else (
-goto initInstallS
+goto checkHashS
 )
 
 :initDST
@@ -1028,7 +1028,7 @@ echo %date%-%time% Download Interrompido! Tentando Novamente... >> "UpdateLog.tx
 echo Download Interrompido! Tentando Novamente...
 goto initDSAG
 ) else (
-goto initInstallS
+goto checkHashS
 )
 
 :initDSAG

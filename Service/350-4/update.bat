@@ -9,7 +9,7 @@ if %code%==350-4 (
 @set tam="3,32"
 @set totaltam=3487396
 @set installedsize="61,25"
-@set hash=C639E54B17B4012802ECD96470244A44A54919E8C9E46C5D52758B93E18E9DE1
+@set hash=E0C947F61633ADE6EF093CDB24DFA199B9C30BDAB484D2708B009EF184880822
 @set file=SSBR.7z
 @set changelog=- Tradução: Muitas Mudanças."^&Chr(13)^&"- Atualizador: Melhorias gerais de estabilidade, Imagens substituídas por códigos Base64 reduzidos, design geral melhorado, agora compatível com a API do Internet Explorer 9, Corrigido: Problemas de interface com o Windows XP, Adicionado: Verificação de Servidor Atual e Verificação Hash SHA-256."^&Chr(13)^&"Progresso: Corrigido problemas gerais de cálculo."^&Chr(13)^&"Instalador: Melhorias gerais de segurança e estabilidade, Novo método de instalação em VBS, melhorias na velocidade de instalação e correções gerais."^&Chr(13)^&"Servidor: Adicionado Servidor GitHub e Removido Servidor DropBox.
 )
@@ -983,7 +983,7 @@ echo %date%-%time% Download Interrompido! Tentando Novamente... >> "UpdateLog.tx
 echo Download Interrompido! Tentando Novamente...
 goto initDST
 ) else (
-goto initInstallS
+goto checkHashS
 )
 
 :initDST
@@ -1028,7 +1028,7 @@ echo %date%-%time% Download Interrompido! Tentando Novamente... >> "UpdateLog.tx
 echo Download Interrompido! Tentando Novamente...
 goto initDSAG
 ) else (
-goto initInstallS
+goto checkHashS
 )
 
 :initDSAG
