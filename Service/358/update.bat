@@ -9,7 +9,7 @@ if %code%==358 (
 @set tam="3,03"
 @set totaltam=3187491
 @set installedsize="27,94"
-@set hash=8C6634AC03B71CFA7825BA21809932B3B18AF41799F54344AA6844191BE2E8AF
+@set hash=1F40D3ED2E05991F5ED7F2DA83E38C2886680B9D0E29003F788E97E662D3FDAB
 @set file=DOW2BR.7z
 @set changelog=- Tradução: Muitas Mudanças."^&Chr(13)^&"- Atualizador: Melhorias gerais de estabilidade, Imagens substituídas por códigos Base64 reduzidos, design geral melhorado, agora compatível com a API do Internet Explorer 9, Corrigido: Problemas de interface com o Windows XP, Adicionado: Verificação de Servidor Atual e Verificação Hash SHA-256."^&Chr(13)^&"Progresso: Corrigido problemas gerais de cálculo."^&Chr(13)^&"Instalador: Melhorias gerais de segurança e estabilidade, Novo método de instalação em VBS, melhorias na velocidade de instalação e correções gerais."^&Chr(13)^&"Servidor: Adicionado Servidor GitHub e Removido Servidor DropBox.
 )
@@ -1087,7 +1087,7 @@ if %firstline%==Valid (
 CLS
 echo %date%-%time% Arquivo Válido: %hash% >> "UpdateLog.txt"
 echo Arquivo Válido: %hash%
-goto initInstall
+goto initInstallS
 ) else if %firstline%==Invalid (
 CLS
 echo %date%-%time% Arquivo Inválido! >> "UpdateLog.txt"

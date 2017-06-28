@@ -7,9 +7,9 @@ CLS
 if %code%==350-4 (
 @set translationof="Dawn of War - Soulstorm"
 @set tam="3,32"
-@set totaltam=3487396
+@set totaltam=3487395
 @set installedsize="61,25"
-@set hash=E0C947F61633ADE6EF093CDB24DFA199B9C30BDAB484D2708B009EF184880822
+@set hash=11202043CB40CA4837505693597C9BBDFA15C8267463469DB8A7C43A649A873B
 @set file=SSBR.7z
 @set changelog=- Tradução: Muitas Mudanças."^&Chr(13)^&"- Atualizador: Melhorias gerais de estabilidade, Imagens substituídas por códigos Base64 reduzidos, design geral melhorado, agora compatível com a API do Internet Explorer 9, Corrigido: Problemas de interface com o Windows XP, Adicionado: Verificação de Servidor Atual e Verificação Hash SHA-256."^&Chr(13)^&"Progresso: Corrigido problemas gerais de cálculo."^&Chr(13)^&"Instalador: Melhorias gerais de segurança e estabilidade, Novo método de instalação em VBS, melhorias na velocidade de instalação e correções gerais."^&Chr(13)^&"Servidor: Adicionado Servidor GitHub e Removido Servidor DropBox.
 )
@@ -1087,7 +1087,7 @@ if %firstline%==Valid (
 CLS
 echo %date%-%time% Arquivo Válido: %hash% >> "UpdateLog.txt"
 echo Arquivo Válido: %hash%
-goto initInstall
+goto initInstallS
 ) else if %firstline%==Invalid (
 CLS
 echo %date%-%time% Arquivo Inválido! >> "UpdateLog.txt"
