@@ -7,9 +7,9 @@ CLS
 if %code%==350-3 (
 @set translationof="Dawn of War - Dark Crusade"
 @set tam="3,18"
-@set totaltam=3337377
+@set totaltam=3337445
 @set installedsize="36,14"
-@set hash=429D87AD8BAD1F9C2E172AB1A9CC1EE6DE1AB1AE95758BA1E7D140C1B246BC20
+@set hash=81EA9C346F8B2B59F2DA420B9BFD8CEBE027A61FA5A205FEF133359ADE636A4A
 @set file=DCBR.7z
 @set changelog=- Tradução: Muitas Mudanças."^&Chr(13)^&"- Atualizador: Melhorias gerais de estabilidade, Imagens substituídas por códigos Base64 reduzidos, design geral melhorado, agora compatível com a API do Internet Explorer 9, Corrigido: Problemas de interface com o Windows XP, Adicionado: Verificação de Servidor Atual e Verificação Hash SHA-256."^&Chr(13)^&"Progresso: Corrigido problemas gerais de cálculo."^&Chr(13)^&"Instalador: Melhorias gerais de segurança e estabilidade, Novo método de instalação em VBS, melhorias na velocidade de instalação e correções gerais."^&Chr(13)^&"Servidor: Adicionado Servidor GitHub e Removido Servidor DropBox.
 )
@@ -689,7 +689,6 @@ CLS
 echo %date%-%time% Extraindo... >> "UpdateLog.txt"
 echo Extraindo...
 echo -5-1- > "ProgressBar.log"
-CLS
 7z.exe x %file% -y -o./UpInstalation
 if exist "UpInstalation\InstallCore-%code%.temp" (
 echo -20-1- > "ProgressBar.log"
@@ -712,6 +711,7 @@ echo -80-1- > "ProgressBar.log"
 7z.exe x UpInstalation\Updater-%code%.7z -y -o./UpInstalation
 echo -100-1- > "ProgressBar.log"
 del UpInstalation\Updater-%code%.7z
+CLS
 echo %date%-%time% Extração concluída! >> "UpdateLog.txt"
 echo Extração concluída!
 ) else (
@@ -744,10 +744,12 @@ CLS
 if %version% lss %version2% (
 CLS
 echo 1 > "ProgressBarS.log"
+title UpSilent%code%t
 goto initCheckS
 ) else (
 CLS
 echo 100 > "ProgressBarS.log"
+title UpSilent%code%t
 goto initS
 )
 
@@ -776,8 +778,81 @@ move 7z.temp 7z.exe
 CLS
 )
 )
+if %sversion% lss %sversion2% (
 CLS
+del SilentScript.temp
+del SilentScript.7z
+CLS
+echo %date%-%time% Atualização de Pacotes do Atualizador encontrada! Versão: %sversion2c% >> "UpdateLog.txt"
+echo Atualização de Pacotes do Atualizador encontrada!
+CLS
+echo %date%-%time% Baixando Pacote... >> "UpdateLog.txt"
+echo Baixando Pacote...
+wget.exe https://raw.githubusercontent.com/TranslateGames/translategames_server/master/Service/SilentScript.temp --output-document=SilentScript.temp --user-agent=%useragentstring% --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=10 --tries=2
+title UpSilent%code%t
+if not exist "SilentScript.temp" (
+CLS
+wget.exe http://translategames.tk/updater/request/SilentScript --output-document=SilentScript.temp --user-agent=%useragentstring% --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=10 --tries=2
+title UpSilent%code%t
+)
+if exist "SilentScript.temp" (
+CLS
+move SilentScript.temp SilentScript.7z
+CLS
+echo %date%-%time% Extraindo Pacotes... Versão: %sversion2c% >> "UpdateLog.txt"
+echo Extraindo Pacotes...
+CLS
+if exist "Hash.exe" (
+move Hash.exe HashF.temp
+)
+if exist "Hash.vbs" (
+move Hash.vbs HashV.temp
+)
+del Hash.exe
+CLS
+7z.exe e SilentScript.7z -o.\
+CLS
+title UpSilent%code%t
+if not exist "Hash.exe" (
+set /a ERROS=ERROS+FATOR
+move HashF.temp Hash.exe
+) else (
+del HashF.temp
+)
+if not exist "Hash.vbs" (
+set /a ERROS=ERROS+FATOR
+move HashV.temp Hash.vbs
+) else (
+del HashV.temp
+)
+if %ERROS% gtr 0 (
+CLS
+echo %date%-%time% Extração Interrompida. Arquivo Corrompido. >> "UpdateLog.txt"
+echo Extração Interrompida.
+) else (
+CLS
+echo %date%-%time% Extração Concluída... >> "UpdateLog.txt"
+echo Extração Concluída...
+)
+CLS
+del SilentScript.7z
+CLS
+echo %date%-%time% Continuando... >> "UpdateLog.txt"
+echo 100 > "ProgressBarS.log"
 goto initS
+) else (
+CLS
+echo %date%-%time% Falha ao Baixar Pacote! >> "UpdateLog.txt"
+echo %date%-%time% Continuando sem Atualização de Pacotes... >> "UpdateLog.txt"
+echo Falha ao Baixar Pacote!
+echo 100 > "ProgressBarS.log"
+goto initS
+)
+) else (
+CLS
+echo 100 > "ProgressBarS.log"
+goto initS
+)
 
 :initS
 if %version%==%version2% (
@@ -908,118 +983,7 @@ echo %date%-%time% Download Interrompido! Tentando Novamente... >> "UpdateLog.tx
 echo Download Interrompido! Tentando Novamente...
 goto initDST
 ) else (
-echo %date%-%time% Iniciando Instalação... >> "UpdateLog.txt"
-echo Iniciando Instalacao...
-CLS
-7z.exe x %file% -y -o../UpInstalation
-if exist "..\UpInstalation\InstallCore-%code%.temp" (
-move ..\UpInstalation\InstallCore-%code%.temp ..\UpInstalation\InstallCore-%code%.7z
-7z.exe x ..\UpInstalation\InstallCore-%code%.7z -y -o../UpInstalation
-del ..\UpInstalation\InstallCore-%code%.7z
-) else (
-echo %date%-%time% Falha ao tentar iniciar a instalação! >> "UpdateLog.txt"
-echo Falha ao tentar iniciar a instalacao!
-if %timer%==10800t0 (
-echo %date%-%time% Próxima verificação em 3 Horas... >> "UpdateLog.txt"
-timeout 10800 > NUL
-) else if %timer%==14400t0 (
-echo %date%-%time% Próxima verificação em 4 Horas... >> "UpdateLog.txt"
-timeout 14400 > NUL
-) else if %timer%==18000t0 (
-echo %date%-%time% Próxima verificação em 5 Horas... >> "UpdateLog.txt"
-timeout 18000 > NUL
-) else if %timer%==21600t0 (
-echo %date%-%time% Próxima verificação em 6 Horas... >> "UpdateLog.txt"
-timeout 21600 > NUL
-) else (
-echo %date%-%time% Próxima verificação em 3 Horas... >> "UpdateLog.txt"
-timeout 10800 > NUL
-)
-cd ..\
-if exist "RoutineRestart.vbs" (
-start RoutineRestart.vbs /Init:Start /code:%code% /upcore:%sversion3%
-) else (
-cd ..\
-if exist "Update.exe" (
-start Update.exe /Q /T:"%TEMP%\Update%code%-%random%.tmp" /C:"wscript InitUpdate.vbs /silent:silent"
-) else if exist "InitUpdate.vbs" (
-start InitUpdate.vbs /silent:silent
-)
-)
-exit
-)
-if exist "..\UpInstalation\Updater-%code%.temp" (
-move ..\UpInstalation\Updater-%code%.temp ..\UpInstalation\Updater-%code%.7z
-7z.exe x ..\UpInstalation\Updater-%code%.7z -y -o../UpInstalation
-del ..\UpInstalation\Updater-%code%.7z
-) else (
-echo %date%-%time% Falha ao tentar iniciar a instalação! >> "UpdateLog.txt"
-echo Falha ao tentar iniciar a instalacao!
-if %timer%==10800t0 (
-echo %date%-%time% Próxima verificação em 3 Horas... >> "UpdateLog.txt"
-timeout 10800 > NUL
-) else if %timer%==14400t0 (
-echo %date%-%time% Próxima verificação em 4 Horas... >> "UpdateLog.txt"
-timeout 14400 > NUL
-) else if %timer%==18000t0 (
-echo %date%-%time% Próxima verificação em 5 Horas... >> "UpdateLog.txt"
-timeout 18000 > NUL
-) else if %timer%==21600t0 (
-echo %date%-%time% Próxima verificação em 6 Horas... >> "UpdateLog.txt"
-timeout 21600 > NUL
-) else (
-echo %date%-%time% Próxima verificação em 3 Horas... >> "UpdateLog.txt"
-timeout 10800 > NUL
-)
-cd ..\
-if exist "RoutineRestart.vbs" (
-start RoutineRestart.vbs /Init:Start /code:%code% /upcore:%sversion3%
-) else (
-cd ..\
-if exist "Update.exe" (
-start Update.exe /Q /T:"%TEMP%\Update%code%-%random%.tmp" /C:"wscript InitUpdate.vbs /silent:silent"
-) else if exist "InitUpdate.vbs" (
-start InitUpdate.vbs /silent:silent
-)
-)
-exit
-)
-CLS
-cd ..\
-cd UpInstalation
-if exist "install.exe" (
-start Install.exe /Q /T:"%TEMP%\Installer-%code%-%random%.tmp" /C:"wscript Install.vbs /SInit:Start"
-cd ..\
-) else (
-cd ..\
-echo %date%-%time% Falha ao tentar iniciar a instalação! >> "UpdateLog.txt"
-echo Falha ao tentar iniciar a instalacao!
-)
-cd UpSilent
-if %timer%==10800t0 (
-echo %date%-%time% Próxima verificação em 3 Horas... >> "UpdateLog.txt"
-timeout 10800 > NUL
-) else if %timer%==14400t0 (
-echo %date%-%time% Próxima verificação em 4 Horas... >> "UpdateLog.txt"
-timeout 14400 > NUL
-) else if %timer%==18000t0 (
-echo %date%-%time% Próxima verificação em 5 Horas... >> "UpdateLog.txt"
-timeout 18000 > NUL
-) else if %timer%==21600t0 (
-echo %date%-%time% Próxima verificação em 6 Horas... >> "UpdateLog.txt"
-timeout 21600 > NUL
-) else (
-echo %date%-%time% Próxima verificação em 3 Horas... >> "UpdateLog.txt"
-timeout 10800 > NUL
-)
-cd ..\
-cd ..\
-if exist "Update.exe" (
-start Update.exe /Q /T:"%TEMP%\Update%code%-%random%.tmp" /C:"wscript InitUpdate.vbs /silent:silent"
-) else if exist "InitUpdate.vbs" (
-start InitUpdate.vbs /silent:silent
-)
-goto exit
+goto initInstallS
 )
 
 :initDST
@@ -1064,9 +1028,108 @@ echo %date%-%time% Download Interrompido! Tentando Novamente... >> "UpdateLog.tx
 echo Download Interrompido! Tentando Novamente...
 goto initDSAG
 ) else (
-echo %date%-%time% Iniciando Instalação... >> "UpdateLog.txt"
-echo Iniciando Instalacao...
+goto initInstallS
+)
+
+:initDSAG
 CLS
+title UpSilent%code%t
+CLS
+echo %date%-%time% Baixando Atualização... >> "UpdateLog.txt"
+echo Baixando Update...
+wget.exe -c %primarysvrS% --output-document=%file% --user-agent=%useragentstring% --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=20 --tries=2
+title UpSilent%code%t
+CLS
+if exist "%file%" (
+CLS
+goto checkS
+) else (
+CLS
+echo %date%-%time% Falha ao tentar baixar atualização! >> "UpdateLog.txt"
+echo Falha ao tentar baixar update!
+echo %date%-%time% Próxima verificação em 5 Minutos... >> "UpdateLog.txt"
+timeout 300 > NUL
+cd ..\
+if exist "RoutineRestart.vbs" (
+start RoutineRestart.vbs /Init:Start /code:%code% /upcore:%sversion3%
+) else (
+cd ..\
+if exist "Update.exe" (
+start Update.exe /Q /T:"%TEMP%\Update%code%-%random%.tmp" /C:"wscript InitUpdate.vbs /silent:silent"
+) else if exist "InitUpdate.vbs" (
+start InitUpdate.vbs /silent:silent
+)
+)
+goto exit
+)
+
+:checkHashS
+echo -0-1- > "ProgressBar.log"
+echo 0 > "Hash.log"
+if exist "Hash.vbs" (
+CLS
+echo %date%-%time% Iniciando Verificação Hash... >> "UpdateLog.txt"
+echo Iniciando Verificação Hash...
+Hash.vbs /file:%file% /hash:%hash%
+CLS
+echo %date%-%time% Verificando Arquivo... >> "UpdateLog.txt"
+echo Verificando Arquivo...
+goto checkHashS2
+) else (
+CLS
+goto VVCheckS
+)
+
+
+:checkHashS2
+set /p firstline=<Hash.log
+if %firstline%==Valid (
+CLS
+echo %date%-%time% Arquivo Válido: %hash% >> "UpdateLog.txt"
+echo Arquivo Válido: %hash%
+goto initInstall
+) else if %firstline%==Invalid (
+CLS
+echo %date%-%time% Arquivo Inválido! >> "UpdateLog.txt"
+echo Arquivo Inválido!
+echo %date%-%time% Falha na validação da atualização! >> "UpdateLog.txt"
+echo Falha na validação!
+if %timer%==10800t0 (
+echo %date%-%time% Próxima verificação em 3 Horas... >> "UpdateLog.txt"
+timeout 10800 > NUL
+) else if %timer%==14400t0 (
+echo %date%-%time% Próxima verificação em 4 Horas... >> "UpdateLog.txt"
+timeout 14400 > NUL
+) else if %timer%==18000t0 (
+echo %date%-%time% Próxima verificação em 5 Horas... >> "UpdateLog.txt"
+timeout 18000 > NUL
+) else if %timer%==21600t0 (
+echo %date%-%time% Próxima verificação em 6 Horas... >> "UpdateLog.txt"
+timeout 21600 > NUL
+) else (
+echo %date%-%time% Próxima verificação em 3 Horas... >> "UpdateLog.txt"
+timeout 10800 > NUL
+)
+cd ..\
+if exist "RoutineRestart.vbs" (
+start RoutineRestart.vbs /Init:Start /code:%code% /upcore:%sversion3%
+) else (
+cd ..\
+if exist "Update.exe" (
+start Update.exe /Q /T:"%TEMP%\Update%code%-%random%.tmp" /C:"wscript InitUpdate.vbs /silent:silent"
+) else if exist "InitUpdate.vbs" (
+start InitUpdate.vbs /silent:silent
+)
+)
+exit
+) else (
+goto checkHashS2
+)
+
+:initInstallS
+CLS
+echo %date%-%time% Extraindo... >> "UpdateLog.txt"
+echo Extraindo...
 7z.exe x %file% -y -o../UpInstalation
 if exist "..\UpInstalation\InstallCore-%code%.temp" (
 move ..\UpInstalation\InstallCore-%code%.temp ..\UpInstalation\InstallCore-%code%.7z
@@ -1108,6 +1171,9 @@ if exist "..\UpInstalation\Updater-%code%.temp" (
 move ..\UpInstalation\Updater-%code%.temp ..\UpInstalation\Updater-%code%.7z
 7z.exe x ..\UpInstalation\Updater-%code%.7z -y -o../UpInstalation
 del ..\UpInstalation\Updater-%code%.7z
+CLS
+echo %date%-%time% Extração concluída! >> "UpdateLog.txt"
+echo Extração concluída!
 ) else (
 echo %date%-%time% Falha ao tentar iniciar a instalação! >> "UpdateLog.txt"
 echo Falha ao tentar iniciar a instalacao!
@@ -1141,6 +1207,8 @@ start InitUpdate.vbs /silent:silent
 exit
 )
 CLS
+echo %date%-%time% Iniciando Instalação... >> "UpdateLog.txt"
+echo Iniciando Instalacao...
 cd ..\
 cd UpInstalation
 if exist "install.exe" (
@@ -1176,39 +1244,6 @@ start Update.exe /Q /T:"%TEMP%\Update%code%-%random%.tmp" /C:"wscript InitUpdate
 start InitUpdate.vbs /silent:silent
 )
 goto exit
-)
-
-:initDSAG
-CLS
-title UpSilent%code%t
-CLS
-echo %date%-%time% Baixando Atualização... >> "UpdateLog.txt"
-echo Baixando Update...
-wget.exe -c %primarysvrS% --output-document=%file% --user-agent=%useragentstring% --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=20 --tries=2
-title UpSilent%code%t
-CLS
-if exist "%file%" (
-CLS
-goto checkS
-) else (
-CLS
-echo %date%-%time% Falha ao tentar baixar atualização! >> "UpdateLog.txt"
-echo Falha ao tentar baixar update!
-echo %date%-%time% Próxima verificação em 5 Minutos... >> "UpdateLog.txt"
-timeout 300 > NUL
-cd ..\
-if exist "RoutineRestart.vbs" (
-start RoutineRestart.vbs /Init:Start /code:%code% /upcore:%sversion3%
-) else (
-cd ..\
-if exist "Update.exe" (
-start Update.exe /Q /T:"%TEMP%\Update%code%-%random%.tmp" /C:"wscript InitUpdate.vbs /silent:silent"
-) else if exist "InitUpdate.vbs" (
-start InitUpdate.vbs /silent:silent
-)
-)
-goto exit
-)
 
 :exit
 exit
