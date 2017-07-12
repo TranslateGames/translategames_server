@@ -7,9 +7,9 @@ CLS
 if %code%==357 (
 @set translationof="Dawn of War II - Retribution"
 @set tam="3,21"
-@set totaltam=3370543
+@set totaltam=3370536
 @set installedsize="36,16"
-@set hash=872642CF074C1B7BC5B14D72AD113765FE51EAA3FD5ECB01D9B6A971E2369285
+@set hash=03D61A2B495FC02A438854BD2138A83AAF912E00EC938DE62A375D0431A53517
 @set file=DOW2RBR.7z
 @set changelog=- Tradução: Muitas Mudanças."^&Chr(13)^&"- Atualizador: Melhorias gerais de estabilidade, Imagens substituídas por códigos Base64 reduzidos, design geral melhorado, agora compatível com a API do Internet Explorer 9, Corrigido: Problemas de interface com o Windows XP, Adicionado: Verificação de Servidor Atual e Verificação Hash SHA-256."^&Chr(13)^&"Progresso: Corrigido problemas gerais de cálculo."^&Chr(13)^&"Instalador: Melhorias gerais de segurança e estabilidade, Novo método de instalação em VBS, melhorias na velocidade de instalação e correções gerais."^&Chr(13)^&"Servidor: Adicionado Servidor GitHub e Removido Servidor DropBox.
 )
