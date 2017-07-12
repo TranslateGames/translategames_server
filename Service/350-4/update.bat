@@ -7,9 +7,9 @@ CLS
 if %code%==350-4 (
 @set translationof="Dawn of War - Soulstorm"
 @set tam="3,32"
-@set totaltam=3487503
+@set totaltam=3487505
 @set installedsize="61,25"
-@set hash=85FD4D430511DCB9F3594D08B33BEE7989323C311A44CE259E054A3CC45F79C4
+@set hash=C512218E61F1D224B4B9021D4B9B0EC4A85B385902E6CF867DBE63224A20F029
 @set file=SSBR.7z
 @set changelog=- Tradução: Muitas Mudanças."^&Chr(13)^&"- Atualizador: Melhorias gerais de estabilidade, Imagens substituídas por códigos Base64 reduzidos, design geral melhorado, agora compatível com a API do Internet Explorer 9, Corrigido: Problemas de interface com o Windows XP, Adicionado: Verificação de Servidor Atual e Verificação Hash SHA-256."^&Chr(13)^&"Progresso: Corrigido problemas gerais de cálculo."^&Chr(13)^&"Instalador: Melhorias gerais de segurança e estabilidade, Novo método de instalação em VBS, melhorias na velocidade de instalação e correções gerais."^&Chr(13)^&"Servidor: Adicionado Servidor GitHub e Removido Servidor DropBox.
 )
