@@ -1,15 +1,15 @@
 @set caller=0
-@set version2="1000983"
-@set version3="1.0.0.0983"
+@set version2="1000984"
+@set version3="1.0.0.0984"
 @set sversion2c=1500281
 @set tam7z=200192
 CLS
 if %code%==358 (
 @set translationof="Dawn of War II e Chaos Rising"
 @set tam="3,04"
-@set totaltam=3188733
-@set installedsize="28"
-@set hash=1632DC296C2FCEBCB8F4376253D923C6A767AFC1545304C9F8FDFFC7E4E8DC6F
+@set totaltam=3188137
+@set installedsize="27,94"
+@set hash=99FD763A77649BA63131385EA30BFC4E0AB1CF4681CE894DF390EEA4C4C44744
 @set file=DOW2BR.7z
 @set changelog=- Tradução: Muitas Mudanças."^&Chr(13)^&"- Atualizador: Melhorias gerais de estabilidade, Imagens substituídas por códigos Base64 reduzidos, design geral melhorado, agora compatível com a API do Internet Explorer 9, Corrigido: Problemas de interface com o Windows XP, Adicionado: Verificação de Servidor Atual e Verificação Hash SHA-256."^&Chr(13)^&"Progresso: Corrigido problemas gerais de cálculo."^&Chr(13)^&"Instalador: Melhorias gerais de segurança e estabilidade, Novo método de instalação em VBS, melhorias na velocidade de instalação e correções gerais."^&Chr(13)^&"Servidor: Adicionado Servidor GitHub e Removido Servidor DropBox.
 )

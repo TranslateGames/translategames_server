@@ -1,15 +1,15 @@
 @set caller=0
-@set version2="1002678"
-@set version3="1.0.0.2678"
+@set version2="1002679"
+@set version3="1.0.0.2679"
 @set sversion2c=1500281
 @set tam7z=200192
 CLS
 if %code%==356-2 (
 @set translationof="Age of Mythology: The Titans Expansion"
-@set tam="2,75"
-@set totaltam=2884262
-@set installedsize="4,54"
-@set hash=38885CC2E7BEEF5B4B28C39A5BB4A91BD87EF57A7F3C9798E8AF83CE2E35258E
+@set tam="2,74"
+@set totaltam=2883412
+@set installedsize="4,48"
+@set hash=EDA162E6C355C410693C87758EA433333BF56D414A96D2F8FF47F098691DEC13
 @set file=XAOMBR.7z
 @set changelog=- Tradução: Algumas Mudanças."^&Chr(13)^&"- Atualizador: Melhorias gerais de estabilidade, Imagens substituídas por códigos Base64 reduzidos, design geral melhorado, agora compatível com a API do Internet Explorer 9, Corrigido: Problemas de interface com o Windows XP, Adicionado: Verificação de Servidor Atual e Verificação Hash SHA-256."^&Chr(13)^&"Progresso: Corrigido problemas gerais de cálculo."^&Chr(13)^&"Instalador: Melhorias gerais de segurança e estabilidade, Novo método de instalação em VBS, melhorias na velocidade de instalação e correções gerais."^&Chr(13)^&"Servidor: Adicionado Servidor GitHub e Removido Servidor DropBox.
 )
