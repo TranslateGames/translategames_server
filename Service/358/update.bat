@@ -1,17 +1,17 @@
 @set caller=0
-@set version2="1000984"
-@set version3="1.0.0.0984"
-@set sversion2c=1500281
-@set tam7z=200192
+@set version2="1000985"
+@set version3="1.0.0.0985"
+@set sversion2c=1500282
+@set tam7z=208896
 CLS
 if %code%==358 (
 @set translationof="Dawn of War II e Chaos Rising"
 @set tam="3,04"
-@set totaltam=3188137
-@set installedsize="27,94"
-@set hash=99FD763A77649BA63131385EA30BFC4E0AB1CF4681CE894DF390EEA4C4C44744
+@set totaltam=3197991
+@set installedsize="27,95"
+@set hash=5F66F722E2842EC36FB5AE6B090F9A6824B230F1D1353632077771463E44BDEC
 @set file=DOW2BR.7z
-@set changelog=- Tradução: Muitas Mudanças."^&Chr(13)^&"- Atualizador: Melhorias gerais de estabilidade, Imagens substituídas por códigos Base64 reduzidos, design geral melhorado, agora compatível com a API do Internet Explorer 9, Corrigido: Problemas de interface com o Windows XP, Adicionado: Verificação de Servidor Atual e Verificação Hash SHA-256."^&Chr(13)^&"Progresso: Corrigido problemas gerais de cálculo."^&Chr(13)^&"Instalador: Melhorias gerais de segurança e estabilidade, Novo método de instalação em VBS, melhorias na velocidade de instalação e correções gerais."^&Chr(13)^&"Servidor: Adicionado Servidor GitHub e Removido Servidor DropBox.
+@set changelog=- Tradução: Algumas Mudanças."^&Chr(13)^&"- Atualizador: Melhorias gerais de estabilidade, Corrigido: Problemas de interface com o Windows XP, Atualizado: 7-zip para a versão 17.01, Adicionado: Verificação de Servidor Atual e Verificação Hash SHA-256."^&Chr(13)^&"Progresso: Corrigido problemas gerais de cálculo."^&Chr(13)^&"Instalador: Melhorias gerais de segurança e estabilidade, Novo método de instalação em VBS, melhorias na velocidade de instalação e correções gerais."^&Chr(13)^&"Servidor: Adicionado Servidor GitHub e Removido Servidor DropBox.
 )
 CLS
 @set secundarysvr=https://raw.githubusercontent.com/TranslateGames/translategames_server/master/Update/%file%
@@ -695,6 +695,9 @@ echo %date%-%time% Falha na validação da atualização! >> "UpdateLog.txt"
 echo Falha na validação!
 wscript ErroHash.vbs
 goto exit
+) else if %firstline%==MissingFile (
+CLS
+goto ARCheck
 ) else (
 goto checkHash2
 )
@@ -1147,6 +1150,9 @@ start InitUpdate.vbs /silent:silent
 )
 )
 exit
+) else if %firstline%==MissingFile (
+CLS
+goto ARCheckS
 ) else (
 goto checkHashS2
 )

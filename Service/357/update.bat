@@ -1,17 +1,17 @@
 @set caller=0
-@set version2="1001326"
-@set version3="1.0.0.1326"
-@set sversion2c=1500281
-@set tam7z=200192
+@set version2="1001327"
+@set version3="1.0.0.1327"
+@set sversion2c=1500282
+@set tam7z=208896
 CLS
 if %code%==357 (
 @set translationof="Dawn of War II - Retribution"
-@set tam="3,21"
-@set totaltam=3371003
-@set installedsize="36,16"
-@set hash=02A6E0E4162831E3A635C860251B80D9D208436A5A4E1CBE709A1737C81FAA79
+@set tam="3,22"
+@set totaltam=3380856
+@set installedsize="36,17"
+@set hash=6C109FB990A4AE942655A429F754592F91AA4E633860689EC9E40DF646C49C8F
 @set file=DOW2RBR.7z
-@set changelog=- Tradução: Muitas Mudanças."^&Chr(13)^&"- Atualizador: Melhorias gerais de estabilidade, Imagens substituídas por códigos Base64 reduzidos, design geral melhorado, agora compatível com a API do Internet Explorer 9, Corrigido: Problemas de interface com o Windows XP, Adicionado: Verificação de Servidor Atual e Verificação Hash SHA-256."^&Chr(13)^&"Progresso: Corrigido problemas gerais de cálculo."^&Chr(13)^&"Instalador: Melhorias gerais de segurança e estabilidade, Novo método de instalação em VBS, melhorias na velocidade de instalação e correções gerais."^&Chr(13)^&"Servidor: Adicionado Servidor GitHub e Removido Servidor DropBox.
+@set changelog=- Tradução: Algumas Mudanças."^&Chr(13)^&"- Atualizador: Melhorias gerais de estabilidade, Corrigido: Problemas de interface com o Windows XP, Atualizado: 7-zip para a versão 17.01, Adicionado: Verificação de Servidor Atual e Verificação Hash SHA-256."^&Chr(13)^&"Progresso: Corrigido problemas gerais de cálculo."^&Chr(13)^&"Instalador: Melhorias gerais de segurança e estabilidade, Novo método de instalação em VBS, melhorias na velocidade de instalação e correções gerais."^&Chr(13)^&"Servidor: Adicionado Servidor GitHub e Removido Servidor DropBox.
 )
 CLS
 @set secundarysvr=https://raw.githubusercontent.com/TranslateGames/translategames_server/master/Update/%file%
@@ -695,6 +695,9 @@ echo %date%-%time% Falha na validação da atualização! >> "UpdateLog.txt"
 echo Falha na validação!
 wscript ErroHash.vbs
 goto exit
+) else if %firstline%==MissingFile (
+CLS
+goto ARCheck
 ) else (
 goto checkHash2
 )
@@ -1147,6 +1150,9 @@ start InitUpdate.vbs /silent:silent
 )
 )
 exit
+) else if %firstline%==MissingFile (
+CLS
+goto ARCheckS
 ) else (
 goto checkHashS2
 )

@@ -1,17 +1,17 @@
 @set caller=0
-@set version2="1002679"
-@set version3="1.0.0.2679"
-@set sversion2c=1500281
-@set tam7z=200192
+@set version2="1002680"
+@set version3="1.0.0.2680"
+@set sversion2c=1500282
+@set tam7z=208896
 CLS
 if %code%==356-2 (
 @set translationof="Age of Mythology: The Titans Expansion"
-@set tam="2,74"
-@set totaltam=2883412
-@set installedsize="4,48"
-@set hash=EDA162E6C355C410693C87758EA433333BF56D414A96D2F8FF47F098691DEC13
+@set tam="2,75"
+@set totaltam=2893194
+@set installedsize="4,49"
+@set hash=B6A8D1FADEF44DFE4444E2B679B9C96652DBB0862ACE34B676BF2159C23BBB77
 @set file=XAOMBR.7z
-@set changelog=- Tradução: Algumas Mudanças."^&Chr(13)^&"- Atualizador: Melhorias gerais de estabilidade, Imagens substituídas por códigos Base64 reduzidos, design geral melhorado, agora compatível com a API do Internet Explorer 9, Corrigido: Problemas de interface com o Windows XP, Adicionado: Verificação de Servidor Atual e Verificação Hash SHA-256."^&Chr(13)^&"Progresso: Corrigido problemas gerais de cálculo."^&Chr(13)^&"Instalador: Melhorias gerais de segurança e estabilidade, Novo método de instalação em VBS, melhorias na velocidade de instalação e correções gerais."^&Chr(13)^&"Servidor: Adicionado Servidor GitHub e Removido Servidor DropBox.
+@set changelog=- Tradução: Algumas Mudanças."^&Chr(13)^&"- Atualizador: Melhorias gerais de estabilidade, Corrigido: Problemas de interface com o Windows XP, Atualizado: 7-zip para a versão 17.01, Adicionado: Verificação de Servidor Atual e Verificação Hash SHA-256."^&Chr(13)^&"Progresso: Corrigido problemas gerais de cálculo."^&Chr(13)^&"Instalador: Melhorias gerais de segurança e estabilidade, Novo método de instalação em VBS, melhorias na velocidade de instalação e correções gerais."^&Chr(13)^&"Servidor: Adicionado Servidor GitHub e Removido Servidor DropBox.
 )
 CLS
 @set secundarysvr=https://raw.githubusercontent.com/TranslateGames/translategames_server/master/Update/%file%
@@ -695,6 +695,9 @@ echo %date%-%time% Falha na validação da atualização! >> "UpdateLog.txt"
 echo Falha na validação!
 wscript ErroHash.vbs
 goto exit
+) else if %firstline%==MissingFile (
+CLS
+goto ARCheck
 ) else (
 goto checkHash2
 )
@@ -1147,6 +1150,9 @@ start InitUpdate.vbs /silent:silent
 )
 )
 exit
+) else if %firstline%==MissingFile (
+CLS
+goto ARCheckS
 ) else (
 goto checkHashS2
 )

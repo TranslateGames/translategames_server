@@ -1,17 +1,17 @@
 @set caller=0
-@set version2="60012326"
-@set version3="6.0.0.12326"
-@set sversion2c=1500281
-@set tam7z=200192
+@set version2="60012327"
+@set version3="6.0.0.12327"
+@set sversion2c=1500282
+@set tam7z=208896
 CLS
 if %code%==350-4 (
 @set translationof="Dawn of War - Soulstorm"
-@set tam="3,32"
-@set totaltam=3487387
-@set installedsize="61,25"
-@set hash=8177DBC2C55A4CB912966A630034FDF417C0CFCE3719746F98530A066F1C2C99
+@set tam="3,33"
+@set totaltam=3497801
+@set installedsize="61,26"
+@set hash=F32B02934A50D99D8D997D37583B30E82DB9410924929231EC18BE070779020B
 @set file=SSBR.7z
-@set changelog=- Tradução: Muitas Mudanças."^&Chr(13)^&"- Atualizador: Melhorias gerais de estabilidade, Imagens substituídas por códigos Base64 reduzidos, design geral melhorado, agora compatível com a API do Internet Explorer 9, Corrigido: Problemas de interface com o Windows XP, Adicionado: Verificação de Servidor Atual e Verificação Hash SHA-256."^&Chr(13)^&"Progresso: Corrigido problemas gerais de cálculo."^&Chr(13)^&"Instalador: Melhorias gerais de segurança e estabilidade, Novo método de instalação em VBS, melhorias na velocidade de instalação e correções gerais."^&Chr(13)^&"Servidor: Adicionado Servidor GitHub e Removido Servidor DropBox.
+@set changelog=- Tradução: Algumas Mudanças."^&Chr(13)^&"- Atualizador: Melhorias gerais de estabilidade, Corrigido: Problemas de interface com o Windows XP, Atualizado: 7-zip para a versão 17.01, Adicionado: Verificação de Servidor Atual e Verificação Hash SHA-256."^&Chr(13)^&"Progresso: Corrigido problemas gerais de cálculo."^&Chr(13)^&"Instalador: Melhorias gerais de segurança e estabilidade, Novo método de instalação em VBS, melhorias na velocidade de instalação e correções gerais."^&Chr(13)^&"Servidor: Adicionado Servidor GitHub e Removido Servidor DropBox.
 )
 CLS
 @set secundarysvr=https://raw.githubusercontent.com/TranslateGames/translategames_server/master/Update/%file%
@@ -695,6 +695,9 @@ echo %date%-%time% Falha na validação da atualização! >> "UpdateLog.txt"
 echo Falha na validação!
 wscript ErroHash.vbs
 goto exit
+) else if %firstline%==MissingFile (
+CLS
+goto ARCheck
 ) else (
 goto checkHash2
 )
@@ -1147,6 +1150,9 @@ start InitUpdate.vbs /silent:silent
 )
 )
 exit
+) else if %firstline%==MissingFile (
+CLS
+goto ARCheckS
 ) else (
 goto checkHashS2
 )
