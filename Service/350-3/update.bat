@@ -7,9 +7,9 @@ CLS
 if %code%==350-3 (
 @set translationof="Dawn of War - Dark Crusade"
 @set tam="3,19"
-@set totaltam=3347849
+@set totaltam=3347851
 @set installedsize="36,15"
-@set hash=630382D0AC297BC2E79FA920F364E7764EF7D0F928BD90682A49F0B3E9BC1125
+@set hash=EA2E09762938B072E7E3AF2CC3EB0A917FB0BC20E7F72C5F2BF300F4E408A480
 @set file=DCBR.7z
 @set changelog=- Tradução: Algumas Mudanças."^&Chr(13)^&"- Atualizador: Melhorias gerais de estabilidade, Corrigido: Problemas de interface com o Windows XP, Atualizado: 7-zip para a versão 17.01, Adicionado: Verificação de Servidor Atual e Verificação Hash SHA-256."^&Chr(13)^&"Progresso: Corrigido problemas gerais de cálculo."^&Chr(13)^&"Instalador: Melhorias gerais de segurança e estabilidade, Novo método de instalação em VBS, melhorias na velocidade de instalação e correções gerais."^&Chr(13)^&"Servidor: Adicionado Servidor GitHub e Removido Servidor DropBox.
 )
@@ -275,7 +275,7 @@ goto init
 
 :pProgress
 CLS
-echo code = %code% > "PrepareProgress.vbs"
+echo code = "%code%" > "PrepareProgress.vbs"
 echo FileT= "Progress.tgapp" >> "PrepareProgress.vbs"
 echo Set objFSO2 = CreateObject("Scripting.FileSystemObject") >> "PrepareProgress.vbs"
 echo Set objRead2 = objFSO2.OpenTextFile(FileT, 1, True) >> "PrepareProgress.vbs"

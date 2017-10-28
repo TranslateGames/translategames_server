@@ -7,9 +7,9 @@ CLS
 if %code%==356 (
 @set translationof="Age of Mythology"
 @set tam="2,77"
-@set totaltam=2912141
+@set totaltam=2912140
 @set installedsize="4,29"
-@set hash=B0741529A06E1FF64C806F0A2D36E8EBCB5228CE7A3F7E24C798511485CA5D2E
+@set hash=9F110718D89423012ADFFDBE2AF7DBEE8096AF6868A5C4771F7B5117700DED86
 @set file=AOMBR.7z
 @set changelog=- Tradução: Algumas Mudanças."^&Chr(13)^&"- Atualizador: Melhorias gerais de estabilidade, Corrigido: Problemas de interface com o Windows XP, Atualizado: 7-zip para a versão 17.01, Adicionado: Verificação de Servidor Atual e Verificação Hash SHA-256."^&Chr(13)^&"Progresso: Corrigido problemas gerais de cálculo."^&Chr(13)^&"Instalador: Melhorias gerais de segurança e estabilidade, Novo método de instalação em VBS, melhorias na velocidade de instalação e correções gerais."^&Chr(13)^&"Servidor: Adicionado Servidor GitHub e Removido Servidor DropBox.
 )
@@ -275,7 +275,7 @@ goto init
 
 :pProgress
 CLS
-echo code = %code% > "PrepareProgress.vbs"
+echo code = "%code%" > "PrepareProgress.vbs"
 echo FileT= "Progress.tgapp" >> "PrepareProgress.vbs"
 echo Set objFSO2 = CreateObject("Scripting.FileSystemObject") >> "PrepareProgress.vbs"
 echo Set objRead2 = objFSO2.OpenTextFile(FileT, 1, True) >> "PrepareProgress.vbs"

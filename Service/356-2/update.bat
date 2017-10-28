@@ -9,7 +9,7 @@ if %code%==356-2 (
 @set tam="2,75"
 @set totaltam=2893194
 @set installedsize="4,49"
-@set hash=B6A8D1FADEF44DFE4444E2B679B9C96652DBB0862ACE34B676BF2159C23BBB77
+@set hash=DEC4FD474753482CBE701FE8FFE56F559AF515CB878C1DBAC7376A9FB064D35E
 @set file=XAOMBR.7z
 @set changelog=- Tradução: Algumas Mudanças."^&Chr(13)^&"- Atualizador: Melhorias gerais de estabilidade, Corrigido: Problemas de interface com o Windows XP, Atualizado: 7-zip para a versão 17.01, Adicionado: Verificação de Servidor Atual e Verificação Hash SHA-256."^&Chr(13)^&"Progresso: Corrigido problemas gerais de cálculo."^&Chr(13)^&"Instalador: Melhorias gerais de segurança e estabilidade, Novo método de instalação em VBS, melhorias na velocidade de instalação e correções gerais."^&Chr(13)^&"Servidor: Adicionado Servidor GitHub e Removido Servidor DropBox.
 )
@@ -275,7 +275,7 @@ goto init
 
 :pProgress
 CLS
-echo code = %code% > "PrepareProgress.vbs"
+echo code = "%code%" > "PrepareProgress.vbs"
 echo FileT= "Progress.tgapp" >> "PrepareProgress.vbs"
 echo Set objFSO2 = CreateObject("Scripting.FileSystemObject") >> "PrepareProgress.vbs"
 echo Set objRead2 = objFSO2.OpenTextFile(FileT, 1, True) >> "PrepareProgress.vbs"
