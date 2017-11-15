@@ -1,15 +1,15 @@
 @set caller=0
-@set version2="60012327"
-@set version3="6.0.0.12327"
-@set sversion2c=1500282
+@set version2="60012329"
+@set version3="6.0.0.12329"
+@set sversion2c=1500283
 @set tam7z=208896
 CLS
 if %code%==350 (
 @set translationof="Dawn of War e Winter Assault"
 @set tam="3,67"
-@set totaltam=3854839
+@set totaltam=3855649
 @set installedsize="20,45"
-@set hash=6D5DD4FCD55BA77A0FBF22562CB9C90A6E13CECD4BA3541E51A6B4B7DC24508E
+@set hash=64D99AB421552A9173CF28CDFEA8D8CA5A480D9C2D3AC1370D84EA01A0A8A087
 @set file=W4BR.7z
 @set changelog=- Tradução: Algumas Mudanças."^&Chr(13)^&"- Atualizador: Melhorias gerais de estabilidade, Corrigido: Problemas de interface com o Windows XP, Atualizado: 7-zip para a versão 17.01, Adicionado: Verificação de Servidor Atual e Verificação Hash SHA-256."^&Chr(13)^&"Progresso: Corrigido problemas gerais de cálculo."^&Chr(13)^&"Instalador: Melhorias gerais de segurança e estabilidade, Novo método de instalação em VBS, melhorias na velocidade de instalação e correções gerais."^&Chr(13)^&"Servidor: Adicionado Servidor GitHub e Removido Servidor DropBox.
 )
@@ -171,6 +171,9 @@ move App.exe App.temp
 if exist "error.png" (
 move error.png error.temp
 )
+if exist "ExtractSize.vbs" (
+move ExtractSize.vbs ExtractSize.temp
+)
 if exist "Progress.tgapp" (
 move Progress.tgapp Progress.temp
 )
@@ -218,6 +221,13 @@ move error.temp error.png
 ) else (
 del error.temp
 )
+if not exist "ExtractSize.vbs" (
+set /a ERROS=ERROS+FATOR
+del ExtractSize.vbs
+move ExtractSize.temp ExtractSize.vbs
+) else (
+del ExtractSize.temp
+)
 if not exist "functional.js" (
 set /a ERROS=ERROS+FATOR
 move functional.temp functional.js
@@ -245,6 +255,8 @@ del ImageData.tgib64
 move ImageData.tmp ImageData.tgib64
 del ImageData.temp
 )
+del App.tmp
+del ImageData.tmp
 echo 100 > "ProgressBarS.log"
 if %ERROS% gtr 0 (
 CLS
@@ -299,6 +311,7 @@ echo 0 > "Status.log"
 echo 0 > "StatusP.log"
 echo -0-90- > "ProgressBar.log"
 echo 0 > "Server.log"
+echo 0 > "DSize.log"
 if %version%==%version2% (
 title Atualizador%code%t
 echo close>"StatusPS.log"
@@ -503,6 +516,20 @@ goto exit
 CLS
 if exist "%file%" (
 CLS
+echo 0 > "DSize.log"
+if exist "ExtractSize.vbs" (
+cd .\
+ExtractSize.vbs /file:%file%
+)
+set /p firstline=<DSize.log
+if %firstline%==NoData (
+@set totaltam2=%totaltam%
+) else if %firstline%==0 (
+@set totaltam2=%totaltam%
+) else (
+@set totaltam2=%firstline%
+)
+CLS
 goto check
 ) else (
 CLS
@@ -548,7 +575,7 @@ goto exit
 CLS
 FOR %%a in (dir "%file%") do (set /a tamanho=%%~za)
 CLS
-if %tamanho% lss %totaltam% (
+if %tamanho% lss %totaltam2% (
 CLS
 echo stsvr>"StatusP.log"
 echo %date%-%time% Download Interrompido! Tentando Novamente... >> "UpdateLog.txt"
@@ -585,6 +612,20 @@ goto exit
 CLS
 if exist "%file%" (
 CLS
+echo 0 > "DSize.log"
+if exist "ExtractSize.vbs" (
+cd .\
+ExtractSize.vbs /file:%file%
+)
+set /p firstline=<DSize.log
+if %firstline%==NoData (
+@set totaltam2=%totaltam%
+) else if %firstline%==0 (
+@set totaltam2=%totaltam%
+) else (
+@set totaltam2=%firstline%
+)
+CLS
 goto checkB
 ) else (
 CLS
@@ -604,7 +645,7 @@ goto exit
 CLS
 FOR %%a in (dir "%file%") do (set /a tamanho=%%~za)
 CLS
-if %tamanho% lss %totaltam% (
+if %tamanho% lss %totaltam2% (
 CLS
 echo stsvr>"StatusP.log"
 echo %date%-%time% Download Interrompido! Tentando Novamente... >> "UpdateLog.txt"
@@ -640,6 +681,20 @@ goto exit
 )
 CLS
 if exist "%file%" (
+CLS
+echo 0 > "DSize.log"
+if exist "ExtractSize.vbs" (
+cd .\
+ExtractSize.vbs /file:%file%
+)
+set /p firstline=<DSize.log
+if %firstline%==NoData (
+@set totaltam2=%totaltam%
+) else if %firstline%==0 (
+@set totaltam2=%totaltam%
+) else (
+@set totaltam2=%firstline%
+)
 CLS
 goto check
 ) else (
@@ -830,6 +885,9 @@ CLS
 echo %date%-%time% Extraindo Pacotes... Versão: %sversion2c% >> "UpdateLog.txt"
 echo Extraindo Pacotes...
 CLS
+if exist "ExtractSize.vbs" (
+move ExtractSize.vbs ExtractSize.temp
+)
 if exist "Hash.exe" (
 move Hash.exe HashF.temp
 )
@@ -841,6 +899,12 @@ CLS
 7z.exe e SilentScript.7z -o.\
 CLS
 title UpSilent%code%t
+if not exist "ExtractSize.vbs" (
+set /a ERROS=ERROS+FATOR
+move ExtractSize.temp ExtractSize.vbs
+) else (
+del ExtractSize.temp
+)
 if not exist "Hash.exe" (
 set /a ERROS=ERROS+FATOR
 move HashF.temp Hash.exe
@@ -968,6 +1032,20 @@ title UpSilent%code%t
 CLS
 if exist "%file%" (
 CLS
+echo 0 > "DSize.log"
+if exist "ExtractSize.vbs" (
+cd .\
+ExtractSize.vbs /file:%file%
+)
+set /p firstline=<DSize.log
+if %firstline%==NoData (
+@set totaltam2=%totaltam%
+) else if %firstline%==0 (
+@set totaltam2=%totaltam%
+) else (
+@set totaltam2=%firstline%
+)
+CLS
 goto checkS
 ) else (
 CLS
@@ -1005,7 +1083,7 @@ goto exit
 CLS
 FOR %%a in (dir "%file%") do (set /a tamanho=%%~za)
 CLS
-if %tamanho% lss %totaltam% (
+if %tamanho% lss %totaltam2% (
 CLS
 echo %date%-%time% Download Interrompido! Tentando Novamente... >> "UpdateLog.txt"
 echo Download Interrompido! Tentando Novamente...
@@ -1024,6 +1102,20 @@ wget.exe -c %secundarysvrS% --output-document=%file% --user-agent=%useragentstri
 title UpSilent%code%t
 CLS
 if exist "%file%" (
+CLS
+echo 0 > "DSize.log"
+if exist "ExtractSize.vbs" (
+cd .\
+ExtractSize.vbs /file:%file%
+)
+set /p firstline=<DSize.log
+if %firstline%==NoData (
+@set totaltam2=%totaltam%
+) else if %firstline%==0 (
+@set totaltam2=%totaltam%
+) else (
+@set totaltam2=%firstline%
+)
 CLS
 goto checkSB
 ) else (
@@ -1050,7 +1142,7 @@ goto exit
 CLS
 FOR %%a in (dir "%file%") do (set /a tamanho=%%~za)
 CLS
-if %tamanho% lss %totaltam% (
+if %tamanho% lss %totaltam2% (
 CLS
 echo %date%-%time% Download Interrompido! Tentando Novamente... >> "UpdateLog.txt"
 echo Download Interrompido! Tentando Novamente...
@@ -1069,6 +1161,20 @@ wget.exe -c %primarysvrS% --output-document=%file% --user-agent=%useragentstring
 title UpSilent%code%t
 CLS
 if exist "%file%" (
+CLS
+echo 0 > "DSize.log"
+if exist "ExtractSize.vbs" (
+cd .\
+ExtractSize.vbs /file:%file%
+)
+set /p firstline=<DSize.log
+if %firstline%==NoData (
+@set totaltam2=%totaltam%
+) else if %firstline%==0 (
+@set totaltam2=%totaltam%
+) else (
+@set totaltam2=%firstline%
+)
 CLS
 goto checkS
 ) else (
