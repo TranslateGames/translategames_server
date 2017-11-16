@@ -7,9 +7,9 @@ CLS
 if %code%==350-3 (
 @set translationof="Dawn of War - Dark Crusade"
 @set tam="3,19"
-@set totaltam=3348695
+@set totaltam=3348694
 @set installedsize="36,15"
-@set hash=097B889B9D0A702BA1474CBBC5553AB1BC0560D5106C719907D485C9261A829E
+@set hash=692A19D166489DB47BF9F349893301180CA103DA9747BFB8295A3EE712C70A33
 @set file=DCBR.7z
 @set changelog=- Tradução: Algumas Mudanças."^&Chr(13)^&"- Atualizador: Melhorias gerais de estabilidade, Corrigido: Problemas de interface com o Windows XP, Atualizado: 7-zip para a versão 17.01, Adicionado: Verificação de Servidor Atual e Verificação Hash SHA-256."^&Chr(13)^&"Progresso: Corrigido problemas gerais de cálculo."^&Chr(13)^&"Instalador: Melhorias gerais de segurança e estabilidade, Novo método de instalação em VBS, melhorias na velocidade de instalação e correções gerais."^&Chr(13)^&"Servidor: Adicionado Servidor GitHub e Removido Servidor DropBox.
 )
@@ -256,6 +256,7 @@ move ImageData.tmp ImageData.tgib64
 del ImageData.temp
 )
 del App.tmp
+del App.temp
 del ImageData.tmp
 echo 100 > "ProgressBarS.log"
 if %ERROS% gtr 0 (
@@ -554,6 +555,20 @@ goto exit
 )
 CLS
 if exist "%file%" (
+CLS
+echo 0 > "DSize.log"
+if exist "ExtractSize.vbs" (
+cd .\
+ExtractSize.vbs /file:%file%
+)
+set /p firstline=<DSize.log
+if %firstline%==NoData (
+@set totaltam2=%totaltam%
+) else if %firstline%==0 (
+@set totaltam2=%totaltam%
+) else (
+@set totaltam2=%firstline%
+)
 CLS
 goto check
 ) else (
@@ -1031,23 +1046,12 @@ wget.exe %primarysvrS% --output-document=%file% --user-agent=%useragentstring% -
 title UpSilent%code%t
 CLS
 if exist "%file%" (
-CLS
-echo 0 > "DSize.log"
-if exist "ExtractSize.vbs" (
-cd .\
-ExtractSize.vbs /file:%file%
-)
-set /p firstline=<DSize.log
-if %firstline%==NoData (
-@set totaltam2=%totaltam%
-) else if %firstline%==0 (
-@set totaltam2=%totaltam%
+goto finishckeckS
 ) else (
-@set totaltam2=%firstline%
+goto secundaryDS
 )
-CLS
-goto checkS
-) else (
+
+:secundaryDS
 CLS
 echo %date%-%time% Falha ao baixar do servidor primário! >> "UpdateLog.txt"
 echo %date%-%time% Baixando de outro Servidor... >> "UpdateLog.txt"
@@ -1056,8 +1060,7 @@ wget.exe %secundarysvrS% --output-document=%file% --user-agent=%useragentstring%
 title UpSilent%code%t
 CLS
 if exist "%file%" (
-CLS
-goto checkS
+goto finishckeckS
 ) else (
 CLS
 echo %date%-%time% Falha ao tentar baixar atualização! >> "UpdateLog.txt"
@@ -1077,7 +1080,24 @@ start InitUpdate.vbs /silent:silent
 )
 goto exit
 )
+
+:finishckeckS
+CLS
+echo 0 > "DSize.log"
+if exist "ExtractSize.vbs" (
+cd .\
+ExtractSize.vbs /file:%file%
 )
+set /p firstline=<DSize.log
+if %firstline%==NoData (
+@set totaltam2=%totaltam%
+) else if %firstline%==0 (
+@set totaltam2=%totaltam%
+) else (
+@set totaltam2=%firstline%
+)
+CLS
+goto checkS
 
 :checkS
 CLS
@@ -1102,22 +1122,7 @@ wget.exe -c %secundarysvrS% --output-document=%file% --user-agent=%useragentstri
 title UpSilent%code%t
 CLS
 if exist "%file%" (
-CLS
-echo 0 > "DSize.log"
-if exist "ExtractSize.vbs" (
-cd .\
-ExtractSize.vbs /file:%file%
-)
-set /p firstline=<DSize.log
-if %firstline%==NoData (
-@set totaltam2=%totaltam%
-) else if %firstline%==0 (
-@set totaltam2=%totaltam%
-) else (
-@set totaltam2=%firstline%
-)
-CLS
-goto checkSB
+goto finishckeckSB
 ) else (
 CLS
 echo %date%-%time% Falha ao tentar baixar atualização! >> "UpdateLog.txt"
@@ -1137,6 +1142,24 @@ start InitUpdate.vbs /silent:silent
 )
 goto exit
 )
+
+:finishckeckSB
+CLS
+echo 0 > "DSize.log"
+if exist "ExtractSize.vbs" (
+cd .\
+ExtractSize.vbs /file:%file%
+)
+set /p firstline=<DSize.log
+if %firstline%==NoData (
+@set totaltam2=%totaltam%
+) else if %firstline%==0 (
+@set totaltam2=%totaltam%
+) else (
+@set totaltam2=%firstline%
+)
+CLS
+goto checkSB
 
 :checkSB
 CLS
@@ -1161,22 +1184,7 @@ wget.exe -c %primarysvrS% --output-document=%file% --user-agent=%useragentstring
 title UpSilent%code%t
 CLS
 if exist "%file%" (
-CLS
-echo 0 > "DSize.log"
-if exist "ExtractSize.vbs" (
-cd .\
-ExtractSize.vbs /file:%file%
-)
-set /p firstline=<DSize.log
-if %firstline%==NoData (
-@set totaltam2=%totaltam%
-) else if %firstline%==0 (
-@set totaltam2=%totaltam%
-) else (
-@set totaltam2=%firstline%
-)
-CLS
-goto checkS
+goto finishckeckS
 ) else (
 CLS
 echo %date%-%time% Falha ao tentar baixar atualização! >> "UpdateLog.txt"
