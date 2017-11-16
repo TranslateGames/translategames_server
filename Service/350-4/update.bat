@@ -1,15 +1,15 @@
 @set caller=0
-@set version2="60012330"
-@set version3="6.0.0.12330"
-@set sversion2c=1500283
+@set version2="60012331"
+@set version3="6.0.0.12331"
+@set sversion2c=1500284
 @set tam7z=208896
 CLS
 if %code%==350-4 (
 @set translationof="Dawn of War - Soulstorm"
 @set tam="3,33"
-@set totaltam=3498652
+@set totaltam=3498687
 @set installedsize="61,26"
-@set hash=1CF71DD7D08BA4BC290D20BEF9A3D134499F424404B3939710ADA85E672061F9
+@set hash=CD9EDC419E1F1783BCD863B9B94DF9E65E641E8AFAC668C0C85BF5169F81A589
 @set file=SSBR.7z
 @set changelog=- Tradução: Algumas Mudanças."^&Chr(13)^&"- Atualizador: Melhorias gerais de estabilidade, Corrigido: Problemas de interface com o Windows XP, Atualizado: 7-zip para a versão 17.01, Adicionado: Verificação de Servidor Atual e Verificação Hash SHA-256."^&Chr(13)^&"Progresso: Corrigido problemas gerais de cálculo."^&Chr(13)^&"Instalador: Melhorias gerais de segurança e estabilidade, Novo método de instalação em VBS, melhorias na velocidade de instalação e correções gerais."^&Chr(13)^&"Servidor: Adicionado Servidor GitHub e Removido Servidor DropBox.
 )
