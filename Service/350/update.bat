@@ -7,9 +7,9 @@ CLS
 if %code%==350 (
 @set translationof="Dawn of War e Winter Assault"
 @set tam="3,67"
-@set totaltam=3855713
+@set totaltam=3855712
 @set installedsize="20,45"
-@set hash=ED6ED88FDB30E4B9B0CCD546F2E6E898839F6A5E65B13472858AEE64AED66DDB
+@set hash=FB7CD03DDD4A75E643BDAB9E2A2F4E6BDC05E2D961066B02514C79A040D3561F
 @set file=W4BR.7z
 @set changelog=- Tradução: Algumas Mudanças."^&Chr(13)^&"- Atualizador: Melhorias gerais de estabilidade, Corrigido: Problemas de interface com o Windows XP, Atualizado: 7-zip para a versão 17.01, Adicionado: Verificação de Servidor Atual e Verificação Hash SHA-256."^&Chr(13)^&"Progresso: Corrigido problemas gerais de cálculo."^&Chr(13)^&"Instalador: Melhorias gerais de segurança e estabilidade, Novo método de instalação em VBS, melhorias na velocidade de instalação e correções gerais."^&Chr(13)^&"Servidor: Adicionado Servidor GitHub e Removido Servidor DropBox.
 )
@@ -525,6 +525,8 @@ ExtractSize.vbs /file:%file%
 set /p firstline=<DSize.log
 if %firstline%==NoData (
 @set totaltam2=%totaltam%
+) else if %firstline%==unspecified (
+@set totaltam2=%totaltam%
 ) else if %firstline%==0 (
 @set totaltam2=%totaltam%
 ) else (
@@ -563,6 +565,8 @@ ExtractSize.vbs /file:%file%
 )
 set /p firstline=<DSize.log
 if %firstline%==NoData (
+@set totaltam2=%totaltam%
+) else if %firstline%==unspecified (
 @set totaltam2=%totaltam%
 ) else if %firstline%==0 (
 @set totaltam2=%totaltam%
@@ -635,6 +639,8 @@ ExtractSize.vbs /file:%file%
 set /p firstline=<DSize.log
 if %firstline%==NoData (
 @set totaltam2=%totaltam%
+) else if %firstline%==unspecified (
+@set totaltam2=%totaltam%
 ) else if %firstline%==0 (
 @set totaltam2=%totaltam%
 ) else (
@@ -704,6 +710,8 @@ ExtractSize.vbs /file:%file%
 )
 set /p firstline=<DSize.log
 if %firstline%==NoData (
+@set totaltam2=%totaltam%
+) else if %firstline%==unspecified (
 @set totaltam2=%totaltam%
 ) else if %firstline%==0 (
 @set totaltam2=%totaltam%
@@ -1091,6 +1099,8 @@ ExtractSize.vbs /file:%file%
 set /p firstline=<DSize.log
 if %firstline%==NoData (
 @set totaltam2=%totaltam%
+) else if %firstline%==unspecified (
+@set totaltam2=%totaltam%
 ) else if %firstline%==0 (
 @set totaltam2=%totaltam%
 ) else (
@@ -1152,6 +1162,8 @@ ExtractSize.vbs /file:%file%
 )
 set /p firstline=<DSize.log
 if %firstline%==NoData (
+@set totaltam2=%totaltam%
+) else if %firstline%==unspecified (
 @set totaltam2=%totaltam%
 ) else if %firstline%==0 (
 @set totaltam2=%totaltam%
