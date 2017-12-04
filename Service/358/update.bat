@@ -7,9 +7,9 @@ CLS
 if %code%==358 (
 @set translationof="Dawn of War II e Chaos Rising"
 @set tam="3,04"
-@set totaltam=3198795
+@set totaltam=3198794
 @set installedsize="27,95"
-@set hash=E6F6BFD8C0850BA61E4F717E03320547D01C6EAE15ADEE63A276E826E16262E8
+@set hash=4CB56AE7DC6B9DBF12F72F34FE23CCD43EF357606A145B548553B7C10FCB026B
 @set file=DOW2BR.7z
 @set changelog=- Tradução: Algumas Mudanças."^&Chr(13)^&"- Atualizador: Melhorias gerais de estabilidade, Corrigido: Problemas de interface com o Windows XP, Atualizado: 7-zip para a versão 17.01, Adicionado: Verificação de Servidor Atual e Verificação Hash SHA-256."^&Chr(13)^&"Progresso: Corrigido problemas gerais de cálculo."^&Chr(13)^&"Instalador: Melhorias gerais de segurança e estabilidade, Novo método de instalação em VBS, melhorias na velocidade de instalação e correções gerais."^&Chr(13)^&"Servidor: Adicionado Servidor GitHub e Removido Servidor DropBox.
 )
@@ -818,6 +818,8 @@ wscript ErroInstall.vbs
 exit
 )
 CLS
+del %file%
+CLS
 echo %date%-%time% Iniciando Instalação... >> "UpdateLog.txt"
 echo Iniciando Instalacao...
 cd UpInstalation
@@ -1363,6 +1365,8 @@ start InitUpdate.vbs /silent:silent
 )
 exit
 )
+CLS
+del %file%
 CLS
 echo %date%-%time% Iniciando Instalação... >> "UpdateLog.txt"
 echo Iniciando Instalacao...

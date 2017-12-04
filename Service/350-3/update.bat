@@ -7,9 +7,9 @@ CLS
 if %code%==350-3 (
 @set translationof="Dawn of War - Dark Crusade"
 @set tam="3,19"
-@set totaltam=3348732
+@set totaltam=3348733
 @set installedsize="36,15"
-@set hash=135B99716DBEE3764212E012B7764BF43F5DA6522381F5C24EA6573F9E4752E7
+@set hash=11FADF42CB496FEA1F475BD3FD8E02F3A7EEF504F759F941E0B1C6F4AA5C368B
 @set file=DCBR.7z
 @set changelog=- Tradução: Algumas Mudanças."^&Chr(13)^&"- Atualizador: Melhorias gerais de estabilidade, Corrigido: Problemas de interface com o Windows XP, Atualizado: 7-zip para a versão 17.01, Adicionado: Verificação de Servidor Atual e Verificação Hash SHA-256."^&Chr(13)^&"Progresso: Corrigido problemas gerais de cálculo."^&Chr(13)^&"Instalador: Melhorias gerais de segurança e estabilidade, Novo método de instalação em VBS, melhorias na velocidade de instalação e correções gerais."^&Chr(13)^&"Servidor: Adicionado Servidor GitHub e Removido Servidor DropBox.
 )
@@ -818,6 +818,8 @@ wscript ErroInstall.vbs
 exit
 )
 CLS
+del %file%
+CLS
 echo %date%-%time% Iniciando Instalação... >> "UpdateLog.txt"
 echo Iniciando Instalacao...
 cd UpInstalation
@@ -1363,6 +1365,8 @@ start InitUpdate.vbs /silent:silent
 )
 exit
 )
+CLS
+del %file%
 CLS
 echo %date%-%time% Iniciando Instalação... >> "UpdateLog.txt"
 echo Iniciando Instalacao...

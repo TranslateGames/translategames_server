@@ -7,9 +7,9 @@ CLS
 if %code%==350-4 (
 @set translationof="Dawn of War - Soulstorm"
 @set tam="3,33"
-@set totaltam=3498683
+@set totaltam=3498685
 @set installedsize="61,26"
-@set hash=842BF9113A148714FFCB840A3FD2AD14FE7B546D375CCB3E31AF2B83C7329E86
+@set hash=5C074623FA129254A7CE0EB4A451F3A8E6E3C6C6FE116B7D605882CB19A66B62
 @set file=SSBR.7z
 @set changelog=- Tradução: Algumas Mudanças."^&Chr(13)^&"- Atualizador: Melhorias gerais de estabilidade, Corrigido: Problemas de interface com o Windows XP, Atualizado: 7-zip para a versão 17.01, Adicionado: Verificação de Servidor Atual e Verificação Hash SHA-256."^&Chr(13)^&"Progresso: Corrigido problemas gerais de cálculo."^&Chr(13)^&"Instalador: Melhorias gerais de segurança e estabilidade, Novo método de instalação em VBS, melhorias na velocidade de instalação e correções gerais."^&Chr(13)^&"Servidor: Adicionado Servidor GitHub e Removido Servidor DropBox.
 )
@@ -818,6 +818,8 @@ wscript ErroInstall.vbs
 exit
 )
 CLS
+del %file%
+CLS
 echo %date%-%time% Iniciando Instalação... >> "UpdateLog.txt"
 echo Iniciando Instalacao...
 cd UpInstalation
@@ -1363,6 +1365,8 @@ start InitUpdate.vbs /silent:silent
 )
 exit
 )
+CLS
+del %file%
 CLS
 echo %date%-%time% Iniciando Instalação... >> "UpdateLog.txt"
 echo Iniciando Instalacao...

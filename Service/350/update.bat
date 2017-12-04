@@ -7,9 +7,9 @@ CLS
 if %code%==350 (
 @set translationof="Dawn of War e Winter Assault"
 @set tam="3,67"
-@set totaltam=3855722
+@set totaltam=3855720
 @set installedsize="20,45"
-@set hash=3193F5CD083C816FE593CD74F6C1CA270E4D3E06DB228FD2336B6CC1FEA68049
+@set hash=36F807DD84727CF40325C48332A49180CA6F1175A7752E18AF04EB76D404ECC1
 @set file=W4BR.7z
 @set changelog=- Tradução: Algumas Mudanças."^&Chr(13)^&"- Atualizador: Melhorias gerais de estabilidade, Corrigido: Problemas de interface com o Windows XP, Atualizado: 7-zip para a versão 17.01, Adicionado: Verificação de Servidor Atual e Verificação Hash SHA-256."^&Chr(13)^&"Progresso: Corrigido problemas gerais de cálculo."^&Chr(13)^&"Instalador: Melhorias gerais de segurança e estabilidade, Novo método de instalação em VBS, melhorias na velocidade de instalação e correções gerais."^&Chr(13)^&"Servidor: Adicionado Servidor GitHub e Removido Servidor DropBox.
 )
@@ -818,6 +818,8 @@ wscript ErroInstall.vbs
 exit
 )
 CLS
+del %file%
+CLS
 echo %date%-%time% Iniciando Instalação... >> "UpdateLog.txt"
 echo Iniciando Instalacao...
 cd UpInstalation
@@ -1363,6 +1365,8 @@ start InitUpdate.vbs /silent:silent
 )
 exit
 )
+CLS
+del %file%
 CLS
 echo %date%-%time% Iniciando Instalação... >> "UpdateLog.txt"
 echo Iniciando Instalacao...

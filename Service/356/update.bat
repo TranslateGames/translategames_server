@@ -9,7 +9,7 @@ if %code%==356 (
 @set tam="2,77"
 @set totaltam=2912932
 @set installedsize="4,29"
-@set hash=D4810A53F35B0D80E7866619EFCD1978C236BCEF987E063A7D5F2A5A47EECF06
+@set hash=D04DD668AF815E2DE2F03B2C4B455C1B098B8C4E635899CA044B11B64F48A6C0
 @set file=AOMBR.7z
 @set changelog=- Tradução: Algumas Mudanças."^&Chr(13)^&"- Atualizador: Melhorias gerais de estabilidade, Corrigido: Problemas de interface com o Windows XP, Atualizado: 7-zip para a versão 17.01, Adicionado: Verificação de Servidor Atual e Verificação Hash SHA-256."^&Chr(13)^&"Progresso: Corrigido problemas gerais de cálculo."^&Chr(13)^&"Instalador: Melhorias gerais de segurança e estabilidade, Novo método de instalação em VBS, melhorias na velocidade de instalação e correções gerais."^&Chr(13)^&"Servidor: Adicionado Servidor GitHub e Removido Servidor DropBox.
 )
@@ -818,6 +818,8 @@ wscript ErroInstall.vbs
 exit
 )
 CLS
+del %file%
+CLS
 echo %date%-%time% Iniciando Instalação... >> "UpdateLog.txt"
 echo Iniciando Instalacao...
 cd UpInstalation
@@ -1363,6 +1365,8 @@ start InitUpdate.vbs /silent:silent
 )
 exit
 )
+CLS
+del %file%
 CLS
 echo %date%-%time% Iniciando Instalação... >> "UpdateLog.txt"
 echo Iniciando Instalacao...
