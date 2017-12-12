@@ -1,15 +1,15 @@
 @set caller=0
-@set version2="1002686"
-@set version3="1.0.0.2686"
-@set sversion2c=1500285
+@set version2="1002687"
+@set version3="1.0.0.2687"
+@set sversion2c=1500286
 @set tam7z=208896
 CLS
 if %code%==356 (
 @set translationof="Age of Mythology"
-@set tam="2,77"
-@set totaltam=2913152
-@set installedsize="4,29"
-@set hash=6792866074A5459D5E303906E70E89DC9B0017B6878AF4484519957DF73513BE
+@set tam="2,78"
+@set totaltam=2919077
+@set installedsize="4,23"
+@set hash=99FAAA04D15B96C908396FBFB7A02735761A4C46CF365347F952A2DAAC4315A3
 @set file=AOMBR.7z
 @set changelog=- Tradução: Algumas Mudanças."^&Chr(13)^&"- Atualizador: Melhorias gerais de estabilidade, Corrigido: Problemas de interface com o Windows XP, Atualizado: 7-zip para a versão 17.01, Adicionado: Verificação de Servidor Atual e Verificação Hash SHA-256."^&Chr(13)^&"Progresso: Corrigido problemas gerais de cálculo."^&Chr(13)^&"Instalador: Melhorias gerais de segurança e estabilidade, Novo método de instalação em VBS, melhorias na velocidade de instalação e correções gerais."^&Chr(13)^&"Servidor: Adicionado Servidor GitHub e Removido Servidor DropBox.
 )
@@ -315,11 +315,13 @@ echo 0 > "Server.log"
 echo 0 > "DSize.log"
 if %version%==%version2% (
 title Atualizador%code%t
+timeout 1
 echo close>"StatusPS.log"
 CLS
 echo %date%-%time% Já está Atualizado! >> "UpdateLog.txt"
 echo Atualizado!
-wscript UpToDate.vbs
+timeout 1
+start wscript UpToDate.vbs
 goto exit
 ) else if %version% lss %version2% (
 title Atualizador%code%t
@@ -349,7 +351,7 @@ title Atualizador%code%t
 echo close>"StatusPS.log"
 CLS
 echo %date%-%time% Ocorreu um erro ao verificar a versão! >> "UpdateLog.txt"
-echo %date%-%time% Solicitação de instalação... >> "UpdateLog.txt"
+echo %date%-%time% Solicitando instalação... >> "UpdateLog.txt"
 echo Aguardando...
 goto promptEV
 )
@@ -771,7 +773,8 @@ echo %date%-%time% Falha na validação da tradução! >> "UpdateLog.txt"
 echo %date%-%time% Falha na validação da atualização! >> "UpdateLog.txt"
 )
 echo Falha na validação!
-wscript ErroHash.vbs
+timeout 1
+start wscript ErroHash.vbs
 goto exit
 ) else if %firstline%==MissingFile (
 CLS
@@ -830,7 +833,8 @@ cd ..\
 echo fail>"StatusP.log"
 echo %date%-%time% Falha ao tentar iniciar a instalação! >> "UpdateLog.txt"
 echo Falha ao tentar iniciar a instalacao!
-wscript ErroInstall.vbs
+timeout 1
+start wscript ErroInstall.vbs
 )
 goto exit
 
