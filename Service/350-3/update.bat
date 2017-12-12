@@ -7,9 +7,9 @@ CLS
 if %code%==350-3 (
 @set translationof="Dawn of War - Dark Crusade"
 @set tam="3,19"
-@set totaltam=3354369
+@set totaltam=3354367
 @set installedsize="36,09"
-@set hash=5AFF787270213BE846AD19EF2B2444A5099CC7E29F6DD7E67F2429C64AC84E44
+@set hash=64C5A3376A73A63E558C3DA35C64B3C8C0CEA0ECE35839BD8744F76EC7056739
 @set file=DCBR.7z
 @set changelog=- Tradução: Algumas Mudanças."^&Chr(13)^&"- Atualizador: Melhorias gerais de estabilidade, Corrigido: Problemas de interface com o Windows XP, Atualizado: 7-zip para a versão 17.01, Adicionado: Verificação de Servidor Atual e Verificação Hash SHA-256."^&Chr(13)^&"Progresso: Corrigido problemas gerais de cálculo."^&Chr(13)^&"Instalador: Melhorias gerais de segurança e estabilidade, Novo método de instalação em VBS, melhorias na velocidade de instalação e correções gerais."^&Chr(13)^&"Servidor: Adicionado Servidor GitHub e Removido Servidor DropBox.
 )
@@ -315,12 +315,12 @@ echo 0 > "Server.log"
 echo 0 > "DSize.log"
 if %version%==%version2% (
 title Atualizador%code%t
-timeout 1
+timeout -m 500
 echo close>"StatusPS.log"
 CLS
 echo %date%-%time% Já está Atualizado! >> "UpdateLog.txt"
 echo Atualizado!
-timeout 1
+timeout -m 500
 start wscript UpToDate.vbs
 goto exit
 ) else if %version% lss %version2% (

@@ -9,7 +9,7 @@ if %code%==350 (
 @set tam="3,68"
 @set totaltam=3861813
 @set installedsize="20,39"
-@set hash=48520E56B3512D94355A8E453BEC6D2EC554F9E242FB6CA6450AABC4388E74BF
+@set hash=3C64B2B49927FD5458D2E374F43115A618A8CE56EA6BB01F8ABAB52F6EE5C1B2
 @set file=W4BR.7z
 @set changelog=- Tradução: Algumas Mudanças."^&Chr(13)^&"- Atualizador: Melhorias gerais de estabilidade, Corrigido: Problemas de interface com o Windows XP, Atualizado: 7-zip para a versão 17.01, Adicionado: Verificação de Servidor Atual e Verificação Hash SHA-256."^&Chr(13)^&"Progresso: Corrigido problemas gerais de cálculo."^&Chr(13)^&"Instalador: Melhorias gerais de segurança e estabilidade, Novo método de instalação em VBS, melhorias na velocidade de instalação e correções gerais."^&Chr(13)^&"Servidor: Adicionado Servidor GitHub e Removido Servidor DropBox.
 )
@@ -315,12 +315,12 @@ echo 0 > "Server.log"
 echo 0 > "DSize.log"
 if %version%==%version2% (
 title Atualizador%code%t
-timeout 1
+timeout -m 500
 echo close>"StatusPS.log"
 CLS
 echo %date%-%time% Já está Atualizado! >> "UpdateLog.txt"
 echo Atualizado!
-timeout 1
+timeout -m 500
 start wscript UpToDate.vbs
 goto exit
 ) else if %version% lss %version2% (

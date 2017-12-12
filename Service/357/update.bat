@@ -7,9 +7,9 @@ CLS
 if %code%==357 (
 @set translationof="Dawn of War II - Retribution"
 @set tam="3,23"
-@set totaltam=3387787
+@set totaltam=3387785
 @set installedsize="36,11"
-@set hash=94C45272B64C04545EA0EB801166C70E8C8FDB415EABEDC2CD6A4C13BABAA435
+@set hash=EFA46D8C5577BA41C0DBE90ACBA008E3601865B1E195A1FBB66057FE000F9A10
 @set file=DOW2RBR.7z
 @set changelog=- Tradução: Algumas Mudanças."^&Chr(13)^&"- Atualizador: Melhorias gerais de estabilidade, Corrigido: Problemas de interface com o Windows XP, Atualizado: 7-zip para a versão 17.01, Adicionado: Verificação de Servidor Atual e Verificação Hash SHA-256."^&Chr(13)^&"Progresso: Corrigido problemas gerais de cálculo."^&Chr(13)^&"Instalador: Melhorias gerais de segurança e estabilidade, Novo método de instalação em VBS, melhorias na velocidade de instalação e correções gerais."^&Chr(13)^&"Servidor: Adicionado Servidor GitHub e Removido Servidor DropBox.
 )
@@ -315,12 +315,12 @@ echo 0 > "Server.log"
 echo 0 > "DSize.log"
 if %version%==%version2% (
 title Atualizador%code%t
-timeout 1
+timeout -m 500
 echo close>"StatusPS.log"
 CLS
 echo %date%-%time% Já está Atualizado! >> "UpdateLog.txt"
 echo Atualizado!
-timeout 1
+timeout -m 500
 start wscript UpToDate.vbs
 goto exit
 ) else if %version% lss %version2% (

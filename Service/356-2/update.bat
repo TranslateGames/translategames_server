@@ -7,9 +7,9 @@ CLS
 if %code%==356-2 (
 @set translationof="Age of Mythology: The Titans Expansion"
 @set tam="2,76"
-@set totaltam=2900299
+@set totaltam=2900300
 @set installedsize="4,43"
-@set hash=EB62B597D5CA265102D4CD9536F044E20B56FA1971D8272B13025EC56F1F24D2
+@set hash=078EE2477FDE422D033A6C74BE4DC69FBD0114C4BBE01FC67546732932DB877A
 @set file=XAOMBR.7z
 @set changelog=- Tradução: Algumas Mudanças."^&Chr(13)^&"- Atualizador: Melhorias gerais de estabilidade, Corrigido: Problemas de interface com o Windows XP, Atualizado: 7-zip para a versão 17.01, Adicionado: Verificação de Servidor Atual e Verificação Hash SHA-256."^&Chr(13)^&"Progresso: Corrigido problemas gerais de cálculo."^&Chr(13)^&"Instalador: Melhorias gerais de segurança e estabilidade, Novo método de instalação em VBS, melhorias na velocidade de instalação e correções gerais."^&Chr(13)^&"Servidor: Adicionado Servidor GitHub e Removido Servidor DropBox.
 )
@@ -315,12 +315,12 @@ echo 0 > "Server.log"
 echo 0 > "DSize.log"
 if %version%==%version2% (
 title Atualizador%code%t
-timeout 1
+timeout -m 500
 echo close>"StatusPS.log"
 CLS
 echo %date%-%time% Já está Atualizado! >> "UpdateLog.txt"
 echo Atualizado!
-timeout 1
+timeout -m 500
 start wscript UpToDate.vbs
 goto exit
 ) else if %version% lss %version2% (
