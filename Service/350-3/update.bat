@@ -1,15 +1,15 @@
 @set caller=0
-@set version2="60012334"
-@set version3="6.0.0.12334"
-@set sversion2c=1500286
+@set version2="60012335"
+@set version3="6.0.0.12335"
+@set sversion2c=1500287
 @set tam7z=208896
 CLS
 if %code%==350-3 (
 @set translationof="Dawn of War - Dark Crusade"
-@set tam="3,19"
-@set totaltam=3354367
-@set installedsize="36,09"
-@set hash=64C5A3376A73A63E558C3DA35C64B3C8C0CEA0ECE35839BD8744F76EC7056739
+@set tam="3,18"
+@set totaltam=3336412
+@set installedsize="36,07"
+@set hash=7267D22C74E4176F53DE0AD4C865A288D8832C0FC7C377EE35888A6B5C9C94D4
 @set file=DCBR.7z
 @set changelog=- Tradução: Algumas Mudanças."^&Chr(13)^&"- Atualizador: Melhorias gerais de estabilidade, Corrigido: Problemas de interface com o Windows XP, Atualizado: 7-zip para a versão 17.01, Adicionado: Verificação de Servidor Atual e Verificação Hash SHA-256."^&Chr(13)^&"Progresso: Corrigido problemas gerais de cálculo."^&Chr(13)^&"Instalador: Melhorias gerais de segurança e estabilidade, Novo método de instalação em VBS, melhorias na velocidade de instalação e correções gerais."^&Chr(13)^&"Servidor: Adicionado Servidor GitHub e Removido Servidor DropBox.
 )
@@ -365,7 +365,7 @@ echo Set OTF = FSO.OpenTextFile("ResultEV.txt", 2, True) >> "EVPrompt.vbs"
 echo OTF.WriteLine "" >> "EVPrompt.vbs"
 echo Set OTF = Nothing >> "EVPrompt.vbs"
 echo Set FSO = Nothing >> "EVPrompt.vbs"
-echo resultado = msgbox("Versão Inválida!"^&Chr(13)^&"Deseja instalar a versão mais recente da Tradução de "^& translationof ^&"?"^&Chr(13)^&Chr(13)^&"Clique em 'Sim' para Baixar e Instalar ou 'Não' para Sair.",vbYesNo,"Versão Inválida!") >> "EVPrompt.vbs"
+echo resultado = msgbox("Deseja instalar a versão mais recente da Tradução de "^& translationof ^&"?"^&Chr(13)^&Chr(13)^&"Clique em 'Sim' para Baixar e Instalar ou 'Não' para Sair.",vbYesNo,"Versão Inválida!") >> "EVPrompt.vbs"
 echo If resultado = vbYes Then >> "EVPrompt.vbs"
 echo     Set FSO = WScript.CreateObject("Scripting.FileSystemObject") >> "EVPrompt.vbs"
 echo     Set OTF = FSO.OpenTextFile("ResultEV.txt", 2, True) >> "EVPrompt.vbs"

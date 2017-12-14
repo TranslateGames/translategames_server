@@ -1,15 +1,15 @@
 @set caller=0
-@set version2="1002687"
-@set version3="1.0.0.2687"
-@set sversion2c=1500286
+@set version2="1002688"
+@set version3="1.0.0.2688"
+@set sversion2c=1500287
 @set tam7z=208896
 CLS
 if %code%==356 (
 @set translationof="Age of Mythology"
-@set tam="2,78"
-@set totaltam=2919077
-@set installedsize="4,23"
-@set hash=255E573A37456967AD738ABD9F6B9B2200FA94761B3BFF7CE48D197CCA206E07
+@set tam="2,76"
+@set totaltam=2899630
+@set installedsize="4,2"
+@set hash=0F693DFF931E31BB87DD4BFDB0A52902DAC90B5181169F5816205C00C5B68432
 @set file=AOMBR.7z
 @set changelog=- Tradução: Algumas Mudanças."^&Chr(13)^&"- Atualizador: Melhorias gerais de estabilidade, Corrigido: Problemas de interface com o Windows XP, Atualizado: 7-zip para a versão 17.01, Adicionado: Verificação de Servidor Atual e Verificação Hash SHA-256."^&Chr(13)^&"Progresso: Corrigido problemas gerais de cálculo."^&Chr(13)^&"Instalador: Melhorias gerais de segurança e estabilidade, Novo método de instalação em VBS, melhorias na velocidade de instalação e correções gerais."^&Chr(13)^&"Servidor: Adicionado Servidor GitHub e Removido Servidor DropBox.
 )
@@ -365,7 +365,7 @@ echo Set OTF = FSO.OpenTextFile("ResultEV.txt", 2, True) >> "EVPrompt.vbs"
 echo OTF.WriteLine "" >> "EVPrompt.vbs"
 echo Set OTF = Nothing >> "EVPrompt.vbs"
 echo Set FSO = Nothing >> "EVPrompt.vbs"
-echo resultado = msgbox("Versão Inválida!"^&Chr(13)^&"Deseja instalar a versão mais recente da Tradução de "^& translationof ^&"?"^&Chr(13)^&Chr(13)^&"Clique em 'Sim' para Baixar e Instalar ou 'Não' para Sair.",vbYesNo,"Versão Inválida!") >> "EVPrompt.vbs"
+echo resultado = msgbox("Deseja instalar a versão mais recente da Tradução de "^& translationof ^&"?"^&Chr(13)^&Chr(13)^&"Clique em 'Sim' para Baixar e Instalar ou 'Não' para Sair.",vbYesNo,"Versão Inválida!") >> "EVPrompt.vbs"
 echo If resultado = vbYes Then >> "EVPrompt.vbs"
 echo     Set FSO = WScript.CreateObject("Scripting.FileSystemObject") >> "EVPrompt.vbs"
 echo     Set OTF = FSO.OpenTextFile("ResultEV.txt", 2, True) >> "EVPrompt.vbs"
