@@ -1,15 +1,15 @@
 @set caller=0
-@set version2="1000994"
-@set version3="1.0.0.0994"
-@set sversion2c=1500288
+@set version2="1000995"
+@set version3="1.0.0.0995"
+@set sversion2c=1500289
 @set tam7z=208896
 CLS
 if %code%==358 (
 @set translationof="Dawn of War II e Chaos Rising"
-@set tam="3,03"
-@set totaltam=3185468
-@set installedsize="27,86"
-@set hash=9DC11546AD5744A362042DDBB53A7D18C467583811F4A0F71B361AC2C55935C5
+@set tam="3,02"
+@set totaltam=3170730
+@set installedsize="27,74"
+@set hash=E382D4664AA1925E70BE136B52BDD378FC57A6A048B36922C434E1AE5DFBB9AC
 @set file=DOW2BR.7z
 @set changelog=- Tradução: Algumas Mudanças."^&Chr(13)^&"- Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Corrigido: Problemas de interface com o Windows XP, Atualizado: 7-Zip para a versão 17.01, Adicionado: Verificação Inteligente de Arquivos e Verificação Hash SHA-256."^&Chr(13)^&"Progresso: Corrigido problemas gerais de cálculo e travamentos."^&Chr(13)^&"Instalador: Melhorias gerais de segurança e estabilidade."^&Chr(13)^&"Servidor: Melhorias gerais.
 )
@@ -1022,8 +1022,8 @@ if exist "%file%" (
 CLS
 echo %date%-%time% Sem permissão de Administrador! Abortando... >> "UpdateLog.txt"
 echo Administrador negado! Abortando...
-echo %date%-%time% Próxima verificação em 5 Minutos... >> "UpdateLog.txt"
-timeout 300 > NUL
+echo %date%-%time% Próxima verificação em 30 Minutos... >> "UpdateLog.txt"
+timeout 1800 > NUL
 cd ..\
 if exist "RoutineRestart.vbs" (
 start RoutineRestart.vbs /Init:Start /code:%code% /upcore:%sversion3%
@@ -1079,8 +1079,8 @@ goto finishckeckS
 CLS
 echo %date%-%time% Falha ao tentar baixar atualização! >> "UpdateLog.txt"
 echo Falha ao tentar baixar update!
-echo %date%-%time% Próxima verificação em 5 Minutos... >> "UpdateLog.txt"
-timeout 300 > NUL
+echo %date%-%time% Próxima verificação em 30 Minutos... >> "UpdateLog.txt"
+timeout 1800 > NUL
 cd ..\
 if exist "RoutineRestart.vbs" (
 start RoutineRestart.vbs /Init:Start /code:%code% /upcore:%sversion3%
@@ -1143,8 +1143,8 @@ goto finishckeckSB
 CLS
 echo %date%-%time% Falha ao tentar baixar atualização! >> "UpdateLog.txt"
 echo Falha ao tentar baixar update!
-echo %date%-%time% Próxima verificação em 5 Minutos... >> "UpdateLog.txt"
-timeout 300 > NUL
+echo %date%-%time% Próxima verificação em 30 Minutos... >> "UpdateLog.txt"
+timeout 1800 > NUL
 cd ..\
 if exist "RoutineRestart.vbs" (
 start RoutineRestart.vbs /Init:Start /code:%code% /upcore:%sversion3%
@@ -1207,8 +1207,8 @@ goto finishckeckS
 CLS
 echo %date%-%time% Falha ao tentar baixar atualização! >> "UpdateLog.txt"
 echo Falha ao tentar baixar update!
-echo %date%-%time% Próxima verificação em 5 Minutos... >> "UpdateLog.txt"
-timeout 300 > NUL
+echo %date%-%time% Próxima verificação em 30 Minutos... >> "UpdateLog.txt"
+timeout 1800 > NUL
 cd ..\
 if exist "RoutineRestart.vbs" (
 start RoutineRestart.vbs /Init:Start /code:%code% /upcore:%sversion3%
