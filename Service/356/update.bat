@@ -1,6 +1,6 @@
 @set caller=0
-@set version2="1002691"
-@set version3="1.0.0.2691"
+@set version2="1002692"
+@set version3="1.0.0.2692"
 @set sversion2c=1500290
 @set tam7z=208896
 CLS
@@ -9,7 +9,7 @@ if %code%==356 (
 @set tam="2,74"
 @set totaltam=2875893
 @set installedsize="4,08"
-@set hash=26A57E359636FE496FBAD6B4528C253BE617CC3CBB2371AFEBC768612F2403EA
+@set hash=EC3CC6EA7DF2000E84A2FC8F5578EBA514945116BFD7755427883AD9C4AF0769
 @set file=AOMBR.7z
 @set changelog=- Tradução: Algumas Mudanças."^&Chr(13)^&"- Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Corrigido: Problemas de interface com o Windows XP, Atualizado: 7-Zip para a versão 17.01, Adicionado: Verificação Inteligente de Arquivos e Verificação Hash SHA-256."^&Chr(13)^&"Progresso: Corrigido problemas gerais de cálculo e travamentos."^&Chr(13)^&"Instalador: Melhorias gerais de segurança e estabilidade."^&Chr(13)^&"Servidor: Melhorias gerais.
 )

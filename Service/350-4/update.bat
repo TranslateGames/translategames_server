@@ -1,6 +1,6 @@
 @set caller=0
-@set version2="60012338"
-@set version3="6.0.0.12338"
+@set version2="60012339"
+@set version3="6.0.0.12339"
 @set sversion2c=1500290
 @set tam7z=208896
 CLS
@@ -9,7 +9,7 @@ if %code%==350-4 (
 @set tam="3,30"
 @set totaltam=3461776
 @set installedsize="61,06"
-@set hash=6817A6FA0852033E6FA4A2D74F734D41C5F2527FB09E6359764049317F1D0166
+@set hash=282180124F1F96E4330233698861803CEB6A481F90A5841C94A2C64081FDFFC9
 @set file=SSBR.7z
 @set changelog=- Tradução: Algumas Mudanças."^&Chr(13)^&"- Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Corrigido: Problemas de interface com o Windows XP, Atualizado: 7-Zip para a versão 17.01, Adicionado: Verificação Inteligente de Arquivos e Verificação Hash SHA-256."^&Chr(13)^&"Progresso: Corrigido problemas gerais de cálculo e travamentos."^&Chr(13)^&"Instalador: Melhorias gerais de segurança e estabilidade."^&Chr(13)^&"Servidor: Melhorias gerais.
 )
