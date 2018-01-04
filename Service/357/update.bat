@@ -7,9 +7,9 @@ CLS
 if %code%==357 (
 @set translationof="Dawn of War II - Retribution"
 @set tam="3,18"
-@set totaltam=3344734
-@set installedsize="35,96"
-@set hash=31F3651D3CEEDF03A114A21E1D12F651FAFCF427B8D31547A701CB8EA7F3F5DC
+@set totaltam=3344826
+@set installedsize="35,97"
+@set hash=FA5E8DF14EAFBF0F87849A1E4C8F278BC8A02C81DA2F032C6A1C7961533FD9E7
 @set file=DOW2RBR.7z
 @set changelog=- Tradução: Algumas Mudanças."^&Chr(13)^&"- Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Corrigido: Problemas de interface com o Windows XP, Atualizado: 7-Zip para a versão 17.01, Adicionado: Verificação Inteligente de Arquivos e Verificação Hash SHA-256."^&Chr(13)^&"Progresso: Corrigido problemas gerais de cálculo e travamentos."^&Chr(13)^&"Instalador: Melhorias gerais de segurança e estabilidade."^&Chr(13)^&"Servidor: Melhorias gerais.
 )

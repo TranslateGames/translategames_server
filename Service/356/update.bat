@@ -7,9 +7,9 @@ CLS
 if %code%==356 (
 @set translationof="Age of Mythology"
 @set tam="2,74"
-@set totaltam=2875893
-@set installedsize="4,08"
-@set hash=EC3CC6EA7DF2000E84A2FC8F5578EBA514945116BFD7755427883AD9C4AF0769
+@set totaltam=2875986
+@set installedsize="4,09"
+@set hash=D1CB2D2A7E2E6B7F29D987209F10C8C009206B9DAE1969F7816E772310D69B51
 @set file=AOMBR.7z
 @set changelog=- Tradução: Algumas Mudanças."^&Chr(13)^&"- Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Corrigido: Problemas de interface com o Windows XP, Atualizado: 7-Zip para a versão 17.01, Adicionado: Verificação Inteligente de Arquivos e Verificação Hash SHA-256."^&Chr(13)^&"Progresso: Corrigido problemas gerais de cálculo e travamentos."^&Chr(13)^&"Instalador: Melhorias gerais de segurança e estabilidade."^&Chr(13)^&"Servidor: Melhorias gerais.
 )

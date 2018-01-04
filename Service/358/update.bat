@@ -7,9 +7,9 @@ CLS
 if %code%==358 (
 @set translationof="Dawn of War II e Chaos Rising"
 @set tam="3,01"
-@set totaltam=3161698
-@set installedsize="27,74"
-@set hash=0B9C4237AD59351CB0DFF0E3545EA67AE442029C6FBB7C0FB8F1EDC978DD2071
+@set totaltam=3161795
+@set installedsize="27,75"
+@set hash=6847ECB925856E7F409F977AC7C5866BCCA254361350D41F40030A9CFDCF143F
 @set file=DOW2BR.7z
 @set changelog=- Tradução: Algumas Mudanças."^&Chr(13)^&"- Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Corrigido: Problemas de interface com o Windows XP, Atualizado: 7-Zip para a versão 17.01, Adicionado: Verificação Inteligente de Arquivos e Verificação Hash SHA-256."^&Chr(13)^&"Progresso: Corrigido problemas gerais de cálculo e travamentos."^&Chr(13)^&"Instalador: Melhorias gerais de segurança e estabilidade."^&Chr(13)^&"Servidor: Melhorias gerais.
 )
