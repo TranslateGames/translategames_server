@@ -1,15 +1,15 @@
 @set caller=0
-@set version2="60012339"
-@set version3="6.0.0.12339"
-@set sversion2c=1500290
+@set version2="60012340"
+@set version3="6.0.0.12340"
+@set sversion2c=1500291
 @set tam7z=208896
 CLS
 if %code%==350 (
 @set translationof="Dawn of War e Winter Assault"
 @set tam="3,64"
-@set totaltam=3818680
+@set totaltam=3818604
 @set installedsize="20,25"
-@set hash=25BE6643CBC5FE2F5CD0302F9ACB35D0A19C3E88017E148D2CDED2592B710ADD
+@set hash=E3A50F2167713FB0CA661F424B640257D166AA5449F39E61F7CC8941013020EB
 @set file=W4BR.7z
 @set changelog=- Tradução: Algumas Mudanças."^&Chr(13)^&"- Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Corrigido: Problemas de interface com o Windows XP, Atualizado: 7-Zip para a versão 17.01, Adicionado: Verificação Inteligente de Arquivos e Verificação Hash SHA-256."^&Chr(13)^&"Progresso: Corrigido problemas gerais de cálculo e travamentos."^&Chr(13)^&"Instalador: Melhorias gerais de segurança e estabilidade."^&Chr(13)^&"Servidor: Melhorias gerais.
 )
