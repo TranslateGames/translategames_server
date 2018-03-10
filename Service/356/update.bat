@@ -7,9 +7,9 @@ CLS
 if %code%==356 (
 @set translationof="Age of Mythology"
 @set tam="2,74"
-@set totaltam=2875164
+@set totaltam=2875165
 @set installedsize="4,08"
-@set hash=43184A59E94AF6F39952155EFA0FF3D98CDEE2D0E9BB9CD7C5F08082A041A793
+@set hash=000F413AFC533F4E1FD8736EF777217EAB1222168DC3D74A38F3368C06589468
 @set file=AOMBR.7z
 @set changelog=- Tradução: Algumas Mudanças."^&Chr(13)^&"- Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Corrigido: Problemas de interface com o Windows XP, Atualizado: 7-Zip para a versão 17.01, Adicionado: Verificação Inteligente de Arquivos."^&Chr(13)^&"Progresso: Corrigido problemas gerais de cálculo e travamentos."^&Chr(13)^&"Instalador: Melhorias gerais de segurança e estabilidade."^&Chr(13)^&"Servidor: Melhorias gerais.
 )
@@ -165,9 +165,6 @@ CLS
 echo %date%-%time% Extraindo Pacotes... Versão: %sversion2c% >> "UpdateLog.txt"
 echo Extraindo Pacotes...
 CLS
-if exist "App.exe" (
-xcopy App.exe App.temp
-)
 if exist "error.png" (
 move error.png error.temp
 )
@@ -185,9 +182,6 @@ move Hash.exe HashF.temp
 )
 if exist "Hash.vbs" (
 move Hash.vbs HashV.temp
-)
-if exist "ImageData.tgib64" (
-xcopy ImageData.tgib64 ImageData.temp
 )
 del Progress.hta
 del Progress.bat
@@ -243,6 +237,12 @@ echo 100 > "ProgressBarS.log"
 timeout -m 500
 echo close>"StatusPS.log"
 timeout 1
+if exist "App.exe" (
+move App.exe App.temp
+)
+if exist "ImageData.tgib64" (
+move ImageData.tgib64 ImageData.temp
+)
 del App.exe
 del ImageData.tgib64
 if not exist "App.tmp" (

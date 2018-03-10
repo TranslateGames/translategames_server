@@ -7,9 +7,9 @@ CLS
 if %code%==350-4 (
 @set translationof="Dawn of War - Soulstorm"
 @set tam="3,30"
-@set totaltam=3461364
+@set totaltam=3461363
 @set installedsize="61,05"
-@set hash=C5CCABB1B3DD0A432CBD8B392E6FDAAAE928B96C86CEEF62AACE9A9593BF0B75
+@set hash=B72DE8A20B6D84343541A76CC1559C6E327E200C98136FD4AE06FE9DF7CD54D2
 @set file=SSBR.7z
 @set changelog=- Tradução: Algumas Mudanças."^&Chr(13)^&"- Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Corrigido: Problemas de interface com o Windows XP, Atualizado: 7-Zip para a versão 17.01, Adicionado: Verificação Inteligente de Arquivos."^&Chr(13)^&"Progresso: Corrigido problemas gerais de cálculo e travamentos."^&Chr(13)^&"Instalador: Melhorias gerais de segurança e estabilidade."^&Chr(13)^&"Servidor: Melhorias gerais.
 )
@@ -165,9 +165,6 @@ CLS
 echo %date%-%time% Extraindo Pacotes... Versão: %sversion2c% >> "UpdateLog.txt"
 echo Extraindo Pacotes...
 CLS
-if exist "App.exe" (
-xcopy App.exe App.temp
-)
 if exist "error.png" (
 move error.png error.temp
 )
@@ -185,9 +182,6 @@ move Hash.exe HashF.temp
 )
 if exist "Hash.vbs" (
 move Hash.vbs HashV.temp
-)
-if exist "ImageData.tgib64" (
-xcopy ImageData.tgib64 ImageData.temp
 )
 del Progress.hta
 del Progress.bat
@@ -243,6 +237,12 @@ echo 100 > "ProgressBarS.log"
 timeout -m 500
 echo close>"StatusPS.log"
 timeout 1
+if exist "App.exe" (
+move App.exe App.temp
+)
+if exist "ImageData.tgib64" (
+move ImageData.tgib64 ImageData.temp
+)
 del App.exe
 del ImageData.tgib64
 if not exist "App.tmp" (

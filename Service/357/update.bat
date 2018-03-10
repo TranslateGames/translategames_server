@@ -7,9 +7,9 @@ CLS
 if %code%==357 (
 @set translationof="Dawn of War II - Retribution"
 @set tam="3,18"
-@set totaltam=3344066
+@set totaltam=3344067
 @set installedsize="35,96"
-@set hash=A1A66392B4DF947FAFC0799B77DE05CE6761F74BA4782D1D2794FB4565FB3740
+@set hash=5A3B863DCE25E524681C48B5E01FFE661D35375F5CA4344C2AEFB48C7F7902E1
 @set file=DOW2RBR.7z
 @set changelog=- Tradução: Algumas Mudanças."^&Chr(13)^&"- Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Corrigido: Problemas de interface com o Windows XP, Atualizado: 7-Zip para a versão 17.01, Adicionado: Verificação Inteligente de Arquivos."^&Chr(13)^&"Progresso: Corrigido problemas gerais de cálculo e travamentos."^&Chr(13)^&"Instalador: Melhorias gerais de segurança e estabilidade."^&Chr(13)^&"Servidor: Melhorias gerais.
 )
@@ -165,9 +165,6 @@ CLS
 echo %date%-%time% Extraindo Pacotes... Versão: %sversion2c% >> "UpdateLog.txt"
 echo Extraindo Pacotes...
 CLS
-if exist "App.exe" (
-xcopy App.exe App.temp
-)
 if exist "error.png" (
 move error.png error.temp
 )
@@ -185,9 +182,6 @@ move Hash.exe HashF.temp
 )
 if exist "Hash.vbs" (
 move Hash.vbs HashV.temp
-)
-if exist "ImageData.tgib64" (
-xcopy ImageData.tgib64 ImageData.temp
 )
 del Progress.hta
 del Progress.bat
@@ -243,6 +237,12 @@ echo 100 > "ProgressBarS.log"
 timeout -m 500
 echo close>"StatusPS.log"
 timeout 1
+if exist "App.exe" (
+move App.exe App.temp
+)
+if exist "ImageData.tgib64" (
+move ImageData.tgib64 ImageData.temp
+)
 del App.exe
 del ImageData.tgib64
 if not exist "App.tmp" (
