@@ -1,17 +1,17 @@
 @set caller=0
-@set version2="60012340"
-@set version3="6.0.0.12340"
-@set sversion2c=1500291
+@set version2="60012341"
+@set version3="6.0.0.12341"
+@set sversion2c=1500292
 @set tam7z=208896
 CLS
 if %code%==350 (
 @set translationof="Dawn of War e Winter Assault"
 @set tam="3,64"
-@set totaltam=3818604
-@set installedsize="20,25"
-@set hash=E3A50F2167713FB0CA661F424B640257D166AA5449F39E61F7CC8941013020EB
+@set totaltam=3818248
+@set installedsize="20,24"
+@set hash=4530B58FA13DBC22F17AE50D61ACB39A321187277728161CA15817E8587D0DA8
 @set file=W4BR.7z
-@set changelog=- Tradução: Algumas Mudanças."^&Chr(13)^&"- Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Corrigido: Problemas de interface com o Windows XP, Atualizado: 7-Zip para a versão 17.01, Adicionado: Verificação Inteligente de Arquivos e Verificação Hash SHA-256."^&Chr(13)^&"Progresso: Corrigido problemas gerais de cálculo e travamentos."^&Chr(13)^&"Instalador: Melhorias gerais de segurança e estabilidade."^&Chr(13)^&"Servidor: Melhorias gerais.
+@set changelog=- Tradução: Algumas Mudanças."^&Chr(13)^&"- Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Corrigido: Problemas de interface com o Windows XP, Atualizado: 7-Zip para a versão 17.01, Adicionado: Verificação Inteligente de Arquivos."^&Chr(13)^&"Progresso: Corrigido problemas gerais de cálculo e travamentos."^&Chr(13)^&"Instalador: Melhorias gerais de segurança e estabilidade."^&Chr(13)^&"Servidor: Melhorias gerais.
 )
 CLS
 @set secundarysvr=https://raw.githubusercontent.com/TranslateGames/translategames_server/master/Update/%file%
@@ -166,7 +166,7 @@ echo %date%-%time% Extraindo Pacotes... Versão: %sversion2c% >> "UpdateLog.txt"
 echo Extraindo Pacotes...
 CLS
 if exist "App.exe" (
-move App.exe App.temp
+xcopy App.exe App.temp
 )
 if exist "error.png" (
 move error.png error.temp
@@ -187,7 +187,7 @@ if exist "Hash.vbs" (
 move Hash.vbs HashV.temp
 )
 if exist "ImageData.tgib64" (
-move ImageData.tgib64 ImageData.temp
+xcopy ImageData.tgib64 ImageData.temp
 )
 del Progress.hta
 del Progress.bat
@@ -206,13 +206,6 @@ set /a ERROS=ERROS+FATOR
 move Progress.temp Progress.tgapp
 ) else (
 del Progress.temp
-)
-if not exist "App.tmp" (
-set /a ERROS=ERROS+FATOR
-move App.temp App.exe
-) else (
-move App.tmp App.exe
-del App.temp
 )
 if not exist "error.png" (
 set /a ERROS=ERROS+FATOR
@@ -246,6 +239,19 @@ move HashV.temp Hash.vbs
 ) else (
 del HashV.temp
 )
+echo 100 > "ProgressBarS.log"
+timeout -m 500
+echo close>"StatusPS.log"
+timeout 1
+del App.exe
+del ImageData.tgib64
+if not exist "App.tmp" (
+set /a ERROS=ERROS+FATOR
+move App.temp App.exe
+) else (
+move App.tmp App.exe
+del App.temp
+)
 if not exist "ImageData.tgib64" (
 set /a ERROS=ERROS+FATOR
 del ImageData.tgib64
@@ -258,7 +264,6 @@ del ImageData.temp
 del App.tmp
 del App.temp
 del ImageData.tmp
-echo 100 > "ProgressBarS.log"
 if %ERROS% gtr 0 (
 CLS
 echo %date%-%time% Extração Interrompida. Arquivo Corrompido. >> "UpdateLog.txt"
