@@ -1,17 +1,17 @@
 @set caller=0
-@set version2="1002695"
-@set version3="1.0.0.2695"
-@set sversion2c=1500292
-@set tam7z=208896
+@set version2="1002696"
+@set version3="1.0.0.2696"
+@set sversion2c=1500293
+@set tam7z=218112
 CLS
 if %code%==356-2 (
 @set translationof="Age of Mythology: The Titans Expansion"
-@set tam="2,72"
-@set totaltam=2857170
-@set installedsize="4,28"
-@set hash=5344918E0B24EE8807077B243DFE1D23F2A51615EE3B68880C07218F28354C3A
+@set tam="2,74"
+@set totaltam=2876510
+@set installedsize="4,3"
+@set hash=BC684D800F320FD2C4F86EFA058BD045FA953B6D14EFBDAEE0ED94A4EE69AE62
 @set file=XAOMBR.7z
-@set changelog=- Tradução: Algumas Mudanças."^&Chr(13)^&"- Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Corrigido: Problemas de interface com o Windows XP, Atualizado: 7-Zip para a versão 17.01, Adicionado: Verificação Inteligente de Arquivos."^&Chr(13)^&"Progresso: Corrigido problemas gerais de cálculo e travamentos."^&Chr(13)^&"Instalador: Melhorias gerais de segurança e estabilidade."^&Chr(13)^&"Servidor: Melhorias gerais.
+@set changelog=- Tradução: Algumas Mudanças."^&Chr(13)^&"- Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Corrigido: Problemas de interface com o Windows XP, Atualizado: 7-Zip para a versão 18.03, Adicionado: Verificação Inteligente de Arquivos."^&Chr(13)^&"Progresso: Corrigido problemas gerais de cálculo e travamentos."^&Chr(13)^&"Instalador: Melhorias gerais de segurança e estabilidade."^&Chr(13)^&"Servidor: Melhorias gerais.
 )
 CLS
 @set secundarysvr=https://raw.githubusercontent.com/TranslateGames/translategames_server/master/Update/%file%

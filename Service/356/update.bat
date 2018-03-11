@@ -1,17 +1,17 @@
 @set caller=0
-@set version2="1002695"
-@set version3="1.0.0.2695"
-@set sversion2c=1500292
-@set tam7z=208896
+@set version2="1002696"
+@set version3="1.0.0.2696"
+@set sversion2c=1500293
+@set tam7z=218112
 CLS
 if %code%==356 (
 @set translationof="Age of Mythology"
-@set tam="2,74"
-@set totaltam=2875939
-@set installedsize="4,08"
-@set hash=A6C1F43B98248BB8B7C21D89A3BED3B52E4F12490C4F20C99B58DAF27CDA09BF
+@set tam="2,76"
+@set totaltam=2895517
+@set installedsize="4,1"
+@set hash=69DA49D93C6775B222AF3F0B982D0A718BF44DE96F7F3DC63FD8E3BABDB37C24
 @set file=AOMBR.7z
-@set changelog=- Tradução: Algumas Mudanças."^&Chr(13)^&"- Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Corrigido: Problemas de interface com o Windows XP, Atualizado: 7-Zip para a versão 17.01, Adicionado: Verificação Inteligente de Arquivos."^&Chr(13)^&"Progresso: Corrigido problemas gerais de cálculo e travamentos."^&Chr(13)^&"Instalador: Melhorias gerais de segurança e estabilidade."^&Chr(13)^&"Servidor: Melhorias gerais.
+@set changelog=- Tradução: Algumas Mudanças."^&Chr(13)^&"- Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Corrigido: Problemas de interface com o Windows XP, Atualizado: 7-Zip para a versão 18.03, Adicionado: Verificação Inteligente de Arquivos."^&Chr(13)^&"Progresso: Corrigido problemas gerais de cálculo e travamentos."^&Chr(13)^&"Instalador: Melhorias gerais de segurança e estabilidade."^&Chr(13)^&"Servidor: Melhorias gerais.
 )
 CLS
 @set secundarysvr=https://raw.githubusercontent.com/TranslateGames/translategames_server/master/Update/%file%
