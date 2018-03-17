@@ -1,17 +1,17 @@
 @set caller=0
-@set version2="60012344"
-@set version3="6.0.0.12344"
-@set sversion2c=1500294
+@set version2="60012345"
+@set version3="6.0.0.12345"
+@set sversion2c=1500295
 @set tam7z=218112
 CLS
 if %code%==350-4 (
 @set translationof="Dawn of War - Soulstorm"
-@set tam="3,31"
-@set totaltam=3480943
-@set installedsize="61,07"
-@set hash=5DBE60AF9D55D0A1940C59D6CFD1D5A6DCB2B8F471E10353B8FECC9FEC5C1932
+@set tam="3,79"
+@set totaltam=3980964
+@set installedsize="61,65"
+@set hash=586748C81B6366DF0C979BD142F6C4E2D80824F06BE41AC1C5BCB794F77A11F6
 @set file=SSBR.7z
-@set changelog=- Tradução: Algumas Mudanças."^&Chr(13)^&"- Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Corrigido: Problemas de interface com o Windows XP, Atualizado: 7-Zip para a versão 18.03, Adicionado: Verificação Inteligente de Arquivos."^&Chr(13)^&"Progresso: Corrigido problemas gerais de cálculo e travamentos."^&Chr(13)^&"Instalador: Melhorias gerais de segurança e estabilidade."^&Chr(13)^&"Servidor: Melhorias gerais.
+@set changelog=- Tradução: Algumas Mudanças."^&Chr(13)^&"- Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Corrigido: Problemas de interface com o Windows XP, Atualizado: 7-Zip para a versão 18.03 e Wget para a versão 1.19.4, Adicionado: Verificação Inteligente de Arquivos."^&Chr(13)^&"Progresso: Corrigido problemas gerais de cálculo e travamentos."^&Chr(13)^&"Instalador: Melhorias gerais de segurança e estabilidade."^&Chr(13)^&"Servidor: Melhorias gerais.
 )
 CLS
 @set secundarysvr=https://raw.githubusercontent.com/TranslateGames/translategames_server/master/Update/%file%

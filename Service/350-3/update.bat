@@ -1,17 +1,17 @@
 @set caller=0
-@set version2="60012344"
-@set version3="6.0.0.12344"
-@set sversion2c=1500294
+@set version2="60012345"
+@set version3="6.0.0.12345"
+@set sversion2c=1500295
 @set tam7z=218112
 CLS
 if %code%==350-3 (
 @set translationof="Dawn of War - Dark Crusade"
-@set tam="3,17"
-@set totaltam=3331099
-@set installedsize="35,96"
-@set hash=CB8FAF1EB1855F8687AED8AABCA04F9DE414F0ECF292FA7F308235C39F1D5F40
+@set tam="3,65"
+@set totaltam=3831134
+@set installedsize="36,54"
+@set hash=B2D7EAE5830AE33B2548B4A8CD0ABC7D7B842A4F7133C3362A1D3EFFC0F7B7AA
 @set file=DCBR.7z
-@set changelog=- Tradução: Algumas Mudanças."^&Chr(13)^&"- Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Corrigido: Problemas de interface com o Windows XP, Atualizado: 7-Zip para a versão 18.03, Adicionado: Verificação Inteligente de Arquivos."^&Chr(13)^&"Progresso: Corrigido problemas gerais de cálculo e travamentos."^&Chr(13)^&"Instalador: Melhorias gerais de segurança e estabilidade."^&Chr(13)^&"Servidor: Melhorias gerais.
+@set changelog=- Tradução: Algumas Mudanças."^&Chr(13)^&"- Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Corrigido: Problemas de interface com o Windows XP, Atualizado: 7-Zip para a versão 18.03 e Wget para a versão 1.19.4, Adicionado: Verificação Inteligente de Arquivos."^&Chr(13)^&"Progresso: Corrigido problemas gerais de cálculo e travamentos."^&Chr(13)^&"Instalador: Melhorias gerais de segurança e estabilidade."^&Chr(13)^&"Servidor: Melhorias gerais.
 )
 CLS
 @set secundarysvr=https://raw.githubusercontent.com/TranslateGames/translategames_server/master/Update/%file%

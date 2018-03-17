@@ -1,17 +1,17 @@
 @set caller=0
-@set version2="1001002"
-@set version3="1.0.0.1002"
-@set sversion2c=1500294
+@set version2="1001003"
+@set version3="1.0.0.1003"
+@set sversion2c=1500295
 @set tam7z=218112
 CLS
 if %code%==358 (
 @set translationof="Dawn of War II e Chaos Rising"
-@set tam="3,03"
-@set totaltam=3180939
-@set installedsize="27,76"
-@set hash=1BC3498992BD122CCCE900C67328B46D7106D311B1377A2420F8D2AB25B79A72
+@set tam="3,50"
+@set totaltam=3681136
+@set installedsize="28,34"
+@set hash=1A5883E42E5359F2C9222E0967169EF319B2CA9AFA74AC12E0402790375CC897
 @set file=DOW2BR.7z
-@set changelog=- Tradução: Algumas Mudanças."^&Chr(13)^&"- Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Corrigido: Problemas de interface com o Windows XP, Atualizado: 7-Zip para a versão 18.03, Adicionado: Verificação Inteligente de Arquivos."^&Chr(13)^&"Progresso: Corrigido problemas gerais de cálculo e travamentos."^&Chr(13)^&"Instalador: Melhorias gerais de segurança e estabilidade."^&Chr(13)^&"Servidor: Melhorias gerais.
+@set changelog=- Tradução: Algumas Mudanças."^&Chr(13)^&"- Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Corrigido: Problemas de interface com o Windows XP, Atualizado: 7-Zip para a versão 18.03 e Wget para a versão 1.19.4, Adicionado: Verificação Inteligente de Arquivos."^&Chr(13)^&"Progresso: Corrigido problemas gerais de cálculo e travamentos."^&Chr(13)^&"Instalador: Melhorias gerais de segurança e estabilidade."^&Chr(13)^&"Servidor: Melhorias gerais.
 )
 CLS
 @set secundarysvr=https://raw.githubusercontent.com/TranslateGames/translategames_server/master/Update/%file%

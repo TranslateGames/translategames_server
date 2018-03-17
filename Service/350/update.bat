@@ -1,17 +1,17 @@
 @set caller=0
-@set version2="60012344"
-@set version3="6.0.0.12344"
-@set sversion2c=1500294
+@set version2="60012345"
+@set version3="6.0.0.12345"
+@set sversion2c=1500295
 @set tam7z=218112
 CLS
 if %code%==350 (
 @set translationof="Dawn of War e Winter Assault"
-@set tam="3,66"
-@set totaltam=3837953
-@set installedsize="20,26"
-@set hash=4310AB329E51CC385DAB49BA8ABE28421FF95CB01603E82D4F56F9E6473C1D94
+@set tam="4,13"
+@set totaltam=4337936
+@set installedsize="20,84"
+@set hash=C3D4596652499F3039C1448079FA852455FEDCB3A92A289BFD61DE52FBC4E054
 @set file=W4BR.7z
-@set changelog=- Tradução: Algumas Mudanças."^&Chr(13)^&"- Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Corrigido: Problemas de interface com o Windows XP, Atualizado: 7-Zip para a versão 18.03, Adicionado: Verificação Inteligente de Arquivos."^&Chr(13)^&"Progresso: Corrigido problemas gerais de cálculo e travamentos."^&Chr(13)^&"Instalador: Melhorias gerais de segurança e estabilidade."^&Chr(13)^&"Servidor: Melhorias gerais.
+@set changelog=- Tradução: Algumas Mudanças."^&Chr(13)^&"- Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Corrigido: Problemas de interface com o Windows XP, Atualizado: 7-Zip para a versão 18.03 e Wget para a versão 1.19.4, Adicionado: Verificação Inteligente de Arquivos."^&Chr(13)^&"Progresso: Corrigido problemas gerais de cálculo e travamentos."^&Chr(13)^&"Instalador: Melhorias gerais de segurança e estabilidade."^&Chr(13)^&"Servidor: Melhorias gerais.
 )
 CLS
 @set secundarysvr=https://raw.githubusercontent.com/TranslateGames/translategames_server/master/Update/%file%

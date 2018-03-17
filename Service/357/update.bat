@@ -1,17 +1,17 @@
 @set caller=0
-@set version2="1001360"
-@set version3="1.0.0.1360"
-@set sversion2c=1500294
+@set version2="1001361"
+@set version3="1.0.0.1361"
+@set sversion2c=1500295
 @set tam7z=218112
 CLS
 if %code%==357 (
 @set translationof="Dawn of War II - Retribution"
-@set tam="3,20"
-@set totaltam=3364004
-@set installedsize="35,98"
-@set hash=641FA5B770C214701F332243A202B45AC77585DDD151A6E179DA0BB0476ACDDB
+@set tam="3,68"
+@set totaltam=3864153
+@set installedsize="36,56"
+@set hash=BF71C7E96AE6B108BEE5D4F3757101F9C7DC95138B71B3F54D77ED36608C5360
 @set file=DOW2RBR.7z
-@set changelog=- Tradução: Algumas Mudanças."^&Chr(13)^&"- Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Corrigido: Problemas de interface com o Windows XP, Atualizado: 7-Zip para a versão 18.03, Adicionado: Verificação Inteligente de Arquivos."^&Chr(13)^&"Progresso: Corrigido problemas gerais de cálculo e travamentos."^&Chr(13)^&"Instalador: Melhorias gerais de segurança e estabilidade."^&Chr(13)^&"Servidor: Melhorias gerais.
+@set changelog=- Tradução: Algumas Mudanças."^&Chr(13)^&"- Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Corrigido: Problemas de interface com o Windows XP, Atualizado: 7-Zip para a versão 18.03 e Wget para a versão 1.19.4, Adicionado: Verificação Inteligente de Arquivos."^&Chr(13)^&"Progresso: Corrigido problemas gerais de cálculo e travamentos."^&Chr(13)^&"Instalador: Melhorias gerais de segurança e estabilidade."^&Chr(13)^&"Servidor: Melhorias gerais.
 )
 CLS
 @set secundarysvr=https://raw.githubusercontent.com/TranslateGames/translategames_server/master/Update/%file%
