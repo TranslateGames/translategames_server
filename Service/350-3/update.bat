@@ -1,15 +1,15 @@
 @set caller=0
-@set version2="60012346"
-@set version3="6.0.0.12346"
+@set version2="60012347"
+@set version3="6.0.0.12347"
 @set sversion2c=1500295
 @set tam7z=218112
 CLS
 if %code%==350-3 (
 @set translationof="Dawn of War - Dark Crusade"
 @set tam="3,43"
-@set totaltam=3598675
+@set totaltam=3598587
 @set installedsize="36,22"
-@set hash=258F975A13D551B7090BF2FC1700ACD916DB320CFA73CA41E23850CCBAD12B99
+@set hash=ACA3D3D76DBD27434E1B628C9D4005328133BEE416B56FD61275C28E1F416B2C
 @set file=DCBR.7z
 @set changelog=- Tradução: Algumas Mudanças."^&Chr(13)^&"- Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Corrigido: Problemas de interface com o Windows XP, Atualizado: 7-Zip para a versão 18.03 e Wget para a versão 1.19.4, Adicionado: Verificação Inteligente de Arquivos."^&Chr(13)^&"Progresso: Corrigido problemas gerais de cálculo e travamentos."^&Chr(13)^&"Instalador: Melhorias gerais de segurança e estabilidade."^&Chr(13)^&"Servidor: Melhorias gerais.
 )

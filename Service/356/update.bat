@@ -1,15 +1,15 @@
 @set caller=0
-@set version2="1002699"
-@set version3="1.0.0.2699"
+@set version2="1002700"
+@set version3="1.0.0.2700"
 @set sversion2c=1500295
 @set tam7z=218112
 CLS
 if %code%==356 (
 @set translationof="Age of Mythology"
 @set tam="3,01"
-@set totaltam=3161640
+@set totaltam=3161626
 @set installedsize="4,36"
-@set hash=26057ABD4E4B32C592405E9FB359AE6FD9C3C6EB643B12858497D928DF3C09EA
+@set hash=706035D5831767EA0AD6A8B943A60B703B06AEEC4EF6D4AC9DDBEC91B4EF4789
 @set file=AOMBR.7z
 @set changelog=- Tradução: Algumas Mudanças."^&Chr(13)^&"- Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Corrigido: Problemas de interface com o Windows XP, Atualizado: 7-Zip para a versão 18.03 e Wget para a versão 1.19.4, Adicionado: Verificação Inteligente de Arquivos."^&Chr(13)^&"Progresso: Corrigido problemas gerais de cálculo e travamentos."^&Chr(13)^&"Instalador: Melhorias gerais de segurança e estabilidade."^&Chr(13)^&"Servidor: Melhorias gerais.
 )
