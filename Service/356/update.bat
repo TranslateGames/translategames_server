@@ -1,17 +1,17 @@
 @set caller=0
-@set version2="1002700"
-@set version3="1.0.0.2700"
-@set sversion2c=1500295
+@set version2="1002701"
+@set version3="1.0.0.2701"
+@set sversion2c=1500296
 @set tam7z=218112
 CLS
 if %code%==356 (
 @set translationof="Age of Mythology"
 @set tam="3,01"
-@set totaltam=3161626
+@set totaltam=3164578
 @set installedsize="4,36"
-@set hash=706035D5831767EA0AD6A8B943A60B703B06AEEC4EF6D4AC9DDBEC91B4EF4789
+@set hash=53F3B6D5B9384FA19156A3232ADADA4F3563F0436318C3C93A267DB5C2CE8177
 @set file=AOMBR.7z
-@set changelog=- Tradução: Algumas Mudanças."^&Chr(13)^&"- Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Corrigido: Problemas de interface com o Windows XP, Atualizado: 7-Zip para a versão 18.03 e Wget para a versão 1.19.4, Adicionado: Verificação Inteligente de Arquivos."^&Chr(13)^&"Progresso: Corrigido problemas gerais de cálculo e travamentos."^&Chr(13)^&"Instalador: Melhorias gerais de segurança e estabilidade."^&Chr(13)^&"Servidor: Melhorias gerais.
+@set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Atualizado: 7-Zip para a versão 18.03 e Wget para a versão 1.19.4, Adicionado: Verificação Inteligente de Arquivos.\n Interface: Unificação de Interfaces, Melhorias Gerais de estabilidade.\n Instalador: Melhorias gerais de segurança e estabilidade.\n Servidor: Melhorias gerais.
 )
 CLS
 @set secundarysvr=https://raw.githubusercontent.com/TranslateGames/translategames_server/master/Update/%file%
@@ -171,9 +171,6 @@ move error.png error.temp
 if exist "ExtractSize.vbs" (
 move ExtractSize.vbs ExtractSize.temp
 )
-if exist "Progress.tgapp" (
-move Progress.tgapp Progress.temp
-)
 if exist "functional.js" (
 move functional.js functional.temp
 )
@@ -186,6 +183,7 @@ move Hash.vbs HashV.temp
 del Progress.hta
 del Progress.bat
 del Progress.vbs
+del ProgressData.tgpd
 del tg.png
 del db.png
 del App.tmp
@@ -195,12 +193,6 @@ CLS
 7z.exe e UpScript.7z -o.\
 CLS
 title Atualizador%code%t
-if not exist "Progress.tgapp" (
-set /a ERROS=ERROS+FATOR
-move Progress.temp Progress.tgapp
-) else (
-del Progress.temp
-)
 if not exist "error.png" (
 set /a ERROS=ERROS+FATOR
 del error.png
@@ -233,24 +225,15 @@ move HashV.temp Hash.vbs
 ) else (
 del HashV.temp
 )
-echo 100 > "ProgressBarS.log"
-timeout -m 500
-echo close>"StatusPS.log"
-timeout 1
-if exist "App.exe" (
-move App.exe App.temp
-)
 if exist "ImageData.tgib64" (
 move ImageData.tgib64 ImageData.temp
 )
-del App.exe
 del ImageData.tgib64
-if not exist "App.tmp" (
-set /a ERROS=ERROS+FATOR
-move App.temp App.exe
-) else (
+if not exist "App.exe" (
 move App.tmp App.exe
-del App.temp
+)
+if not exist "UpdaterUI.tgapp" (
+move UpdaterUI.tmp UpdaterUI.tgapp
 )
 if not exist "ImageData.tgib64" (
 set /a ERROS=ERROS+FATOR
@@ -263,6 +246,7 @@ del ImageData.temp
 )
 del App.tmp
 del App.temp
+del UpdaterUI.tmp
 del ImageData.tmp
 if %ERROS% gtr 0 (
 CLS
@@ -276,6 +260,9 @@ echo Extração Concluída...
 CLS
 del UpScript.7z
 CLS
+echo 100 > "ProgressBarS.log"
+timeout -m 500
+echo close>"StatusPS.log"
 echo %date%-%time% Continuando... >> "UpdateLog.txt"
 goto pProgress
 ) else (
@@ -294,7 +281,7 @@ goto init
 :pProgress
 CLS
 echo code = "%code%" > "PrepareProgress.vbs"
-echo FileT= "Progress.tgapp" >> "PrepareProgress.vbs"
+echo FileT= "UpdaterUI.tgapp" >> "PrepareProgress.vbs"
 echo Set objFSO2 = CreateObject("Scripting.FileSystemObject") >> "PrepareProgress.vbs"
 echo Set objRead2 = objFSO2.OpenTextFile(FileT, 1, True) >> "PrepareProgress.vbs"
 echo D2 = objRead2.ReadAll >> "PrepareProgress.vbs"
@@ -318,10 +305,12 @@ echo 0 > "StatusP.log"
 echo -0-90- > "ProgressBar.log"
 echo 0 > "Server.log"
 echo 0 > "DSize.log"
+echo 0 > "ChangeLogIV.log"
+del ChangeLog.log
 if %version%==%version2% (
 title Atualizador%code%t
 timeout -m 500
-echo close>"StatusPS.log"
+echo forceclose>"StatusPS.log"
 CLS
 echo %date%-%time% Já está Atualizado! >> "UpdateLog.txt"
 echo Atualizado!
@@ -341,6 +330,7 @@ if exist "%file%" (
 CLS
 echo %date%-%time% Sem permissão de Administrador! Abortando... >> "UpdateLog.txt"
 echo Administrador negado! Abortando...
+echo forceclose>"StatusPS.log"
 ErroAOpened.vbs
 goto exit
 ) else (
@@ -393,6 +383,7 @@ wscript EVPrompt.vbs
 set /p firstline=<ResultEV.txt
 if %firstline%==cancelar (
 CLS
+echo forceclose>"StatusPS.log"
 echo %date%-%time% Instalação cancelada pelo usuário! >> "UpdateLog.txt"
 echo Cancelando...
 goto exit
@@ -403,79 +394,59 @@ goto initB
 
 :initB
 CLS
-echo translationof = %translationof% > "UpdateFound.vbs"
-echo tam = %tam% >> "UpdateFound.vbs"
-echo installedsize = %installedsize% >> "UpdateFound.vbs"
-echo version = %version3% >> "UpdateFound.vbs"
-echo REM - Iniciando Configuração... >> "UpdateFound.vbs"
-echo Set FSO = WScript.CreateObject("Scripting.FileSystemObject") >> "UpdateFound.vbs"
-echo Set OTF = FSO.OpenTextFile("Result.txt", 2, True) >> "UpdateFound.vbs"
-echo OTF.WriteLine "" >> "UpdateFound.vbs"
-echo Set OTF = Nothing >> "UpdateFound.vbs"
-echo Set FSO = Nothing >> "UpdateFound.vbs"
-echo resultado = msgbox("Tradução de "^& translationof ^&""^&Chr(13)^&"Tamanho: " ^& tam ^& " MB "^&Chr(40)^&"Instalado: " ^& installedsize ^& " MB"^&Chr(41)^&" | Versão: " ^& version ^& ""^&Chr(13)^&Chr(13)^&"Últimas Mudanças:"^&Chr(13)^&"%changelog%"^&Chr(13)^&Chr(13)^&"Clique em 'OK' para começar a Baixar ou 'Cancelar' para Sair."^&Chr(13)^&"(Assim que estiver concluído, a tradução será instalada automáticamente!)",vbOKCancel,"Tradução Disponível!") >> "UpdateFound.vbs"
-echo If resultado = vbOK Then >> "UpdateFound.vbs"
-echo     Set FSO = WScript.CreateObject("Scripting.FileSystemObject") >> "UpdateFound.vbs"
-echo     Set OTF = FSO.OpenTextFile("Result.txt", 2, True) >> "UpdateFound.vbs"
-echo     OTF.WriteLine "continuar" >> "UpdateFound.vbs"
-echo     Set OTF = Nothing >> "UpdateFound.vbs"
-echo     Set FSO = Nothing >> "UpdateFound.vbs"
-echo Else >> "UpdateFound.vbs"
-echo     Set FSO = WScript.CreateObject("Scripting.FileSystemObject") >> "UpdateFound.vbs"
-echo     Set OTF = FSO.OpenTextFile("Result.txt", 2, True) >> "UpdateFound.vbs"
-echo     OTF.WriteLine "cancelar" >> "UpdateFound.vbs"
-echo     Set OTF = Nothing >> "UpdateFound.vbs"
-echo     Set FSO = Nothing >> "UpdateFound.vbs"
-echo End If >> "UpdateFound.vbs"
-goto initD
+if %mode%==install (
+echo %date%-%time% Tradução Disponível! >> "UpdateLog.txt"
+) else (
+echo %date%-%time% Atualização Disponível! Versão: %version2% >> "UpdateLog.txt"
+)
+CLS
+if %showcl% gtr 0 (
+echo 1 > "ChangeLogIV.log"
+) else (
+echo 2 > "ChangeLogIV.log"
+)
+echo Tradução de %translationof%\n Tamanho: %tam% MB (Instalado: %installedsize% MB) \/ Versão: %version3%\n \n Últimas Mudanças:\n %changelog%\n \n Clique em 'OK' para começar a Baixar ou 'Cancelar' para Sair.\n (Assim que estiver concluído, a tradução será instalada automáticamente!) > "ChangeLog.log"
+CLS
+echo -%file%-%totaltam%- > "ProgressFile.log"
+CLS
+if exist "UpdaterUI.tgapp" (
+cd .\
+start App.exe "%CD%\UpdaterUI.tgapp" /:Init /:%mode%
+)
+goto CLCheck
 
 :initC
-CLS
-echo translationof = %translationof% > "UpdateFound.vbs"
-echo tam = %tam% >> "UpdateFound.vbs"
-echo installedsize = %installedsize% >> "UpdateFound.vbs"
-echo version = %version3% >> "UpdateFound.vbs"
-echo REM - Iniciando Configuração... >> "UpdateFound.vbs"
-echo Set FSO = WScript.CreateObject("Scripting.FileSystemObject") >> "UpdateFound.vbs"
-echo Set OTF = FSO.OpenTextFile("Result.txt", 2, True) >> "UpdateFound.vbs"
-echo OTF.WriteLine "" >> "UpdateFound.vbs"
-echo Set OTF = Nothing >> "UpdateFound.vbs"
-echo Set FSO = Nothing >> "UpdateFound.vbs"
-echo resultado = msgbox("Atualização da Tradução de "^& translationof ^&""^&Chr(13)^&"Tamanho: " ^& tam ^& " MB "^&Chr(40)^&"Instalado: " ^& installedsize ^& " MB"^&Chr(41)^&" | Versão: " ^& version ^& ""^&Chr(13)^&Chr(13)^&"Mudanças:"^&Chr(13)^&"%changelog%"^&Chr(13)^&Chr(13)^&"Clique em 'OK' para começar a Baixar ou 'Cancelar' para Sair."^&Chr(13)^&"(Assim que estiver concluído, a tradução será instalada automáticamente!)",vbOKCancel,"Atualização Disponível!") >> "UpdateFound.vbs"
-echo If resultado = vbOK Then >> "UpdateFound.vbs"
-echo     Set FSO = WScript.CreateObject("Scripting.FileSystemObject") >> "UpdateFound.vbs"
-echo     Set OTF = FSO.OpenTextFile("Result.txt", 2, True) >> "UpdateFound.vbs"
-echo     OTF.WriteLine "continuar" >> "UpdateFound.vbs"
-echo     Set OTF = Nothing >> "UpdateFound.vbs"
-echo     Set FSO = Nothing >> "UpdateFound.vbs"
-echo Else >> "UpdateFound.vbs"
-echo     Set FSO = WScript.CreateObject("Scripting.FileSystemObject") >> "UpdateFound.vbs"
-echo     Set OTF = FSO.OpenTextFile("Result.txt", 2, True) >> "UpdateFound.vbs"
-echo     OTF.WriteLine "cancelar" >> "UpdateFound.vbs"
-echo     Set OTF = Nothing >> "UpdateFound.vbs"
-echo     Set FSO = Nothing >> "UpdateFound.vbs"
-echo End If >> "UpdateFound.vbs"
-goto initD
-
-:initD
-CLS
-title Atualizador%code%t
 CLS
 if %mode%==install (
 echo %date%-%time% Tradução Disponível! >> "UpdateLog.txt"
 ) else (
 echo %date%-%time% Atualização Disponível! Versão: %version2% >> "UpdateLog.txt"
 )
-del PrepareProgress.vbs
-del App.temp
-del %file%
-echo 0 > "Hash.log"
 CLS
 if %showcl% gtr 0 (
-echo Update Encontrado!
-wscript UpdateFound.vbs
+echo 1 > "ChangeLogIV.log"
+) else (
+echo 2 > "ChangeLogIV.log"
 )
+echo Atualização da Tradução de %translationof%\n Tamanho: %tam% MB (Instalado: %installedsize% MB) \/ Versão: %version3%\n \n Mudanças:\n %changelog%\n \n Clique em 'OK' para começar a Baixar ou 'Cancelar' para Sair.\n (Assim que estiver concluído, a tradução será instalada automáticamente!) > "ChangeLog.log"
 CLS
+echo -%file%-%totaltam%- > "ProgressFile.log"
+CLS
+if exist "UpdaterUI.tgapp" (
+cd .\
+start App.exe "%CD%\UpdaterUI.tgapp" /:Init /:%mode%
+)
+goto CLCheck
+
+:CLCheck
+CLS
+title Atualizador%code%t
+CLS
+set /p firstline=<ChangeLogIV.log
+if %firstline%==1 (
+CLS
+goto CLCheck
+)
 set /p firstline=<Result.txt
 if %firstline%==cancelar (
 CLS
@@ -487,8 +458,23 @@ echo %date%-%time% Atualização cancelada pelo usuário! >> "UpdateLog.txt"
 echo Cancelando...
 goto exit
 )
+goto initD
+
+:initD
 CLS
-if exist "App.exe" (
+title Atualizador%code%t
+CLS
+del PrepareProgress.vbs
+del App.temp
+del %file%
+echo 0 > "Hash.log"
+CLS
+echo -%file%-%totaltam%- > "ProgressFile.log"
+CLS
+if exist "UpdaterUI.tgapp" (
+cd .\
+start App.exe "%CD%\UpdaterUI.tgapp" /:Init /:%mode%
+) else if exist "Progress.tgapp" (
 cd .\
 start App.exe "%CD%\Progress.tgapp" /:Init /:%file% /:%totaltam% /:%mode%
 ) else if exist "Progress.vbs" (

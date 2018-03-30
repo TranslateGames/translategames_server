@@ -1,17 +1,17 @@
 @set caller=0
-@set version2="60012347"
-@set version3="6.0.0.12347"
+@set version2="60012348"
+@set version3="6.0.0.12348"
 @set sversion2c=1500296
 @set tam7z=218112
 CLS
 if %code%==350-4 (
 @set translationof="Dawn of War - Soulstorm"
 @set tam="3,57"
-@set totaltam=3750151
+@set totaltam=3749021
 @set installedsize="61,33"
-@set hash=B8436EFB11DE51A7D05A680F28D5126BA5B4C52D090189389420FBC267D8A0DE
+@set hash=3F9AE938F0C68B82146B4B6098D355D95427CD271023BF0F2C2192E42506BA02
 @set file=SSBR.7z
-@set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Corrigido: Problemas de interface com o Windows XP, Atualizado: 7-Zip para a versão 18.03 e Wget para a versão 1.19.4, Adicionado: Verificação Inteligente de Arquivos.\n Progresso: Corrigido problemas gerais de cálculo e travamentos.\n Instalador: Melhorias gerais de segurança e estabilidade.\n Servidor: Melhorias gerais.
+@set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Atualizado: 7-Zip para a versão 18.03 e Wget para a versão 1.19.4, Adicionado: Verificação Inteligente de Arquivos.\n Interface: Unificação de Interfaces, Melhorias Gerais de estabilidade.\n Instalador: Melhorias gerais de segurança e estabilidade.\n Servidor: Melhorias gerais.
 )
 CLS
 @set secundarysvr=https://raw.githubusercontent.com/TranslateGames/translategames_server/master/Update/%file%
