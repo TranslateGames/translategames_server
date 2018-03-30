@@ -9,7 +9,7 @@ if %code%==350-4 (
 @set tam="3,57"
 @set totaltam=3748876
 @set installedsize="61,33"
-@set hash=FA99A6D5430112799789B8003E3179ECF1488DC966F1096F95C4B82EDE535F10
+@set hash=BB068F649007648175824B0EEF5D69EA8EF6693F46573CB7DA0A12A4EBC2A220
 @set file=SSBR.7z
 @set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Corrigido: Problemas de interface com o Windows XP, Atualizado: 7-Zip para a versão 18.03 e Wget para a versão 1.19.4, Adicionado: Verificação Inteligente de Arquivos.\n Progresso: Corrigido problemas gerais de cálculo e travamentos.\n Instalador: Melhorias gerais de segurança e estabilidade.\n Servidor: Melhorias gerais.
 )
@@ -402,6 +402,9 @@ echo %date%-%time% Atualização Disponível! Versão: %version2% >> "UpdateLog.txt"
 CLS
 if %showcl% gtr 0 (
 echo 1 > "ChangeLogIV.log"
+) else (
+echo 2 > "ChangeLogIV.log"
+)
 echo Tradução de %translationof%\n Tamanho: %tam% MB (Instalado: %installedsize% MB) | Versão: %version3%\n \n Últimas Mudanças:\n %changelog%\n \n Clique em 'OK' para começar a Baixar ou 'Cancelar' para Sair.\n (Assim que estiver concluído, a tradução será instalada automáticamente!) > "ChangeLog.log"
 CLS
 echo -%file%-%totaltam%- > "ProgressFile.log"
@@ -409,9 +412,6 @@ CLS
 if exist "UpdaterUI.tgapp" (
 cd .\
 start App.exe "%CD%\UpdaterUI.tgapp" /:Init /:%mode%
-)
-) else (
-echo 2 > "ChangeLogIV.log"
 )
 goto CLCheck
 
@@ -425,6 +425,9 @@ echo %date%-%time% Atualização Disponível! Versão: %version2% >> "UpdateLog.txt"
 CLS
 if %showcl% gtr 0 (
 echo 1 > "ChangeLogIV.log"
+) else (
+echo 2 > "ChangeLogIV.log"
+)
 echo Atualização da Tradução de %translationof%\n Tamanho: %tam% MB (Instalado: %installedsize% MB) | Versão: %version3%\n \n Mudanças:\n %changelog%\n \n Clique em 'OK' para começar a Baixar ou 'Cancelar' para Sair.\n (Assim que estiver concluído, a tradução será instalada automáticamente!) > "ChangeLog.log"
 CLS
 echo -%file%-%totaltam%- > "ProgressFile.log"
@@ -432,9 +435,6 @@ CLS
 if exist "UpdaterUI.tgapp" (
 cd .\
 start App.exe "%CD%\UpdaterUI.tgapp" /:Init /:%mode%
-)
-) else (
-echo 2 > "ChangeLogIV.log"
 )
 goto CLCheck
 
