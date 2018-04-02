@@ -7,9 +7,9 @@ CLS
 if %code%==356-2 (
 @set translationof="Age of Mythology: The Titans Expansion"
 @set tam="3,00"
-@set totaltam=3146255
+@set totaltam=3146256
 @set installedsize="4,56"
-@set hash=8735F8C1848BDA86827CF541071404CAC4EFC31484C6C23F0C16B008474CFFE0
+@set hash=E4DA23E54463A90C10C54BC0E0DF2D0E77B714533144C4E5B2C32538FB8DAAC4
 @set file=XAOMBR.7z
 @set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Atualizado: 7-Zip para a versão 18.03 e Wget para a versão 1.19.4, Adicionado: Verificação Inteligente de Arquivos.\n Interface: Unificação de Interfaces, Melhorias Gerais de estabilidade.\n Instalador: Melhorias gerais de segurança e estabilidade.\n Servidor: Melhorias gerais.
 )
@@ -261,7 +261,7 @@ CLS
 del UpScript.7z
 CLS
 echo 100 > "ProgressBarS.log"
-timeout -m 500
+timeout -m 500 > NUL
 echo close>"StatusPS.log"
 echo %date%-%time% Continuando... >> "UpdateLog.txt"
 goto pProgress
@@ -309,12 +309,12 @@ echo 0 > "ChangeLogIV.log"
 del ChangeLog.log
 if %version%==%version2% (
 title Atualizador%code%t
-timeout -m 500
+timeout -m 500 > NUL
 echo forceclose>"StatusPS.log"
 CLS
 echo %date%-%time% Já está Atualizado! >> "UpdateLog.txt"
 echo Atualizado!
-timeout -m 500
+timeout -m 500 > NUL
 start wscript UpToDate.vbs
 goto exit
 ) else if %version% lss %version2% (
@@ -440,14 +440,14 @@ goto CLCheck
 
 :CLCheck
 CLS
+echo Aguardando...
 title Atualizador%code%t
-CLS
 set /p firstline=<ChangeLogIV.log
 if %firstline%==1 (
-CLS
-timeout 1
+timeout 1 > NUL
 goto CLCheck
 )
+CLS
 set /p firstline=<Result.txt
 if %firstline%==cancelar (
 CLS
@@ -765,14 +765,14 @@ echo %date%-%time% Falha na validação da tradução! >> "UpdateLog.txt"
 echo %date%-%time% Falha na validação da atualização! >> "UpdateLog.txt"
 )
 echo Falha na validação!
-timeout 1
+timeout 1 > NUL
 start wscript ErroHash.vbs
 goto exit
 ) else if %firstline%==MissingFile (
 CLS
 goto ARCheck
 ) else (
-timeout 1
+timeout 1 > NUL
 goto checkHash2
 )
 
@@ -826,7 +826,7 @@ cd ..\
 echo fail>"StatusP.log"
 echo %date%-%time% Falha ao tentar iniciar a instalação! >> "UpdateLog.txt"
 echo Falha ao tentar iniciar a instalacao!
-timeout 1
+timeout 1 > NUL
 start wscript ErroInstall.vbs
 )
 goto exit
