@@ -7,9 +7,9 @@ CLS
 if %code%==350-3 (
 @set translationof="Dawn of War - Dark Crusade"
 @set tam="3,43"
-@set totaltam=3600324
+@set totaltam=3600323
 @set installedsize="36,22"
-@set hash=3099B0D271890DFCBB26B0BD9634311AD8A0BEAD91176F2300C0196A12261791
+@set hash=609791741C358556A0088291163AAFB642C56AF9DE71CF2A5A6474E144C49465
 @set file=DCBR.7z
 @set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Atualizado: 7-Zip para a versão 18.03 e Wget para a versão 1.19.4, Adicionado: Verificação Inteligente de Arquivos.\n Interface: Unificação de Interfaces, Melhorias Gerais de estabilidade.\n Instalador: Melhorias gerais de segurança e estabilidade.\n Servidor: Melhorias gerais.
 )
@@ -445,6 +445,7 @@ CLS
 set /p firstline=<ChangeLogIV.log
 if %firstline%==1 (
 CLS
+timeout 1
 goto CLCheck
 )
 set /p firstline=<Result.txt
@@ -771,6 +772,7 @@ goto exit
 CLS
 goto ARCheck
 ) else (
+timeout 1
 goto checkHash2
 )
 

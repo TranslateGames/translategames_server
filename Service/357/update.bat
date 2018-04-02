@@ -9,7 +9,7 @@ if %code%==357 (
 @set tam="3,46"
 @set totaltam=3633309
 @set installedsize="36,24"
-@set hash=C7AE79E8CF6E9037E05AC8E971F213FA766AF2FB8BBB12F156D671A3E2567189
+@set hash=A5E25F0007816CAEE4125A556096006E30D6E76BBC0AE597CA36D1A9C973D37C
 @set file=DOW2RBR.7z
 @set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Atualizado: 7-Zip para a versão 18.03 e Wget para a versão 1.19.4, Adicionado: Verificação Inteligente de Arquivos.\n Interface: Unificação de Interfaces, Melhorias Gerais de estabilidade.\n Instalador: Melhorias gerais de segurança e estabilidade.\n Servidor: Melhorias gerais.
 )
@@ -445,6 +445,7 @@ CLS
 set /p firstline=<ChangeLogIV.log
 if %firstline%==1 (
 CLS
+timeout 1
 goto CLCheck
 )
 set /p firstline=<Result.txt
@@ -771,6 +772,7 @@ goto exit
 CLS
 goto ARCheck
 ) else (
+timeout 1
 goto checkHash2
 )
 

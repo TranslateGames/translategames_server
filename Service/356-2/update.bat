@@ -7,9 +7,9 @@ CLS
 if %code%==356-2 (
 @set translationof="Age of Mythology: The Titans Expansion"
 @set tam="3,00"
-@set totaltam=3146256
+@set totaltam=3146255
 @set installedsize="4,56"
-@set hash=5654E46C31163E4F59A177EF60B390231D4F61FD0C221652B8CD60964A73D28B
+@set hash=8735F8C1848BDA86827CF541071404CAC4EFC31484C6C23F0C16B008474CFFE0
 @set file=XAOMBR.7z
 @set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Atualizado: 7-Zip para a versão 18.03 e Wget para a versão 1.19.4, Adicionado: Verificação Inteligente de Arquivos.\n Interface: Unificação de Interfaces, Melhorias Gerais de estabilidade.\n Instalador: Melhorias gerais de segurança e estabilidade.\n Servidor: Melhorias gerais.
 )
@@ -445,6 +445,7 @@ CLS
 set /p firstline=<ChangeLogIV.log
 if %firstline%==1 (
 CLS
+timeout 1
 goto CLCheck
 )
 set /p firstline=<Result.txt
@@ -771,6 +772,7 @@ goto exit
 CLS
 goto ARCheck
 ) else (
+timeout 1
 goto checkHash2
 )
 

@@ -7,9 +7,9 @@ CLS
 if %code%==350-4 (
 @set translationof="Dawn of War - Soulstorm"
 @set tam="3,57"
-@set totaltam=3750163
+@set totaltam=3750162
 @set installedsize="61,33"
-@set hash=70DC2FAB756F1F450DA762EEEBA71FF1103C4EF3FE568853DFAFFD8178780985
+@set hash=04DB6B824D0C894A4E74D7B75F1AEFEF6DA3231941A8FC1270A1911C725DA887
 @set file=SSBR.7z
 @set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Atualizado: 7-Zip para a versão 18.03 e Wget para a versão 1.19.4, Adicionado: Verificação Inteligente de Arquivos.\n Interface: Unificação de Interfaces, Melhorias Gerais de estabilidade.\n Instalador: Melhorias gerais de segurança e estabilidade.\n Servidor: Melhorias gerais.
 )
@@ -445,6 +445,7 @@ CLS
 set /p firstline=<ChangeLogIV.log
 if %firstline%==1 (
 CLS
+timeout 1
 goto CLCheck
 )
 set /p firstline=<Result.txt
@@ -771,6 +772,7 @@ goto exit
 CLS
 goto ARCheck
 ) else (
+timeout 1
 goto checkHash2
 )
 

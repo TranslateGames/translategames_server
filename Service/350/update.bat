@@ -7,9 +7,9 @@ CLS
 if %code%==350 (
 @set translationof="Dawn of War e Winter Assault"
 @set tam="3,91"
-@set totaltam=4107822
+@set totaltam=4107821
 @set installedsize="20,52"
-@set hash=B13956573BCAC19AA4E82D00892A1BE8B89A97E6CCD1583C0A1693BF56663D86
+@set hash=25ADF98DECBE48D74AA62D87687E792FA5F5892D517AB984B583012CDC544CD1
 @set file=W4BR.7z
 @set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Atualizado: 7-Zip para a versão 18.03 e Wget para a versão 1.19.4, Adicionado: Verificação Inteligente de Arquivos.\n Interface: Unificação de Interfaces, Melhorias Gerais de estabilidade.\n Instalador: Melhorias gerais de segurança e estabilidade.\n Servidor: Melhorias gerais.
 )
@@ -445,6 +445,7 @@ CLS
 set /p firstline=<ChangeLogIV.log
 if %firstline%==1 (
 CLS
+timeout 1
 goto CLCheck
 )
 set /p firstline=<Result.txt
@@ -771,6 +772,7 @@ goto exit
 CLS
 goto ARCheck
 ) else (
+timeout 1
 goto checkHash2
 )
 
