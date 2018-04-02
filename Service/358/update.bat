@@ -1,15 +1,15 @@
 @set caller=0
-@set version2="1001008"
-@set version3="1.0.0.1008"
-@set sversion2c=1500297
+@set version2="1001009"
+@set version3="1.0.0.1009"
+@set sversion2c=1500298
 @set tam7z=218112
 CLS
 if %code%==358 (
 @set translationof="Dawn of War II e Chaos Rising"
 @set tam="3,29"
-@set totaltam=3450957
+@set totaltam=3450446
 @set installedsize="28,02"
-@set hash=90571277060EE3AA9A851701ED8954654EC31046341B019660F0E7FD07934FDC
+@set hash=FA56EE5B5662BE6DECEC92E92BACFCA8DDB739E19103372FA13BF71ABEC00F75
 @set file=DOW2BR.7z
 @set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Atualizado: 7-Zip para a versão 18.03 e Wget para a versão 1.19.4, Adicionado: Verificação Inteligente de Arquivos.\n Interface: Unificação de Interfaces, Melhorias Gerais de estabilidade.\n Instalador: Melhorias gerais de segurança e estabilidade.\n Servidor: Melhorias gerais.
 )
@@ -306,6 +306,7 @@ echo -0-90- > "ProgressBar.log"
 echo 0 > "Server.log"
 echo 0 > "DSize.log"
 echo 0 > "ChangeLogIV.log"
+echo 0 > "UpdateMode.log
 del ChangeLog.log
 if %version%==%version2% (
 title Atualizador%code%t
@@ -400,6 +401,7 @@ echo %date%-%time% Tradução Disponível! >> "UpdateLog.txt"
 echo %date%-%time% Atualização Disponível! Versão: %version2% >> "UpdateLog.txt"
 )
 CLS
+echo %mode%>"UpdateMode.log
 echo \\Tradução Disponível\\Tradução de %translationof%\n Tamanho: %tam% MB (Instalado: %installedsize% MB) \/ Versão: %version3%\n \n Últimas Mudanças:\n %changelog%\n \n Clique em 'OK' para começar a Baixar ou 'Cancelar' para Sair.\n (Assim que estiver concluído, a tradução será instalada automáticamente!) > "ChangeLog.log"
 if %showcl% gtr 0 (
 echo 1 > "ChangeLogIV.log"
@@ -423,6 +425,7 @@ echo %date%-%time% Tradução Disponível! >> "UpdateLog.txt"
 echo %date%-%time% Atualização Disponível! Versão: %version2% >> "UpdateLog.txt"
 )
 CLS
+echo %mode%>"UpdateMode.log
 echo \\Atualização Disponível\\Atualização da Tradução de %translationof%\n Tamanho: %tam% MB (Instalado: %installedsize% MB) \/ Versão: %version3%\n \n Mudanças:\n %changelog%\n \n Clique em 'OK' para começar a Baixar ou 'Cancelar' para Sair.\n (Assim que estiver concluído, a tradução será instalada automáticamente!) > "ChangeLog.log"
 if %showcl% gtr 0 (
 echo 1 > "ChangeLogIV.log"
@@ -471,6 +474,7 @@ del %file%
 echo 0 > "Hash.log"
 CLS
 echo -%file%-%totaltam%- > "ProgressFile.log"
+echo %mode%>"UpdateMode.log
 CLS
 if exist "UpdaterUI.tgapp" (
 cd .\
