@@ -1,15 +1,15 @@
 @set caller=0
-@set version2="1002702"
-@set version3="1.0.0.2702"
-@set sversion2c=1500296
+@set version2="1002703"
+@set version3="1.0.0.2703"
+@set sversion2c=1500297
 @set tam7z=218112
 CLS
 if %code%==356-2 (
 @set translationof="Age of Mythology: The Titans Expansion"
-@set tam="2,99"
-@set totaltam=3145541
+@set tam="3,00"
+@set totaltam=3146256
 @set installedsize="4,56"
-@set hash=90C9D40E356D9C4DAA6E52D373A6EFA0BE59F8413BB7E28255DB79E642E22BD8
+@set hash=5654E46C31163E4F59A177EF60B390231D4F61FD0C221652B8CD60964A73D28B
 @set file=XAOMBR.7z
 @set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Atualizado: 7-Zip para a versão 18.03 e Wget para a versão 1.19.4, Adicionado: Verificação Inteligente de Arquivos.\n Interface: Unificação de Interfaces, Melhorias Gerais de estabilidade.\n Instalador: Melhorias gerais de segurança e estabilidade.\n Servidor: Melhorias gerais.
 )
@@ -400,12 +400,12 @@ echo %date%-%time% Tradução Disponível! >> "UpdateLog.txt"
 echo %date%-%time% Atualização Disponível! Versão: %version2% >> "UpdateLog.txt"
 )
 CLS
+echo \\Tradução Disponível\\Tradução de %translationof%\n Tamanho: %tam% MB (Instalado: %installedsize% MB) \/ Versão: %version3%\n \n Últimas Mudanças:\n %changelog%\n \n Clique em 'OK' para começar a Baixar ou 'Cancelar' para Sair.\n (Assim que estiver concluído, a tradução será instalada automáticamente!) > "ChangeLog.log"
 if %showcl% gtr 0 (
 echo 1 > "ChangeLogIV.log"
 ) else (
 echo 2 > "ChangeLogIV.log"
 )
-echo Tradução de %translationof%\n Tamanho: %tam% MB (Instalado: %installedsize% MB) \/ Versão: %version3%\n \n Últimas Mudanças:\n %changelog%\n \n Clique em 'OK' para começar a Baixar ou 'Cancelar' para Sair.\n (Assim que estiver concluído, a tradução será instalada automáticamente!) > "ChangeLog.log"
 CLS
 echo -%file%-%totaltam%- > "ProgressFile.log"
 CLS
@@ -423,12 +423,12 @@ echo %date%-%time% Tradução Disponível! >> "UpdateLog.txt"
 echo %date%-%time% Atualização Disponível! Versão: %version2% >> "UpdateLog.txt"
 )
 CLS
+echo \\Atualização Disponível\\Atualização da Tradução de %translationof%\n Tamanho: %tam% MB (Instalado: %installedsize% MB) \/ Versão: %version3%\n \n Mudanças:\n %changelog%\n \n Clique em 'OK' para começar a Baixar ou 'Cancelar' para Sair.\n (Assim que estiver concluído, a tradução será instalada automáticamente!) > "ChangeLog.log"
 if %showcl% gtr 0 (
 echo 1 > "ChangeLogIV.log"
 ) else (
 echo 2 > "ChangeLogIV.log"
 )
-echo Atualização da Tradução de %translationof%\n Tamanho: %tam% MB (Instalado: %installedsize% MB) \/ Versão: %version3%\n \n Mudanças:\n %changelog%\n \n Clique em 'OK' para começar a Baixar ou 'Cancelar' para Sair.\n (Assim que estiver concluído, a tradução será instalada automáticamente!) > "ChangeLog.log"
 CLS
 echo -%file%-%totaltam%- > "ProgressFile.log"
 CLS

@@ -1,15 +1,15 @@
 @set caller=0
-@set version2="60012349"
-@set version3="6.0.0.12349"
-@set sversion2c=1500296
+@set version2="60012350"
+@set version3="6.0.0.12350"
+@set sversion2c=1500297
 @set tam7z=218112
 CLS
 if %code%==350 (
 @set translationof="Dawn of War e Winter Assault"
 @set tam="3,91"
-@set totaltam=4106331
+@set totaltam=4107822
 @set installedsize="20,52"
-@set hash=403FD00AB6B7D571019CF2707BF561A9490D593F1F9B0994000815D92EB3378A
+@set hash=B13956573BCAC19AA4E82D00892A1BE8B89A97E6CCD1583C0A1693BF56663D86
 @set file=W4BR.7z
 @set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Atualizado: 7-Zip para a versão 18.03 e Wget para a versão 1.19.4, Adicionado: Verificação Inteligente de Arquivos.\n Interface: Unificação de Interfaces, Melhorias Gerais de estabilidade.\n Instalador: Melhorias gerais de segurança e estabilidade.\n Servidor: Melhorias gerais.
 )
@@ -400,12 +400,12 @@ echo %date%-%time% Tradução Disponível! >> "UpdateLog.txt"
 echo %date%-%time% Atualização Disponível! Versão: %version2% >> "UpdateLog.txt"
 )
 CLS
+echo \\Tradução Disponível\\Tradução de %translationof%\n Tamanho: %tam% MB (Instalado: %installedsize% MB) \/ Versão: %version3%\n \n Últimas Mudanças:\n %changelog%\n \n Clique em 'OK' para começar a Baixar ou 'Cancelar' para Sair.\n (Assim que estiver concluído, a tradução será instalada automáticamente!) > "ChangeLog.log"
 if %showcl% gtr 0 (
 echo 1 > "ChangeLogIV.log"
 ) else (
 echo 2 > "ChangeLogIV.log"
 )
-echo Tradução de %translationof%\n Tamanho: %tam% MB (Instalado: %installedsize% MB) \/ Versão: %version3%\n \n Últimas Mudanças:\n %changelog%\n \n Clique em 'OK' para começar a Baixar ou 'Cancelar' para Sair.\n (Assim que estiver concluído, a tradução será instalada automáticamente!) > "ChangeLog.log"
 CLS
 echo -%file%-%totaltam%- > "ProgressFile.log"
 CLS
@@ -423,12 +423,12 @@ echo %date%-%time% Tradução Disponível! >> "UpdateLog.txt"
 echo %date%-%time% Atualização Disponível! Versão: %version2% >> "UpdateLog.txt"
 )
 CLS
+echo \\Atualização Disponível\\Atualização da Tradução de %translationof%\n Tamanho: %tam% MB (Instalado: %installedsize% MB) \/ Versão: %version3%\n \n Mudanças:\n %changelog%\n \n Clique em 'OK' para começar a Baixar ou 'Cancelar' para Sair.\n (Assim que estiver concluído, a tradução será instalada automáticamente!) > "ChangeLog.log"
 if %showcl% gtr 0 (
 echo 1 > "ChangeLogIV.log"
 ) else (
 echo 2 > "ChangeLogIV.log"
 )
-echo Atualização da Tradução de %translationof%\n Tamanho: %tam% MB (Instalado: %installedsize% MB) \/ Versão: %version3%\n \n Mudanças:\n %changelog%\n \n Clique em 'OK' para começar a Baixar ou 'Cancelar' para Sair.\n (Assim que estiver concluído, a tradução será instalada automáticamente!) > "ChangeLog.log"
 CLS
 echo -%file%-%totaltam%- > "ProgressFile.log"
 CLS
