@@ -9,7 +9,7 @@ if %code%==350-4 (
 @set tam="3,57"
 @set totaltam=3749795
 @set installedsize="61,33"
-@set hash=E3C558C1F77A5ED393315362C13D8B7429F82970283520CCFED3AE9B97EEF95B
+@set hash=151F5AF88B22FCF190D0790705194B2287ECFC8C641D05C410DA6F0DA57BC822
 @set file=SSBR.7z
 @set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Atualizado: 7-Zip para a versão 18.03 e Wget para a versão 1.19.4, Adicionado: Verificação Inteligente de Arquivos.\n Interface: Unificação de Interfaces, Melhorias Gerais de estabilidade.\n Instalador: Melhorias gerais de segurança e estabilidade.\n Servidor: Melhorias gerais.
 )
@@ -154,7 +154,7 @@ wget.exe https://raw.githubusercontent.com/TranslateGames/translategames_server/
 title Atualizador%code%t
 if not exist "UpScript.temp" (
 CLS
-wget.exe http://translategames.tk/updater/request/UpScript --output-document=UpScript.temp --user-agent=%useragentstring% --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=10 --tries=2
+wget.exe http://translategames.tk/updater/request/UpScript --user-agent=%useragentstring% --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=10 --tries=2
 title Atualizador%code%t
 )
 echo 95 > "ProgressBarS.log"
@@ -266,6 +266,8 @@ echo close>"StatusPS.log"
 echo %date%-%time% Continuando... >> "UpdateLog.txt"
 goto pProgress
 ) else (
+CLS
+del UpScript.temp
 CLS
 echo %date%-%time% Falha ao Baixar Pacote! >> "UpdateLog.txt"
 echo %date%-%time% Continuando sem Atualização de Pacotes... >> "UpdateLog.txt"
