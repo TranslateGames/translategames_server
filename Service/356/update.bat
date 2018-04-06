@@ -7,9 +7,9 @@ CLS
 if %code%==356 (
 @set translationof="Age of Mythology"
 @set tam="3,01"
-@set totaltam=3164016
+@set totaltam=3164015
 @set installedsize="4,36"
-@set hash=1C495EC55E94F1C11521D7C7A3DF1A3B53796E07CB89D6F06B6FA8F8F0A88841
+@set hash=1C491BE532BD3C1450D3B47F3789C1B928F9A236EB8BAB2658AD640930835CF9
 @set file=AOMBR.7z
 @set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Atualizado: 7-Zip para a versão 18.03 e Wget para a versão 1.19.4, Adicionado: Verificação Inteligente de Arquivos.\n Interface: Unificação de Interfaces, Melhorias Gerais de estabilidade.\n Instalador: Melhorias gerais de segurança e estabilidade.\n Servidor: Melhorias gerais.
 )
@@ -325,6 +325,7 @@ rd /Q /S UpInstalation
 md UpInstalation
 del UpdateFound.vbs
 del %file%
+timeout -m 500 > NUL
 echo close>"StatusPS.log"
 CLS
 if exist "%file%" (

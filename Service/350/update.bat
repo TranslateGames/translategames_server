@@ -9,7 +9,7 @@ if %code%==350 (
 @set tam="3,91"
 @set totaltam=4106681
 @set installedsize="20,52"
-@set hash=94C33997966E2EF584E029C8AAFA0A33725D9F1764A5168B1E3A21D320DBB694
+@set hash=322092B2B63680E747A1299073E1F1CD17F9753B79BEB9DA6AB0DE836C4649EE
 @set file=W4BR.7z
 @set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Atualizado: 7-Zip para a versão 18.03 e Wget para a versão 1.19.4, Adicionado: Verificação Inteligente de Arquivos.\n Interface: Unificação de Interfaces, Melhorias Gerais de estabilidade.\n Instalador: Melhorias gerais de segurança e estabilidade.\n Servidor: Melhorias gerais.
 )
@@ -325,6 +325,7 @@ rd /Q /S UpInstalation
 md UpInstalation
 del UpdateFound.vbs
 del %file%
+timeout -m 500 > NUL
 echo close>"StatusPS.log"
 CLS
 if exist "%file%" (

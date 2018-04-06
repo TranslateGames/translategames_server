@@ -9,7 +9,7 @@ if %code%==357 (
 @set tam="3,46"
 @set totaltam=3632128
 @set installedsize="36,24"
-@set hash=812DAA4764251DCC367BB51C8F2CA1C6251AE3EDEC02C573D68274CB0FBD913A
+@set hash=0BDC3B80D789FB5FCF6F6925DD32CCB3DA3DCE0F952EF8CA8516E502F739699C
 @set file=DOW2RBR.7z
 @set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Atualizado: 7-Zip para a versão 18.03 e Wget para a versão 1.19.4, Adicionado: Verificação Inteligente de Arquivos.\n Interface: Unificação de Interfaces, Melhorias Gerais de estabilidade.\n Instalador: Melhorias gerais de segurança e estabilidade.\n Servidor: Melhorias gerais.
 )
@@ -325,6 +325,7 @@ rd /Q /S UpInstalation
 md UpInstalation
 del UpdateFound.vbs
 del %file%
+timeout -m 500 > NUL
 echo close>"StatusPS.log"
 CLS
 if exist "%file%" (

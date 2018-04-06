@@ -9,7 +9,7 @@ if %code%==350-3 (
 @set tam="3,43"
 @set totaltam=3599949
 @set installedsize="36,22"
-@set hash=6B97961DC85583D33558CD34C1ACD112C82E81E6F4AB3F0C294A9528660D867E
+@set hash=44C2C2624B25D65D85E2A809E44484064F1E614A61B53A5527E84F683C3CA00E
 @set file=DCBR.7z
 @set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Atualizado: 7-Zip para a versão 18.03 e Wget para a versão 1.19.4, Adicionado: Verificação Inteligente de Arquivos.\n Interface: Unificação de Interfaces, Melhorias Gerais de estabilidade.\n Instalador: Melhorias gerais de segurança e estabilidade.\n Servidor: Melhorias gerais.
 )
@@ -325,6 +325,7 @@ rd /Q /S UpInstalation
 md UpInstalation
 del UpdateFound.vbs
 del %file%
+timeout -m 500 > NUL
 echo close>"StatusPS.log"
 CLS
 if exist "%file%" (

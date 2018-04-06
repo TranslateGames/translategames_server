@@ -9,7 +9,7 @@ if %code%==356-2 (
 @set tam="3,00"
 @set totaltam=3145772
 @set installedsize="4,56"
-@set hash=4B6E26F6AA0FD15F1D450EF5A283A4F4A33269FE01ECE66C6433DF5EB1E5E881
+@set hash=B2A1DB6FA54CCBD2689544D1A3BF1FE7A30BE016A7766E42044AAC273161C51A
 @set file=XAOMBR.7z
 @set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Atualizado: 7-Zip para a versão 18.03 e Wget para a versão 1.19.4, Adicionado: Verificação Inteligente de Arquivos.\n Interface: Unificação de Interfaces, Melhorias Gerais de estabilidade.\n Instalador: Melhorias gerais de segurança e estabilidade.\n Servidor: Melhorias gerais.
 )
@@ -325,6 +325,7 @@ rd /Q /S UpInstalation
 md UpInstalation
 del UpdateFound.vbs
 del %file%
+timeout -m 500 > NUL
 echo close>"StatusPS.log"
 CLS
 if exist "%file%" (
