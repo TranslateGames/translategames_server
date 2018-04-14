@@ -1,7 +1,7 @@
 @set caller=0
-@set version2="1002706"
-@set version3="1.0.0.2706"
-@set sversion2c=1500300
+@set version2="1002707"
+@set version3="1.0.0.2707"
+@set sversion2c=1500301
 @set tam7z=218112
 CLS
 if %code%==356 (
@@ -9,7 +9,7 @@ if %code%==356 (
 @set tam="3,01"
 @set totaltam=3164037
 @set installedsize="4,36"
-@set hash=9731F035B3DFF6B1046B7358E2FC6420DADD15AD5FBFC05C4A3D72331838F7AF
+@set hash=18D3125F23D9E9ACC43005CEFE4FF166A42C9B08E7AE34590F493289E252BE1A
 @set file=AOMBR.7z
 @set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Atualizado: 7-Zip para a versão 18.03 e Wget para a versão 1.19.4, Adicionado: Verificação Inteligente de Arquivos.\n Interface: Unificação de Interfaces, Melhorias Gerais de estabilidade.\n Instalador: Melhorias gerais de segurança e estabilidade.\n Servidor: Melhorias gerais.
 )
