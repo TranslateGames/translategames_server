@@ -1,15 +1,15 @@
 @set caller=0
-@set version2="1001013"
-@set version3="1.0.0.1013"
-@set sversion2c=1500302
+@set version2="1001014"
+@set version3="1.0.0.1014"
+@set sversion2c=1500303
 @set tam7z=218112
 CLS
 if %code%==358 (
 @set translationof="Dawn of War II e Chaos Rising"
-@set tam="3,29"
-@set totaltam=3450627
+@set tam="3,28"
+@set totaltam=3445247
 @set installedsize="28,02"
-@set hash=4D955E09AF54EA456FB3752F0507BA2214DFCF0F8F49D77020878F25E323433B
+@set hash=2DBCF414596900C5C1A5C84E8639705DC5FB0D5746F48E5CD7EB7AA068D85175
 @set file=DOW2BR.7z
 @set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Atualizado: 7-Zip para a versão 18.03 e Wget para a versão 1.19.4, Adicionado: Verificação Inteligente de Arquivos.\n Interface: Unificação de Interfaces, Melhorias Gerais de estabilidade e Corrigido: Erro de compatibilidade com o Windows XP.\n Instalador: Melhorias gerais de segurança e estabilidade.\n Servidor: Melhorias gerais.
 )
@@ -171,9 +171,6 @@ move error.png error.temp
 if exist "ExtractSize.vbs" (
 move ExtractSize.vbs ExtractSize.temp
 )
-if exist "functional.js" (
-move functional.js functional.temp
-)
 if exist "Hash.exe" (
 move Hash.exe HashF.temp
 )
@@ -184,6 +181,7 @@ del Progress.hta
 del Progress.bat
 del Progress.vbs
 del ProgressData.tgpd
+del functional.js
 del tg.png
 del db.png
 del App.tmp
@@ -206,12 +204,6 @@ del ExtractSize.vbs
 move ExtractSize.temp ExtractSize.vbs
 ) else (
 del ExtractSize.temp
-)
-if not exist "functional.js" (
-set /a ERROS=ERROS+FATOR
-move functional.temp functional.js
-) else (
-del functional.temp
 )
 if not exist "Hash.exe" (
 set /a ERROS=ERROS+FATOR

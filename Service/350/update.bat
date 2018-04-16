@@ -1,15 +1,15 @@
 @set caller=0
-@set version2="60012355"
-@set version3="6.0.0.12355"
-@set sversion2c=1500302
+@set version2="60012356"
+@set version3="6.0.0.12356"
+@set sversion2c=1500303
 @set tam7z=218112
 CLS
 if %code%==350 (
 @set translationof="Dawn of War e Winter Assault"
 @set tam="3,91"
-@set totaltam=4107493
+@set totaltam=4102205
 @set installedsize="20,52"
-@set hash=5075E0D3D1C6A0F93AF70082BD7C137695368250FBE499D21EC349C7343C619C
+@set hash=A93CE1281AD9960FE2775D42F450AA970595CCB23D07EC2DE9873F371602BA1F
 @set file=W4BR.7z
 @set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Atualizado: 7-Zip para a versão 18.03 e Wget para a versão 1.19.4, Adicionado: Verificação Inteligente de Arquivos.\n Interface: Unificação de Interfaces, Melhorias Gerais de estabilidade e Corrigido: Erro de compatibilidade com o Windows XP.\n Instalador: Melhorias gerais de segurança e estabilidade.\n Servidor: Melhorias gerais.
 )
@@ -171,9 +171,6 @@ move error.png error.temp
 if exist "ExtractSize.vbs" (
 move ExtractSize.vbs ExtractSize.temp
 )
-if exist "functional.js" (
-move functional.js functional.temp
-)
 if exist "Hash.exe" (
 move Hash.exe HashF.temp
 )
@@ -184,6 +181,7 @@ del Progress.hta
 del Progress.bat
 del Progress.vbs
 del ProgressData.tgpd
+del functional.js
 del tg.png
 del db.png
 del App.tmp
@@ -206,12 +204,6 @@ del ExtractSize.vbs
 move ExtractSize.temp ExtractSize.vbs
 ) else (
 del ExtractSize.temp
-)
-if not exist "functional.js" (
-set /a ERROS=ERROS+FATOR
-move functional.temp functional.js
-) else (
-del functional.temp
 )
 if not exist "Hash.exe" (
 set /a ERROS=ERROS+FATOR

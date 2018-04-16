@@ -1,15 +1,15 @@
 @set caller=0
-@set version2="1002708"
-@set version3="1.0.0.2708"
-@set sversion2c=1500302
+@set version2="1002709"
+@set version3="1.0.0.2709"
+@set sversion2c=1500303
 @set tam7z=218112
 CLS
 if %code%==356 (
 @set translationof="Age of Mythology"
 @set tam="3,01"
-@set totaltam=3164882
+@set totaltam=3159461
 @set installedsize="4,36"
-@set hash=A60735AF569F31725AA4378B8E23D3E664DB722EB4098DC406222D0865D2EF3B
+@set hash=8977CD4119C1D3B9EB90B6F348BB4E829707737C04672DFE4026795BFFCA874A
 @set file=AOMBR.7z
 @set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Atualizado: 7-Zip para a versão 18.03 e Wget para a versão 1.19.4, Adicionado: Verificação Inteligente de Arquivos.\n Interface: Unificação de Interfaces, Melhorias Gerais de estabilidade e Corrigido: Erro de compatibilidade com o Windows XP.\n Instalador: Melhorias gerais de segurança e estabilidade.\n Servidor: Melhorias gerais.
 )
@@ -171,9 +171,6 @@ move error.png error.temp
 if exist "ExtractSize.vbs" (
 move ExtractSize.vbs ExtractSize.temp
 )
-if exist "functional.js" (
-move functional.js functional.temp
-)
 if exist "Hash.exe" (
 move Hash.exe HashF.temp
 )
@@ -184,6 +181,7 @@ del Progress.hta
 del Progress.bat
 del Progress.vbs
 del ProgressData.tgpd
+del functional.js
 del tg.png
 del db.png
 del App.tmp
@@ -206,12 +204,6 @@ del ExtractSize.vbs
 move ExtractSize.temp ExtractSize.vbs
 ) else (
 del ExtractSize.temp
-)
-if not exist "functional.js" (
-set /a ERROS=ERROS+FATOR
-move functional.temp functional.js
-) else (
-del functional.temp
 )
 if not exist "Hash.exe" (
 set /a ERROS=ERROS+FATOR

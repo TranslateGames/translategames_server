@@ -1,15 +1,15 @@
 @set caller=0
-@set version2="1002708"
-@set version3="1.0.0.2708"
-@set sversion2c=1500302
+@set version2="1002709"
+@set version3="1.0.0.2709"
+@set sversion2c=1500303
 @set tam7z=218112
 CLS
 if %code%==356-2 (
 @set translationof="Age of Mythology: The Titans Expansion"
-@set tam="3,00"
-@set totaltam=3145954
+@set tam="2,99"
+@set totaltam=3140548
 @set installedsize="4,56"
-@set hash=7F0B2959FFA00B1E781A4ED3D02D8941F2B6480AD604427C8E9BC7F2501F62C5
+@set hash=3BF7DE57BF59C49EEE1BCFBE257F742B0B6323452BE4D093C54A4C09153A9025
 @set file=XAOMBR.7z
 @set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Atualizado: 7-Zip para a versão 18.03 e Wget para a versão 1.19.4, Adicionado: Verificação Inteligente de Arquivos.\n Interface: Unificação de Interfaces, Melhorias Gerais de estabilidade e Corrigido: Erro de compatibilidade com o Windows XP.\n Instalador: Melhorias gerais de segurança e estabilidade.\n Servidor: Melhorias gerais.
 )
@@ -171,9 +171,6 @@ move error.png error.temp
 if exist "ExtractSize.vbs" (
 move ExtractSize.vbs ExtractSize.temp
 )
-if exist "functional.js" (
-move functional.js functional.temp
-)
 if exist "Hash.exe" (
 move Hash.exe HashF.temp
 )
@@ -184,6 +181,7 @@ del Progress.hta
 del Progress.bat
 del Progress.vbs
 del ProgressData.tgpd
+del functional.js
 del tg.png
 del db.png
 del App.tmp
@@ -206,12 +204,6 @@ del ExtractSize.vbs
 move ExtractSize.temp ExtractSize.vbs
 ) else (
 del ExtractSize.temp
-)
-if not exist "functional.js" (
-set /a ERROS=ERROS+FATOR
-move functional.temp functional.js
-) else (
-del functional.temp
 )
 if not exist "Hash.exe" (
 set /a ERROS=ERROS+FATOR
