@@ -1,17 +1,17 @@
 @set caller=0
-@set version2="60012354"
-@set version3="6.0.0.12354"
-@set sversion2c=1500301
+@set version2="60012355"
+@set version3="6.0.0.12355"
+@set sversion2c=1500302
 @set tam7z=218112
 CLS
 if %code%==350-4 (
 @set translationof="Dawn of War - Soulstorm"
 @set tam="3,57"
-@set totaltam=3749711
+@set totaltam=3749354
 @set installedsize="61,33"
-@set hash=5346954CD92C2A2F8B9FF5315A8B2E514DF9E535BE98BA430CFB56DA9E123B92
+@set hash=B967BA6BC122F4BF6694EA0D19E8B071EE4E6A17A370B3F5E9CD9A6CBDC75380
 @set file=SSBR.7z
-@set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Atualizado: 7-Zip para a versão 18.03 e Wget para a versão 1.19.4, Adicionado: Verificação Inteligente de Arquivos.\n Interface: Unificação de Interfaces, Melhorias Gerais de estabilidade.\n Instalador: Melhorias gerais de segurança e estabilidade.\n Servidor: Melhorias gerais.
+@set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Atualizado: 7-Zip para a versão 18.03 e Wget para a versão 1.19.4, Adicionado: Verificação Inteligente de Arquivos.\n Interface: Unificação de Interfaces, Melhorias Gerais de estabilidade e Corrigido: Erro de compatibilidade com o Windows XP.\n Instalador: Melhorias gerais de segurança e estabilidade.\n Servidor: Melhorias gerais.
 )
 CLS
 @set secundarysvr=https://raw.githubusercontent.com/TranslateGames/translategames_server/master/Update/%file%
@@ -277,6 +277,8 @@ goto init
 ) else (
 CLS
 echo 100 > "ProgressBarS.log"
+timeout -m 500 > NUL
+echo close>"StatusPS.log"
 goto init
 )
 
@@ -327,7 +329,6 @@ rd /Q /S UpInstalation
 md UpInstalation
 del UpdateFound.vbs
 del %file%
-timeout -m 500 > NUL
 echo close>"StatusPS.log"
 CLS
 if exist "%file%" (

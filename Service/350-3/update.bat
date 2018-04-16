@@ -1,17 +1,17 @@
 @set caller=0
-@set version2="60012354"
-@set version3="6.0.0.12354"
-@set sversion2c=1500301
+@set version2="60012355"
+@set version3="6.0.0.12355"
+@set sversion2c=1500302
 @set tam7z=218112
 CLS
 if %code%==350-3 (
 @set translationof="Dawn of War - Dark Crusade"
 @set tam="3,43"
-@set totaltam=3599867
+@set totaltam=3599509
 @set installedsize="36,22"
-@set hash=EC6312D7DECC7E4E573CF7EE400DC861FB040FF61251097940E598CE696C83C2
+@set hash=4F04FCD5D606B5E4DB7665E369BC3793D7CD6F74C9129007C5D47CB794DC4323
 @set file=DCBR.7z
-@set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Atualizado: 7-Zip para a versão 18.03 e Wget para a versão 1.19.4, Adicionado: Verificação Inteligente de Arquivos.\n Interface: Unificação de Interfaces, Melhorias Gerais de estabilidade.\n Instalador: Melhorias gerais de segurança e estabilidade.\n Servidor: Melhorias gerais.
+@set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Atualizado: 7-Zip para a versão 18.03 e Wget para a versão 1.19.4, Adicionado: Verificação Inteligente de Arquivos.\n Interface: Unificação de Interfaces, Melhorias Gerais de estabilidade e Corrigido: Erro de compatibilidade com o Windows XP.\n Instalador: Melhorias gerais de segurança e estabilidade.\n Servidor: Melhorias gerais.
 )
 CLS
 @set secundarysvr=https://raw.githubusercontent.com/TranslateGames/translategames_server/master/Update/%file%
@@ -277,6 +277,8 @@ goto init
 ) else (
 CLS
 echo 100 > "ProgressBarS.log"
+timeout -m 500 > NUL
+echo close>"StatusPS.log"
 goto init
 )
 
@@ -327,7 +329,6 @@ rd /Q /S UpInstalation
 md UpInstalation
 del UpdateFound.vbs
 del %file%
-timeout -m 500 > NUL
 echo close>"StatusPS.log"
 CLS
 if exist "%file%" (

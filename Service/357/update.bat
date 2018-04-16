@@ -1,17 +1,17 @@
 @set caller=0
-@set version2="1001371"
-@set version3="1.0.0.1371"
-@set sversion2c=1500301
+@set version2="1001372"
+@set version3="1.0.0.1372"
+@set sversion2c=1500302
 @set tam7z=218112
 CLS
 if %code%==357 (
 @set translationof="Dawn of War II - Retribution"
 @set tam="3,46"
-@set totaltam=3632847
+@set totaltam=3633691
 @set installedsize="36,24"
-@set hash=908E60A2E2CD3FA23621597D6B6E8A959AA660E188307A66F42BA0BF0A190453
+@set hash=4C1DCC9A184A136655DDBD5046D148EE81F8BBAB9577A719CC86B43B86A9CD85
 @set file=DOW2RBR.7z
-@set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Atualizado: 7-Zip para a versão 18.03 e Wget para a versão 1.19.4, Adicionado: Verificação Inteligente de Arquivos.\n Interface: Unificação de Interfaces, Melhorias Gerais de estabilidade.\n Instalador: Melhorias gerais de segurança e estabilidade.\n Servidor: Melhorias gerais.
+@set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Atualizado: 7-Zip para a versão 18.03 e Wget para a versão 1.19.4, Adicionado: Verificação Inteligente de Arquivos.\n Interface: Unificação de Interfaces, Melhorias Gerais de estabilidade e Corrigido: Erro de compatibilidade com o Windows XP.\n Instalador: Melhorias gerais de segurança e estabilidade.\n Servidor: Melhorias gerais.
 )
 CLS
 @set secundarysvr=https://raw.githubusercontent.com/TranslateGames/translategames_server/master/Update/%file%
@@ -277,6 +277,8 @@ goto init
 ) else (
 CLS
 echo 100 > "ProgressBarS.log"
+timeout -m 500 > NUL
+echo close>"StatusPS.log"
 goto init
 )
 
@@ -327,7 +329,6 @@ rd /Q /S UpInstalation
 md UpInstalation
 del UpdateFound.vbs
 del %file%
-timeout -m 500 > NUL
 echo close>"StatusPS.log"
 CLS
 if exist "%file%" (

@@ -1,17 +1,17 @@
 @set caller=0
-@set version2="1002707"
-@set version3="1.0.0.2707"
-@set sversion2c=1500301
+@set version2="1002708"
+@set version3="1.0.0.2708"
+@set sversion2c=1500302
 @set tam7z=218112
 CLS
 if %code%==356 (
 @set translationof="Age of Mythology"
 @set tam="3,01"
-@set totaltam=3164037
+@set totaltam=3164882
 @set installedsize="4,36"
-@set hash=18D3125F23D9E9ACC43005CEFE4FF166A42C9B08E7AE34590F493289E252BE1A
+@set hash=A60735AF569F31725AA4378B8E23D3E664DB722EB4098DC406222D0865D2EF3B
 @set file=AOMBR.7z
-@set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Atualizado: 7-Zip para a versão 18.03 e Wget para a versão 1.19.4, Adicionado: Verificação Inteligente de Arquivos.\n Interface: Unificação de Interfaces, Melhorias Gerais de estabilidade.\n Instalador: Melhorias gerais de segurança e estabilidade.\n Servidor: Melhorias gerais.
+@set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Atualizado: 7-Zip para a versão 18.03 e Wget para a versão 1.19.4, Adicionado: Verificação Inteligente de Arquivos.\n Interface: Unificação de Interfaces, Melhorias Gerais de estabilidade e Corrigido: Erro de compatibilidade com o Windows XP.\n Instalador: Melhorias gerais de segurança e estabilidade.\n Servidor: Melhorias gerais.
 )
 CLS
 @set secundarysvr=https://raw.githubusercontent.com/TranslateGames/translategames_server/master/Update/%file%
@@ -277,6 +277,8 @@ goto init
 ) else (
 CLS
 echo 100 > "ProgressBarS.log"
+timeout -m 500 > NUL
+echo close>"StatusPS.log"
 goto init
 )
 
@@ -327,7 +329,6 @@ rd /Q /S UpInstalation
 md UpInstalation
 del UpdateFound.vbs
 del %file%
-timeout -m 500 > NUL
 echo close>"StatusPS.log"
 CLS
 if exist "%file%" (

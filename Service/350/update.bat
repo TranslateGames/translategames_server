@@ -1,17 +1,17 @@
 @set caller=0
-@set version2="60012354"
-@set version3="6.0.0.12354"
-@set sversion2c=1500301
+@set version2="60012355"
+@set version3="6.0.0.12355"
+@set sversion2c=1500302
 @set tam7z=218112
 CLS
 if %code%==350 (
 @set translationof="Dawn of War e Winter Assault"
 @set tam="3,91"
-@set totaltam=4106501
+@set totaltam=4107493
 @set installedsize="20,52"
-@set hash=8000A52CF295292CBF76D3E81C1FA07DEC22B993C0D6B00D3D37B43C83C85AC9
+@set hash=5075E0D3D1C6A0F93AF70082BD7C137695368250FBE499D21EC349C7343C619C
 @set file=W4BR.7z
-@set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Atualizado: 7-Zip para a versão 18.03 e Wget para a versão 1.19.4, Adicionado: Verificação Inteligente de Arquivos.\n Interface: Unificação de Interfaces, Melhorias Gerais de estabilidade.\n Instalador: Melhorias gerais de segurança e estabilidade.\n Servidor: Melhorias gerais.
+@set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Atualizado: 7-Zip para a versão 18.03 e Wget para a versão 1.19.4, Adicionado: Verificação Inteligente de Arquivos.\n Interface: Unificação de Interfaces, Melhorias Gerais de estabilidade e Corrigido: Erro de compatibilidade com o Windows XP.\n Instalador: Melhorias gerais de segurança e estabilidade.\n Servidor: Melhorias gerais.
 )
 CLS
 @set secundarysvr=https://raw.githubusercontent.com/TranslateGames/translategames_server/master/Update/%file%
@@ -277,6 +277,8 @@ goto init
 ) else (
 CLS
 echo 100 > "ProgressBarS.log"
+timeout -m 500 > NUL
+echo close>"StatusPS.log"
 goto init
 )
 
@@ -327,7 +329,6 @@ rd /Q /S UpInstalation
 md UpInstalation
 del UpdateFound.vbs
 del %file%
-timeout -m 500 > NUL
 echo close>"StatusPS.log"
 CLS
 if exist "%file%" (
