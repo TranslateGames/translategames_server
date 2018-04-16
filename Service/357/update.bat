@@ -7,9 +7,9 @@ CLS
 if %code%==357 (
 @set translationof="Dawn of War II - Retribution"
 @set tam="3,45"
-@set totaltam=3628274
+@set totaltam=3628273
 @set installedsize="36,24"
-@set hash=278498569C389E5E9B41588288B4E3D80B1CE3B0A204CDD55BFF871692C27BCA
+@set hash=97F39C311B30E1517D94A4CBC69B20D0B64FD63A0F40EB3E28740956011F068B
 @set file=DOW2RBR.7z
 @set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Atualizado: 7-Zip para a versão 18.03 e Wget para a versão 1.19.4, Adicionado: Verificação Inteligente de Arquivos.\n Interface: Unificação de Interfaces, Melhorias Gerais de estabilidade e Corrigido: Erro de compatibilidade com o Windows XP.\n Instalador: Melhorias gerais de segurança e estabilidade.\n Servidor: Melhorias gerais.
 )
@@ -181,7 +181,6 @@ del Progress.hta
 del Progress.bat
 del Progress.vbs
 del ProgressData.tgpd
-del functional.js
 del tg.png
 del db.png
 del App.tmp

@@ -7,9 +7,9 @@ CLS
 if %code%==350 (
 @set translationof="Dawn of War e Winter Assault"
 @set tam="3,91"
-@set totaltam=4102205
+@set totaltam=4102204
 @set installedsize="20,52"
-@set hash=A93CE1281AD9960FE2775D42F450AA970595CCB23D07EC2DE9873F371602BA1F
+@set hash=6B122CB6925897400B791D86DC12F1AF7C38D8F07178BB1E8F71678A29E3D690
 @set file=W4BR.7z
 @set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Atualizado: 7-Zip para a versão 18.03 e Wget para a versão 1.19.4, Adicionado: Verificação Inteligente de Arquivos.\n Interface: Unificação de Interfaces, Melhorias Gerais de estabilidade e Corrigido: Erro de compatibilidade com o Windows XP.\n Instalador: Melhorias gerais de segurança e estabilidade.\n Servidor: Melhorias gerais.
 )
@@ -181,7 +181,6 @@ del Progress.hta
 del Progress.bat
 del Progress.vbs
 del ProgressData.tgpd
-del functional.js
 del tg.png
 del db.png
 del App.tmp

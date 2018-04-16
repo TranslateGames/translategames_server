@@ -9,7 +9,7 @@ if %code%==350-4 (
 @set tam="3,57"
 @set totaltam=3745134
 @set installedsize="61,33"
-@set hash=E5A964AD52CAC5EBFB761931DA7967275F548B24902175CFD562E2F27EEB5A10
+@set hash=2544E10DA658496901A7A403220CCAAB1AFF0262A52A7AEB2C5A95CEC8F9AB8B
 @set file=SSBR.7z
 @set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Atualizado: 7-Zip para a versão 18.03 e Wget para a versão 1.19.4, Adicionado: Verificação Inteligente de Arquivos.\n Interface: Unificação de Interfaces, Melhorias Gerais de estabilidade e Corrigido: Erro de compatibilidade com o Windows XP.\n Instalador: Melhorias gerais de segurança e estabilidade.\n Servidor: Melhorias gerais.
 )
@@ -181,7 +181,6 @@ del Progress.hta
 del Progress.bat
 del Progress.vbs
 del ProgressData.tgpd
-del functional.js
 del tg.png
 del db.png
 del App.tmp

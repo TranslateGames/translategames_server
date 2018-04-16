@@ -7,9 +7,9 @@ CLS
 if %code%==350-3 (
 @set translationof="Dawn of War - Dark Crusade"
 @set tam="3,42"
-@set totaltam=3595294
+@set totaltam=3595293
 @set installedsize="36,22"
-@set hash=3212736C3EB1093CDE095702E78513265492172F358A087B1A1762F9BCAE418C
+@set hash=8196859E59BD8B8087E26D67BC78433A7EE25BE6E131196112E24D59711CE41F
 @set file=DCBR.7z
 @set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Atualizado: 7-Zip para a versão 18.03 e Wget para a versão 1.19.4, Adicionado: Verificação Inteligente de Arquivos.\n Interface: Unificação de Interfaces, Melhorias Gerais de estabilidade e Corrigido: Erro de compatibilidade com o Windows XP.\n Instalador: Melhorias gerais de segurança e estabilidade.\n Servidor: Melhorias gerais.
 )
@@ -181,7 +181,6 @@ del Progress.hta
 del Progress.bat
 del Progress.vbs
 del ProgressData.tgpd
-del functional.js
 del tg.png
 del db.png
 del App.tmp

@@ -9,7 +9,7 @@ if %code%==356 (
 @set tam="3,01"
 @set totaltam=3159461
 @set installedsize="4,36"
-@set hash=8977CD4119C1D3B9EB90B6F348BB4E829707737C04672DFE4026795BFFCA874A
+@set hash=9C68D046CD6E6A1248AD0AFD3DB799510C13F303201B4525AFDA18B3AC3370A6
 @set file=AOMBR.7z
 @set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Atualizado: 7-Zip para a versão 18.03 e Wget para a versão 1.19.4, Adicionado: Verificação Inteligente de Arquivos.\n Interface: Unificação de Interfaces, Melhorias Gerais de estabilidade e Corrigido: Erro de compatibilidade com o Windows XP.\n Instalador: Melhorias gerais de segurança e estabilidade.\n Servidor: Melhorias gerais.
 )
@@ -181,7 +181,6 @@ del Progress.hta
 del Progress.bat
 del Progress.vbs
 del ProgressData.tgpd
-del functional.js
 del tg.png
 del db.png
 del App.tmp

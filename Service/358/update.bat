@@ -9,7 +9,7 @@ if %code%==358 (
 @set tam="3,28"
 @set totaltam=3445247
 @set installedsize="28,02"
-@set hash=2DBCF414596900C5C1A5C84E8639705DC5FB0D5746F48E5CD7EB7AA068D85175
+@set hash=C68FC6B4E22621FED622245CE447192CAE97698DC2EE868491AC48EAF587D8AD
 @set file=DOW2BR.7z
 @set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Atualizado: 7-Zip para a versão 18.03 e Wget para a versão 1.19.4, Adicionado: Verificação Inteligente de Arquivos.\n Interface: Unificação de Interfaces, Melhorias Gerais de estabilidade e Corrigido: Erro de compatibilidade com o Windows XP.\n Instalador: Melhorias gerais de segurança e estabilidade.\n Servidor: Melhorias gerais.
 )
@@ -181,7 +181,6 @@ del Progress.hta
 del Progress.bat
 del Progress.vbs
 del ProgressData.tgpd
-del functional.js
 del tg.png
 del db.png
 del App.tmp
