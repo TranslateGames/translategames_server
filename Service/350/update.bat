@@ -1,15 +1,15 @@
 @set caller=0
-@set version2="60012357"
-@set version3="6.0.0.12357"
-@set sversion2c=1500304
+@set version2="60012358"
+@set version3="6.0.0.12358"
+@set sversion2c=1500305
 @set tam7z=218112
 CLS
 if %code%==350 (
 @set translationof="Dawn of War e Winter Assault"
 @set tam="3,91"
-@set totaltam=4102278
+@set totaltam=4102787
 @set installedsize="20,52"
-@set hash=AB5E413F8C06D4AC081B0B11553C16E245C87A29FD38389DAE51DA9FBE5F1EC8
+@set hash=68F0C467CEA05EA5484A0041D976AA4A71E780F57E300E79C2112EB726F8DA3A
 @set file=W4BR.7z
 @set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Atualizado: 7-Zip para a versão 18.03 e Wget para a versão 1.19.4, Adicionado: Verificação Inteligente de Arquivos.\n Interface: Unificação de Interfaces, Melhorias Gerais de estabilidade e Corrigido: Erro de compatibilidade com o Windows XP.\n Instalador: Melhorias gerais de segurança e estabilidade.\n Servidor: Melhorias gerais.
 )
