@@ -1,15 +1,15 @@
 @set caller=0
-@set version2="60012360"
-@set version3="6.0.0.12360"
-@set sversion2c=1500307
+@set version2="60012361"
+@set version3="6.0.0.12361"
+@set sversion2c=1500308
 @set tam7z=218112
 CLS
 if %code%==350-4 (
 @set translationof="Dawn of War - Soulstorm"
 @set tam="3,57"
-@set totaltam=3745492
+@set totaltam=3745748
 @set installedsize="61,33"
-@set hash=74B7E66086DC653710E5A07429D07F4E0D4E4811C4FA993862D7912802AA1224
+@set hash=C072962BC59400A18D611C74229C7EE401906D4934B3EF442D38892992B10C2B
 @set file=SSBR.7z
 @set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Atualizado: 7-Zip para a versão 18.03 e Wget para a versão 1.19.4, Adicionado: Verificação Inteligente de Arquivos.\n Interface: Unificação de Interfaces, Melhorias Gerais de estabilidade e Corrigido: Erro de compatibilidade com o Windows XP.\n Instalador: Melhorias gerais de segurança e estabilidade.\n Servidor: Melhorias gerais.
 )
@@ -408,7 +408,7 @@ echo -%file%-%totaltam%- > "ProgressFile.log"
 CLS
 if exist "UpdaterUI.tgapp" (
 cd .\
-start App.exe "%CD%\UpdaterUI.tgapp" /:Init /:%mode%
+start App.exe "%CD%\UpdaterUI.tgapp" /:Init /:%mode% /:%code%
 )
 goto CLCheck
 
@@ -432,7 +432,7 @@ echo -%file%-%totaltam%- > "ProgressFile.log"
 CLS
 if exist "UpdaterUI.tgapp" (
 cd .\
-start App.exe "%CD%\UpdaterUI.tgapp" /:Init /:%mode%
+start App.exe "%CD%\UpdaterUI.tgapp" /:Init /:%mode% /:%code%
 )
 goto CLCheck
 
@@ -473,7 +473,7 @@ echo %mode%>"UpdateMode.log
 CLS
 if exist "UpdaterUI.tgapp" (
 cd .\
-start App.exe "%CD%\UpdaterUI.tgapp" /:Init /:%mode%
+start App.exe "%CD%\UpdaterUI.tgapp" /:Init /:%mode% /:%code%
 ) else if exist "Progress.tgapp" (
 cd .\
 start App.exe "%CD%\Progress.tgapp" /:Init /:%file% /:%totaltam% /:%mode%

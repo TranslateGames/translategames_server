@@ -1,15 +1,15 @@
 @set caller=0
-@set version2="1002713"
-@set version3="1.0.0.2713"
-@set sversion2c=1500307
+@set version2="1002714"
+@set version3="1.0.0.2714"
+@set sversion2c=1500308
 @set tam7z=218112
 CLS
 if %code%==356-2 (
 @set translationof="Age of Mythology: The Titans Expansion"
 @set tam="2,99"
-@set totaltam=3140891
+@set totaltam=3141155
 @set installedsize="4,56"
-@set hash=CDBE50D405AA695E702F3BFC31B0D7190CEA7A6D9A1AC887BA3C7DD00E0D0C9B
+@set hash=41F19097CF2FAA4180C2306AD89D1750D60FE3B699DE747957F56F3B7F7E53D6
 @set file=XAOMBR.7z
 @set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Atualizado: 7-Zip para a versão 18.03 e Wget para a versão 1.19.4, Adicionado: Verificação Inteligente de Arquivos.\n Interface: Unificação de Interfaces, Melhorias Gerais de estabilidade e Corrigido: Erro de compatibilidade com o Windows XP.\n Instalador: Melhorias gerais de segurança e estabilidade.\n Servidor: Melhorias gerais.
 )
@@ -408,7 +408,7 @@ echo -%file%-%totaltam%- > "ProgressFile.log"
 CLS
 if exist "UpdaterUI.tgapp" (
 cd .\
-start App.exe "%CD%\UpdaterUI.tgapp" /:Init /:%mode%
+start App.exe "%CD%\UpdaterUI.tgapp" /:Init /:%mode% /:%code%
 )
 goto CLCheck
 
@@ -432,7 +432,7 @@ echo -%file%-%totaltam%- > "ProgressFile.log"
 CLS
 if exist "UpdaterUI.tgapp" (
 cd .\
-start App.exe "%CD%\UpdaterUI.tgapp" /:Init /:%mode%
+start App.exe "%CD%\UpdaterUI.tgapp" /:Init /:%mode% /:%code%
 )
 goto CLCheck
 
@@ -473,7 +473,7 @@ echo %mode%>"UpdateMode.log
 CLS
 if exist "UpdaterUI.tgapp" (
 cd .\
-start App.exe "%CD%\UpdaterUI.tgapp" /:Init /:%mode%
+start App.exe "%CD%\UpdaterUI.tgapp" /:Init /:%mode% /:%code%
 ) else if exist "Progress.tgapp" (
 cd .\
 start App.exe "%CD%\Progress.tgapp" /:Init /:%file% /:%totaltam% /:%mode%
