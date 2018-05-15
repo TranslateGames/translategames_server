@@ -1,17 +1,17 @@
 @set caller=0
-@set version2="1001024"
-@set version3="1.0.0.1024"
-@set sversion2c=1500311
+@set version2="1001025"
+@set version3="1.0.0.1025"
+@set sversion2c=1500312
 @set tam7z=218112
 CLS
 if %code%==358 (
 @set translationof="Dawn of War II e Chaos Rising"
-@set tam="3,28"
-@set totaltam=3445327
-@set installedsize="28,02"
-@set hash=779324A20ECD27223C8B0050A950CABD1B250AE3D62427B7F7DB30FE594453F1
+@set tam="3,23"
+@set totaltam=3395209
+@set installedsize="27,97"
+@set hash=CD59A6E23A60091FCD2676930847B8AC926AFB8505EC85F433BFB14F1CC414EE
 @set file=DOW2BR.7z
-@set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Atualizado: 7-Zip para a versão 18.03 e Wget para a versão 1.19.4, Adicionado: Verificação Inteligente de Arquivos.\n Interface: Unificação de Interfaces, Melhorias Gerais de estabilidade e Corrigido: Erro de compatibilidade com o Windows XP.\n Instalador: Melhorias gerais de segurança e estabilidade.\n Servidor: Melhorias gerais.
+@set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Atualizado: 7-Zip para a versão 18.03 e Wget para a versão 1.19.4, Adicionado: Verificação Inteligente de Arquivos.\n Interface: Unificação de Interfaces, Melhorias Gerais de estabilidade e Corrigido: Erro de compatibilidade com o Windows Vista.\n Instalador: Melhorias gerais de segurança e estabilidade.\n Servidor: Melhorias gerais.
 )
 CLS
 @set secundarysvr=https://raw.githubusercontent.com/TranslateGames/translategames_server/master/Update/%file%
