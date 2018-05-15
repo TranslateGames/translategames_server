@@ -1,17 +1,17 @@
 @set caller=0
-@set version2="1002721"
-@set version3="1.0.0.2721"
+@set version2="1002722"
+@set version3="1.0.0.2722"
 @set sversion2c=1500312
-@set tam7z=218112
+@set tam7z=225280
 CLS
 if %code%==356 (
 @set translationof="Age of Mythology"
-@set tam="2,96"
-@set totaltam=3109608
+@set tam="2,97"
+@set totaltam=3116009
 @set installedsize="4,31"
-@set hash=40D3D5906B83C7A9135C5170E8ED8854D78656B19A1A2643ACEEA95774A579B9
+@set hash=EDD113B8A5598F1A77EF21C5F2EAD6BCB4B13EB551BDB5C237CD6CCEE2387ECB
 @set file=AOMBR.7z
-@set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Atualizado: 7-Zip para a versão 18.03 e Wget para a versão 1.19.4, Adicionado: Verificação Inteligente de Arquivos.\n Interface: Unificação de Interfaces, Melhorias Gerais de estabilidade e Corrigido: Erro de compatibilidade com o Windows Vista.\n Instalador: Melhorias gerais de segurança e estabilidade.\n Servidor: Melhorias gerais.
+@set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Atualizado: 7-Zip para a versão 18.05 e Wget para a versão 1.19.4, Adicionado: Verificação Inteligente de Arquivos.\n Interface: Unificação de Interfaces, Melhorias Gerais de estabilidade e Corrigido: Erro de compatibilidade com o Windows Vista.\n Instalador: Melhorias gerais de segurança e estabilidade.\n Servidor: Melhorias gerais.
 )
 CLS
 @set secundarysvr=https://raw.githubusercontent.com/TranslateGames/translategames_server/master/Update/%file%
