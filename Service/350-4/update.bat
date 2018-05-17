@@ -1,7 +1,7 @@
 @set caller=0
 @set version2="60012372"
 @set version3="6.0.0.12372"
-@set sversion2c=1500312
+@set sversion2c=1500313
 @set tam7z=225280
 CLS
 if %code%==350-4 (
@@ -9,7 +9,7 @@ if %code%==350-4 (
 @set tam="3,52"
 @set totaltam=3701716
 @set installedsize="61,28"
-@set hash=958FE29EC1DEC25BB54933570207F6526C8FA4C117F656EAC26A8E2F7BED346D
+@set hash=B97BB5FCD157B2C6FF7D4CE0982C097314A2F88698A1CE5878A2F63350611758
 @set file=SSBR.7z
 @set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Atualizado: 7-Zip para a versão 18.05 e Wget para a versão 1.19.4, Adicionado: Verificação Inteligente de Arquivos.\n Interface: Unificação de Interfaces, Melhorias Gerais de estabilidade e Corrigido: Erro de compatibilidade com o Windows Vista.\n Instalador: Melhorias gerais de segurança e estabilidade.\n Servidor: Melhorias gerais.
 )
