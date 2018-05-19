@@ -1,15 +1,15 @@
 @set caller=0
-@set version2="1002727"
-@set version3="1.0.0.2727"
-@set sversion2c=1500313
+@set version2="1002728"
+@set version3="1.0.0.2728"
+@set sversion2c=1500314
 @set tam7z=225280
 CLS
 if %code%==356 (
 @set translationof="Age of Mythology"
 @set tam="2,97"
-@set totaltam=3116139
-@set installedsize="4,31"
-@set hash=D67FD88466267E46B7C557B1A0F24618118E4171C12639814058F3D97752601C
+@set totaltam=3117203
+@set installedsize="4,32"
+@set hash=08B1B4AECF2A450F1C7D00958F959C0E70085C2095782741631F693D017247A3
 @set file=AOMBR.7z
 @set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Atualizado: 7-Zip para a versão 18.05 e Wget para a versão 1.19.4, Adicionado: Verificação Inteligente de Arquivos.\n Interface: Unificação de Interfaces, Melhorias Gerais de estabilidade e Corrigido: Erro de compatibilidade com o Windows Vista.\n Instalador: Melhorias gerais de segurança e estabilidade.\n Servidor: Melhorias gerais.
 )
@@ -306,12 +306,17 @@ del ChangeLog.log
 if %version%==%version2% (
 title Atualizador%code%t
 timeout -m 500 > NUL
-echo forceclose>"StatusPS.log"
 CLS
 echo %date%-%time% Já está Atualizado! >> "UpdateLog.txt"
 echo Atualizado!
 timeout -m 500 > NUL
+set /p firstline=<StatusIS.log
+if %firstline%==ready (
+echo updated > "StatusIS.log"
+) else (
+echo forceclose>"StatusPS.log"
 start wscript UpToDate.vbs
+)
 goto exit
 ) else if %version% lss %version2% (
 title Atualizador%code%t

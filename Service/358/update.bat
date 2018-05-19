@@ -1,15 +1,15 @@
 @set caller=0
-@set version2="1001032"
-@set version3="1.0.0.1032"
-@set sversion2c=1500313
+@set version2="1001033"
+@set version3="1.0.0.1033"
+@set sversion2c=1500314
 @set tam7z=225280
 CLS
 if %code%==358 (
 @set translationof="Dawn of War II e Chaos Rising"
 @set tam="3,24"
-@set totaltam=3401925
-@set installedsize="27,97"
-@set hash=E2A4E53E676D85D3B8593038A40CD9F18183934FA079618791EAF76C4348921B
+@set totaltam=3403023
+@set installedsize="27,98"
+@set hash=7BB2F55BDF9D1149F2D3FF33FAE525348C09D63CC64FF40C22C75074BD34F972
 @set file=DOW2BR.7z
 @set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Atualizado: 7-Zip para a versão 18.05 e Wget para a versão 1.19.4, Adicionado: Verificação Inteligente de Arquivos.\n Interface: Unificação de Interfaces, Melhorias Gerais de estabilidade e Corrigido: Erro de compatibilidade com o Windows Vista.\n Instalador: Melhorias gerais de segurança e estabilidade.\n Servidor: Melhorias gerais.
 )
@@ -306,12 +306,17 @@ del ChangeLog.log
 if %version%==%version2% (
 title Atualizador%code%t
 timeout -m 500 > NUL
-echo forceclose>"StatusPS.log"
 CLS
 echo %date%-%time% Já está Atualizado! >> "UpdateLog.txt"
 echo Atualizado!
 timeout -m 500 > NUL
+set /p firstline=<StatusIS.log
+if %firstline%==ready (
+echo updated > "StatusIS.log"
+) else (
+echo forceclose>"StatusPS.log"
 start wscript UpToDate.vbs
+)
 goto exit
 ) else if %version% lss %version2% (
 title Atualizador%code%t

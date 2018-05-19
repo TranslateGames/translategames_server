@@ -1,15 +1,15 @@
 @set caller=0
-@set version2="60012374"
-@set version3="6.0.0.12374"
-@set sversion2c=1500313
+@set version2="60012375"
+@set version3="6.0.0.12375"
+@set sversion2c=1500314
 @set tam7z=225280
 CLS
 if %code%==350-3 (
 @set translationof="Dawn of War - Dark Crusade"
 @set tam="3,38"
-@set totaltam=3551971
+@set totaltam=3552315
 @set installedsize="36,17"
-@set hash=830A8C971828493C20D7AFF7D0C5DE874A49CD604D2EE38734DB51390AB73E0B
+@set hash=59061D1111ADE20EBECA03C546F3477E3FEF3948C5AF0E793C4A2F5A2AB62ECD
 @set file=DCBR.7z
 @set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Atualizado: 7-Zip para a versão 18.05 e Wget para a versão 1.19.4, Adicionado: Verificação Inteligente de Arquivos.\n Interface: Unificação de Interfaces, Melhorias Gerais de estabilidade e Corrigido: Erro de compatibilidade com o Windows Vista.\n Instalador: Melhorias gerais de segurança e estabilidade.\n Servidor: Melhorias gerais.
 )
@@ -306,12 +306,17 @@ del ChangeLog.log
 if %version%==%version2% (
 title Atualizador%code%t
 timeout -m 500 > NUL
-echo forceclose>"StatusPS.log"
 CLS
 echo %date%-%time% Já está Atualizado! >> "UpdateLog.txt"
 echo Atualizado!
 timeout -m 500 > NUL
+set /p firstline=<StatusIS.log
+if %firstline%==ready (
+echo updated > "StatusIS.log"
+) else (
+echo forceclose>"StatusPS.log"
 start wscript UpToDate.vbs
+)
 goto exit
 ) else if %version% lss %version2% (
 title Atualizador%code%t
