@@ -7,9 +7,9 @@ CLS
 if %code%==356-2 (
 @set translationof="Age of Mythology: The Titans Expansion"
 @set tam="2,95"
-@set totaltam=3097652
+@set totaltam=3097653
 @set installedsize="4,51"
-@set hash=4F099C5E6235DD06CDB29AD1FC88F6A0CF671CE1577595F7A060CDE305CED54F
+@set hash=5927F5D89BABF370B5E0E01EF98C8CCE90AF4C512AA5AF2409AA0C654CAF32B5
 @set file=XAOMBR.7z
 @set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Atualizado: 7-Zip para a versão 18.05 e Wget para a versão 1.19.4, Adicionado: Verificação Inteligente de Arquivos.\n Interface: Unificação de Interfaces, Melhorias Gerais de estabilidade e Corrigido: Erro de compatibilidade com o Windows Vista.\n Instalador: Melhorias gerais de segurança e estabilidade.\n Servidor: Melhorias gerais.
 )
@@ -294,7 +294,20 @@ PrepareProgress.vbs
 CLS
 goto init
 
+:uptodate
+set /p firstline=<StatusIS.log
+if %firstline%==ready (
+echo updated > "StatusIS.log"
+) else (
+echo forceclose>"StatusPS.log"
+start wscript UpToDate.vbs
+)
+CLS
+echo Atualizado!
+goto exit
+
 :init
+CLS
 echo 0 > "Status.log"
 echo 0 > "StatusP.log"
 echo -0-90- > "ProgressBar.log"
@@ -310,14 +323,7 @@ CLS
 echo %date%-%time% Já está Atualizado! >> "UpdateLog.txt"
 echo Atualizado!
 timeout -m 500 > NUL
-set /p firstline=<StatusIS.log
-if %firstline%==ready (
-echo updated > "StatusIS.log"
-) else (
-echo forceclose>"StatusPS.log"
-start wscript UpToDate.vbs
-)
-goto exit
+goto uptodate
 ) else if %version% lss %version2% (
 title Atualizador%code%t
 del /Q /F /S UpInstalation\*

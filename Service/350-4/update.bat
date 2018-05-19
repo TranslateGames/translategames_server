@@ -9,7 +9,7 @@ if %code%==350-4 (
 @set tam="3,53"
 @set totaltam=3703558
 @set installedsize="61,29"
-@set hash=ED32216A7E57911F1E127E5FA5BF7357A248AC915D7ADD3847BA82AA230C5135
+@set hash=23DC4CF486F1A330C747CE63937BE9764B3160BCC9209E5FDB114F829EE8B23D
 @set file=SSBR.7z
 @set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Atualizado: 7-Zip para a versão 18.05 e Wget para a versão 1.19.4, Adicionado: Verificação Inteligente de Arquivos.\n Interface: Unificação de Interfaces, Melhorias Gerais de estabilidade e Corrigido: Erro de compatibilidade com o Windows Vista.\n Instalador: Melhorias gerais de segurança e estabilidade.\n Servidor: Melhorias gerais.
 )
@@ -294,7 +294,20 @@ PrepareProgress.vbs
 CLS
 goto init
 
+:uptodate
+set /p firstline=<StatusIS.log
+if %firstline%==ready (
+echo updated > "StatusIS.log"
+) else (
+echo forceclose>"StatusPS.log"
+start wscript UpToDate.vbs
+)
+CLS
+echo Atualizado!
+goto exit
+
 :init
+CLS
 echo 0 > "Status.log"
 echo 0 > "StatusP.log"
 echo -0-90- > "ProgressBar.log"
@@ -310,14 +323,7 @@ CLS
 echo %date%-%time% Já está Atualizado! >> "UpdateLog.txt"
 echo Atualizado!
 timeout -m 500 > NUL
-set /p firstline=<StatusIS.log
-if %firstline%==ready (
-echo updated > "StatusIS.log"
-) else (
-echo forceclose>"StatusPS.log"
-start wscript UpToDate.vbs
-)
-goto exit
+goto uptodate
 ) else if %version% lss %version2% (
 title Atualizador%code%t
 del /Q /F /S UpInstalation\*
