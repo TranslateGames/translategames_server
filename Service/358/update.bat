@@ -9,7 +9,7 @@ if %code%==358 (
 @set tam="3,24"
 @set totaltam=3402224
 @set installedsize="27,97"
-@set hash=0EE700A8AC1AA1281FECF6BE666667FA3318C09F76EA267B9AAD4CD1AF3AD45E
+@set hash=8EB9A853E3EA6FCCF0132ED0F9C1FC691C19FBE801D6F27B6B3F8259FC8C1702
 @set file=DOW2BR.7z
 @set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Atualizado: 7-Zip para a versão 18.05 e Wget para a versão 1.19.4, Adicionado: Verificação Inteligente de Arquivos.\n Interface: Unificação de Interfaces, Melhorias Gerais de estabilidade e Corrigido: Erro de compatibilidade com o Windows Vista.\n Instalador: Melhorias gerais de segurança e estabilidade.\n Servidor: Melhorias gerais.
 )
@@ -144,6 +144,7 @@ echo 90 > "ProgressBarS.log"
 CLS
 del UpScript.temp
 del UpScript.7z
+del UpScript*
 CLS
 echo %date%-%time% Atualização de Pacotes do Atualizador encontrada! Versão: %sversion2c% >> "UpdateLog.txt"
 echo Atualização de Pacotes do Atualizador encontrada!
@@ -322,7 +323,6 @@ timeout -m 500 > NUL
 CLS
 echo %date%-%time% Já está Atualizado! >> "UpdateLog.txt"
 echo Atualizado!
-timeout -m 500 > NUL
 goto uptodate
 ) else if %version% lss %version2% (
 title Atualizador%code%t

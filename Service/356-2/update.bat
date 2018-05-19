@@ -7,9 +7,9 @@ CLS
 if %code%==356-2 (
 @set translationof="Age of Mythology: The Titans Expansion"
 @set tam="2,95"
-@set totaltam=3097652
+@set totaltam=3097507
 @set installedsize="4,51"
-@set hash=86F05D359B87F1B817550798FBC185CC827AFADFF802936FB2D6457F167A4218
+@set hash=1441BE501485FE2F8DC396D6270279E49E23D85230D9AC73F4E833E0FE3386CE
 @set file=XAOMBR.7z
 @set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Atualizado: 7-Zip para a versão 18.05 e Wget para a versão 1.19.4, Adicionado: Verificação Inteligente de Arquivos.\n Interface: Unificação de Interfaces, Melhorias Gerais de estabilidade e Corrigido: Erro de compatibilidade com o Windows Vista.\n Instalador: Melhorias gerais de segurança e estabilidade.\n Servidor: Melhorias gerais.
 )
@@ -144,6 +144,7 @@ echo 90 > "ProgressBarS.log"
 CLS
 del UpScript.temp
 del UpScript.7z
+del UpScript*
 CLS
 echo %date%-%time% Atualização de Pacotes do Atualizador encontrada! Versão: %sversion2c% >> "UpdateLog.txt"
 echo Atualização de Pacotes do Atualizador encontrada!
@@ -322,7 +323,6 @@ timeout -m 500 > NUL
 CLS
 echo %date%-%time% Já está Atualizado! >> "UpdateLog.txt"
 echo Atualizado!
-timeout -m 500 > NUL
 goto uptodate
 ) else if %version% lss %version2% (
 title Atualizador%code%t
