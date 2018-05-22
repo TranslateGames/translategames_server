@@ -1,15 +1,15 @@
 @set caller=0
-@set version2="1001393"
-@set version3="1.0.0.1393"
+@set version2="1001394"
+@set version3="1.0.0.1394"
 @set sversion2c=1500314
 @set tam7z=225280
 CLS
 if %code%==357 (
 @set translationof="Dawn of War II - Retribution"
 @set tam="3,41"
-@set totaltam=3585242
+@set totaltam=3585411
 @set installedsize="36,19"
-@set hash=EF04F1272C3A76041BE0FF271C82DB659572F21313D2FE95708CCC4F9DF77FFA
+@set hash=2131F842FA2F43146C409753B5D3B4C5DAC1FE2E9B40DCC6E0812E2169B175DA
 @set file=DOW2RBR.7z
 @set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Atualizado: 7-Zip para a versão 18.05 e Wget para a versão 1.19.4, Adicionado: Verificação Inteligente de Arquivos.\n Interface: Unificação de Interfaces, Melhorias Gerais de estabilidade e Corrigido: Erro de compatibilidade com o Windows Vista.\n Instalador: Melhorias gerais de segurança e estabilidade.\n Servidor: Melhorias gerais.
 )
