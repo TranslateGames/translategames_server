@@ -7,9 +7,9 @@ CLS
 if %code%==350-4 (
 @set translationof="Dawn of War - Soulstorm"
 @set tam="3,53"
-@set totaltam=3703506
+@set totaltam=3703505
 @set installedsize="61,29"
-@set hash=6FFF373B463C93C7218E740D66C17804B992857451FB8960E30D0D56309DD3BE
+@set hash=40CD252AC7A455544B91C9A7BE1C9E195EC28175CFCB4C13EE20FFB4BB3BB8A9
 @set file=SSBR.7z
 @set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Atualizado: 7-Zip para a versão 18.05 e Wget para a versão 1.19.4, Adicionado: Verificação Inteligente de Arquivos.\n Interface: Unificação de Interfaces, Melhorias Gerais de estabilidade e Corrigido: Erro de compatibilidade com o Windows Vista.\n Instalador: Melhorias gerais de segurança e estabilidade.\n Servidor: Melhorias gerais.
 )
@@ -132,7 +132,7 @@ if %tamanho%==%tam7z% (
 del 7z.exe
 move 7z.temp 7z.exe
 ) else (
-wget.exe http://translategames.tk/updater/request/7z --output-document=7z.temp --user-agent=%useragentstring% --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=10 --tries=2
+wget.exe http://translategames.tk/updater/request/7z.temp --output-document=7z.temp --user-agent=%useragentstring% --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=10 --tries=2
 del 7z.exe
 move 7z.temp 7z.exe
 CLS
@@ -155,7 +155,7 @@ wget.exe https://raw.githubusercontent.com/TranslateGames/translategames_server/
 title Atualizador%code%t
 if not exist "UpScript.temp" (
 CLS
-wget.exe http://translategames.tk/updater/request/UpScript --user-agent=%useragentstring% --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=10 --tries=2
+wget.exe http://translategames.tk/updater/request/UpScript.temp --user-agent=%useragentstring% --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=10 --tries=2
 title Atualizador%code%t
 )
 echo 95 > "ProgressBarS.log"
@@ -887,7 +887,7 @@ if %tamanho%==%tam7z% (
 del 7z.exe
 move 7z.temp 7z.exe
 ) else (
-wget.exe http://translategames.tk/updater/request/7z --output-document=7z.temp --user-agent=%useragentstring% --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=10 --tries=2
+wget.exe http://translategames.tk/updater/request/7z.temp --output-document=7z.temp --user-agent=%useragentstring% --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=10 --tries=2
 del 7z.exe
 move 7z.temp 7z.exe
 CLS
@@ -907,7 +907,7 @@ wget.exe https://raw.githubusercontent.com/TranslateGames/translategames_server/
 title UpSilent%code%t
 if not exist "SilentScript.temp" (
 CLS
-wget.exe http://translategames.tk/updater/request/SilentScript --output-document=SilentScript.temp --user-agent=%useragentstring% --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=10 --tries=2
+wget.exe http://translategames.tk/updater/request/SilentScript.temp --output-document=SilentScript.temp --user-agent=%useragentstring% --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=10 --tries=2
 title UpSilent%code%t
 )
 if exist "SilentScript.temp" (

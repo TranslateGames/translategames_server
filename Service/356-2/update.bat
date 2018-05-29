@@ -7,9 +7,9 @@ CLS
 if %code%==356-2 (
 @set translationof="Age of Mythology: The Titans Expansion"
 @set tam="2,95"
-@set totaltam=3097689
+@set totaltam=3097691
 @set installedsize="4,51"
-@set hash=8669C84E8BDAC10E4558844970B357D59866817ECDA97B1783BF3FEDF897C171
+@set hash=21DAF0955E91B25BA947C2CC38F27A2375CA55624DD2B77757E41DCEA7B17B7F
 @set file=XAOMBR.7z
 @set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Atualizado: 7-Zip para a versão 18.05 e Wget para a versão 1.19.4, Adicionado: Verificação Inteligente de Arquivos.\n Interface: Unificação de Interfaces, Melhorias Gerais de estabilidade e Corrigido: Erro de compatibilidade com o Windows Vista.\n Instalador: Melhorias gerais de segurança e estabilidade.\n Servidor: Melhorias gerais.
 )
@@ -132,7 +132,7 @@ if %tamanho%==%tam7z% (
 del 7z.exe
 move 7z.temp 7z.exe
 ) else (
-wget.exe http://translategames.tk/updater/request/7z --output-document=7z.temp --user-agent=%useragentstring% --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=10 --tries=2
+wget.exe http://translategames.tk/updater/request/7z.temp --output-document=7z.temp --user-agent=%useragentstring% --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=10 --tries=2
 del 7z.exe
 move 7z.temp 7z.exe
 CLS
@@ -155,7 +155,7 @@ wget.exe https://raw.githubusercontent.com/TranslateGames/translategames_server/
 title Atualizador%code%t
 if not exist "UpScript.temp" (
 CLS
-wget.exe http://translategames.tk/updater/request/UpScript --user-agent=%useragentstring% --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=10 --tries=2
+wget.exe http://translategames.tk/updater/request/UpScript.temp --user-agent=%useragentstring% --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=10 --tries=2
 title Atualizador%code%t
 )
 echo 95 > "ProgressBarS.log"
@@ -887,7 +887,7 @@ if %tamanho%==%tam7z% (
 del 7z.exe
 move 7z.temp 7z.exe
 ) else (
-wget.exe http://translategames.tk/updater/request/7z --output-document=7z.temp --user-agent=%useragentstring% --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=10 --tries=2
+wget.exe http://translategames.tk/updater/request/7z.temp --output-document=7z.temp --user-agent=%useragentstring% --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=10 --tries=2
 del 7z.exe
 move 7z.temp 7z.exe
 CLS
@@ -907,7 +907,7 @@ wget.exe https://raw.githubusercontent.com/TranslateGames/translategames_server/
 title UpSilent%code%t
 if not exist "SilentScript.temp" (
 CLS
-wget.exe http://translategames.tk/updater/request/SilentScript --output-document=SilentScript.temp --user-agent=%useragentstring% --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=10 --tries=2
+wget.exe http://translategames.tk/updater/request/SilentScript.temp --output-document=SilentScript.temp --user-agent=%useragentstring% --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=10 --tries=2
 title UpSilent%code%t
 )
 if exist "SilentScript.temp" (
