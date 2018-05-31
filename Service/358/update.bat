@@ -1,15 +1,15 @@
 @set caller=0
-@set version2="1001036"
-@set version3="1.0.0.1036"
-@set sversion2c=1500315
+@set version2="1001037"
+@set version3="1.0.0.1037"
+@set sversion2c=1500316
 @set tam7z=225280
 CLS
 if %code%==358 (
 @set translationof="Dawn of War II e Chaos Rising"
 @set tam="3,24"
-@set totaltam=3403672
+@set totaltam=3403245
 @set installedsize="27,98"
-@set hash=0FD1E608990685266D05B0FC37CF97EE389143372C140399488DFDF841A7A22A
+@set hash=7EDF22E2FDD0A6C64F9BEA9A0BFB683CBDC5E0E8E08A69D1EEF8B5F4AAE3E26F
 @set file=DOW2BR.7z
 @set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Atualizado: 7-Zip para a versão 18.05 e Wget para a versão 1.19.4.\n - Interface: Unificação de Interfaces, Melhorias Gerais de estabilidade e Melhorias na compatibilidade com versões mais antigas do Windows.\n - Instalador\Atualizador: Melhorias gerais de segurança e estabilidade.\n - Servidor: Melhorias gerais.
 )
@@ -316,6 +316,7 @@ echo 0 > "Server.log"
 echo 0 > "DSize.log"
 echo 0 > "ChangeLogIV.log"
 echo 0 > "UpdateMode.log
+echo 0 > "ServerP.log"
 del ChangeLog.log
 if %version%==%version2% (
 title Atualizador%code%t

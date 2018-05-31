@@ -1,15 +1,15 @@
 @set caller=0
-@set version2="60012378"
-@set version3="6.0.0.12378"
-@set sversion2c=1500315
+@set version2="60012379"
+@set version3="6.0.0.12379"
+@set sversion2c=1500316
 @set tam7z=225280
 CLS
 if %code%==350-4 (
 @set translationof="Dawn of War - Soulstorm"
 @set tam="3,53"
-@set totaltam=3703104
+@set totaltam=3703592
 @set installedsize="61,29"
-@set hash=FC20D0B67B01FBBFFAF1C587DD34E27F0A751400ED17D815654050420E2F84E7
+@set hash=69ACD17F4F97EF5AA0B80F51F186E696EE18BF8DE15DDABD4C6EC7FDB20EC421
 @set file=SSBR.7z
 @set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Atualizado: 7-Zip para a versão 18.05 e Wget para a versão 1.19.4.\n - Interface: Unificação de Interfaces, Melhorias Gerais de estabilidade e Melhorias na compatibilidade com versões mais antigas do Windows.\n - Instalador\Atualizador: Melhorias gerais de segurança e estabilidade.\n - Servidor: Melhorias gerais.
 )
@@ -316,6 +316,7 @@ echo 0 > "Server.log"
 echo 0 > "DSize.log"
 echo 0 > "ChangeLogIV.log"
 echo 0 > "UpdateMode.log
+echo 0 > "ServerP.log"
 del ChangeLog.log
 if %version%==%version2% (
 title Atualizador%code%t

@@ -1,15 +1,15 @@
 @set caller=0
-@set version2="60012378"
-@set version3="6.0.0.12378"
-@set sversion2c=1500315
+@set version2="60012379"
+@set version3="6.0.0.12379"
+@set sversion2c=1500316
 @set tam7z=225280
 CLS
 if %code%==350-3 (
 @set translationof="Dawn of War - Dark Crusade"
 @set tam="3,38"
-@set totaltam=3553282
+@set totaltam=3553773
 @set installedsize="36,18"
-@set hash=F483E73744FD215525AEE053404D48D06ADF5A6C6AC9D6940E5B2966B3483AC1
+@set hash=D9292DA6B0306A9F9AA6E0509D149ABAAF1DB8D698659FBA6AF538A592854471
 @set file=DCBR.7z
 @set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Atualizado: 7-Zip para a versão 18.05 e Wget para a versão 1.19.4.\n - Interface: Unificação de Interfaces, Melhorias Gerais de estabilidade e Melhorias na compatibilidade com versões mais antigas do Windows.\n - Instalador\Atualizador: Melhorias gerais de segurança e estabilidade.\n - Servidor: Melhorias gerais.
 )
@@ -316,6 +316,7 @@ echo 0 > "Server.log"
 echo 0 > "DSize.log"
 echo 0 > "ChangeLogIV.log"
 echo 0 > "UpdateMode.log
+echo 0 > "ServerP.log"
 del ChangeLog.log
 if %version%==%version2% (
 title Atualizador%code%t

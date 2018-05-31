@@ -1,15 +1,15 @@
 @set caller=0
-@set version2="1002731"
-@set version3="1.0.0.2731"
-@set sversion2c=1500315
+@set version2="1002732"
+@set version3="1.0.0.2732"
+@set sversion2c=1500316
 @set tam7z=225280
 CLS
 if %code%==356 (
 @set translationof="Age of Mythology"
 @set tam="2,97"
-@set totaltam=3117914
+@set totaltam=3117973
 @set installedsize="4,32"
-@set hash=24EE917D26EAFC61876C464AD6EF1DCF6DD145E053B0EAF9C192815D3F62BD73
+@set hash=170C0539EAE8BC7ED5658A3A461AD68EF1F46544E603F27EA20DBAF0EB611B22
 @set file=AOMBR.7z
 @set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Atualizado: 7-Zip para a versão 18.05 e Wget para a versão 1.19.4.\n - Interface: Unificação de Interfaces, Melhorias Gerais de estabilidade e Melhorias na compatibilidade com versões mais antigas do Windows.\n - Instalador\Atualizador: Melhorias gerais de segurança e estabilidade.\n - Servidor: Melhorias gerais.
 )
@@ -316,6 +316,7 @@ echo 0 > "Server.log"
 echo 0 > "DSize.log"
 echo 0 > "ChangeLogIV.log"
 echo 0 > "UpdateMode.log
+echo 0 > "ServerP.log"
 del ChangeLog.log
 if %version%==%version2% (
 title Atualizador%code%t

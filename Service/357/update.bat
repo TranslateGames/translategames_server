@@ -1,15 +1,15 @@
 @set caller=0
-@set version2="1001395"
-@set version3="1.0.0.1395"
-@set sversion2c=1500315
+@set version2="1001396"
+@set version3="1.0.0.1396"
+@set sversion2c=1500316
 @set tam7z=225280
 CLS
 if %code%==357 (
 @set translationof="Dawn of War II - Retribution"
 @set tam="3,41"
-@set totaltam=3586756
+@set totaltam=3586324
 @set installedsize="36,2"
-@set hash=89863C33E00F33B3E72529F696F4037B6CBAB64348F41CD3D1E4B0F210EE5010
+@set hash=966E4DA61162929BCB2EF57BA36271F1D8B3F9781426AE7FFCD235C3BFA4896F
 @set file=DOW2RBR.7z
 @set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Atualizado: 7-Zip para a versão 18.05 e Wget para a versão 1.19.4.\n - Interface: Unificação de Interfaces, Melhorias Gerais de estabilidade e Melhorias na compatibilidade com versões mais antigas do Windows.\n - Instalador\Atualizador: Melhorias gerais de segurança e estabilidade.\n - Servidor: Melhorias gerais.
 )
@@ -316,6 +316,7 @@ echo 0 > "Server.log"
 echo 0 > "DSize.log"
 echo 0 > "ChangeLogIV.log"
 echo 0 > "UpdateMode.log
+echo 0 > "ServerP.log"
 del ChangeLog.log
 if %version%==%version2% (
 title Atualizador%code%t

@@ -1,15 +1,15 @@
 @set caller=0
-@set version2="1002731"
-@set version3="1.0.0.2731"
-@set sversion2c=1500315
+@set version2="1002732"
+@set version3="1.0.0.2732"
+@set sversion2c=1500316
 @set tam7z=225280
 CLS
 if %code%==356-2 (
 @set translationof="Age of Mythology: The Titans Expansion"
 @set tam="2,95"
-@set totaltam=3098496
-@set installedsize="4,52"
-@set hash=58A48AE6625782074840ADEF97D207D45E8F7DC3DB53D496F4EE88EE56D8E508
+@set totaltam=3097784
+@set installedsize="4,51"
+@set hash=0C269D1D285F058B96712AAF9F6867E5FF8F7C3BE03C49534D62C7DAD4680EA2
 @set file=XAOMBR.7z
 @set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Atualizado: 7-Zip para a versão 18.05 e Wget para a versão 1.19.4.\n - Interface: Unificação de Interfaces, Melhorias Gerais de estabilidade e Melhorias na compatibilidade com versões mais antigas do Windows.\n - Instalador\Atualizador: Melhorias gerais de segurança e estabilidade.\n - Servidor: Melhorias gerais.
 )
@@ -316,6 +316,7 @@ echo 0 > "Server.log"
 echo 0 > "DSize.log"
 echo 0 > "ChangeLogIV.log"
 echo 0 > "UpdateMode.log
+echo 0 > "ServerP.log"
 del ChangeLog.log
 if %version%==%version2% (
 title Atualizador%code%t
