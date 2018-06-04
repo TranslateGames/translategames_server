@@ -1,15 +1,15 @@
 @set caller=0
-@set version2="60012379"
-@set version3="6.0.0.12379"
-@set sversion2c=1500316
+@set version2="60012380"
+@set version3="6.0.0.12380"
+@set sversion2c=1500317
 @set tam7z=225280
 CLS
 if %code%==350 (
 @set translationof="Dawn of War e Winter Assault"
 @set tam="3,87"
-@set totaltam=4059402
-@set installedsize="20,47"
-@set hash=DA5E901B354D67480FB199236BB137A91FFB35812B60F01CF5C5FDB356D178DE
+@set totaltam=4059981
+@set installedsize="20,48"
+@set hash=FDB68BDEC6694D06FD2EF0B5754F6F190484E589B102A1C2900FD1945B854834
 @set file=W4BR.7z
 @set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Atualizado: 7-Zip para a versão 18.05 e Wget para a versão 1.19.4.\n - Interface: Unificação de Interfaces, Melhorias Gerais de estabilidade e Melhorias na compatibilidade com versões mais antigas do Windows.\n - Instalador\Atualizador: Melhorias gerais de segurança e estabilidade.\n - Servidor: Melhorias gerais.
 )
@@ -317,6 +317,7 @@ echo 0 > "DSize.log"
 echo 0 > "ChangeLogIV.log"
 echo 0 > "UpdateMode.log
 echo 0 > "ServerP.log"
+echo 0 > "UpCoreFCE.log"
 del ChangeLog.log
 if %version%==%version2% (
 title Atualizador%code%t
@@ -756,7 +757,6 @@ CLS
 goto ARCheck
 )
 
-
 :checkHash2
 set /p firstline=<Hash.log
 if %firstline%==Valid (
@@ -769,15 +769,13 @@ CLS
 echo %date%-%time% Arquivo Inválido! >> "UpdateLog.txt"
 echo Arquivo Inválido!
 echo fail>"StatusPS.log"
-echo fail>"StatusP.log"
+echo checkerror>"StatusP.log"
+echo -%sversion3%- > "UpCoreFCE.log"
 if %mode%==install (
 echo %date%-%time% Falha na validação da tradução! >> "UpdateLog.txt"
 ) else (
 echo %date%-%time% Falha na validação da atualização! >> "UpdateLog.txt"
 )
-echo Falha na validação!
-timeout 1 > NUL
-start wscript ErroHash.vbs
 goto exit
 ) else if %firstline%==MissingFile (
 CLS

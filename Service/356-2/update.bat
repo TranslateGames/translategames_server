@@ -1,15 +1,15 @@
 @set caller=0
-@set version2="1002732"
-@set version3="1.0.0.2732"
-@set sversion2c=1500316
+@set version2="1002733"
+@set version3="1.0.0.2733"
+@set sversion2c=1500317
 @set tam7z=225280
 CLS
 if %code%==356-2 (
 @set translationof="Age of Mythology: The Titans Expansion"
 @set tam="2,95"
-@set totaltam=3097784
-@set installedsize="4,51"
-@set hash=0C269D1D285F058B96712AAF9F6867E5FF8F7C3BE03C49534D62C7DAD4680EA2
+@set totaltam=3098319
+@set installedsize="4,52"
+@set hash=ADF8FE4D21E402AB2E53E40239B694292E6D26B88F9F956F1CF8836DDFB9E7A3
 @set file=XAOMBR.7z
 @set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Atualizado: 7-Zip para a versão 18.05 e Wget para a versão 1.19.4.\n - Interface: Unificação de Interfaces, Melhorias Gerais de estabilidade e Melhorias na compatibilidade com versões mais antigas do Windows.\n - Instalador\Atualizador: Melhorias gerais de segurança e estabilidade.\n - Servidor: Melhorias gerais.
 )
@@ -317,6 +317,7 @@ echo 0 > "DSize.log"
 echo 0 > "ChangeLogIV.log"
 echo 0 > "UpdateMode.log
 echo 0 > "ServerP.log"
+echo 0 > "UpCoreFCE.log"
 del ChangeLog.log
 if %version%==%version2% (
 title Atualizador%code%t
@@ -756,7 +757,6 @@ CLS
 goto ARCheck
 )
 
-
 :checkHash2
 set /p firstline=<Hash.log
 if %firstline%==Valid (
@@ -769,15 +769,13 @@ CLS
 echo %date%-%time% Arquivo Inválido! >> "UpdateLog.txt"
 echo Arquivo Inválido!
 echo fail>"StatusPS.log"
-echo fail>"StatusP.log"
+echo checkerror>"StatusP.log"
+echo -%sversion3%- > "UpCoreFCE.log"
 if %mode%==install (
 echo %date%-%time% Falha na validação da tradução! >> "UpdateLog.txt"
 ) else (
 echo %date%-%time% Falha na validação da atualização! >> "UpdateLog.txt"
 )
-echo Falha na validação!
-timeout 1 > NUL
-start wscript ErroHash.vbs
 goto exit
 ) else if %firstline%==MissingFile (
 CLS
