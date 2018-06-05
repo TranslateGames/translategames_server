@@ -1,15 +1,15 @@
 @set caller=0
-@set version2="60012380"
-@set version3="6.0.0.12380"
+@set version2="60012381"
+@set version3="6.0.0.12381"
 @set sversion2c=1500317
 @set tam7z=225280
 CLS
 if %code%==350 (
 @set translationof="Dawn of War e Winter Assault"
 @set tam="3,87"
-@set totaltam=4059981
+@set totaltam=4060118
 @set installedsize="20,48"
-@set hash=FDB68BDEC6694D06FD2EF0B5754F6F190484E589B102A1C2900FD1945B854834
+@set hash=E6BDEE3DB35B8D553505FBB7413FE0A46603B15F25E14B3269E83B571C7CFBF4
 @set file=W4BR.7z
 @set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Atualizado: 7-Zip para a versão 18.05 e Wget para a versão 1.19.4.\n - Interface: Unificação de Interfaces, Melhorias Gerais de estabilidade e Melhorias na compatibilidade com versões mais antigas do Windows.\n - Instalador\Atualizador: Melhorias gerais de segurança e estabilidade.\n - Servidor: Melhorias gerais.
 )
@@ -71,7 +71,6 @@ del UpdateFound.vbs
 echo msgbox"A Tradução mais recente, já está instalada!",vbInformation,"A Tradução já está atualizada!" > "UpToDate.vbs"
 echo msgbox"Não foi possível obter acesso de Administrador!",vbCritical,"Acesso Negado!" > "ErroAOpened.vbs"
 echo msgbox"Ocorreu um erro ao tentar baixar a Atualização!",vbCritical,"Falha ao Baixar" > "ErroDownload.vbs"
-echo msgbox"Falha na validação da Atualização! O arquivo pode estar corrompido!",vbCritical,"Falha na validação" > "ErroHash.vbs"
 echo msgbox"Conexão Interrompida durante o download da Atualização!",vbCritical,"Conexão Perdida" > "ErroIConnection.vbs"
 echo msgbox"Arquivo necessário para iniciar a Instalação, não foi encontrado!",vbCritical,"Falha na Instalação" > "ErroInstall.vbs"
 CLS

@@ -1,15 +1,15 @@
 @set caller=0
-@set version2="1002733"
-@set version3="1.0.0.2733"
+@set version2="1002734"
+@set version3="1.0.0.2734"
 @set sversion2c=1500317
 @set tam7z=225280
 CLS
 if %code%==356-2 (
 @set translationof="Age of Mythology: The Titans Expansion"
 @set tam="2,95"
-@set totaltam=3098319
+@set totaltam=3099084
 @set installedsize="4,52"
-@set hash=ADF8FE4D21E402AB2E53E40239B694292E6D26B88F9F956F1CF8836DDFB9E7A3
+@set hash=C33C22996BB7F4E26A5BBFA0D6A31E405564E6892896CA4DBF0B0D1CC9F68848
 @set file=XAOMBR.7z
 @set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Atualizado: 7-Zip para a versão 18.05 e Wget para a versão 1.19.4.\n - Interface: Unificação de Interfaces, Melhorias Gerais de estabilidade e Melhorias na compatibilidade com versões mais antigas do Windows.\n - Instalador\Atualizador: Melhorias gerais de segurança e estabilidade.\n - Servidor: Melhorias gerais.
 )
@@ -71,7 +71,6 @@ del UpdateFound.vbs
 echo msgbox"A Tradução mais recente, já está instalada!",vbInformation,"A Tradução já está atualizada!" > "UpToDate.vbs"
 echo msgbox"Não foi possível obter acesso de Administrador!",vbCritical,"Acesso Negado!" > "ErroAOpened.vbs"
 echo msgbox"Ocorreu um erro ao tentar baixar a Atualização!",vbCritical,"Falha ao Baixar" > "ErroDownload.vbs"
-echo msgbox"Falha na validação da Atualização! O arquivo pode estar corrompido!",vbCritical,"Falha na validação" > "ErroHash.vbs"
 echo msgbox"Conexão Interrompida durante o download da Atualização!",vbCritical,"Conexão Perdida" > "ErroIConnection.vbs"
 echo msgbox"Arquivo necessário para iniciar a Instalação, não foi encontrado!",vbCritical,"Falha na Instalação" > "ErroInstall.vbs"
 CLS

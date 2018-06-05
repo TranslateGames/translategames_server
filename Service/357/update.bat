@@ -1,15 +1,15 @@
 @set caller=0
-@set version2="1001397"
-@set version3="1.0.0.1397"
+@set version2="1001398"
+@set version3="1.0.0.1398"
 @set sversion2c=1500317
 @set tam7z=225280
 CLS
 if %code%==357 (
 @set translationof="Dawn of War II - Retribution"
 @set tam="3,42"
-@set totaltam=3587332
+@set totaltam=3587352
 @set installedsize="36,2"
-@set hash=1E6A709CBC2370774DA91E5919FB688E66641C70F644E94E02C96BA510FA090E
+@set hash=CEB6E601B5CF31AB4D3A58477D51ADD710DF3548DEA62ED15A91604CA58F27B8
 @set file=DOW2RBR.7z
 @set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Atualizado: 7-Zip para a versão 18.05 e Wget para a versão 1.19.4.\n - Interface: Unificação de Interfaces, Melhorias Gerais de estabilidade e Melhorias na compatibilidade com versões mais antigas do Windows.\n - Instalador\Atualizador: Melhorias gerais de segurança e estabilidade.\n - Servidor: Melhorias gerais.
 )
@@ -71,7 +71,6 @@ del UpdateFound.vbs
 echo msgbox"A Tradução mais recente, já está instalada!",vbInformation,"A Tradução já está atualizada!" > "UpToDate.vbs"
 echo msgbox"Não foi possível obter acesso de Administrador!",vbCritical,"Acesso Negado!" > "ErroAOpened.vbs"
 echo msgbox"Ocorreu um erro ao tentar baixar a Atualização!",vbCritical,"Falha ao Baixar" > "ErroDownload.vbs"
-echo msgbox"Falha na validação da Atualização! O arquivo pode estar corrompido!",vbCritical,"Falha na validação" > "ErroHash.vbs"
 echo msgbox"Conexão Interrompida durante o download da Atualização!",vbCritical,"Conexão Perdida" > "ErroIConnection.vbs"
 echo msgbox"Arquivo necessário para iniciar a Instalação, não foi encontrado!",vbCritical,"Falha na Instalação" > "ErroInstall.vbs"
 CLS

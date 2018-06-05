@@ -1,15 +1,15 @@
 @set caller=0
-@set version2="60012380"
-@set version3="6.0.0.12380"
+@set version2="60012381"
+@set version3="6.0.0.12381"
 @set sversion2c=1500317
 @set tam7z=225280
 CLS
 if %code%==350-3 (
 @set translationof="Dawn of War - Dark Crusade"
 @set tam="3,38"
-@set totaltam=3553883
+@set totaltam=3553205
 @set installedsize="36,18"
-@set hash=F32C0679BBE2A0773165ECFF31DCBD96C254918F266A849EF5C09B0020ADA576
+@set hash=D49DB8607FA70377A69720A2430B3B70E5F8D8CF8F29A998AADADA164DD079EE
 @set file=DCBR.7z
 @set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Atualizado: 7-Zip para a versão 18.05 e Wget para a versão 1.19.4.\n - Interface: Unificação de Interfaces, Melhorias Gerais de estabilidade e Melhorias na compatibilidade com versões mais antigas do Windows.\n - Instalador\Atualizador: Melhorias gerais de segurança e estabilidade.\n - Servidor: Melhorias gerais.
 )
@@ -71,7 +71,6 @@ del UpdateFound.vbs
 echo msgbox"A Tradução mais recente, já está instalada!",vbInformation,"A Tradução já está atualizada!" > "UpToDate.vbs"
 echo msgbox"Não foi possível obter acesso de Administrador!",vbCritical,"Acesso Negado!" > "ErroAOpened.vbs"
 echo msgbox"Ocorreu um erro ao tentar baixar a Atualização!",vbCritical,"Falha ao Baixar" > "ErroDownload.vbs"
-echo msgbox"Falha na validação da Atualização! O arquivo pode estar corrompido!",vbCritical,"Falha na validação" > "ErroHash.vbs"
 echo msgbox"Conexão Interrompida durante o download da Atualização!",vbCritical,"Conexão Perdida" > "ErroIConnection.vbs"
 echo msgbox"Arquivo necessário para iniciar a Instalação, não foi encontrado!",vbCritical,"Falha na Instalação" > "ErroInstall.vbs"
 CLS
