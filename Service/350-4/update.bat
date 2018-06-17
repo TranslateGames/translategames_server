@@ -1,15 +1,15 @@
 @set caller=0
-@set version2="60012382"
-@set version3="6.0.0.12382"
+@set version2="60012383"
+@set version3="6.0.0.12383"
 @set sversion2c=1500318
 @set tam7z=225280
 CLS
 if %code%==350-4 (
 @set translationof="Dawn of War - Soulstorm"
 @set tam="3,53"
-@set totaltam=3704119
+@set totaltam=3703769
 @set installedsize="61,29"
-@set hash=968B6E8BD29F0AFF3EE5A2A46620BD9446D3D0BA51BE3E6D70C96749E5AEBFB4
+@set hash=E330F0E372853B921D2CD4CD0EF85BBFE443D1275ED4BF8CC414C80103BED2D5
 @set file=SSBR.7z
 @set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Atualizado: 7-Zip para a versão 18.05 e Wget para a versão 1.19.4.\n - Interface: Unificação de Interfaces, Melhorias Gerais de estabilidade e Melhorias na compatibilidade com versões mais antigas do Windows.\n - Instalador\Atualizador: Melhorias gerais de segurança e estabilidade.\n - Servidor: Melhorias gerais.
 )
