@@ -1,6 +1,6 @@
 @set caller=0
-@set version2="1001042"
-@set version3="1.0.0.1042"
+@set version2="1001043"
+@set version3="1.0.0.1043"
 @set sversion2c=1500318
 @set tam7z=225280
 CLS
@@ -9,7 +9,7 @@ if %code%==358 (
 @set tam="3,24"
 @set totaltam=3403166
 @set installedsize="27,98"
-@set hash=173DC3F1AA4560BB627532B2DC36E0048DF5B71D3843B3503257563A8DB59DBB
+@set hash=6E5702DCD55E9CCFFDB7EBBF61E69D7E758F5843D06EBC79495365CB995A6CAD
 @set file=DOW2BR.7z
 @set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Atualizado: 7-Zip para a versão 18.05 e Wget para a versão 1.19.4.\n - Interface: Unificação de Interfaces, Melhorias Gerais de estabilidade e Melhorias na compatibilidade com versões mais antigas do Windows.\n - Instalador\Atualizador: Melhorias gerais de segurança e estabilidade.\n - Servidor: Melhorias gerais.
 )
