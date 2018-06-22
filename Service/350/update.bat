@@ -1,15 +1,15 @@
 @set caller=0
-@set version2="60012386"
-@set version3="6.0.0.12386"
-@set sversion2c=1500318
+@set version2="60012387"
+@set version3="6.0.0.12387"
+@set sversion2c=1500319
 @set tam7z=225280
 CLS
 if %code%==350 (
 @set translationof="Dawn of War e Winter Assault"
 @set tam="3,87"
-@set totaltam=4060226
+@set totaltam=4060255
 @set installedsize="20,48"
-@set hash=D8BC15733DDE4C444D66236542FC82FCAF1E7189972CCDE9BBAF5B7AA43FD881
+@set hash=E0B56AE76514F9A573499C83BDF0ED5C31E1549C65025AED07DE82375763FE80
 @set file=W4BR.7z
 @set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Atualizado: 7-Zip para a versão 18.05 e Wget para a versão 1.19.4.\n - Interface: Unificação de Interfaces, Melhorias Gerais de estabilidade e Melhorias na compatibilidade com versões mais antigas do Windows.\n - Instalador\Atualizador: Melhorias gerais de segurança e estabilidade.\n - Servidor: Melhorias gerais.
 )
@@ -300,7 +300,7 @@ if %firstline%==ready (
 echo updated > "StatusIS.log"
 ) else (
 echo close>"StatusPS.log"
-timeout 1 > NUL
+timeout -m 500 > NUL
 echo forceclose>"StatusPS.log"
 timeout -m 500 > NUL
 start wscript UpToDate.vbs
@@ -770,9 +770,9 @@ goto initInstall
 CLS
 echo %date%-%time% Arquivo Inválido! >> "UpdateLog.txt"
 echo Arquivo Inválido!
+echo -%sversion3%- > "UpCoreFCE.log"
 echo fail>"StatusPS.log"
 echo checkerror>"StatusP.log"
-echo -%sversion3%- > "UpCoreFCE.log"
 if %mode%==install (
 echo %date%-%time% Falha na validação da tradução! >> "UpdateLog.txt"
 ) else (

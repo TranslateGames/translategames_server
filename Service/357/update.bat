@@ -1,15 +1,15 @@
 @set caller=0
-@set version2="1001403"
-@set version3="1.0.0.1403"
-@set sversion2c=1500318
+@set version2="1001404"
+@set version3="1.0.0.1404"
+@set sversion2c=1500319
 @set tam7z=225280
 CLS
 if %code%==357 (
 @set translationof="Dawn of War II - Retribution"
 @set tam="3,41"
-@set totaltam=3586481
+@set totaltam=3586377
 @set installedsize="36,2"
-@set hash=6B12F2F2051AC12F51D6919A5F7E3823FEDDC133CF1ECFC4F5F5B0AF27D98335
+@set hash=6A8FE5803AFE54A9962DFB50B8A8F558B83993C509A284711143A42D6FC32015
 @set file=DOW2RBR.7z
 @set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Atualizado: 7-Zip para a versão 18.05 e Wget para a versão 1.19.4.\n - Interface: Unificação de Interfaces, Melhorias Gerais de estabilidade e Melhorias na compatibilidade com versões mais antigas do Windows.\n - Instalador\Atualizador: Melhorias gerais de segurança e estabilidade.\n - Servidor: Melhorias gerais.
 )
@@ -300,7 +300,7 @@ if %firstline%==ready (
 echo updated > "StatusIS.log"
 ) else (
 echo close>"StatusPS.log"
-timeout 1 > NUL
+timeout -m 500 > NUL
 echo forceclose>"StatusPS.log"
 timeout -m 500 > NUL
 start wscript UpToDate.vbs
@@ -770,9 +770,9 @@ goto initInstall
 CLS
 echo %date%-%time% Arquivo Inválido! >> "UpdateLog.txt"
 echo Arquivo Inválido!
+echo -%sversion3%- > "UpCoreFCE.log"
 echo fail>"StatusPS.log"
 echo checkerror>"StatusP.log"
-echo -%sversion3%- > "UpCoreFCE.log"
 if %mode%==install (
 echo %date%-%time% Falha na validação da tradução! >> "UpdateLog.txt"
 ) else (

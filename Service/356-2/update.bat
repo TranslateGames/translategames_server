@@ -1,15 +1,15 @@
 @set caller=0
-@set version2="1002739"
-@set version3="1.0.0.2739"
-@set sversion2c=1500318
+@set version2="1002740"
+@set version3="1.0.0.2740"
+@set sversion2c=1500319
 @set tam7z=225280
 CLS
 if %code%==356-2 (
 @set translationof="Age of Mythology: The Titans Expansion"
 @set tam="2,95"
-@set totaltam=3099797
+@set totaltam=3099333
 @set installedsize="4,52"
-@set hash=9DF4E4DB7FBC29E53673C1F3828DC8F919A05937AE53D85EFC3034B73B5D14E1
+@set hash=FAEE2159DA9B61B93C070599B24ABA63821B5E4324E11F52B76FB975A5E3077B
 @set file=XAOMBR.7z
 @set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Atualizado: 7-Zip para a versão 18.05 e Wget para a versão 1.19.4.\n - Interface: Unificação de Interfaces, Melhorias Gerais de estabilidade e Melhorias na compatibilidade com versões mais antigas do Windows.\n - Instalador\Atualizador: Melhorias gerais de segurança e estabilidade.\n - Servidor: Melhorias gerais.
 )
@@ -300,7 +300,7 @@ if %firstline%==ready (
 echo updated > "StatusIS.log"
 ) else (
 echo close>"StatusPS.log"
-timeout 1 > NUL
+timeout -m 500 > NUL
 echo forceclose>"StatusPS.log"
 timeout -m 500 > NUL
 start wscript UpToDate.vbs
@@ -770,9 +770,9 @@ goto initInstall
 CLS
 echo %date%-%time% Arquivo Inválido! >> "UpdateLog.txt"
 echo Arquivo Inválido!
+echo -%sversion3%- > "UpCoreFCE.log"
 echo fail>"StatusPS.log"
 echo checkerror>"StatusP.log"
-echo -%sversion3%- > "UpCoreFCE.log"
 if %mode%==install (
 echo %date%-%time% Falha na validação da tradução! >> "UpdateLog.txt"
 ) else (
