@@ -9,7 +9,7 @@ if %code%==350-4 (
 @set tam="3,53"
 @set totaltam=3704468
 @set installedsize="61,29"
-@set hash=BA8F1A45591B5248122245B75EF85D8E8BC39E0005150CF5F8440F4A00D9392B
+@set hash=5A292FEC4B36D3BE84C5A49CA3CD428BD2A64B1C35C3FABB9A4A67A75F681DC2
 @set file=SSBR.7z
 @set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Atualizado: 7-Zip para a versão 18.05 e Wget para a versão 1.19.4.\n - Interface: Unificação de Interfaces, Melhorias Gerais de estabilidade e Melhorias na compatibilidade com versões mais antigas do Windows.\n - Instalador\Atualizador: Melhorias gerais de segurança e estabilidade.\n - Servidor: Melhorias gerais.
 )
@@ -299,7 +299,10 @@ set /p firstline=<StatusIS.log
 if %firstline%==ready (
 echo updated > "StatusIS.log"
 ) else (
+echo close>"StatusPS.log"
+timeout 1 > NUL
 echo forceclose>"StatusPS.log"
+timeout -m 500 > NUL
 start wscript UpToDate.vbs
 )
 CLS

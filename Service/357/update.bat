@@ -7,9 +7,9 @@ CLS
 if %code%==357 (
 @set translationof="Dawn of War II - Retribution"
 @set tam="3,41"
-@set totaltam=3586482
+@set totaltam=3586481
 @set installedsize="36,2"
-@set hash=143D9BD4AFB3DB4EC87D34518408B6DE04224AA5FC25D21F7802F0E7028519B0
+@set hash=6B12F2F2051AC12F51D6919A5F7E3823FEDDC133CF1ECFC4F5F5B0AF27D98335
 @set file=DOW2RBR.7z
 @set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Atualizado: 7-Zip para a versão 18.05 e Wget para a versão 1.19.4.\n - Interface: Unificação de Interfaces, Melhorias Gerais de estabilidade e Melhorias na compatibilidade com versões mais antigas do Windows.\n - Instalador\Atualizador: Melhorias gerais de segurança e estabilidade.\n - Servidor: Melhorias gerais.
 )
@@ -299,7 +299,10 @@ set /p firstline=<StatusIS.log
 if %firstline%==ready (
 echo updated > "StatusIS.log"
 ) else (
+echo close>"StatusPS.log"
+timeout 1 > NUL
 echo forceclose>"StatusPS.log"
+timeout -m 500 > NUL
 start wscript UpToDate.vbs
 )
 CLS

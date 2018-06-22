@@ -9,7 +9,7 @@ if %code%==358 (
 @set tam="3,24"
 @set totaltam=3403306
 @set installedsize="27,98"
-@set hash=E20E9BEAC45E1D13C88FE6A3E6469E38BDF27FFB03679C468177829A605047B0
+@set hash=F02AD8F2A098B2D15AAE7743D89AFFE804A5ACEC7ECE165D14CE03BC7BF030B6
 @set file=DOW2BR.7z
 @set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Atualizado: 7-Zip para a versão 18.05 e Wget para a versão 1.19.4.\n - Interface: Unificação de Interfaces, Melhorias Gerais de estabilidade e Melhorias na compatibilidade com versões mais antigas do Windows.\n - Instalador\Atualizador: Melhorias gerais de segurança e estabilidade.\n - Servidor: Melhorias gerais.
 )
@@ -299,7 +299,10 @@ set /p firstline=<StatusIS.log
 if %firstline%==ready (
 echo updated > "StatusIS.log"
 ) else (
+echo close>"StatusPS.log"
+timeout 1 > NUL
 echo forceclose>"StatusPS.log"
+timeout -m 500 > NUL
 start wscript UpToDate.vbs
 )
 CLS

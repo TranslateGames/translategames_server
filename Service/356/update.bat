@@ -9,7 +9,7 @@ if %code%==356 (
 @set tam="2,97"
 @set totaltam=3117505
 @set installedsize="4,32"
-@set hash=4A47AB230A6110754A0C6A235526E6C1B58BD4C24653187AFB0CDA643D802134
+@set hash=BF899555EDDBCB863392EADEFC7FEE906F68A9903351AD4811DFA14D5C5DFAD7
 @set file=AOMBR.7z
 @set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Atualizado: 7-Zip para a versão 18.05 e Wget para a versão 1.19.4.\n - Interface: Unificação de Interfaces, Melhorias Gerais de estabilidade e Melhorias na compatibilidade com versões mais antigas do Windows.\n - Instalador\Atualizador: Melhorias gerais de segurança e estabilidade.\n - Servidor: Melhorias gerais.
 )
@@ -299,7 +299,10 @@ set /p firstline=<StatusIS.log
 if %firstline%==ready (
 echo updated > "StatusIS.log"
 ) else (
+echo close>"StatusPS.log"
+timeout 1 > NUL
 echo forceclose>"StatusPS.log"
+timeout -m 500 > NUL
 start wscript UpToDate.vbs
 )
 CLS

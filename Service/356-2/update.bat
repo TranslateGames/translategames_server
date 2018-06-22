@@ -7,9 +7,9 @@ CLS
 if %code%==356-2 (
 @set translationof="Age of Mythology: The Titans Expansion"
 @set tam="2,95"
-@set totaltam=3099796
+@set totaltam=3099797
 @set installedsize="4,52"
-@set hash=FE89A9E69D60384B4DA7C29DE8FEF2531D42C4207CF8CC0A0322DC46BD511505
+@set hash=9DF4E4DB7FBC29E53673C1F3828DC8F919A05937AE53D85EFC3034B73B5D14E1
 @set file=XAOMBR.7z
 @set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Atualizado: 7-Zip para a versão 18.05 e Wget para a versão 1.19.4.\n - Interface: Unificação de Interfaces, Melhorias Gerais de estabilidade e Melhorias na compatibilidade com versões mais antigas do Windows.\n - Instalador\Atualizador: Melhorias gerais de segurança e estabilidade.\n - Servidor: Melhorias gerais.
 )
@@ -299,7 +299,10 @@ set /p firstline=<StatusIS.log
 if %firstline%==ready (
 echo updated > "StatusIS.log"
 ) else (
+echo close>"StatusPS.log"
+timeout 1 > NUL
 echo forceclose>"StatusPS.log"
+timeout -m 500 > NUL
 start wscript UpToDate.vbs
 )
 CLS

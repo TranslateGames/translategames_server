@@ -9,7 +9,7 @@ if %code%==350-3 (
 @set tam="3,38"
 @set totaltam=3554654
 @set installedsize="36,18"
-@set hash=BA3246FB0BA420484F40935F99BEAAE9E9D17E83C0211E283C35FC13A5C18A41
+@set hash=039974F3FAAA07989C1DA7C2DA311FC7752E901A3D2435C3FC81C45FB33DFC80
 @set file=DCBR.7z
 @set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Atualizado: 7-Zip para a versão 18.05 e Wget para a versão 1.19.4.\n - Interface: Unificação de Interfaces, Melhorias Gerais de estabilidade e Melhorias na compatibilidade com versões mais antigas do Windows.\n - Instalador\Atualizador: Melhorias gerais de segurança e estabilidade.\n - Servidor: Melhorias gerais.
 )
@@ -299,7 +299,10 @@ set /p firstline=<StatusIS.log
 if %firstline%==ready (
 echo updated > "StatusIS.log"
 ) else (
+echo close>"StatusPS.log"
+timeout 1 > NUL
 echo forceclose>"StatusPS.log"
+timeout -m 500 > NUL
 start wscript UpToDate.vbs
 )
 CLS
