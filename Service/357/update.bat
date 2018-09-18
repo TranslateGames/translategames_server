@@ -1,15 +1,15 @@
 @set caller=0
-@set version2="1001410"
-@set version3="1.0.0.1410"
-@set sversion2c=1500320
+@set version2="1001411"
+@set version3="1.0.0.1411"
+@set sversion2c=1500321
 @set tam7z=225280
 CLS
 if %code%==357 (
 @set translationof="Dawn of War II - Retribution"
 @set tam="3,42"
-@set totaltam=3587199
+@set totaltam=3587737
 @set installedsize="36,2"
-@set hash=EACD7DF4D305AEC694605482274074D5C0EED706ECF7CCA4421EE6496A7586C0
+@set hash=C4D8B1DC6F8AF25AE09CEF708855B41FC7DC6FF37E2A65272A8E782614B372A1
 @set file=DOW2RBR.7z
 @set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Atualizado: 7-Zip para a versão 18.05 e Wget para a versão 1.19.4.\n - Interface: Unificação de Interfaces, Melhorias Gerais de estabilidade e Melhorias na compatibilidade com versões mais antigas do Windows.\n - Instalador\Atualizador: Melhorias gerais de segurança e estabilidade.\n - Servidor: Melhorias gerais.
 )
@@ -412,7 +412,7 @@ echo %date%-%time% Atualização Disponível! Versão: %version2% >> "UpdateLog.txt"
 )
 CLS
 echo %mode%>"UpdateMode.log
-echo \\Tradução Disponível\\Tradução de %translationof%\n Tamanho: %tam% MB (Instalado: %installedsize% MB) \/ Versão: %version3%\n \n Últimas Mudanças:\n %changelog%\n \n Clique em 'OK' para começar a Baixar ou 'Cancelar' para Sair.\n (Assim que estiver concluído, a tradução será instalada automáticamente!) > "ChangeLog.log"
+echo \\Tradução Disponível\\Tradução de %translationof%\n Tamanho: %tam% MB (Instalado: %installedsize% MB) \/ Versão: %version3%\n \n Últimas Mudanças:\n %changelog%\n \n Clique em 'OK' para começar a Baixar ou 'Cancelar' para Sair.\n (Assim que baixar, a tradução será instalada automaticamente!) > "ChangeLog.log"
 if %showcl% gtr 0 (
 echo 1 > "ChangeLogIV.log"
 ) else (
@@ -436,7 +436,7 @@ echo %date%-%time% Atualização Disponível! Versão: %version2% >> "UpdateLog.txt"
 )
 CLS
 echo %mode%>"UpdateMode.log
-echo \\Atualização Disponível\\Atualização da Tradução de %translationof%\n Tamanho: %tam% MB (Instalado: %installedsize% MB) \/ Versão: %version3%\n \n Mudanças:\n %changelog%\n \n Clique em 'OK' para começar a Baixar ou 'Cancelar' para Sair.\n (Assim que estiver concluído, a tradução será instalada automáticamente!) > "ChangeLog.log"
+echo \\Atualização Disponível\\Atualização da Tradução de %translationof%\n Tamanho: %tam% MB (Instalado: %installedsize% MB) \/ Versão: %version3%\n \n Mudanças:\n %changelog%\n \n Clique em 'OK' para começar a Baixar ou 'Cancelar' para Sair.\n (Assim que baixar, a tradução será atualizada automaticamente!) > "ChangeLog.log"
 if %showcl% gtr 0 (
 echo 1 > "ChangeLogIV.log"
 ) else (
@@ -831,6 +831,7 @@ echo %date%-%time% Iniciando Instalação... >> "UpdateLog.txt"
 echo Iniciando Instalacao...
 cd UpInstalation
 if exist "install.exe" (
+echo -%sversion3%- > "UpCoreFCE.log"
 start Install.exe /Q /T:"%TEMP%\Installer-%code%-%random%.tmp" /C:"wscript Install.vbs /Init:Start"
 ) else (
 cd ..\
