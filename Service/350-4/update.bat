@@ -7,9 +7,9 @@ CLS
 if %code%==350-4 (
 @set translationof="Dawn of War - Soulstorm"
 @set tam="3,53"
-@set totaltam=3704116
+@set totaltam=3704118
 @set installedsize="61,29"
-@set hash=A1F374BCECA85CC27AFEBAAC1C7781D2676AF0BF628093AABA6288F41C2E026E
+@set hash=1D5D0C36AD1547B0814E93BE4BF869C9B429B6050AC9D9A6FB793E7C4A77BEA6
 @set file=SSBR.7z
 @set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Atualizado: 7-Zip para a versão 18.05 e Wget para a versão 1.19.4.\n - Interface: Unificação de Interfaces, Melhorias Gerais de estabilidade e Melhorias na compatibilidade com versões mais antigas do Windows.\n - Instalador\Atualizador: Melhorias gerais de segurança e estabilidade.\n - Servidor: Melhorias gerais.
 )
@@ -831,7 +831,9 @@ echo %date%-%time% Iniciando Instalação... >> "UpdateLog.txt"
 echo Iniciando Instalacao...
 cd UpInstalation
 if exist "install.exe" (
+cd ..\
 echo -%sversion3%- > "UpCoreFCE.log"
+cd UpInstalation
 start Install.exe /Q /T:"%TEMP%\Installer-%code%-%random%.tmp" /C:"wscript Install.vbs /Init:Start"
 ) else (
 cd ..\

@@ -9,7 +9,7 @@ if %code%==356 (
 @set tam="2,97"
 @set totaltam=3117927
 @set installedsize="3,78"
-@set hash=A7D5B6AE6E0DC0B3E3678E5ED04027D944C578F0532B492FF9F9374060D3D105
+@set hash=1C86913EF9CB1E64AF8338E87CE40F3DC66CEEDCE3627CC3065B10A59EF24B93
 @set file=AOMBR.7z
 @set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Atualizado: 7-Zip para a versão 18.05 e Wget para a versão 1.19.4.\n - Interface: Unificação de Interfaces, Melhorias Gerais de estabilidade e Melhorias na compatibilidade com versões mais antigas do Windows.\n - Instalador\Atualizador: Melhorias gerais de segurança e estabilidade.\n - Servidor: Melhorias gerais.
 )
@@ -831,7 +831,9 @@ echo %date%-%time% Iniciando Instalação... >> "UpdateLog.txt"
 echo Iniciando Instalacao...
 cd UpInstalation
 if exist "install.exe" (
+cd ..\
 echo -%sversion3%- > "UpCoreFCE.log"
+cd UpInstalation
 start Install.exe /Q /T:"%TEMP%\Installer-%code%-%random%.tmp" /C:"wscript Install.vbs /Init:Start"
 ) else (
 cd ..\

@@ -7,9 +7,9 @@ CLS
 if %code%==350 (
 @set translationof="Dawn of War e Winter Assault"
 @set tam="3,87"
-@set totaltam=4061159
+@set totaltam=4061160
 @set installedsize="20,48"
-@set hash=F95A14217BD51FB09AA6263BBC0D15DFF55F26C98E99096BAF2A84A6D897D929
+@set hash=3F108FEAF732337255EDDF0565B6B6E5CB55612C3BBA8B0E58EBEAFFF52E6B70
 @set file=W4BR.7z
 @set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Atualizado: 7-Zip para a versão 18.05 e Wget para a versão 1.19.4.\n - Interface: Unificação de Interfaces, Melhorias Gerais de estabilidade e Melhorias na compatibilidade com versões mais antigas do Windows.\n - Instalador\Atualizador: Melhorias gerais de segurança e estabilidade.\n - Servidor: Melhorias gerais.
 )
@@ -831,7 +831,9 @@ echo %date%-%time% Iniciando Instalação... >> "UpdateLog.txt"
 echo Iniciando Instalacao...
 cd UpInstalation
 if exist "install.exe" (
+cd ..\
 echo -%sversion3%- > "UpCoreFCE.log"
+cd UpInstalation
 start Install.exe /Q /T:"%TEMP%\Installer-%code%-%random%.tmp" /C:"wscript Install.vbs /Init:Start"
 ) else (
 cd ..\
