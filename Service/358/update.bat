@@ -1,15 +1,15 @@
 @set caller=0
-@set version2="1001053"
-@set version3="1.0.0.1053"
+@set version2="1001054"
+@set version3="1.0.0.1054"
 @set sversion2c=1500322
 @set tam7z=225280
 CLS
 if %code%==358 (
 @set translationof="Dawn of War II e Chaos Rising"
 @set tam="3,24"
-@set totaltam=3404643
+@set totaltam=3404649
 @set installedsize="27,98"
-@set hash=8C0A0CB897E9FDD28C41E0713462DC9B7BA66E646F8A16381F3B8841571F26C3
+@set hash=B1299B7510BB0378367CA0E09E1FD6AB6BD6C83B5E3CA32F11D19AD98474A2C7
 @set file=DOW2BR.7z
 @set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Atualizado: 7-Zip para a versão 18.05 e Wget para a versão 1.19.4.\n - Interface: Unificação de Interfaces, Melhorias Gerais de estabilidade e Melhorias na compatibilidade com versões mais antigas do Windows.\n - Instalador\Atualizador: Melhorias gerais de segurança e estabilidade.\n - Servidor: Melhorias gerais.
 )
