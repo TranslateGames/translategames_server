@@ -1,17 +1,17 @@
 @set caller=0
-@set version2="60012397"
-@set version3="6.0.0.12397"
-@set sversion2c=1500322
+@set version2="60012398"
+@set version3="6.0.0.12398"
+@set sversion2c=1500323
 @set tam7z=226304
 CLS
 if %code%==350-3 (
 @set translationof="Dawn of War - Dark Crusade"
-@set tam="3,39"
-@set totaltam=3556266
+@set tam="3,38"
+@set totaltam=3555287
 @set installedsize="36,18"
-@set hash=5EB15A26FB4256099A65A6A5244E12EC14AA303E1EB72110BC2F617071467FEC
+@set hash=2D9FEC5BDE8196EF01FE2B89EFCF3946D657CD6B39D4695199F3FB2DDD7ECC5A
 @set file=DCBR.7z
-@set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Atualizado: 7-Zip para a versão 18.06 e Wget para a versão 1.19.4.\n - Interface: Unificação de Interfaces, Melhorias Gerais de estabilidade e Melhorias na compatibilidade com versões mais antigas do Windows.\n - Instalador\Atualizador: Melhorias gerais de segurança e estabilidade.\n - Servidor: Melhorias gerais.
+@set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Atualizado: 7-Zip para a versão 18.06 e Wget para a versão 1.19.4.\n - Interface: Melhorias Gerais de estabilidade e Melhorias na compatibilidade com versões mais antigas do Windows.\n - Instalador\Atualizador: Melhorias gerais de segurança e estabilidade.\n - Servidor: Melhorias gerais.
 )
 CLS
 @set secundarysvr=https://raw.githubusercontent.com/TranslateGames/translategames_server/master/Update/%file%
