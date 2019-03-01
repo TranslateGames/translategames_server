@@ -9,7 +9,7 @@ if %code%==350 (
 @set tam="3,87"
 @set totaltam=4062875
 @set installedsize="20,48"
-@set hash=0809E1D09FB2415C4D65FDB3F94AE0575CF2BF505D7921AD26968642562E6D68
+@set hash=64BAB8D58EEB7FF134FDA1534DE525606E50BCEE1CE5294BE38F42C446025A5E
 @set file=W4BR.7z
 @set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Atualizado: 7-Zip para a versão 18.06 e Wget para a versão 1.19.4.\n - Interface: Melhorias Gerais de estabilidade e Melhorias na compatibilidade com versões mais antigas do Windows.\n - Instalador\Atualizador: Melhorias gerais de segurança e estabilidade.\n - Servidor: Melhorias gerais.
 )

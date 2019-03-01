@@ -9,7 +9,7 @@ if %code%==356 (
 @set tam="2,97"
 @set totaltam=3119822
 @set installedsize="3,78"
-@set hash=40F4959D49C1EFDD7456FFDD318FB201411EC20DF106E573E6F6909F285E8AFC
+@set hash=B236F84EFBCD54F7F62B03A058F5FC80611125577A49DD1473516AB6DA17F2A6
 @set file=AOMBR.7z
 @set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Atualizado: 7-Zip para a versão 18.06 e Wget para a versão 1.19.4.\n - Interface: Melhorias Gerais de estabilidade e Melhorias na compatibilidade com versões mais antigas do Windows.\n - Instalador\Atualizador: Melhorias gerais de segurança e estabilidade.\n - Servidor: Melhorias gerais.
 )

@@ -9,7 +9,7 @@ if %code%==357 (
 @set tam="3,42"
 @set totaltam=3588070
 @set installedsize="36,2"
-@set hash=A72AEF9FC6C0E0B5768ABF51682EA5AB7B3E97BD69687404D40D7FD22FF6DEF0
+@set hash=9A6DEC200276B048BA02173879A395FCDE78C783D11064E624955862A3BE5564
 @set file=DOW2RBR.7z
 @set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias na velocidade da extração de inicialização, Atualizado: 7-Zip para a versão 18.06 e Wget para a versão 1.19.4.\n - Interface: Melhorias Gerais de estabilidade e Melhorias na compatibilidade com versões mais antigas do Windows.\n - Instalador\Atualizador: Melhorias gerais de segurança e estabilidade.\n - Servidor: Melhorias gerais.
 )
