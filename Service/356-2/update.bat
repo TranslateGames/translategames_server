@@ -1,23 +1,23 @@
 @set caller=0
-@set version2="1002753"
-@set version3="1.0.0.2753"
-@set sversion2c=1500323
+@set version2="1002754"
+@set version3="1.0.0.2754"
+@set sversion2c=1500324
 @set tam7z=227328
 CLS
 if %code%==356-2 (
 @set translationof="Age of Mythology: The Titans Expansion"
 @set tam="2,95"
-@set totaltam=3100855
+@set totaltam=3101786
 @set installedsize="3,8"
-@set hash=5FD2BF65377538A6173421204FFE684EC5A78D935183C2A0A8C139D1C81491F9
+@set hash=1587BBDBDAF7CC19402BB822A07DF820A9A3AC28A8525816FBEA9DCAA1388AF1
 @set file=XAOMBR.7z
-@set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Atualizado: 7-Zip para a versão 19.00 e Wget para a versão 1.19.4.\n - Interface: Melhorias Gerais de estabilidade e Melhorias na compatibilidade com versões mais antigas do Windows.\n - Instalador\Atualizador: Melhorias gerais de segurança e estabilidade.\n - Servidor: Melhorias gerais.
+@set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias de segurança em todas as conexões, Atualizado: 7-Zip para a versão 19.00 e Wget para a versão 1.19.4.\n - Interface: Melhorias Gerais de estabilidade e Melhorias na compatibilidade com versões mais antigas do Windows.\n - Instalador\Atualizador: Melhorias gerais de segurança e estabilidade.\n - Servidor: Melhorias gerais e Adicionado: Suporte completo ao protocolo HTTPS.
 )
 CLS
 @set secundarysvr=https://raw.githubusercontent.com/TranslateGames/translategames_server/master/Update/%file%
-@set primarysvr=http://translategames.tk/updater/download/%code%
+@set primarysvr=https://translategames.tk/updater/download/%code%
 @set secundarysvrS=https://raw.githubusercontent.com/TranslateGames/translategames_server/master/Update/%file%
-@set primarysvrS=http://translategames.tk/updater/download/%code%
+@set primarysvrS=https://translategames.tk/updater/download/%code%
 @set timer=%timer%%caller%
 @set limiter=%limiter%%caller%
 @set ERROS=%caller%

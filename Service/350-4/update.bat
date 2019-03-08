@@ -1,23 +1,23 @@
 @set caller=0
-@set version2="60012399"
-@set version3="6.0.0.12399"
-@set sversion2c=1500323
+@set version2="60012400"
+@set version3="6.0.0.12400"
+@set sversion2c=1500324
 @set tam7z=227328
 CLS
 if %code%==350-4 (
 @set translationof="Dawn of War - Soulstorm"
-@set tam="3,53"
-@set totaltam=3704321
-@set installedsize="61,29"
-@set hash=CE6EF3202D4C59938B1355BE7242794EF320348BAD71113652C502A5D5B9EEE4
+@set tam="3,49"
+@set totaltam=3667816
+@set installedsize="61,18"
+@set hash=3AA86182CA256045DB0CBC25FF241D5000368BCFC39735B96CB7AEF35E0B4725
 @set file=SSBR.7z
-@set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Atualizado: 7-Zip para a versão 19.00 e Wget para a versão 1.19.4.\n - Interface: Melhorias Gerais de estabilidade e Melhorias na compatibilidade com versões mais antigas do Windows.\n - Instalador\Atualizador: Melhorias gerais de segurança e estabilidade.\n - Servidor: Melhorias gerais.
+@set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias de segurança em todas as conexões, Atualizado: 7-Zip para a versão 19.00 e Wget para a versão 1.19.4.\n - Interface: Melhorias Gerais de estabilidade e Melhorias na compatibilidade com versões mais antigas do Windows.\n - Instalador\Atualizador: Melhorias gerais de segurança e estabilidade.\n - Servidor: Melhorias gerais e Adicionado: Suporte completo ao protocolo HTTPS.
 )
 CLS
 @set secundarysvr=https://raw.githubusercontent.com/TranslateGames/translategames_server/master/Update/%file%
-@set primarysvr=http://translategames.tk/updater/download/%code%
+@set primarysvr=https://translategames.tk/updater/download/%code%
 @set secundarysvrS=https://raw.githubusercontent.com/TranslateGames/translategames_server/master/Update/%file%
-@set primarysvrS=http://translategames.tk/updater/download/%code%
+@set primarysvrS=https://translategames.tk/updater/download/%code%
 @set timer=%timer%%caller%
 @set limiter=%limiter%%caller%
 @set ERROS=%caller%
