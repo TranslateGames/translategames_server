@@ -1,17 +1,17 @@
 @set caller=0
-@set version2="60012400"
-@set version3="6.0.0.12400"
+@set version2="60012401"
+@set version3="6.0.0.12401"
 @set sversion2c=1500324
 @set tam7z=227328
 CLS
 if %code%==350 (
 @set translationof="Dawn of War e Winter Assault"
 @set tam="3,83"
-@set totaltam=4024800
+@set totaltam=4024886
 @set installedsize="20,37"
-@set hash=E6A60ED07B9B2B488F79FCF752A59CB23B33A651C177A5832D4AFCCD7CBD41EC
+@set hash=8EB1C247D8AD60C35C2E41990D38543C7B4FF24C4BC8E69EBAB9A261BB8A11E4
 @set file=W4BR.7z
-@set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias de segurança em todas as conexões, Atualizado: 7-Zip para a versão 19.00 e Wget para a versão 1.19.4.\n - Interface: Melhorias Gerais de estabilidade e Melhorias na compatibilidade com versões mais antigas do Windows.\n - Instalador\Atualizador: Melhorias gerais de segurança e estabilidade.\n - Servidor: Melhorias gerais e Adicionado: Suporte completo ao protocolo HTTPS.
+@set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias de segurança em todas as conexões, Atualizado: 7-Zip para a versão 19.00.\n - Interface: Melhorias Gerais de estabilidade e Melhorias na compatibilidade com versões mais antigas do Windows.\n - Instalador\Atualizador: Melhorias gerais de segurança e estabilidade.\n - Servidor: Melhorias gerais e Adicionado: Suporte completo ao protocolo HTTPS.
 )
 CLS
 @set secundarysvr=https://raw.githubusercontent.com/TranslateGames/translategames_server/master/Update/%file%
