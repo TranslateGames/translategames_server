@@ -1,15 +1,15 @@
 @set caller=0
-@set version2="1002755"
-@set version3="1.0.0.2755"
-@set sversion2c=1500324
+@set version2="1002756"
+@set version3="1.0.0.2756"
+@set sversion2c=1500325
 @set tam7z=227328
 CLS
 if %code%==356 (
 @set translationof="Age of Mythology"
 @set tam="2,97"
-@set totaltam=3120446
+@set totaltam=3120502
 @set installedsize="3,78"
-@set hash=6709154B243C4B8A1B117EA1F9BA9E0AD0088A7D95C96A36A39DD8E9985C4678
+@set hash=DA9AE636934107EBB1AAEB07469033342C53053BB35F50181C29D62577B6B0A5
 @set file=AOMBR.7z
 @set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias de segurança em todas as conexões, Atualizado: 7-Zip para a versão 19.00.\n - Interface: Melhorias Gerais de estabilidade e Melhorias na compatibilidade com versões mais antigas do Windows.\n - Instalador\Atualizador: Melhorias gerais de segurança e estabilidade.\n - Servidor: Melhorias gerais e Adicionado: Suporte completo ao protocolo HTTPS.
 )

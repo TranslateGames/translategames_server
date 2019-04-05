@@ -1,15 +1,15 @@
 @set caller=0
-@set version2="60012401"
-@set version3="6.0.0.12401"
-@set sversion2c=1500324
+@set version2="60012402"
+@set version3="6.0.0.12402"
+@set sversion2c=1500325
 @set tam7z=227328
 CLS
 if %code%==350-4 (
 @set translationof="Dawn of War - Soulstorm"
 @set tam="3,49"
-@set totaltam=3666645
+@set totaltam=3666781
 @set installedsize="61,18"
-@set hash=E6E8DF6EB7E2B097C3CD5E7712C665964901C7097770F05EF2680B878E399B48
+@set hash=4BFB832E616F8C91F8EE82E542B1C7F16D0163BA5CE9BF5B28907BA3B2F23138
 @set file=SSBR.7z
 @set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias de segurança em todas as conexões, Atualizado: 7-Zip para a versão 19.00.\n - Interface: Melhorias Gerais de estabilidade e Melhorias na compatibilidade com versões mais antigas do Windows.\n - Instalador\Atualizador: Melhorias gerais de segurança e estabilidade.\n - Servidor: Melhorias gerais e Adicionado: Suporte completo ao protocolo HTTPS.
 )
