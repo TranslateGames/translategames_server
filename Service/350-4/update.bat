@@ -2,14 +2,15 @@
 @set version2="60012402"
 @set version3="6.0.0.12402"
 @set sversion2c=1800327
+@set sversion3c="1.8.0.0327"
 @set tam7z=227328
 CLS
 if %code%==350-4 (
 @set translationof="Dawn of War - Soulstorm"
 @set tam="3,49"
-@set totaltam=3668745
+@set totaltam=3668746
 @set installedsize="61,18"
-@set hash=AD022174F3C2B3D256132F684E4DCD65C6588FA944232DB9E8B9DDC5481DF702
+@set hash=46E0940B9417AC765B7A3004D6B068CD89BDD6A04A351F566BAF3325F7F8FB0C
 @set file=SSBR.7z
 @set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias de segurança em todas as conexões e Desempenho aprimorado.\n - Interface: Melhorias Gerais de estabilidade e Correções de erros.\n - Instalador\Atualizador: Melhorias gerais de segurança e estabilidade.\n - Servidor: Melhorias gerais e Adicionado: Suporte completo ao protocolo HTTPS.
 )
@@ -145,11 +146,11 @@ del UpScript.temp
 del UpScript.7z
 del UpScript*
 CLS
-echo %date%-%time% Atualização de Pacotes do Atualizador encontrada! Versão: %sversion2c% >> "UpdateLog.txt"
-echo Atualização de Pacotes do Atualizador encontrada!
+echo %date%-%time% Atualização de complementos do Atualizador encontrada! Versão: %sversion3c% >> "UpdateLog.txt"
+echo Atualização de complementos do Atualizador encontrada!
 CLS
-echo %date%-%time% Baixando Pacote... >> "UpdateLog.txt"
-echo Baixando Pacote...
+echo %date%-%time% Baixando complementos... >> "UpdateLog.txt"
+echo Baixando complementos...
 wget.exe https://raw.githubusercontent.com/TranslateGames/translategames_server/master/Service/UpScript.temp --user-agent=%useragentstring% --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=10 --tries=2
 title Atualizador%code%t
 if not exist "UpScript.temp" (
@@ -162,7 +163,7 @@ if exist "UpScript.temp" (
 CLS
 move UpScript.temp UpScript.7z
 CLS
-echo %date%-%time% Extraindo Pacotes... Versão: %sversion2c% >> "UpdateLog.txt"
+echo %date%-%time% Extraindo complementos... Versão: %sversion3c% >> "UpdateLog.txt"
 echo Extraindo Pacotes...
 CLS
 if exist "error.png" (
@@ -251,9 +252,9 @@ goto pProgress
 CLS
 del UpScript.temp
 CLS
-echo %date%-%time% Falha ao Baixar Pacote! >> "UpdateLog.txt"
-echo %date%-%time% Continuando sem Atualização de Pacotes... >> "UpdateLog.txt"
-echo Falha ao Baixar Pacote!
+echo %date%-%time% Falha ao Baixar complementos! >> "UpdateLog.txt"
+echo %date%-%time% Continuando sem Atualização de complementos... >> "UpdateLog.txt"
+echo Falha ao Baixar complementos!
 goto init
 )
 ) else (
