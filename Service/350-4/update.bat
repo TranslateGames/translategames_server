@@ -9,7 +9,7 @@ if %code%==350-4 (
 @set tam="3,49"
 @set totaltam=3668746
 @set installedsize="61,18"
-@set hash=9C29628A520750832C516AE17471E4ACDACF16E7BA357E39066B6080E98139F9
+@set hash=15857583B1DA2A57C0BACD67775B524DF63A02E3AD3BE56E480B49420104C241
 @set file=SSBR.7z
 @set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias de segurança em todas as conexões e Desempenho aprimorado.\n - Interface: Melhorias Gerais de estabilidade e Correções de erros.\n - Instalador\Atualizador: Melhorias gerais de segurança e estabilidade.\n - Servidor: Melhorias gerais e Adicionado: Suporte completo ao protocolo HTTPS.
 )
