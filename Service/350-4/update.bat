@@ -1,17 +1,17 @@
 @set caller=0
 @set version2="60012402"
 @set version3="6.0.0.12402"
-@set sversion2c=1500325
+@set sversion2c=1800326
 @set tam7z=227328
 CLS
 if %code%==350-4 (
 @set translationof="Dawn of War - Soulstorm"
 @set tam="3,49"
-@set totaltam=3666781
+@set totaltam=3668745
 @set installedsize="61,18"
-@set hash=4BFB832E616F8C91F8EE82E542B1C7F16D0163BA5CE9BF5B28907BA3B2F23138
+@set hash=50F697BAC6056BA2EB7EE90BAB8F712EEB7A64A3BD0B0CC32DE0C0316BBBAA49
 @set file=SSBR.7z
-@set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias de segurança em todas as conexões, Atualizado: 7-Zip para a versão 19.00.\n - Interface: Melhorias Gerais de estabilidade e Melhorias na compatibilidade com versões mais antigas do Windows.\n - Instalador\Atualizador: Melhorias gerais de segurança e estabilidade.\n - Servidor: Melhorias gerais e Adicionado: Suporte completo ao protocolo HTTPS.
+@set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias de segurança em todas as conexões e Desempenho aprimorado.\n - Interface: Melhorias Gerais de estabilidade e Correções de erros.\n - Instalador\Atualizador: Melhorias gerais de segurança e estabilidade.\n - Servidor: Melhorias gerais e Adicionado: Suporte completo ao protocolo HTTPS.
 )
 CLS
 @set secundarysvr=https://raw.githubusercontent.com/TranslateGames/translategames_server/master/Update/%file%
@@ -168,9 +168,6 @@ CLS
 if exist "error.png" (
 move error.png error.temp
 )
-if exist "ExtractSize.vbs" (
-move ExtractSize.vbs ExtractSize.temp
-)
 if exist "Hash.exe" (
 move Hash.exe HashF.temp
 )
@@ -196,13 +193,6 @@ del error.png
 move error.temp error.png
 ) else (
 del error.temp
-)
-if not exist "ExtractSize.vbs" (
-set /a ERROS=ERROS+FATOR
-del ExtractSize.vbs
-move ExtractSize.temp ExtractSize.vbs
-) else (
-del ExtractSize.temp
 )
 if not exist "Hash.exe" (
 set /a ERROS=ERROS+FATOR
@@ -317,7 +307,7 @@ echo -0-90- > "ProgressBar.log"
 echo 0 > "Server.log"
 echo 0 > "DSize.log"
 echo 0 > "ChangeLogIV.log"
-echo 0 > "UpdateMode.log
+echo 0 > "UpdateMode.log"
 echo 0 > "ServerP.log"
 echo 0 > "UpCoreFCE.log"
 del ChangeLog.log
