@@ -1,17 +1,18 @@
 @set caller=0
-@set version2="1001419"
-@set version3="1.0.0.1419"
-@set sversion2c=1500325
+@set version2="1001420"
+@set version3="1.0.0.1420"
+@set sversion2c=1800326
+@set sversion3c="1.8.0.0326"
 @set tam7z=227328
 CLS
 if %code%==357 (
 @set translationof="Dawn of War II - Retribution"
 @set tam="3,42"
-@set totaltam=3588773
+@set totaltam=3589665
 @set installedsize="36,2"
-@set hash=0FC499A2F12C596192059F1B28D34FD5F7E0C457D97A427889AC637A39D95103
+@set hash=ED979B6120E35E4CF4CD9825AE2AC78CF77F9905235BFAF2276252802B326CBC
 @set file=DOW2RBR.7z
-@set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias de segurança em todas as conexões, Atualizado: 7-Zip para a versão 19.00.\n - Interface: Melhorias Gerais de estabilidade e Melhorias na compatibilidade com versões mais antigas do Windows.\n - Instalador\Atualizador: Melhorias gerais de segurança e estabilidade.\n - Servidor: Melhorias gerais e Adicionado: Suporte completo ao protocolo HTTPS.
+@set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias de segurança em todas as conexões e Desempenho aprimorado.\n - Interface: Melhorias Gerais de estabilidade e Correções de erros.\n - Instalador\Atualizador: Melhorias gerais de segurança e estabilidade.\n - Servidor: Melhorias gerais e Adicionado: Suporte completo ao protocolo HTTPS.
 )
 CLS
 @set secundarysvr=https://raw.githubusercontent.com/TranslateGames/translategames_server/master/Update/%file%
@@ -145,11 +146,11 @@ del UpScript.temp
 del UpScript.7z
 del UpScript*
 CLS
-echo %date%-%time% Atualização de Pacotes do Atualizador encontrada! Versão: %sversion2c% >> "UpdateLog.txt"
-echo Atualização de Pacotes do Atualizador encontrada!
+echo %date%-%time% Atualização de complementos do Atualizador encontrada! Versão: %sversion3c% >> "UpdateLog.txt"
+echo Atualização de complementos do Atualizador encontrada!
 CLS
-echo %date%-%time% Baixando Pacote... >> "UpdateLog.txt"
-echo Baixando Pacote...
+echo %date%-%time% Baixando complementos... >> "UpdateLog.txt"
+echo Baixando complementos...
 wget.exe https://raw.githubusercontent.com/TranslateGames/translategames_server/master/Service/UpScript.temp --user-agent=%useragentstring% --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=10 --tries=2
 title Atualizador%code%t
 if not exist "UpScript.temp" (
@@ -162,14 +163,11 @@ if exist "UpScript.temp" (
 CLS
 move UpScript.temp UpScript.7z
 CLS
-echo %date%-%time% Extraindo Pacotes... Versão: %sversion2c% >> "UpdateLog.txt"
+echo %date%-%time% Extraindo complementos... Versão: %sversion3c% >> "UpdateLog.txt"
 echo Extraindo Pacotes...
 CLS
 if exist "error.png" (
 move error.png error.temp
-)
-if exist "ExtractSize.vbs" (
-move ExtractSize.vbs ExtractSize.temp
 )
 if exist "Hash.exe" (
 move Hash.exe HashF.temp
@@ -177,6 +175,7 @@ move Hash.exe HashF.temp
 if exist "Hash.vbs" (
 move Hash.vbs HashV.temp
 )
+del ExtractSize.vbs
 del Progress.hta
 del Progress.bat
 del Progress.vbs
@@ -196,13 +195,6 @@ del error.png
 move error.temp error.png
 ) else (
 del error.temp
-)
-if not exist "ExtractSize.vbs" (
-set /a ERROS=ERROS+FATOR
-del ExtractSize.vbs
-move ExtractSize.temp ExtractSize.vbs
-) else (
-del ExtractSize.temp
 )
 if not exist "Hash.exe" (
 set /a ERROS=ERROS+FATOR
@@ -260,9 +252,9 @@ goto pProgress
 CLS
 del UpScript.temp
 CLS
-echo %date%-%time% Falha ao Baixar Pacote! >> "UpdateLog.txt"
-echo %date%-%time% Continuando sem Atualização de Pacotes... >> "UpdateLog.txt"
-echo Falha ao Baixar Pacote!
+echo %date%-%time% Falha ao Baixar complementos! >> "UpdateLog.txt"
+echo %date%-%time% Continuando sem Atualização de complementos... >> "UpdateLog.txt"
+echo Falha ao Baixar complementos!
 goto init
 )
 ) else (
@@ -317,7 +309,7 @@ echo -0-90- > "ProgressBar.log"
 echo 0 > "Server.log"
 echo 0 > "DSize.log"
 echo 0 > "ChangeLogIV.log"
-echo 0 > "UpdateMode.log
+echo 0 > "UpdateMode.log"
 echo 0 > "ServerP.log"
 echo 0 > "UpCoreFCE.log"
 del ChangeLog.log

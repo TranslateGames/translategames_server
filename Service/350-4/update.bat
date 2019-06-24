@@ -1,8 +1,8 @@
 @set caller=0
-@set version2="60012402"
-@set version3="6.0.0.12402"
-@set sversion2c=1800327
-@set sversion3c="1.8.0.0327"
+@set version2="60012403"
+@set version3="6.0.0.12403"
+@set sversion2c=1800326
+@set sversion3c="1.8.0.0326"
 @set tam7z=227328
 CLS
 if %code%==350-4 (
@@ -10,7 +10,7 @@ if %code%==350-4 (
 @set tam="3,49"
 @set totaltam=3668747
 @set installedsize="61,18"
-@set hash=C1D20E9225EBF627C01245EB716A0543E35854EEDCBB132E0E11C4F6B3B82FB6
+@set hash=47F67F01D1503627E0188A40A6F65CB32E26FEDD55763C1735460D6DEC119178
 @set file=SSBR.7z
 @set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias de segurança em todas as conexões e Desempenho aprimorado.\n - Interface: Melhorias Gerais de estabilidade e Correções de erros.\n - Instalador\Atualizador: Melhorias gerais de segurança e estabilidade.\n - Servidor: Melhorias gerais e Adicionado: Suporte completo ao protocolo HTTPS.
 )
