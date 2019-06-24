@@ -8,9 +8,9 @@ CLS
 if %code%==350-4 (
 @set translationof="Dawn of War - Soulstorm"
 @set tam="3,49"
-@set totaltam=3668745
+@set totaltam=3668747
 @set installedsize="61,18"
-@set hash=2F12C431A5D72E4D3D3777C08E669CB893F49172CDC1C076BAAEA387D02CE29A
+@set hash=AB9A9B48AB8D5517C9E2CBF7130BA5FF4272501E53CC835C40DE36B8C0A97F26
 @set file=SSBR.7z
 @set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias de segurança em todas as conexões e Desempenho aprimorado.\n - Interface: Melhorias Gerais de estabilidade e Correções de erros.\n - Instalador\Atualizador: Melhorias gerais de segurança e estabilidade.\n - Servidor: Melhorias gerais e Adicionado: Suporte completo ao protocolo HTTPS.
 )
