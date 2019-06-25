@@ -1,6 +1,6 @@
 @set caller=0
-@set version2="1002757"
-@set version3="1.0.0.2757"
+@set version2="1002758"
+@set version3="1.0.0.2758"
 @set sversion2c=1800326
 @set sversion3c="1.8.0.0326"
 @set tam7z=227328
@@ -8,9 +8,9 @@ CLS
 if %code%==356 (
 @set translationof="Age of Mythology"
 @set tam="2,97"
-@set totaltam=3120732
+@set totaltam=3120995
 @set installedsize="3,78"
-@set hash=118EB200144EA7571E2CE492FAA3B2BD16780D4A25BED22FDCE6176654FB5810
+@set hash=72FC820B63EDAB5E5B1A7770E7BF767243D8365ABF0B3FD98153DA3FC2341733
 @set file=AOMBR.7z
 @set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias de segurança em todas as conexões e Desempenho aprimorado.\n - Interface: Melhorias Gerais de estabilidade e Correções de erros.\n - Instalador\Atualizador: Melhorias gerais de segurança e estabilidade.\n - Servidor: Melhorias gerais e Adicionado: Suporte completo ao protocolo HTTPS.
 )
@@ -400,7 +400,7 @@ CLS
 if %mode%==install (
 echo %date%-%time% Tradução Disponível! >> "UpdateLog.txt"
 ) else (
-echo %date%-%time% Atualização Disponível! Versão: %version2% >> "UpdateLog.txt"
+echo %date%-%time% Atualização Disponível! Versão: %version3% >> "UpdateLog.txt"
 )
 CLS
 echo %mode%>"UpdateMode.log
@@ -424,7 +424,7 @@ CLS
 if %mode%==install (
 echo %date%-%time% Tradução Disponível! >> "UpdateLog.txt"
 ) else (
-echo %date%-%time% Atualização Disponível! Versão: %version2% >> "UpdateLog.txt"
+echo %date%-%time% Atualização Disponível! Versão: %version3% >> "UpdateLog.txt"
 )
 CLS
 echo %mode%>"UpdateMode.log

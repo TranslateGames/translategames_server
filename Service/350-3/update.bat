@@ -1,6 +1,6 @@
 @set caller=0
-@set version2="60012403"
-@set version3="6.0.0.12403"
+@set version2="60012404"
+@set version3="6.0.0.12404"
 @set sversion2c=1800326
 @set sversion3c="1.8.0.0326"
 @set tam7z=227328
@@ -8,9 +8,9 @@ CLS
 if %code%==350-3 (
 @set translationof="Dawn of War - Dark Crusade"
 @set tam="3,35"
-@set totaltam=3520272
+@set totaltam=3520575
 @set installedsize="36,07"
-@set hash=8EA99A33512647AE2B18CA5E088E7979459B9299B0BC1E7456CB8076D01A7502
+@set hash=1534E1CF704699FD55C616C5827D35AEF2B0528BB5D159A57BF78B3E30AABA07
 @set file=DCBR.7z
 @set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias de segurança em todas as conexões e Desempenho aprimorado.\n - Interface: Melhorias Gerais de estabilidade e Correções de erros.\n - Instalador\Atualizador: Melhorias gerais de segurança e estabilidade.\n - Servidor: Melhorias gerais e Adicionado: Suporte completo ao protocolo HTTPS.
 )
@@ -400,7 +400,7 @@ CLS
 if %mode%==install (
 echo %date%-%time% Tradução Disponível! >> "UpdateLog.txt"
 ) else (
-echo %date%-%time% Atualização Disponível! Versão: %version2% >> "UpdateLog.txt"
+echo %date%-%time% Atualização Disponível! Versão: %version3% >> "UpdateLog.txt"
 )
 CLS
 echo %mode%>"UpdateMode.log
@@ -424,7 +424,7 @@ CLS
 if %mode%==install (
 echo %date%-%time% Tradução Disponível! >> "UpdateLog.txt"
 ) else (
-echo %date%-%time% Atualização Disponível! Versão: %version2% >> "UpdateLog.txt"
+echo %date%-%time% Atualização Disponível! Versão: %version3% >> "UpdateLog.txt"
 )
 CLS
 echo %mode%>"UpdateMode.log

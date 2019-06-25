@@ -1,6 +1,6 @@
 @set caller=0
-@set version2="60012403"
-@set version3="6.0.0.12403"
+@set version2="60012404"
+@set version3="6.0.0.12404"
 @set sversion2c=1800326
 @set sversion3c="1.8.0.0326"
 @set tam7z=227328
@@ -8,9 +8,9 @@ CLS
 if %code%==350 (
 @set translationof="Dawn of War e Winter Assault"
 @set tam="3,83"
-@set totaltam=4026836
+@set totaltam=4027130
 @set installedsize="20,37"
-@set hash=3E90753BBAFC4C2246436EA394AAED008C4FF783DD29A0A4D9B2E81C60DF0472
+@set hash=A12AEBC1650DABDEA11A83340BE1305BA0E150299ACCF6B02B12C46BF72D419C
 @set file=W4BR.7z
 @set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias de segurança em todas as conexões e Desempenho aprimorado.\n - Interface: Melhorias Gerais de estabilidade e Correções de erros.\n - Instalador\Atualizador: Melhorias gerais de segurança e estabilidade.\n - Servidor: Melhorias gerais e Adicionado: Suporte completo ao protocolo HTTPS.
 )
@@ -400,7 +400,7 @@ CLS
 if %mode%==install (
 echo %date%-%time% Tradução Disponível! >> "UpdateLog.txt"
 ) else (
-echo %date%-%time% Atualização Disponível! Versão: %version2% >> "UpdateLog.txt"
+echo %date%-%time% Atualização Disponível! Versão: %version3% >> "UpdateLog.txt"
 )
 CLS
 echo %mode%>"UpdateMode.log
@@ -424,7 +424,7 @@ CLS
 if %mode%==install (
 echo %date%-%time% Tradução Disponível! >> "UpdateLog.txt"
 ) else (
-echo %date%-%time% Atualização Disponível! Versão: %version2% >> "UpdateLog.txt"
+echo %date%-%time% Atualização Disponível! Versão: %version3% >> "UpdateLog.txt"
 )
 CLS
 echo %mode%>"UpdateMode.log

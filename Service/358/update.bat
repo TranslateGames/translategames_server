@@ -1,6 +1,6 @@
 @set caller=0
-@set version2="1001061"
-@set version3="1.0.0.1061"
+@set version2="1001062"
+@set version3="1.0.0.1062"
 @set sversion2c=1800326
 @set sversion3c="1.8.0.0326"
 @set tam7z=227328
@@ -8,9 +8,9 @@ CLS
 if %code%==358 (
 @set translationof="Dawn of War II e Chaos Rising"
 @set tam="3,24"
-@set totaltam=3405244
+@set totaltam=3405562
 @set installedsize="27,98"
-@set hash=30A1BC1C9783EFC3B532BDF955A0A2F58A8B5AB0B02A05372A4B8A2ACEB2FC24
+@set hash=CEAF3BEE4CA71B9B5BB56100518AABA9624D4990802677AD975156EF8A19D116
 @set file=DOW2BR.7z
 @set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias de segurança em todas as conexões e Desempenho aprimorado.\n - Interface: Melhorias Gerais de estabilidade e Correções de erros.\n - Instalador\Atualizador: Melhorias gerais de segurança e estabilidade.\n - Servidor: Melhorias gerais e Adicionado: Suporte completo ao protocolo HTTPS.
 )
@@ -400,7 +400,7 @@ CLS
 if %mode%==install (
 echo %date%-%time% Tradução Disponível! >> "UpdateLog.txt"
 ) else (
-echo %date%-%time% Atualização Disponível! Versão: %version2% >> "UpdateLog.txt"
+echo %date%-%time% Atualização Disponível! Versão: %version3% >> "UpdateLog.txt"
 )
 CLS
 echo %mode%>"UpdateMode.log
@@ -424,7 +424,7 @@ CLS
 if %mode%==install (
 echo %date%-%time% Tradução Disponível! >> "UpdateLog.txt"
 ) else (
-echo %date%-%time% Atualização Disponível! Versão: %version2% >> "UpdateLog.txt"
+echo %date%-%time% Atualização Disponível! Versão: %version3% >> "UpdateLog.txt"
 )
 CLS
 echo %mode%>"UpdateMode.log
