@@ -1,6 +1,6 @@
 @set caller=0
-@set version2="1001069"
-@set version3="1.0.0.1069"
+@set version2="1001070"
+@set version3="1.0.0.1070"
 @set sversion2c=1800326
 @set sversion3c="1.8.0.0326"
 @set tam7z=227328
@@ -10,9 +10,9 @@ if %code%==358 (
 @set tam="3,24"
 @set totaltam=3405740
 @set installedsize="27,98"
-@set hash=4B7C0A1F1B631FB8EBD2D9A1A3090AED43D033C4520B8F12F186B20350F2EF9C
+@set hash=CA0C1B903EE60AE1CD3E9F73D4F84AC8FAF46A6F47E22DB8064B8F11A0081CF8
 @set file=DOW2BR.7z
-@set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias de segurança em todas as conexões e Desempenho aprimorado.\n - Interface: Melhorias Gerais de estabilidade e Correções de erros.\n - Instalador\Atualizador: Melhorias gerais e Adicionado: Criação de cache dos arquivos de instalação, para posterior verificação.\n - Servidor: Melhorias gerais e Adicionado: Suporte completo ao protocolo HTTPS.
+@set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Desempenho aprimorado e Adicionado: Verificação de cache de arquivos de instalação.\n - Interface: Melhorias Gerais de estabilidade e Correções de erros.\n - Instalador\Atualizador: Melhorias gerais e Adicionado: Criação de cache dos arquivos de instalação, para posterior verificação.\n - Servidor: Melhorias gerais.
 )
 CLS
 @set secundarysvr=https://raw.githubusercontent.com/TranslateGames/translategames_server/master/Update/%file%

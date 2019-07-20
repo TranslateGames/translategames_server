@@ -1,6 +1,6 @@
 @set caller=0
-@set version2="60012411"
-@set version3="6.0.0.12411"
+@set version2="60012412"
+@set version3="6.0.0.12412"
 @set sversion2c=1800326
 @set sversion3c="1.8.0.0326"
 @set tam7z=227328
@@ -10,9 +10,9 @@ if %code%==350 (
 @set tam="3,84"
 @set totaltam=4027454
 @set installedsize="20,37"
-@set hash=A032663542417495C3469E08468DA65F093035E92E93AF1425A6B12DA94B9068
+@set hash=DFA5DD5A5023B76F356E8C718E760A611C233451D6CDBBF77ED950876F6B93A0
 @set file=W4BR.7z
-@set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias de segurança em todas as conexões e Desempenho aprimorado.\n - Interface: Melhorias Gerais de estabilidade e Correções de erros.\n - Instalador\Atualizador: Melhorias gerais e Adicionado: Criação de cache dos arquivos de instalação, para posterior verificação.\n - Servidor: Melhorias gerais e Adicionado: Suporte completo ao protocolo HTTPS.
+@set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Desempenho aprimorado e Adicionado: Verificação de cache de arquivos de instalação.\n - Interface: Melhorias Gerais de estabilidade e Correções de erros.\n - Instalador\Atualizador: Melhorias gerais e Adicionado: Criação de cache dos arquivos de instalação, para posterior verificação.\n - Servidor: Melhorias gerais.
 )
 CLS
 @set secundarysvr=https://raw.githubusercontent.com/TranslateGames/translategames_server/master/Update/%file%
