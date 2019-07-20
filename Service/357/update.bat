@@ -1,6 +1,6 @@
 @set caller=0
-@set version2="1001427"
-@set version3="1.0.0.1427"
+@set version2="1001428"
+@set version3="1.0.0.1428"
 @set sversion2c=1800326
 @set sversion3c="1.8.0.0326"
 @set tam7z=227328
@@ -8,11 +8,11 @@ CLS
 if %code%==357 (
 @set translationof="Dawn of War II - Retribution"
 @set tam="3,42"
-@set totaltam=3588797
+@set totaltam=3588906
 @set installedsize="36,2"
-@set hash=2FE6C088CEC2324DFDD7FAFBC849BDAE4C065DF324B50DD351BFBC660CE2272B
+@set hash=9FF89419CC41FA60040E733BF3CC71BCB5D702E8D8AC492BF0AA07DCE4D33D9F
 @set file=DOW2RBR.7z
-@set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias de segurança em todas as conexões e Desempenho aprimorado.\n - Interface: Melhorias Gerais de estabilidade e Correções de erros.\n - Instalador\Atualizador: Melhorias gerais de segurança e estabilidade.\n - Servidor: Melhorias gerais e Adicionado: Suporte completo ao protocolo HTTPS.
+@set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias de segurança em todas as conexões e Desempenho aprimorado.\n - Interface: Melhorias Gerais de estabilidade e Correções de erros.\n - Instalador\Atualizador: Melhorias gerais e Adicionado: Criação de cache dos arquivos de instalação, para posterior verificação.\n - Servidor: Melhorias gerais e Adicionado: Suporte completo ao protocolo HTTPS.
 )
 CLS
 @set secundarysvr=https://raw.githubusercontent.com/TranslateGames/translategames_server/master/Update/%file%

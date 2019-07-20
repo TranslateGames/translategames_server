@@ -1,6 +1,6 @@
 @set caller=0
-@set version2="1002763"
-@set version3="1.0.0.2763"
+@set version2="1002764"
+@set version3="1.0.0.2764"
 @set sversion2c=1800326
 @set sversion3c="1.8.0.0326"
 @set tam7z=227328
@@ -8,11 +8,11 @@ CLS
 if %code%==356 (
 @set translationof="Age of Mythology"
 @set tam="2,97"
-@set totaltam=3121865
+@set totaltam=3122031
 @set installedsize="3,78"
-@set hash=439BEF9A8D7AFFC55C0F1C60BDD0A445A9F7D1E064B1E490AB6F0F9D80EE9FD3
+@set hash=8F70A650303FB280CCDF240895FB3B4156AE8571B8B90DC61D908B628228CC2E
 @set file=AOMBR.7z
-@set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias de segurança em todas as conexões e Desempenho aprimorado.\n - Interface: Melhorias Gerais de estabilidade e Correções de erros.\n - Instalador\Atualizador: Melhorias gerais de segurança e estabilidade.\n - Servidor: Melhorias gerais e Adicionado: Suporte completo ao protocolo HTTPS.
+@set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Melhorias de segurança em todas as conexões e Desempenho aprimorado.\n - Interface: Melhorias Gerais de estabilidade e Correções de erros.\n - Instalador\Atualizador: Melhorias gerais e Adicionado: Criação de cache dos arquivos de instalação, para posterior verificação.\n - Servidor: Melhorias gerais e Adicionado: Suporte completo ao protocolo HTTPS.
 )
 CLS
 @set secundarysvr=https://raw.githubusercontent.com/TranslateGames/translategames_server/master/Update/%file%
