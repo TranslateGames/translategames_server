@@ -1,16 +1,16 @@
 @set caller=0
-@set version2="1002766"
-@set version3="1.0.0.2766"
-@set sversion2c=1800326
-@set sversion3c="1.8.0.0326"
+@set version2="1002767"
+@set version3="1.0.0.2767"
+@set sversion2c=1800327
+@set sversion3c="1.8.0.0327"
 @set tam7z=227328
 CLS
 if %code%==356-2 (
 @set translationof="Age of Mythology: The Titans Expansion"
 @set tam="2,95"
-@set totaltam=3102309
+@set totaltam=3103941
 @set installedsize="3,8"
-@set hash=3290E63984F73F898C9CC60E11F9AD64E3F8CA95DFC135F9780EB94D0A656E5B
+@set hash=11CCCEF228A9EB0BF932C7642195D85AA3B16C5EEA5D8F66389EF84F326D0D3E
 @set file=XAOMBR.7z
 @set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Desempenho aprimorado e Adicionado: Verificação de cache de arquivos de instalação.\n - Interface: Melhorias Gerais de estabilidade e Correções de erros.\n - Instalador\Atualizador: Melhorias gerais e Adicionado: Criação de cache dos arquivos de instalação, para posterior verificação.\n - Servidor: Melhorias gerais.
 )
