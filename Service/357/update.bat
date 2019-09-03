@@ -1,6 +1,6 @@
 @set caller=0
-@set version2="1001431"
-@set version3="1.0.0.1431"
+@set version2="1001432"
+@set version3="1.0.0.1432"
 @set sversion2c=1800327
 @set sversion3c="1.8.0.0327"
 @set tam7z=227328
@@ -8,9 +8,9 @@ CLS
 if %code%==357 (
 @set translationof="Dawn of War II - Retribution"
 @set tam="3,42"
-@set totaltam=3589592
+@set totaltam=3590708
 @set installedsize="36,2"
-@set hash=84F574414A62B5B92EA3FBBD35C24918A2B3396108D768DBB71AFFD68AA55DE0
+@set hash=1D33B57950D79D9B07C947BB71DBCF03C85AC7BBED2A42F4F805ABC28F6493ED
 @set file=DOW2RBR.7z
 @set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Desempenho aprimorado e Adicionado: Verificação de cache de arquivos de instalação.\n - Interface: Melhorias Gerais de estabilidade e Correções de erros.\n - Instalador\Atualizador: Melhorias gerais e Adicionado: Criação de cache dos arquivos de instalação, para posterior verificação.\n - Servidor: Melhorias gerais.
 )

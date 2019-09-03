@@ -1,6 +1,6 @@
 @set caller=0
-@set version2="60012413"
-@set version3="6.0.0.12413"
+@set version2="60012414"
+@set version3="6.0.0.12414"
 @set sversion2c=1800327
 @set sversion3c="1.8.0.0327"
 @set tam7z=227328
@@ -8,9 +8,9 @@ CLS
 if %code%==350-3 (
 @set translationof="Dawn of War - Dark Crusade"
 @set tam="3,35"
-@set totaltam=3520397
+@set totaltam=3520410
 @set installedsize="36,07"
-@set hash=663CD6A93F1985993392C0B912FA6CC057D089E43F7DB4CF986E45D320CBE895
+@set hash=8E270AD5689FC29B15CACC810219F9A15881D787B03F3B7C11A64AAC5F70944B
 @set file=DCBR.7z
 @set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Desempenho aprimorado e Adicionado: Verificação de cache de arquivos de instalação.\n - Interface: Melhorias Gerais de estabilidade e Correções de erros.\n - Instalador\Atualizador: Melhorias gerais e Adicionado: Criação de cache dos arquivos de instalação, para posterior verificação.\n - Servidor: Melhorias gerais.
 )
