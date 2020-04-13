@@ -1,6 +1,6 @@
 @set caller=0
-@set version2="60012416"
-@set version3="6.0.0.12416"
+@set version2="60012417"
+@set version3="6.0.0.12417"
 @set sversion2c=1800328
 @set sversion3c="1.8.0.0328"
 @set tam7z=227328
@@ -8,17 +8,17 @@ CLS
 if %code%==350 (
 @set translationof="Dawn of War e Winter Assault"
 @set tam="3,81"
-@set totaltam=3999839
+@set totaltam=3999026
 @set installedsize="20,34"
-@set hash=42CAA4B811875B86474C2A2682337DBA09C12C3D0ADD87EDEB5C497EBB9EA3C8
+@set hash=664BDAC5F456E3BBC96379C68C32EA4A29CB137BF6420CBBF438E4F0B78F26F6
 @set file=W4BR.7z
 @set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Desempenho aprimorado e Adicionado: Verificação de cache de arquivos de instalação.\n - Interface: Melhorias Gerais de estabilidade e Correções de erros.\n - Instalador\Atualizador: Melhorias gerais e Adicionado: Criação de cache dos arquivos de instalação, para posterior verificação.\n - Servidor: Melhorias gerais.
 )
 CLS
 @set secundarysvr=https://raw.githubusercontent.com/TranslateGames/translategames_server/master/Update/%file%
-@set primarysvr=https://translategames.tk/updater/download/%code%
+@set primarysvr=https://translategames.com.br/updater/download/%code%
 @set secundarysvrS=https://raw.githubusercontent.com/TranslateGames/translategames_server/master/Update/%file%
-@set primarysvrS=https://translategames.tk/updater/download/%code%
+@set primarysvrS=https://translategames.com.br/updater/download/%code%
 @set timer=%timer%%caller%
 @set limiter=%limiter%%caller%
 @set ERROS=%caller%
@@ -132,7 +132,7 @@ if %tamanho%==%tam7z% (
 del 7z.exe
 move 7z.temp 7z.exe
 ) else (
-wget.exe http://translategames.tk/updater/request/7z.temp --output-document=7z.temp --user-agent=%useragentstring% --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=10 --tries=2
+wget.exe http://translategames.com.br/updater/request/7z.temp --output-document=7z.temp --user-agent=%useragentstring% --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=10 --tries=2
 del 7z.exe
 move 7z.temp 7z.exe
 CLS
@@ -155,7 +155,7 @@ wget.exe https://raw.githubusercontent.com/TranslateGames/translategames_server/
 title Atualizador%code%t
 if not exist "UpScript.temp" (
 CLS
-wget.exe http://translategames.tk/updater/request/UpScript.temp --user-agent=%useragentstring% --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=10 --tries=2
+wget.exe http://translategames.com.br/updater/request/UpScript.temp --user-agent=%useragentstring% --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=10 --tries=2
 title Atualizador%code%t
 )
 echo 95 > "ProgressBarS.log"

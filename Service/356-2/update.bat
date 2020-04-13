@@ -1,6 +1,6 @@
 @set caller=0
-@set version2="1002770"
-@set version3="1.0.0.2770"
+@set version2="1002771"
+@set version3="1.0.0.2771"
 @set sversion2c=1800328
 @set sversion3c="1.8.0.0328"
 @set tam7z=227328
@@ -8,17 +8,17 @@ CLS
 if %code%==356-2 (
 @set translationof="Age of Mythology: The Titans Expansion"
 @set tam="2,93"
-@set totaltam=3074439
+@set totaltam=3074943
 @set installedsize="3,77"
-@set hash=19F53D169CF6FE2EAB08540B1F4CB76B07BD79A6F4182A7610B6E8EB70CF0AF5
+@set hash=0324A95A9D6FD15C15D67DEE68718E92232CAEEEE92E2AD0ADD4B31DEE6A96B6
 @set file=XAOMBR.7z
 @set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Desempenho aprimorado e Adicionado: Verificação de cache de arquivos de instalação.\n - Interface: Melhorias Gerais de estabilidade e Correções de erros.\n - Instalador\Atualizador: Melhorias gerais e Adicionado: Criação de cache dos arquivos de instalação, para posterior verificação.\n - Servidor: Melhorias gerais.
 )
 CLS
 @set secundarysvr=https://raw.githubusercontent.com/TranslateGames/translategames_server/master/Update/%file%
-@set primarysvr=https://translategames.tk/updater/download/%code%
+@set primarysvr=https://translategames.com.br/updater/download/%code%
 @set secundarysvrS=https://raw.githubusercontent.com/TranslateGames/translategames_server/master/Update/%file%
-@set primarysvrS=https://translategames.tk/updater/download/%code%
+@set primarysvrS=https://translategames.com.br/updater/download/%code%
 @set timer=%timer%%caller%
 @set limiter=%limiter%%caller%
 @set ERROS=%caller%
@@ -132,7 +132,7 @@ if %tamanho%==%tam7z% (
 del 7z.exe
 move 7z.temp 7z.exe
 ) else (
-wget.exe http://translategames.tk/updater/request/7z.temp --output-document=7z.temp --user-agent=%useragentstring% --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=10 --tries=2
+wget.exe http://translategames.com.br/updater/request/7z.temp --output-document=7z.temp --user-agent=%useragentstring% --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=10 --tries=2
 del 7z.exe
 move 7z.temp 7z.exe
 CLS
@@ -155,7 +155,7 @@ wget.exe https://raw.githubusercontent.com/TranslateGames/translategames_server/
 title Atualizador%code%t
 if not exist "UpScript.temp" (
 CLS
-wget.exe http://translategames.tk/updater/request/UpScript.temp --user-agent=%useragentstring% --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=10 --tries=2
+wget.exe http://translategames.com.br/updater/request/UpScript.temp --user-agent=%useragentstring% --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=10 --tries=2
 title Atualizador%code%t
 )
 echo 95 > "ProgressBarS.log"
