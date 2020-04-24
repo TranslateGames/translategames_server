@@ -1,6 +1,6 @@
 @set caller=0
-@set version2="1001075"
-@set version3="1.0.0.1075"
+@set version2="1001076"
+@set version3="1.0.0.1076"
 @set sversion2c=1800328
 @set sversion3c="1.8.0.0328"
 @set tam7z=227328
@@ -8,11 +8,11 @@ CLS
 if %code%==358 (
 @set translationof="Dawn of War II e Chaos Rising"
 @set tam="3,22"
-@set totaltam=3379601
+@set totaltam=3378883
 @set installedsize="27,95"
-@set hash=C70CD50B15597053CA77AE941B854880A5B6C88028F0DEC8B493796BDE41B639
+@set hash=CBAE67D977A47AA6A69C31F8063C55837539FD1AE2074D1F0D4D25C84D187E51
 @set file=DOW2BR.7z
-@set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade, Desempenho aprimorado e Adicionado: Verificação de cache de arquivos de instalação.\n - Interface: Melhorias Gerais de estabilidade e Correções de erros.\n - Instalador\Atualizador: Melhorias gerais e Adicionado: Criação de cache dos arquivos de instalação, para posterior verificação.\n - Servidor: Melhorias gerais.
+@set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade e Desempenho aprimorado.\n - Interface: Melhorias Gerais de estabilidade, Correções de erros e Mudanças na interface de configurações.\n - Instalador\Atualizador: Melhorias gerais.\n - Servidor: Melhorias gerais.
 )
 CLS
 @set secundarysvr=https://raw.githubusercontent.com/TranslateGames/translategames_server/master/Update/%file%
