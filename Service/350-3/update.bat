@@ -1,6 +1,6 @@
 @set caller=0
-@set version2="60012418"
-@set version3="6.0.0.12418"
+@set version2="60012430"
+@set version3="6.0.0.12430"
 @set sversion2c=1800328
 @set sversion3c="1.8.0.0328"
 @set tam7z=227328
@@ -8,11 +8,11 @@ CLS
 if %code%==350-3 (
 @set translationof="Dawn of War - Dark Crusade"
 @set tam="3,33"
-@set totaltam=3493703
-@set installedsize="36,04"
-@set hash=A14C3632CCDD354794A35F646A6BC0FF004379F3389209EB2131E72651F1B940
+@set totaltam=3498663
+@set installedsize="36,05"
+@set hash=936BB21DB75CA35734AA894D6A1FE6BBDEE0FED9BAF46AB88F89D9F62273BA87
 @set file=DCBR.7z
-@set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Melhorias gerais de estabilidade e Desempenho aprimorado.\n - Interface: Melhorias Gerais de estabilidade, Correções de erros e Mudanças na interface de configurações.\n - Instalador\Atualizador: Melhorias gerais.\n - Servidor: Melhorias gerais.
+@set changelog=- Tradução: Algumas Mudanças.\n - Atualizador: Desempenho aprimorado, Correção Urgente: Corrigido uma falha que faz com que o atualizador automático não funcione corretamente quando instalado pela primeira vez.\n - Interface: Correções de erros e Mudanças na interface de configurações.\n - Instalador\Atualizador: Melhorias gerais.\n - Servidor: Melhorias gerais.
 )
 CLS
 @set secundarysvr=https://raw.githubusercontent.com/TranslateGames/translategames_server/master/Update/%file%
