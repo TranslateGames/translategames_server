@@ -10,7 +10,7 @@ if %code%==350 (
 @set tam="3,81"
 @set totaltam=4005458
 @set installedsize="20,35"
-@set hash=FB408BE875D91D6633FFEA98DBB59F35CFB7BEC30EEC592D7F7BCE91044A809A
+@set hash=7AE5FB40769D435A0FE1E4658DABD326AC5287B8617FBDD126794053BD1F5931
 @set file=W4BR.7z
 @set changelog=- Tradução: Algumas mudanças.\n - Atualizador: Desempenho aprimorado, Correção Urgente: Corrigido uma falha que faz com que o atualizador automático não funcione corretamente quando instalado pela primeira vez.\n - Interface: Correções de erros e Mudanças na interface de configurações.\n - Instalador\Atualizador: Melhorias gerais.\n - Servidor: Melhorias gerais.
 )
