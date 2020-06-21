@@ -1,16 +1,16 @@
 @set caller=0
-@set version2="1001101"
-@set version3="1.0.0.1101"
-@set sversion2c=1800329
-@set sversion3c="1.8.0.0329"
+@set version2="1001102"
+@set version3="1.0.0.1102"
+@set sversion2c=1800330
+@set sversion3c="1.8.0.0330"
 @set tam7z=227328
 CLS
 if %code%==358 (
 @set translationof="Dawn of War II e Chaos Rising"
 @set tam="3,22"
-@set totaltam=3384942
-@set installedsize="27,96"
-@set hash=959B45E05A5F1C072F307CE874C1D90DA0BAE227E50E9A2E7352CC9DC20BC89C
+@set totaltam=3384410
+@set installedsize="27,95"
+@set hash=2FC063BC00E0EF685EBC1360E6CD60DC6327EA0CFE6C5B531FDEEDAD99782EC2
 @set file=DOW2BR.7z
 @set changelog=- Tradução: Algumas mudanças.\n - Atualizador: Desempenho aprimorado, Correção Urgente: Corrigido uma falha que faz com que o atualizador automático não funcione corretamente quando instalado pela primeira vez.\n - Interface: Correções de erros e Mudanças na interface de configurações.\n - Instalador\Atualizador: Melhorias gerais.\n - Servidor: Melhorias gerais.
 )
@@ -166,6 +166,12 @@ CLS
 echo %date%-%time% Extraindo complementos... Versão: %sversion3c% >> "UpdateLog.txt"
 echo Extraindo Pacotes...
 CLS
+del error.temp
+del HashF.temp
+del HashV.temp
+del InterfaceMaintainer.temp
+del ExtractSize.temp
+del ProgressData.temp
 if exist "error.png" (
 move error.png error.temp
 )
@@ -174,6 +180,15 @@ move Hash.exe HashF.temp
 )
 if exist "Hash.vbs" (
 move Hash.vbs HashV.temp
+)
+if exist "InterfaceMaintainer.vbs" (
+move InterfaceMaintainer.vbs InterfaceMaintainer.temp
+)
+if exist "ExtractSize.vbs" (
+move ExtractSize.vbs ExtractSize.temp
+)
+if exist "ProgressData.tgpd" (
+move ProgressData.tgpd ProgressData.temp
 )
 del ExtractSize.vbs
 del Progress.hta
@@ -185,6 +200,7 @@ del db.png
 del App.tmp
 del Hash.exe
 del ImageData.tmp
+del UpdaterUI.tmp
 CLS
 7z.exe e UpScript.7z -o.\
 CLS
@@ -207,6 +223,12 @@ set /a ERROS=ERROS+FATOR
 move HashV.temp Hash.vbs
 ) else (
 del HashV.temp
+)
+if not exist "InterfaceMaintainer.vbs" (
+set /a ERROS=ERROS+FATOR
+move InterfaceMaintainer.temp InterfaceMaintainer.vbs
+) else (
+del InterfaceMaintainer.temp
 )
 if exist "ImageData.tgib64" (
 move ImageData.tgib64 ImageData.temp

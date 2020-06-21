@@ -1,6 +1,6 @@
 @set caller=0
-@set version2="60012432"
-@set version3="6.0.0.12432"
+@set version2="60012433"
+@set version3="6.0.0.12433"
 @set sversion2c=1800330
 @set sversion3c="1.8.0.0330"
 @set tam7z=227328
@@ -8,9 +8,9 @@ CLS
 if %code%==350 (
 @set translationof="Dawn of War e Winter Assault"
 @set tam="3,81"
-@set totaltam=4004835
+@set totaltam=4005026
 @set installedsize="20,34"
-@set hash=FB60CDFB9401107631C80BC139322C646B116761D9A4F97B8830BAE771097F9D
+@set hash=C5D47C4ED7DC1A09E6D76633492B4207204EB629FA5436249462013B82C5213B
 @set file=W4BR.7z
 @set changelog=- Tradução: Algumas mudanças.\n - Atualizador: Desempenho aprimorado, Correção Urgente: Corrigido uma falha que faz com que o atualizador automático não funcione corretamente quando instalado pela primeira vez.\n - Interface: Correções de erros e Mudanças na interface de configurações.\n - Instalador\Atualizador: Melhorias gerais.\n - Servidor: Melhorias gerais.
 )
@@ -166,6 +166,12 @@ CLS
 echo %date%-%time% Extraindo complementos... Versão: %sversion3c% >> "UpdateLog.txt"
 echo Extraindo Pacotes...
 CLS
+del error.temp
+del HashF.temp
+del HashV.temp
+del InterfaceMaintainer.temp
+del ExtractSize.temp
+del ProgressData.temp
 if exist "error.png" (
 move error.png error.temp
 )
@@ -174,6 +180,15 @@ move Hash.exe HashF.temp
 )
 if exist "Hash.vbs" (
 move Hash.vbs HashV.temp
+)
+if exist "InterfaceMaintainer.vbs" (
+move InterfaceMaintainer.vbs InterfaceMaintainer.temp
+)
+if exist "ExtractSize.vbs" (
+move ExtractSize.vbs ExtractSize.temp
+)
+if exist "ProgressData.tgpd" (
+move ProgressData.tgpd ProgressData.temp
 )
 del ExtractSize.vbs
 del Progress.hta
@@ -185,6 +200,7 @@ del db.png
 del App.tmp
 del Hash.exe
 del ImageData.tmp
+del UpdaterUI.tmp
 CLS
 7z.exe e UpScript.7z -o.\
 CLS
@@ -207,6 +223,12 @@ set /a ERROS=ERROS+FATOR
 move HashV.temp Hash.vbs
 ) else (
 del HashV.temp
+)
+if not exist "InterfaceMaintainer.vbs" (
+set /a ERROS=ERROS+FATOR
+move InterfaceMaintainer.temp InterfaceMaintainer.vbs
+) else (
+del InterfaceMaintainer.temp
 )
 if exist "ImageData.tgib64" (
 move ImageData.tgib64 ImageData.temp

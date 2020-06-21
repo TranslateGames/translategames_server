@@ -1,16 +1,16 @@
 @set caller=0
-@set version2="1002784"
-@set version3="1.0.0.2784"
-@set sversion2c=1800329
-@set sversion3c="1.8.0.0329"
+@set version2="1002785"
+@set version3="1.0.0.2785"
+@set sversion2c=1800330
+@set sversion3c="1.8.0.0330"
 @set tam7z=227328
 CLS
 if %code%==356-2 (
 @set translationof="Age of Mythology: The Titans Expansion"
 @set tam="2,93"
-@set totaltam=3081446
-@set installedsize="3,78"
-@set hash=AD6FA18AB0615B650F06E3DB86D504E31182C5468AD89468A1EB2327FD39E4ED
+@set totaltam=3080956
+@set installedsize="3,77"
+@set hash=D66160919387ECAC1F951450A24B999D693546FB227A13C7E5D34D60C49E1AE3
 @set file=XAOMBR.7z
 @set changelog=- Tradução: Algumas mudanças.\n - Atualizador: Desempenho aprimorado, Correção Urgente: Corrigido uma falha que faz com que o atualizador automático não funcione corretamente quando instalado pela primeira vez.\n - Interface: Correções de erros e Mudanças na interface de configurações.\n - Instalador\Atualizador: Melhorias gerais.\n - Servidor: Melhorias gerais.
 )
@@ -166,6 +166,12 @@ CLS
 echo %date%-%time% Extraindo complementos... Versão: %sversion3c% >> "UpdateLog.txt"
 echo Extraindo Pacotes...
 CLS
+del error.temp
+del HashF.temp
+del HashV.temp
+del InterfaceMaintainer.temp
+del ExtractSize.temp
+del ProgressData.temp
 if exist "error.png" (
 move error.png error.temp
 )
@@ -174,6 +180,15 @@ move Hash.exe HashF.temp
 )
 if exist "Hash.vbs" (
 move Hash.vbs HashV.temp
+)
+if exist "InterfaceMaintainer.vbs" (
+move InterfaceMaintainer.vbs InterfaceMaintainer.temp
+)
+if exist "ExtractSize.vbs" (
+move ExtractSize.vbs ExtractSize.temp
+)
+if exist "ProgressData.tgpd" (
+move ProgressData.tgpd ProgressData.temp
 )
 del ExtractSize.vbs
 del Progress.hta
@@ -185,6 +200,7 @@ del db.png
 del App.tmp
 del Hash.exe
 del ImageData.tmp
+del UpdaterUI.tmp
 CLS
 7z.exe e UpScript.7z -o.\
 CLS
@@ -207,6 +223,12 @@ set /a ERROS=ERROS+FATOR
 move HashV.temp Hash.vbs
 ) else (
 del HashV.temp
+)
+if not exist "InterfaceMaintainer.vbs" (
+set /a ERROS=ERROS+FATOR
+move InterfaceMaintainer.temp InterfaceMaintainer.vbs
+) else (
+del InterfaceMaintainer.temp
 )
 if exist "ImageData.tgib64" (
 move ImageData.tgib64 ImageData.temp
