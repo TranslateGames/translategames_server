@@ -1,6 +1,6 @@
 @set caller=0
-@set version2="60012433"
-@set version3="6.0.0.12433"
+@set version2="60012434"
+@set version3="6.0.0.12434"
 @set sversion2c=1800330
 @set sversion3c="1.8.0.0330"
 @set tam7z=227328
@@ -8,9 +8,9 @@ CLS
 if %code%==350-3 (
 @set translationof="Dawn of War - Dark Crusade"
 @set tam="3,33"
-@set totaltam=3499592
+@set totaltam=3499463
 @set installedsize="36,05"
-@set hash=4B53DB8A554D0A4159606DD07FC2855F33BF4D3D86BFC1A00EACE628736A65E2
+@set hash=D8B98A6806D11A35F501026EB9A1418F0BD15E04220264CC32D62E4F4DCE78A6
 @set file=DCBR.7z
 @set changelog=- Tradução: Algumas mudanças.\n - Atualizador: Desempenho aprimorado, Correção Urgente: Corrigido uma falha que faz com que o atualizador automático não funcione corretamente quando instalado pela primeira vez.\n - Interface: Correções de erros e Mudanças na interface de configurações.\n - Instalador\Atualizador: Melhorias gerais.\n - Servidor: Melhorias gerais.
 )
