@@ -1,6 +1,6 @@
 @set caller=0
-@set version2="60012434"
-@set version3="6.0.0.12434"
+@set version2="60012435"
+@set version3="6.0.0.12435"
 @set sversion2c=1800330
 @set sversion3c="1.8.0.0330"
 @set tam7z=227328
@@ -8,9 +8,9 @@ CLS
 if %code%==350 (
 @set translationof="Dawn of War e Winter Assault"
 @set tam="3,82"
-@set totaltam=4005995
+@set totaltam=4006222
 @set installedsize="20,35"
-@set hash=7D14785D17EDFA526B462993337FE57AAC6A29C1374A5CC61C8202601EA5A90D
+@set hash=459FD2C4A183B3503780E475821B0E72EFE677396E1759115D950616B0BC4F76
 @set file=W4BR.7z
 @set changelog=- Tradução: Algumas mudanças.\n - Atualizador: Desempenho aprimorado, Correção Urgente: Corrigido uma falha que faz com que o atualizador automático não funcione corretamente quando instalado pela primeira vez.\n - Interface: Correções de erros e Mudanças na interface de configurações.\n - Instalador\Atualizador: Melhorias gerais.\n - Servidor: Melhorias gerais.
 )
