@@ -1,16 +1,16 @@
 @set caller=0
-@set version2="60012435"
-@set version3="6.0.0.12435"
-@set sversion2c=1800330
-@set sversion3c="1.8.0.0330"
+@set version2="60012436"
+@set version3="6.0.0.12436"
+@set sversion2c=1800331
+@set sversion3c="1.8.0.0331"
 @set tam7z=227328
 CLS
 if %code%==350-4 (
 @set translationof="Dawn of War - Soulstorm"
 @set tam="3,47"
-@set totaltam=3648049
+@set totaltam=3648146
 @set installedsize="61,16"
-@set hash=97F6DC983CD1F0EC7DF1C8AED2CFEFDAE2C68C2567D6B3303F60B59E68F1B682
+@set hash=B9E15AE3D66E3D39FB546F63D39C4DA76BEE76E6734333A34B8B8F3E9996F12E
 @set file=SSBR.7z
 @set changelog=- Tradução: Algumas mudanças.\n - Atualizador: Desempenho aprimorado, Correção Urgente: Corrigido uma falha que faz com que o atualizador automático não funcione corretamente quando instalado pela primeira vez.\n - Interface: Correções de erros e Mudanças na interface de configurações.\n - Instalador\Atualizador: Melhorias gerais.\n - Servidor: Melhorias gerais.
 )
