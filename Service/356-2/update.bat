@@ -10,7 +10,7 @@ if %code%==356-2 (
 @set tam="2,93"
 @set totaltam=3081924
 @set installedsize="3,78"
-@set hash=1B0EF2AB89786BA605D9CB062B936359AAAFBABC52A0BFBDB6FD38BC218A12B2
+@set hash=BB2BF3FB5E16C688BAF32C78D10B913769771D80022A0BF27B05AC6409D25071
 @set file=XAOMBR.7z
 @set changelog=- Tradução: Algumas mudanças.\n - Atualizador: Desempenho aprimorado, Correção Urgente: Corrigido uma falha que faz com que o atualizador automático não funcione corretamente quando instalado pela primeira vez.\n - Interface: Correções de erros e Mudanças na interface de configurações.\n - Instalador\Atualizador: Melhorias gerais.\n - Servidor: Melhorias gerais.
 )
@@ -85,6 +85,8 @@ goto exit
 if %version% lss %version2% (
 CLS
 echo 1 > "ProgressBarS.log"
+echo 0 > "ChangeLogIV.log"
+echo 0 > "StatusPS.log"
 goto initCheck
 ) else (
 CLS
@@ -267,7 +269,6 @@ del UpScript.7z
 CLS
 echo 100 > "ProgressBarS.log"
 timeout -m 500 > NUL
-echo close>"StatusPS.log"
 echo %date%-%time% Continuando... >> "UpdateLog.txt"
 goto pProgress
 ) else (
@@ -283,7 +284,6 @@ goto init
 CLS
 echo 100 > "ProgressBarS.log"
 timeout -m 500 > NUL
-echo close>"StatusPS.log"
 goto init
 )
 
@@ -316,7 +316,6 @@ echo updated > "StatusIS.log"
 echo close>"StatusPS.log"
 timeout -m 500 > NUL
 echo forceclose>"StatusPS.log"
-timeout -m 500 > NUL
 start wscript UpToDate.vbs
 )
 CLS

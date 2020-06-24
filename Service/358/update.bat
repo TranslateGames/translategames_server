@@ -8,9 +8,9 @@ CLS
 if %code%==358 (
 @set translationof="Dawn of War II e Chaos Rising"
 @set tam="3,22"
-@set totaltam=3385667
+@set totaltam=3385666
 @set installedsize="27,96"
-@set hash=9F310D2C10F1343A990CB165236CD83D61AC1066947B75B5D888B2561ED61D61
+@set hash=0E10895266532C0AADC0764A4EA5FEC0A5F50A7C38A6B588F89A81DD4669DA0D
 @set file=DOW2BR.7z
 @set changelog=- Tradução: Algumas mudanças.\n - Atualizador: Desempenho aprimorado, Correção Urgente: Corrigido uma falha que faz com que o atualizador automático não funcione corretamente quando instalado pela primeira vez.\n - Interface: Correções de erros e Mudanças na interface de configurações.\n - Instalador\Atualizador: Melhorias gerais.\n - Servidor: Melhorias gerais.
 )
@@ -85,6 +85,8 @@ goto exit
 if %version% lss %version2% (
 CLS
 echo 1 > "ProgressBarS.log"
+echo 0 > "ChangeLogIV.log"
+echo 0 > "StatusPS.log"
 goto initCheck
 ) else (
 CLS
@@ -267,7 +269,6 @@ del UpScript.7z
 CLS
 echo 100 > "ProgressBarS.log"
 timeout -m 500 > NUL
-echo close>"StatusPS.log"
 echo %date%-%time% Continuando... >> "UpdateLog.txt"
 goto pProgress
 ) else (
@@ -283,7 +284,6 @@ goto init
 CLS
 echo 100 > "ProgressBarS.log"
 timeout -m 500 > NUL
-echo close>"StatusPS.log"
 goto init
 )
 
@@ -316,7 +316,6 @@ echo updated > "StatusIS.log"
 echo close>"StatusPS.log"
 timeout -m 500 > NUL
 echo forceclose>"StatusPS.log"
-timeout -m 500 > NUL
 start wscript UpToDate.vbs
 )
 CLS

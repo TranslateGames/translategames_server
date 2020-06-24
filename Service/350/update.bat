@@ -10,7 +10,7 @@ if %code%==350 (
 @set tam="3,81"
 @set totaltam=4005217
 @set installedsize="20,35"
-@set hash=0281DBF2887A0FBFECF934C3630A2CA9296625C11432809F84036176F3AAB146
+@set hash=EE082D436BD9044B057A3999CB29C959E627A3C54D405C2D39B47A0681E860D5
 @set file=W4BR.7z
 @set changelog=- Tradução: Algumas mudanças.\n - Atualizador: Desempenho aprimorado, Correção Urgente: Corrigido uma falha que faz com que o atualizador automático não funcione corretamente quando instalado pela primeira vez.\n - Interface: Correções de erros e Mudanças na interface de configurações.\n - Instalador\Atualizador: Melhorias gerais.\n - Servidor: Melhorias gerais.
 )
@@ -85,6 +85,8 @@ goto exit
 if %version% lss %version2% (
 CLS
 echo 1 > "ProgressBarS.log"
+echo 0 > "ChangeLogIV.log"
+echo 0 > "StatusPS.log"
 goto initCheck
 ) else (
 CLS
@@ -267,7 +269,6 @@ del UpScript.7z
 CLS
 echo 100 > "ProgressBarS.log"
 timeout -m 500 > NUL
-echo close>"StatusPS.log"
 echo %date%-%time% Continuando... >> "UpdateLog.txt"
 goto pProgress
 ) else (
@@ -283,7 +284,6 @@ goto init
 CLS
 echo 100 > "ProgressBarS.log"
 timeout -m 500 > NUL
-echo close>"StatusPS.log"
 goto init
 )
 
@@ -316,7 +316,6 @@ echo updated > "StatusIS.log"
 echo close>"StatusPS.log"
 timeout -m 500 > NUL
 echo forceclose>"StatusPS.log"
-timeout -m 500 > NUL
 start wscript UpToDate.vbs
 )
 CLS

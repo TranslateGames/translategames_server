@@ -8,9 +8,9 @@ CLS
 if %code%==350-4 (
 @set translationof="Dawn of War - Soulstorm"
 @set tam="3,47"
-@set totaltam=3648147
+@set totaltam=3648148
 @set installedsize="61,16"
-@set hash=B2EF69B7D9CC92CDA5DF02883CE9D801387E1C762C677E2E13190748AFEBF6C0
+@set hash=E61C48ED361795BB75C940EC42D7B0B240F73CDE5AA1704AABA69F1E53A2120B
 @set file=SSBR.7z
 @set changelog=- Tradução: Algumas mudanças.\n - Atualizador: Desempenho aprimorado, Correção Urgente: Corrigido uma falha que faz com que o atualizador automático não funcione corretamente quando instalado pela primeira vez.\n - Interface: Correções de erros e Mudanças na interface de configurações.\n - Instalador\Atualizador: Melhorias gerais.\n - Servidor: Melhorias gerais.
 )
@@ -85,6 +85,8 @@ goto exit
 if %version% lss %version2% (
 CLS
 echo 1 > "ProgressBarS.log"
+echo 0 > "ChangeLogIV.log"
+echo 0 > "StatusPS.log"
 goto initCheck
 ) else (
 CLS
@@ -267,7 +269,6 @@ del UpScript.7z
 CLS
 echo 100 > "ProgressBarS.log"
 timeout -m 500 > NUL
-echo close>"StatusPS.log"
 echo %date%-%time% Continuando... >> "UpdateLog.txt"
 goto pProgress
 ) else (
@@ -283,7 +284,6 @@ goto init
 CLS
 echo 100 > "ProgressBarS.log"
 timeout -m 500 > NUL
-echo close>"StatusPS.log"
 goto init
 )
 
@@ -316,7 +316,6 @@ echo updated > "StatusIS.log"
 echo close>"StatusPS.log"
 timeout -m 500 > NUL
 echo forceclose>"StatusPS.log"
-timeout -m 500 > NUL
 start wscript UpToDate.vbs
 )
 CLS
