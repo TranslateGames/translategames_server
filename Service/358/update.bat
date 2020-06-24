@@ -10,7 +10,7 @@ if %code%==358 (
 @set tam="3,22"
 @set totaltam=3385666
 @set installedsize="27,96"
-@set hash=0E10895266532C0AADC0764A4EA5FEC0A5F50A7C38A6B588F89A81DD4669DA0D
+@set hash=24A3CED3BE0F63CEEAE5A5E4DFA7B1FA3DAFCC41B9F92F56E807644B50BDD883
 @set file=DOW2BR.7z
 @set changelog=- Tradução: Algumas mudanças.\n - Atualizador: Desempenho aprimorado, Correção Urgente: Corrigido uma falha que faz com que o atualizador automático não funcione corretamente quando instalado pela primeira vez.\n - Interface: Correções de erros e Mudanças na interface de configurações.\n - Instalador\Atualizador: Melhorias gerais.\n - Servidor: Melhorias gerais.
 )
@@ -333,6 +333,7 @@ echo 0 > "ChangeLogIV.log"
 echo 0 > "UpdateMode.log"
 echo 0 > "ServerP.log"
 echo 0 > "UpCoreFCE.log"
+echo 0 > "Result.txt"
 del ChangeLog.log
 if %version%==%version2% (
 title Atualizador%code%t

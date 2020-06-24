@@ -10,7 +10,7 @@ if %code%==350 (
 @set tam="3,81"
 @set totaltam=4005217
 @set installedsize="20,35"
-@set hash=EE082D436BD9044B057A3999CB29C959E627A3C54D405C2D39B47A0681E860D5
+@set hash=D3D3EA97DD239F769711EB34A7542A4FF502BA3B2C441C60411429A3BF0F5031
 @set file=W4BR.7z
 @set changelog=- Tradução: Algumas mudanças.\n - Atualizador: Desempenho aprimorado, Correção Urgente: Corrigido uma falha que faz com que o atualizador automático não funcione corretamente quando instalado pela primeira vez.\n - Interface: Correções de erros e Mudanças na interface de configurações.\n - Instalador\Atualizador: Melhorias gerais.\n - Servidor: Melhorias gerais.
 )
@@ -333,6 +333,7 @@ echo 0 > "ChangeLogIV.log"
 echo 0 > "UpdateMode.log"
 echo 0 > "ServerP.log"
 echo 0 > "UpCoreFCE.log"
+echo 0 > "Result.txt"
 del ChangeLog.log
 if %version%==%version2% (
 title Atualizador%code%t

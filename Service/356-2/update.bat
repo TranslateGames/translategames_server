@@ -10,7 +10,7 @@ if %code%==356-2 (
 @set tam="2,93"
 @set totaltam=3081924
 @set installedsize="3,78"
-@set hash=BB2BF3FB5E16C688BAF32C78D10B913769771D80022A0BF27B05AC6409D25071
+@set hash=6A43FCA1CB66EC804DA4FD0F8EC75573AA0F2B87320E88823E6E1A3CE2C5AC22
 @set file=XAOMBR.7z
 @set changelog=- Tradução: Algumas mudanças.\n - Atualizador: Desempenho aprimorado, Correção Urgente: Corrigido uma falha que faz com que o atualizador automático não funcione corretamente quando instalado pela primeira vez.\n - Interface: Correções de erros e Mudanças na interface de configurações.\n - Instalador\Atualizador: Melhorias gerais.\n - Servidor: Melhorias gerais.
 )
@@ -333,6 +333,7 @@ echo 0 > "ChangeLogIV.log"
 echo 0 > "UpdateMode.log"
 echo 0 > "ServerP.log"
 echo 0 > "UpCoreFCE.log"
+echo 0 > "Result.txt"
 del ChangeLog.log
 if %version%==%version2% (
 title Atualizador%code%t
