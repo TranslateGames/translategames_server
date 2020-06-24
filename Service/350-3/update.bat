@@ -10,7 +10,7 @@ if %code%==350-3 (
 @set tam="3,33"
 @set totaltam=3499620
 @set installedsize="36,05"
-@set hash=5B24DBD5C9717BEB7CC7EE728653D71C16E841FACC8D2C9A84FD321906FFE5ED
+@set hash=D2C59B22F34C650F03ED93831323CB78F2AC4B4CCE2C4F273201B5E08241EFC9
 @set file=DCBR.7z
 @set changelog=- Tradução: Algumas mudanças.\n - Atualizador: Desempenho aprimorado, Correção Urgente: Corrigido uma falha que faz com que o atualizador automático não funcione corretamente quando instalado pela primeira vez.\n - Interface: Correções de erros e Mudanças na interface de configurações.\n - Instalador\Atualizador: Melhorias gerais.\n - Servidor: Melhorias gerais.
 )
@@ -471,6 +471,17 @@ echo Aguardando...
 title Atualizador%code%t
 set /p firstline=<ChangeLogIV.log
 if %firstline%==1 (
+set /p firstline2=<Result.txt
+if %firstline2%==cancelar (
+CLS
+if %mode%==install (
+echo %date%-%time% Instalação cancelada pelo usuário! >> "UpdateLog.txt"
+) else (
+echo %date%-%time% Atualização cancelada pelo usuário! >> "UpdateLog.txt"
+)
+echo Cancelando...
+goto exit
+)
 timeout 1 > NUL
 goto CLCheck
 )

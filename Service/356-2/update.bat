@@ -10,7 +10,7 @@ if %code%==356-2 (
 @set tam="2,93"
 @set totaltam=3081924
 @set installedsize="3,78"
-@set hash=1432D23D5F31DC23C7D0EEC22D99C4EFFD415A856BDE3D13CAD20E8F9EC38FB7
+@set hash=963B7C60944F0624316B98F12F480402BACC610CB4A96DC18DCEF5642539E8FC
 @set file=XAOMBR.7z
 @set changelog=- Tradução: Algumas mudanças.\n - Atualizador: Desempenho aprimorado, Correção Urgente: Corrigido uma falha que faz com que o atualizador automático não funcione corretamente quando instalado pela primeira vez.\n - Interface: Correções de erros e Mudanças na interface de configurações.\n - Instalador\Atualizador: Melhorias gerais.\n - Servidor: Melhorias gerais.
 )
@@ -471,6 +471,17 @@ echo Aguardando...
 title Atualizador%code%t
 set /p firstline=<ChangeLogIV.log
 if %firstline%==1 (
+set /p firstline2=<Result.txt
+if %firstline2%==cancelar (
+CLS
+if %mode%==install (
+echo %date%-%time% Instalação cancelada pelo usuário! >> "UpdateLog.txt"
+) else (
+echo %date%-%time% Atualização cancelada pelo usuário! >> "UpdateLog.txt"
+)
+echo Cancelando...
+goto exit
+)
 timeout 1 > NUL
 goto CLCheck
 )

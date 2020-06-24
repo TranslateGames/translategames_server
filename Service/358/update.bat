@@ -10,7 +10,7 @@ if %code%==358 (
 @set tam="3,22"
 @set totaltam=3385666
 @set installedsize="27,96"
-@set hash=E5DA5A2951DB0C98B16948A0E33211C87C964E2A9E9150B1C68497D424763578
+@set hash=9A928BB74FFB828FA17A7B5BCF9EEF0BED530DC24113F13DA6961DBE250CEABC
 @set file=DOW2BR.7z
 @set changelog=- Tradução: Algumas mudanças.\n - Atualizador: Desempenho aprimorado, Correção Urgente: Corrigido uma falha que faz com que o atualizador automático não funcione corretamente quando instalado pela primeira vez.\n - Interface: Correções de erros e Mudanças na interface de configurações.\n - Instalador\Atualizador: Melhorias gerais.\n - Servidor: Melhorias gerais.
 )
@@ -471,6 +471,17 @@ echo Aguardando...
 title Atualizador%code%t
 set /p firstline=<ChangeLogIV.log
 if %firstline%==1 (
+set /p firstline2=<Result.txt
+if %firstline2%==cancelar (
+CLS
+if %mode%==install (
+echo %date%-%time% Instalação cancelada pelo usuário! >> "UpdateLog.txt"
+) else (
+echo %date%-%time% Atualização cancelada pelo usuário! >> "UpdateLog.txt"
+)
+echo Cancelando...
+goto exit
+)
 timeout 1 > NUL
 goto CLCheck
 )
