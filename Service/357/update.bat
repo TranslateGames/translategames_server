@@ -8,9 +8,9 @@ CLS
 if %code%==357 (
 @set translationof="Dawn of War II - Retribution"
 @set tam="3,40"
-@set totaltam=3568876
+@set totaltam=3568875
 @set installedsize="36,18"
-@set hash=9C5EC556D55C26EB081C05A97B19873829BD41BE63DE16B39A5CA9E1E1FDFBE8
+@set hash=5512298A45690FC9419ECF4584AB52CD317EBA773AF2918D17260D15C94FC3C7
 @set file=DOW2RBR.7z
 @set changelog=- Tradução: Algumas mudanças.\n - Atualizador: Desempenho aprimorado, Correção Urgente: Corrigido uma falha que faz com que o atualizador automático não funcione corretamente quando instalado pela primeira vez.\n - Interface: Correções de erros e Mudanças na interface de configurações.\n - Instalador\Atualizador: Melhorias gerais.\n - Servidor: Melhorias gerais.
 )
@@ -471,19 +471,7 @@ echo Aguardando...
 title Atualizador%code%t
 set /p firstline=<ChangeLogIV.log
 if %firstline%==1 (
-set /p firstline2=<Result.txt
-if %firstline2%==cancelar (
-CLS
-if %mode%==install (
-echo %date%-%time% Instalação cancelada pelo usuário! >> "UpdateLog.txt"
-) else (
-echo %date%-%time% Atualização cancelada pelo usuário! >> "UpdateLog.txt"
-)
-echo Cancelando...
-goto exit
-)
-timeout 1 > NUL
-goto CLCheck
+goto CLCheck2
 )
 CLS
 set /p firstline=<Result.txt
@@ -498,6 +486,24 @@ echo Cancelando...
 goto exit
 )
 goto initD
+
+:CLCheck2
+CLS
+echo Aguardando...
+title Atualizador%code%t
+set /p firstline=<Result.txt
+if %firstline%==cancelar (
+CLS
+if %mode%==install (
+echo %date%-%time% Instalação cancelada pelo usuário! >> "UpdateLog.txt"
+) else (
+echo %date%-%time% Atualização cancelada pelo usuário! >> "UpdateLog.txt"
+)
+echo Cancelando...
+goto exit
+)
+timeout 1 > NUL
+goto CLCheck
 
 :initD
 CLS

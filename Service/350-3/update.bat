@@ -8,9 +8,9 @@ CLS
 if %code%==350-3 (
 @set translationof="Dawn of War - Dark Crusade"
 @set tam="3,33"
-@set totaltam=3499620
+@set totaltam=3499619
 @set installedsize="36,05"
-@set hash=D2C59B22F34C650F03ED93831323CB78F2AC4B4CCE2C4F273201B5E08241EFC9
+@set hash=ADF1724AB315D4F5DE8F9B6D2E2055783A048214DA8A9E4D582E3ABE18822112
 @set file=DCBR.7z
 @set changelog=- Tradução: Algumas mudanças.\n - Atualizador: Desempenho aprimorado, Correção Urgente: Corrigido uma falha que faz com que o atualizador automático não funcione corretamente quando instalado pela primeira vez.\n - Interface: Correções de erros e Mudanças na interface de configurações.\n - Instalador\Atualizador: Melhorias gerais.\n - Servidor: Melhorias gerais.
 )
@@ -471,19 +471,7 @@ echo Aguardando...
 title Atualizador%code%t
 set /p firstline=<ChangeLogIV.log
 if %firstline%==1 (
-set /p firstline2=<Result.txt
-if %firstline2%==cancelar (
-CLS
-if %mode%==install (
-echo %date%-%time% Instalação cancelada pelo usuário! >> "UpdateLog.txt"
-) else (
-echo %date%-%time% Atualização cancelada pelo usuário! >> "UpdateLog.txt"
-)
-echo Cancelando...
-goto exit
-)
-timeout 1 > NUL
-goto CLCheck
+goto CLCheck2
 )
 CLS
 set /p firstline=<Result.txt
@@ -498,6 +486,24 @@ echo Cancelando...
 goto exit
 )
 goto initD
+
+:CLCheck2
+CLS
+echo Aguardando...
+title Atualizador%code%t
+set /p firstline=<Result.txt
+if %firstline%==cancelar (
+CLS
+if %mode%==install (
+echo %date%-%time% Instalação cancelada pelo usuário! >> "UpdateLog.txt"
+) else (
+echo %date%-%time% Atualização cancelada pelo usuário! >> "UpdateLog.txt"
+)
+echo Cancelando...
+goto exit
+)
+timeout 1 > NUL
+goto CLCheck
 
 :initD
 CLS

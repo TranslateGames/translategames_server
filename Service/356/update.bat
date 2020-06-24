@@ -10,7 +10,7 @@ if %code%==356 (
 @set tam="2,95"
 @set totaltam=3100690
 @set installedsize="3,76"
-@set hash=6E938B982D867B638C73D6DC822D562122A64D7430521C2D433486F82780C16B
+@set hash=8E2746565B4F065DBEC2C9B5A7141EDE639888486A4EB43E04E08464AB79A83B
 @set file=AOMBR.7z
 @set changelog=- Tradução: Algumas mudanças.\n - Atualizador: Desempenho aprimorado, Correção Urgente: Corrigido uma falha que faz com que o atualizador automático não funcione corretamente quando instalado pela primeira vez.\n - Interface: Correções de erros e Mudanças na interface de configurações.\n - Instalador\Atualizador: Melhorias gerais.\n - Servidor: Melhorias gerais.
 )
@@ -471,19 +471,7 @@ echo Aguardando...
 title Atualizador%code%t
 set /p firstline=<ChangeLogIV.log
 if %firstline%==1 (
-set /p firstline2=<Result.txt
-if %firstline2%==cancelar (
-CLS
-if %mode%==install (
-echo %date%-%time% Instalação cancelada pelo usuário! >> "UpdateLog.txt"
-) else (
-echo %date%-%time% Atualização cancelada pelo usuário! >> "UpdateLog.txt"
-)
-echo Cancelando...
-goto exit
-)
-timeout 1 > NUL
-goto CLCheck
+goto CLCheck2
 )
 CLS
 set /p firstline=<Result.txt
@@ -498,6 +486,24 @@ echo Cancelando...
 goto exit
 )
 goto initD
+
+:CLCheck2
+CLS
+echo Aguardando...
+title Atualizador%code%t
+set /p firstline=<Result.txt
+if %firstline%==cancelar (
+CLS
+if %mode%==install (
+echo %date%-%time% Instalação cancelada pelo usuário! >> "UpdateLog.txt"
+) else (
+echo %date%-%time% Atualização cancelada pelo usuário! >> "UpdateLog.txt"
+)
+echo Cancelando...
+goto exit
+)
+timeout 1 > NUL
+goto CLCheck
 
 :initD
 CLS
