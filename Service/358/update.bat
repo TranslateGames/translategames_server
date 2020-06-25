@@ -10,7 +10,7 @@ if %code%==358 (
 @set tam="3,22"
 @set totaltam=3385666
 @set installedsize="27,96"
-@set hash=24A3CED3BE0F63CEEAE5A5E4DFA7B1FA3DAFCC41B9F92F56E807644B50BDD883
+@set hash=500E641B5255D7C462ABBF89C2214D783D711517DE8C6B02C914B0DF099A878A
 @set file=DOW2BR.7z
 @set changelog=- Tradução: Algumas mudanças.\n - Atualizador: Desempenho aprimorado, Correção Urgente: Corrigido uma falha que faz com que o atualizador automático não funcione corretamente quando instalado pela primeira vez.\n - Interface: Correções de erros e Mudanças na interface de configurações.\n - Instalador\Atualizador: Melhorias gerais.\n - Servidor: Melhorias gerais.
 )
