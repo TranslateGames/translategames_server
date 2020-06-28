@@ -1,6 +1,6 @@
 @set caller=0
-@set version2="60012436"
-@set version3="6.0.0.12436"
+@set version2="60012437"
+@set version3="6.0.0.12437"
 @set sversion2c=1800332
 @set sversion3c="1.8.0.0332"
 @set tam7z=227328
@@ -10,7 +10,7 @@ if %code%==350-3 (
 @set tam="3,33"
 @set totaltam=3497764
 @set installedsize="36,04"
-@set hash=5FA337EFF3DB7DB070C656C66B5EBD5F8BD1C06B5CB39390A17FC63B4C0FA1F2
+@set hash=7E4E1010416BA7BD6E46BF4B9EB6DB981EC90765E0A22DC4E02C634137B88B0E
 @set file=DCBR.7z
 @set changelog=- Tradução: Algumas mudanças.\n - Atualizador: Desempenho aprimorado, Correção Urgente: Corrigido uma falha que faz com que o atualizador automático não funcione corretamente quando instalado pela primeira vez.\n - Interface: Correções de erros e Mudanças na interface de configurações.\n - Instalador\Atualizador: Melhorias gerais.\n - Servidor: Melhorias gerais.
 )

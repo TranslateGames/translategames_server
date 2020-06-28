@@ -1,6 +1,6 @@
 @set caller=0
-@set version2="1002788"
-@set version3="1.0.0.2788"
+@set version2="1002789"
+@set version3="1.0.0.2789"
 @set sversion2c=1800332
 @set sversion3c="1.8.0.0332"
 @set tam7z=227328
@@ -10,7 +10,7 @@ if %code%==356-2 (
 @set tam="2,93"
 @set totaltam=3080362
 @set installedsize="3,77"
-@set hash=D9832103360C8DEBB56EC46C408D9685233AF8F437044EEE9FAA4EA1D22ECC11
+@set hash=CC89A8EDFAAE1DDFABA8EDF6FE4E9B4F121786B515C315B9E49CADF6B9F343B5
 @set file=XAOMBR.7z
 @set changelog=- Tradução: Algumas mudanças.\n - Atualizador: Desempenho aprimorado, Correção Urgente: Corrigido uma falha que faz com que o atualizador automático não funcione corretamente quando instalado pela primeira vez.\n - Interface: Correções de erros e Mudanças na interface de configurações.\n - Instalador\Atualizador: Melhorias gerais.\n - Servidor: Melhorias gerais.
 )

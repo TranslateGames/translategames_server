@@ -1,6 +1,6 @@
 @set caller=0
-@set version2="1001452"
-@set version3="1.0.0.1452"
+@set version2="1001453"
+@set version3="1.0.0.1453"
 @set sversion2c=1800332
 @set sversion3c="1.8.0.0332"
 @set tam7z=227328
@@ -10,7 +10,7 @@ if %code%==357 (
 @set tam="3,40"
 @set totaltam=3565859
 @set installedsize="36,17"
-@set hash=396118C7CF996773E9CFB92613463263CE2EE42B4C281042D714FF7582D84E81
+@set hash=23C391F1300EB2B7670890B697ABEC3407D081794052CA860B8B40C58818BD0A
 @set file=DOW2RBR.7z
 @set changelog=- Tradução: Algumas mudanças.\n - Atualizador: Desempenho aprimorado, Correção Urgente: Corrigido uma falha que faz com que o atualizador automático não funcione corretamente quando instalado pela primeira vez.\n - Interface: Correções de erros e Mudanças na interface de configurações.\n - Instalador\Atualizador: Melhorias gerais.\n - Servidor: Melhorias gerais.
 )
