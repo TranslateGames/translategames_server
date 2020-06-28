@@ -1,16 +1,16 @@
 @set caller=0
 @set version2="60012436"
 @set version3="6.0.0.12436"
-@set sversion2c=1800331
-@set sversion3c="1.8.0.0331"
+@set sversion2c=1800332
+@set sversion3c="1.8.0.0332"
 @set tam7z=227328
 CLS
 if %code%==350 (
 @set translationof="Dawn of War e Winter Assault"
 @set tam="3,81"
-@set totaltam=4005215
-@set installedsize="20,35"
-@set hash=C1160C81F84112285B6455F3757178B9A4D8D53E9A867CE5EC6515E08E7033E6
+@set totaltam=4003149
+@set installedsize="20,34"
+@set hash=4600379E3FB550D07E8FC99FA807A2256387AA30E0EBBEDEAFE60F0D32BD4330
 @set file=W4BR.7z
 @set changelog=- Tradução: Algumas mudanças.\n - Atualizador: Desempenho aprimorado, Correção Urgente: Corrigido uma falha que faz com que o atualizador automático não funcione corretamente quando instalado pela primeira vez.\n - Interface: Correções de erros e Mudanças na interface de configurações.\n - Instalador\Atualizador: Melhorias gerais.\n - Servidor: Melhorias gerais.
 )
@@ -174,6 +174,8 @@ del HashV.temp
 del InterfaceMaintainer.temp
 del ExtractSize.temp
 del ProgressData.temp
+del ImageData.temp
+del UpdaterUI.temp
 if exist "error.png" (
 move error.png error.temp
 )
@@ -192,6 +194,12 @@ move ExtractSize.vbs ExtractSize.temp
 if exist "ProgressData.tgpd" (
 move ProgressData.tgpd ProgressData.temp
 )
+if exist "ImageData.tgib64" (
+move ImageData.tgib64 ImageData.temp
+)
+if exist "UpdaterUI.tgapp" (
+move UpdaterUI.tgapp UpdaterUI.temp
+)
 del ExtractSize.vbs
 del Progress.hta
 del Progress.bat
@@ -200,7 +208,8 @@ del ProgressData.tgpd
 del tg.png
 del db.png
 del App.tmp
-del Hash.exe
+del App.temp
+del Hash.tmp
 del ImageData.tmp
 del UpdaterUI.tmp
 CLS
@@ -209,15 +218,15 @@ CLS
 title Atualizador%code%t
 if not exist "error.png" (
 set /a ERROS=ERROS+FATOR
-del error.png
 move error.temp error.png
 ) else (
 del error.temp
 )
-if not exist "Hash.exe" (
+if not exist "Hash.tmp" (
 set /a ERROS=ERROS+FATOR
 move HashF.temp Hash.exe
 ) else (
+move Hash.tmp Hash.exe
 del HashF.temp
 )
 if not exist "Hash.vbs" (
@@ -232,29 +241,25 @@ move InterfaceMaintainer.temp InterfaceMaintainer.vbs
 ) else (
 del InterfaceMaintainer.temp
 )
-if exist "ImageData.tgib64" (
-move ImageData.tgib64 ImageData.temp
-)
-del ImageData.tgib64
-if not exist "App.exe" (
-move App.tmp App.exe
-)
-if not exist "UpdaterUI.tgapp" (
-move UpdaterUI.tmp UpdaterUI.tgapp
-)
-if not exist "ImageData.tgib64" (
+if not exist "ImageData.tmp" (
 set /a ERROS=ERROS+FATOR
-del ImageData.tgib64
 move ImageData.temp ImageData.tgib64
 ) else (
-del ImageData.tgib64
 move ImageData.tmp ImageData.tgib64
 del ImageData.temp
 )
+if not exist "UpdaterUI.tmp" (
+set /a ERROS=ERROS+FATOR
+move UpdaterUI.temp UpdaterUI.tgapp
+) else (
+move UpdaterUI.tmp UpdaterUI.tgapp
+del UpdaterUI.temp
+)
+if not exist "App.exe" (
+move App.tmp App.exe
+) else (
 del App.tmp
-del App.temp
-del UpdaterUI.tmp
-del ImageData.tmp
+)
 if %ERROS% gtr 0 (
 CLS
 echo %date%-%time% Extração Interrompida. Arquivo Corrompido. >> "UpdateLog.txt"
@@ -952,30 +957,25 @@ CLS
 echo %date%-%time% Extraindo Pacotes... Versão: %sversion2c% >> "UpdateLog.txt"
 echo Extraindo Pacotes...
 CLS
-if exist "ExtractSize.vbs" (
-move ExtractSize.vbs ExtractSize.temp
-)
+del HashF.temp
+del HashV.temp
 if exist "Hash.exe" (
 move Hash.exe HashF.temp
 )
 if exist "Hash.vbs" (
 move Hash.vbs HashV.temp
 )
-del Hash.exe
+del ExtractSize.vbs
+del Hash.tmp
 CLS
 7z.exe e SilentScript.7z -o.\
 CLS
 title UpSilent%code%t
-if not exist "ExtractSize.vbs" (
-set /a ERROS=ERROS+FATOR
-move ExtractSize.temp ExtractSize.vbs
-) else (
-del ExtractSize.temp
-)
-if not exist "Hash.exe" (
+if not exist "Hash.tmp" (
 set /a ERROS=ERROS+FATOR
 move HashF.temp Hash.exe
 ) else (
+move Hash.tmp Hash.exe
 del HashF.temp
 )
 if not exist "Hash.vbs" (
