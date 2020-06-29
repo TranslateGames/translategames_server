@@ -8,9 +8,9 @@ CLS
 if %code%==350 (
 @set translationof="Dawn of War e Winter Assault"
 @set tam="3,81"
-@set totaltam=4003267
+@set totaltam=4003269
 @set installedsize="20,34"
-@set hash=330E82561B67E9DB5EA2F6BDD049CE18F0A11A8F6998C2CF82E29F8D8A94442E
+@set hash=8A8EBB8F7FAF3C0E4B5157F3E7EFADFC48D0E5973071B37FB6323C42E389C9FA
 @set file=W4BR.7z
 @set changelog=- Tradução: Algumas mudanças.\n - Atualizador: Desempenho aprimorado, Correção Urgente: Corrigido uma falha que faz com que o atualizador automático não funcione corretamente quando instalado pela primeira vez.\n - Interface: Correções de erros e Mudanças na interface de configurações.\n - Instalador\Atualizador: Melhorias gerais.\n - Servidor: Melhorias gerais.
 )
@@ -82,6 +82,13 @@ goto exit
 )
 
 :VVCheck
+if exist "InterfaceMaintainer.vbs" (
+set /p firstline=<InterfaceMaintainer.log
+if %firstline%==not (
+cd .\
+start wscript "InterfaceMaintainer.vbs" /mode:%mode% /code:%code%
+)
+)
 if %version% lss %version2% (
 CLS
 echo 1 > "ProgressBarS.log"
@@ -96,6 +103,13 @@ goto init
 
 :ARCheck
 CLS
+if exist "InterfaceMaintainer.vbs" (
+set /p firstline=<InterfaceMaintainer.log
+if %firstline%==not (
+cd .\
+start wscript "InterfaceMaintainer.vbs" /mode:%mode% /code:%code%
+)
+)
 del %file%
 echo 1 > "ProgressBarS.log"
 echo -0-90- > "ProgressBar.log"
@@ -478,6 +492,15 @@ if exist "UpdaterUI.tgapp" (
 cd .\
 start App.exe "%CD%\UpdaterUI.tgapp" /:Init /:%mode% /:%code%
 )
+if exist "InterfaceMaintainer.vbs" (
+set /p firstline=<InterfaceMaintainer.log
+if %firstline%==not (
+cd .\
+start wscript "InterfaceMaintainer.vbs" /mode:%mode% /code:%code%
+)
+)
+CLS
+echo Aguardando...
 goto CLCheck
 
 :initC
@@ -502,17 +525,23 @@ if exist "UpdaterUI.tgapp" (
 cd .\
 start App.exe "%CD%\UpdaterUI.tgapp" /:Init /:%mode% /:%code%
 )
+if exist "InterfaceMaintainer.vbs" (
+set /p firstline=<InterfaceMaintainer.log
+if %firstline%==not (
+cd .\
+start wscript "InterfaceMaintainer.vbs" /mode:%mode% /code:%code%
+)
+)
+CLS
+echo Aguardando...
 goto CLCheck
 
 :CLCheck
-CLS
-echo Aguardando...
 title Atualizador%code%t
 set /p firstline=<ChangeLogIV.log
 if %firstline%==1 (
 goto CLCheck2
 )
-CLS
 set /p firstline=<Result.txt
 if %firstline%==cancelar (
 CLS
@@ -527,8 +556,6 @@ goto exit
 goto initD
 
 :CLCheck2
-CLS
-echo Aguardando...
 title Atualizador%code%t
 set /p firstline=<Result.txt
 if %firstline%==cancelar (
@@ -548,8 +575,6 @@ goto CLCheck
 CLS
 title Atualizador%code%t
 CLS
-del PrepareProgress.vbs
-del App.temp
 del %file%
 echo 0 > "Hash.log"
 CLS
