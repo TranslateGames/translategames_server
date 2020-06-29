@@ -8,9 +8,9 @@ CLS
 if %code%==357 (
 @set translationof="Dawn of War II - Retribution"
 @set tam="3,40"
-@set totaltam=3567119
+@set totaltam=3567118
 @set installedsize="36,17"
-@set hash=0ECE3D6B0ACDF6EA62D821BA17395B530D0AEC2A65A8B4C2A6BD9DBB632420A5
+@set hash=01B2FDE3EA8D8C28E5998D20918AB93721F9D5007AB841C6CE81A1485EB97FB6
 @set file=DOW2RBR.7z
 @set changelog=- Tradução: Algumas mudanças.\n - Atualizador: Desempenho aprimorado, Correção Urgente: Corrigido uma falha que faz com que o atualizador automático não funcione corretamente quando instalado pela primeira vez.\n - Interface: Correções de erros e Mudanças na interface de configurações.\n - Instalador\Atualizador: Melhorias gerais.\n - Servidor: Melhorias gerais.
 )
@@ -82,13 +82,6 @@ goto exit
 )
 
 :VVCheck
-if exist "InterfaceMaintainer.vbs" (
-set /p firstline=<InterfaceMaintainer.log
-if %firstline%==not (
-cd .\
-start wscript "InterfaceMaintainer.vbs" /mode:%mode% /code:%code%
-)
-)
 if %version% lss %version2% (
 CLS
 echo 1 > "ProgressBarS.log"
@@ -103,13 +96,6 @@ goto init
 
 :ARCheck
 CLS
-if exist "InterfaceMaintainer.vbs" (
-set /p firstline=<InterfaceMaintainer.log
-if %firstline%==not (
-cd .\
-start wscript "InterfaceMaintainer.vbs" /mode:%mode% /code:%code%
-)
-)
 del %file%
 echo 1 > "ProgressBarS.log"
 echo -0-90- > "ProgressBar.log"
@@ -349,6 +335,9 @@ echo 0 > "UpdateMode.log"
 echo 0 > "ServerP.log"
 echo 0 > "UpCoreFCE.log"
 echo 0 > "Result.txt"
+if not exist "InterfaceMaintainer.log" (
+echo not>"InterfaceMaintainer.log"
+)
 del ChangeLog.log
 CLS
 echo Dim D2 > "ExtractSize.vbs"
@@ -493,11 +482,8 @@ cd .\
 start App.exe "%CD%\UpdaterUI.tgapp" /:Init /:%mode% /:%code%
 )
 if exist "InterfaceMaintainer.vbs" (
-set /p firstline=<InterfaceMaintainer.log
-if %firstline%==not (
-cd .\
-start wscript "InterfaceMaintainer.vbs" /mode:%mode% /code:%code%
-)
+CLS
+goto initCLCheck
 )
 CLS
 echo Aguardando...
@@ -526,11 +512,18 @@ cd .\
 start App.exe "%CD%\UpdaterUI.tgapp" /:Init /:%mode% /:%code%
 )
 if exist "InterfaceMaintainer.vbs" (
+CLS
+goto initCLCheck
+)
+CLS
+echo Aguardando...
+goto CLCheck
+
+:initCLCheck
 set /p firstline=<InterfaceMaintainer.log
 if %firstline%==not (
 cd .\
 start wscript "InterfaceMaintainer.vbs" /mode:%mode% /code:%code%
-)
 )
 CLS
 echo Aguardando...

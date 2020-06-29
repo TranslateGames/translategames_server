@@ -10,7 +10,7 @@ if %code%==350-3 (
 @set tam="3,33"
 @set totaltam=3497853
 @set installedsize="36,04"
-@set hash=4604DA19597F54D2AF839A77E8EA65340E925BB79EDD1B206F00E2B964AFC796
+@set hash=5B2FF288C118545D95A0FD0303425FE01342707A2AE69EB85F556EDD034DA01E
 @set file=DCBR.7z
 @set changelog=- Tradução: Algumas mudanças.\n - Atualizador: Desempenho aprimorado, Correção Urgente: Corrigido uma falha que faz com que o atualizador automático não funcione corretamente quando instalado pela primeira vez.\n - Interface: Correções de erros e Mudanças na interface de configurações.\n - Instalador\Atualizador: Melhorias gerais.\n - Servidor: Melhorias gerais.
 )
@@ -82,13 +82,6 @@ goto exit
 )
 
 :VVCheck
-if exist "InterfaceMaintainer.vbs" (
-set /p firstline=<InterfaceMaintainer.log
-if %firstline%==not (
-cd .\
-start wscript "InterfaceMaintainer.vbs" /mode:%mode% /code:%code%
-)
-)
 if %version% lss %version2% (
 CLS
 echo 1 > "ProgressBarS.log"
@@ -103,13 +96,6 @@ goto init
 
 :ARCheck
 CLS
-if exist "InterfaceMaintainer.vbs" (
-set /p firstline=<InterfaceMaintainer.log
-if %firstline%==not (
-cd .\
-start wscript "InterfaceMaintainer.vbs" /mode:%mode% /code:%code%
-)
-)
 del %file%
 echo 1 > "ProgressBarS.log"
 echo -0-90- > "ProgressBar.log"
@@ -349,6 +335,9 @@ echo 0 > "UpdateMode.log"
 echo 0 > "ServerP.log"
 echo 0 > "UpCoreFCE.log"
 echo 0 > "Result.txt"
+if not exist "InterfaceMaintainer.log" (
+echo not>"InterfaceMaintainer.log"
+)
 del ChangeLog.log
 CLS
 echo Dim D2 > "ExtractSize.vbs"
@@ -493,11 +482,8 @@ cd .\
 start App.exe "%CD%\UpdaterUI.tgapp" /:Init /:%mode% /:%code%
 )
 if exist "InterfaceMaintainer.vbs" (
-set /p firstline=<InterfaceMaintainer.log
-if %firstline%==not (
-cd .\
-start wscript "InterfaceMaintainer.vbs" /mode:%mode% /code:%code%
-)
+CLS
+goto initCLCheck
 )
 CLS
 echo Aguardando...
@@ -526,11 +512,18 @@ cd .\
 start App.exe "%CD%\UpdaterUI.tgapp" /:Init /:%mode% /:%code%
 )
 if exist "InterfaceMaintainer.vbs" (
+CLS
+goto initCLCheck
+)
+CLS
+echo Aguardando...
+goto CLCheck
+
+:initCLCheck
 set /p firstline=<InterfaceMaintainer.log
 if %firstline%==not (
 cd .\
 start wscript "InterfaceMaintainer.vbs" /mode:%mode% /code:%code%
-)
 )
 CLS
 echo Aguardando...
