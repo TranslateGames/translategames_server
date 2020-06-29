@@ -8,9 +8,9 @@ CLS
 if %code%==357 (
 @set translationof="Dawn of War II - Retribution"
 @set tam="3,40"
-@set totaltam=3567118
+@set totaltam=3567119
 @set installedsize="36,17"
-@set hash=01B2FDE3EA8D8C28E5998D20918AB93721F9D5007AB841C6CE81A1485EB97FB6
+@set hash=CD5E5F62648A48D6CEB89155E26164B24ECBDF07507CC5E677998E740C88DE99
 @set file=DOW2RBR.7z
 @set changelog=- Tradução: Algumas mudanças.\n - Atualizador: Desempenho aprimorado, Correção Urgente: Corrigido uma falha que faz com que o atualizador automático não funcione corretamente quando instalado pela primeira vez.\n - Interface: Correções de erros e Mudanças na interface de configurações.\n - Instalador\Atualizador: Melhorias gerais.\n - Servidor: Melhorias gerais.
 )
@@ -335,8 +335,8 @@ echo 0 > "UpdateMode.log"
 echo 0 > "ServerP.log"
 echo 0 > "UpCoreFCE.log"
 echo 0 > "Result.txt"
-if not exist "InterfaceMaintainer.log" (
-echo not>"InterfaceMaintainer.log"
+if exist "InterfaceMaintainer.log" (
+del InterfaceMaintainer.log
 )
 del ChangeLog.log
 CLS
@@ -481,7 +481,7 @@ if exist "UpdaterUI.tgapp" (
 cd .\
 start App.exe "%CD%\UpdaterUI.tgapp" /:Init /:%mode% /:%code%
 )
-if exist "InterfaceMaintainer.vbs" (
+if not exist "InterfaceMaintainer.log" (
 CLS
 goto initCLCheck
 )
@@ -511,7 +511,7 @@ if exist "UpdaterUI.tgapp" (
 cd .\
 start App.exe "%CD%\UpdaterUI.tgapp" /:Init /:%mode% /:%code%
 )
-if exist "InterfaceMaintainer.vbs" (
+if not exist "InterfaceMaintainer.log" (
 CLS
 goto initCLCheck
 )
@@ -520,8 +520,8 @@ echo Aguardando...
 goto CLCheck
 
 :initCLCheck
-set /p firstline=<InterfaceMaintainer.log
-if %firstline%==not (
+if exist "InterfaceMaintainer.vbs" (
+echo not>"InterfaceMaintainer.log"
 cd .\
 start wscript "InterfaceMaintainer.vbs" /mode:%mode% /code:%code%
 )

@@ -10,7 +10,7 @@ if %code%==350 (
 @set tam="3,81"
 @set totaltam=4003269
 @set installedsize="20,34"
-@set hash=98204E5ED4BF3EF028FF66E803318C9EB6EF61904080969CC4A42CBEF865A998
+@set hash=40BF33773974E1B0DAE24EBBBD8358AD62C334B741EF88EE6EE744B0C9616025
 @set file=W4BR.7z
 @set changelog=- Tradução: Algumas mudanças.\n - Atualizador: Desempenho aprimorado, Correção Urgente: Corrigido uma falha que faz com que o atualizador automático não funcione corretamente quando instalado pela primeira vez.\n - Interface: Correções de erros e Mudanças na interface de configurações.\n - Instalador\Atualizador: Melhorias gerais.\n - Servidor: Melhorias gerais.
 )
@@ -335,8 +335,8 @@ echo 0 > "UpdateMode.log"
 echo 0 > "ServerP.log"
 echo 0 > "UpCoreFCE.log"
 echo 0 > "Result.txt"
-if not exist "InterfaceMaintainer.log" (
-echo not>"InterfaceMaintainer.log"
+if exist "InterfaceMaintainer.log" (
+del InterfaceMaintainer.log
 )
 del ChangeLog.log
 CLS
@@ -481,7 +481,7 @@ if exist "UpdaterUI.tgapp" (
 cd .\
 start App.exe "%CD%\UpdaterUI.tgapp" /:Init /:%mode% /:%code%
 )
-if exist "InterfaceMaintainer.vbs" (
+if not exist "InterfaceMaintainer.log" (
 CLS
 goto initCLCheck
 )
@@ -511,7 +511,7 @@ if exist "UpdaterUI.tgapp" (
 cd .\
 start App.exe "%CD%\UpdaterUI.tgapp" /:Init /:%mode% /:%code%
 )
-if exist "InterfaceMaintainer.vbs" (
+if not exist "InterfaceMaintainer.log" (
 CLS
 goto initCLCheck
 )
@@ -520,8 +520,8 @@ echo Aguardando...
 goto CLCheck
 
 :initCLCheck
-set /p firstline=<InterfaceMaintainer.log
-if %firstline%==not (
+if exist "InterfaceMaintainer.vbs" (
+echo not>"InterfaceMaintainer.log"
 cd .\
 start wscript "InterfaceMaintainer.vbs" /mode:%mode% /code:%code%
 )
