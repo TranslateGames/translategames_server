@@ -8,9 +8,9 @@ CLS
 if %code%==350-3 (
 @set translationof="Dawn of War - Dark Crusade"
 @set tam="3,33"
-@set totaltam=3497851
+@set totaltam=3497853
 @set installedsize="36,04"
-@set hash=286F5C0A8CA8D9FA8B34281196201EC0151FC8E9AAE3A36FC4E46A5497E3A363
+@set hash=EA7C3F5FD134159760AF098EB0384C19C606BA662DE02024070E47D116D24329
 @set file=DCBR.7z
 @set changelog=- Tradução: Algumas mudanças.\n - Atualizador: Desempenho aprimorado, Correção Urgente: Corrigido uma falha que faz com que o atualizador automático não funcione corretamente quando instalado pela primeira vez.\n - Interface: Correções de erros e Mudanças na interface de configurações.\n - Instalador\Atualizador: Melhorias gerais.\n - Servidor: Melhorias gerais.
 )
@@ -340,7 +340,7 @@ del InterfaceMaintainer.log
 )
 del ChangeLog.log
 CLS
-echo Dim D2 > "ExtractSize.vbs"
+echo Dim Data > "ExtractSize.vbs"
 echo On Error Resume Next >> "ExtractSize.vbs"
 echo Set objArgs = WScript.Arguments.Named >> "ExtractSize.vbs"
 echo If NOT (IsEmpty(objArgs.Item("file"))) Then >> "ExtractSize.vbs"
@@ -350,12 +350,13 @@ echo WScript.Quit >> "ExtractSize.vbs"
 echo End If >> "ExtractSize.vbs"
 echo Set objFSO2 = CreateObject("Scripting.FileSystemObject") >> "ExtractSize.vbs"
 echo Set objRead2 = objFSO2.OpenTextFile("UpdateLog.txt", 1, False) >> "ExtractSize.vbs"
-echo D2 = objRead2.ReadAll >> "ExtractSize.vbs"
+echo Data = objRead2.ReadAll >> "ExtractSize.vbs"
 echo Set objFSO2 = Nothing >> "ExtractSize.vbs"
 echo Set objRead2 = Nothing >> "ExtractSize.vbs"
-echo D2r = Split(D2, "Saving to: '"^&File^&"'") >> "ExtractSize.vbs"
+echo D2r = Split(Data, "Saving to: '"^&File^&"'") >> "ExtractSize.vbs"
 echo Filet = Ubound(D2r) >> "ExtractSize.vbs"
 echo Filet = Filet - 1 >> "ExtractSize.vbs"
+echo If NOT Filet = "-1" Then >> "ExtractSize.vbs"
 echo Filet2 = D2r(Filet) >> "ExtractSize.vbs"
 echo D2r = Split(Filet2, "Length: ") >> "ExtractSize.vbs"
 echo Filet = Ubound(D2r) >> "ExtractSize.vbs"
@@ -366,6 +367,9 @@ echo Filet2 = D2r(Filet) >> "ExtractSize.vbs"
 echo D2r = Split(Filet2, " (") >> "ExtractSize.vbs"
 echo Filet = 0 >> "ExtractSize.vbs"
 echo Filet2 = D2r(Filet) >> "ExtractSize.vbs"
+echo Else >> "ExtractSize.vbs"
+echo Filet2 = "" >> "ExtractSize.vbs"
+echo End If >> "ExtractSize.vbs"
 echo D2dataR = Filet2 >> "ExtractSize.vbs"
 echo Set objFSO = CreateObject("Scripting.FileSystemObject") >> "ExtractSize.vbs"
 echo Set objRead = objFSO.OpenTextFile("DSize.log", 2, True) >> "ExtractSize.vbs"
@@ -1067,7 +1071,7 @@ goto initS
 
 :initS
 CLS
-echo Dim D2 > "ExtractSize.vbs"
+echo Dim Data > "ExtractSize.vbs"
 echo On Error Resume Next >> "ExtractSize.vbs"
 echo Set objArgs = WScript.Arguments.Named >> "ExtractSize.vbs"
 echo If NOT (IsEmpty(objArgs.Item("file"))) Then >> "ExtractSize.vbs"
@@ -1077,12 +1081,13 @@ echo WScript.Quit >> "ExtractSize.vbs"
 echo End If >> "ExtractSize.vbs"
 echo Set objFSO2 = CreateObject("Scripting.FileSystemObject") >> "ExtractSize.vbs"
 echo Set objRead2 = objFSO2.OpenTextFile("UpdateLog.txt", 1, False) >> "ExtractSize.vbs"
-echo D2 = objRead2.ReadAll >> "ExtractSize.vbs"
+echo Data = objRead2.ReadAll >> "ExtractSize.vbs"
 echo Set objFSO2 = Nothing >> "ExtractSize.vbs"
 echo Set objRead2 = Nothing >> "ExtractSize.vbs"
-echo D2r = Split(D2, "Saving to: '"^&File^&"'") >> "ExtractSize.vbs"
+echo D2r = Split(Data, "Saving to: '"^&File^&"'") >> "ExtractSize.vbs"
 echo Filet = Ubound(D2r) >> "ExtractSize.vbs"
 echo Filet = Filet - 1 >> "ExtractSize.vbs"
+echo If NOT Filet = "-1" Then >> "ExtractSize.vbs"
 echo Filet2 = D2r(Filet) >> "ExtractSize.vbs"
 echo D2r = Split(Filet2, "Length: ") >> "ExtractSize.vbs"
 echo Filet = Ubound(D2r) >> "ExtractSize.vbs"
@@ -1093,6 +1098,9 @@ echo Filet2 = D2r(Filet) >> "ExtractSize.vbs"
 echo D2r = Split(Filet2, " (") >> "ExtractSize.vbs"
 echo Filet = 0 >> "ExtractSize.vbs"
 echo Filet2 = D2r(Filet) >> "ExtractSize.vbs"
+echo Else >> "ExtractSize.vbs"
+echo Filet2 = "" >> "ExtractSize.vbs"
+echo End If >> "ExtractSize.vbs"
 echo D2dataR = Filet2 >> "ExtractSize.vbs"
 echo Set objFSO = CreateObject("Scripting.FileSystemObject") >> "ExtractSize.vbs"
 echo Set objRead = objFSO.OpenTextFile("DSize.log", 2, True) >> "ExtractSize.vbs"
