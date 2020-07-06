@@ -1,18 +1,18 @@
 @set caller=0
-@set version2="60012438"
-@set version3="6.0.0.12438"
-@set sversion2c=1800332
-@set sversion3c="1.8.0.0332"
+@set version2="60012439"
+@set version3="6.0.0.12439"
+@set sversion2c=1800333
+@set sversion3c="1.8.0.0333"
 @set tam7z=227328
 CLS
 if %code%==350 (
 @set translationof="Dawn of War e Winter Assault"
 @set tam="3,81"
-@set totaltam=4003268
-@set installedsize="20,34"
-@set hash=40FDF70E2C1A623DCF4030262A8FFFE05C42E588B5530DE95C8B3DD1300FA49E
+@set totaltam=3999357
+@set installedsize="20,35"
+@set hash=F075AB874930A2B8B983901CCC3258F8150D9EE9269042DB43E7285B46DDB367
 @set file=W4BR.7z
-@set changelog=- Tradução: Algumas mudanças.\n - Atualizador: Desempenho aprimorado, Correção Urgente: Corrigido uma falha que faz com que o atualizador automático não funcione corretamente quando instalado pela primeira vez.\n - Interface: Correções de erros e Mudanças na interface de configurações.\n - Instalador\Atualizador: Melhorias gerais.\n - Servidor: Melhorias gerais.
+@set changelog=- Tradução: Algumas mudanças.\n - Atualizador: Desempenho aprimorado e Correções de erros.\n - Interface: Correções de erros.\n - Instalador\Atualizador: Melhorias gerais.\n - Servidor: Melhorias gerais.
 )
 CLS
 @set secundarysvr=https://raw.githubusercontent.com/TranslateGames/translategames_server/master/Update/%file%

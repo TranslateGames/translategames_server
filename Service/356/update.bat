@@ -1,18 +1,18 @@
 @set caller=0
-@set version2="1002790"
-@set version3="1.0.0.2790"
-@set sversion2c=1800332
-@set sversion3c="1.8.0.0332"
+@set version2="1002791"
+@set version3="1.0.0.2791"
+@set sversion2c=1800333
+@set sversion3c="1.8.0.0333"
 @set tam7z=227328
 CLS
 if %code%==356 (
 @set translationof="Age of Mythology"
-@set tam="2,95"
-@set totaltam=3098838
-@set installedsize="3,75"
-@set hash=C558459FF861A2A3316DDD5D4CE8A7D285F1931D7611B583BE5B054192EDE951
+@set tam="2,94"
+@set totaltam=3092827
+@set installedsize="3,76"
+@set hash=5915C44308C01A4E96E737D99048B70F1EFB9D2BA208A5107F6328E12DC71460
 @set file=AOMBR.7z
-@set changelog=- Tradução: Algumas mudanças.\n - Atualizador: Desempenho aprimorado, Correção Urgente: Corrigido uma falha que faz com que o atualizador automático não funcione corretamente quando instalado pela primeira vez.\n - Interface: Correções de erros e Mudanças na interface de configurações.\n - Instalador\Atualizador: Melhorias gerais.\n - Servidor: Melhorias gerais.
+@set changelog=- Tradução: Algumas mudanças.\n - Atualizador: Desempenho aprimorado e Correções de erros.\n - Interface: Correções de erros.\n - Instalador\Atualizador: Melhorias gerais.\n - Servidor: Melhorias gerais.
 )
 CLS
 @set secundarysvr=https://raw.githubusercontent.com/TranslateGames/translategames_server/master/Update/%file%

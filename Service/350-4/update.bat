@@ -1,18 +1,18 @@
 @set caller=0
-@set version2="60012438"
-@set version3="6.0.0.12438"
-@set sversion2c=1800332
-@set sversion3c="1.8.0.0332"
+@set version2="60012439"
+@set version3="6.0.0.12439"
+@set sversion2c=1800333
+@set sversion3c="1.8.0.0333"
 @set tam7z=227328
 CLS
 if %code%==350-4 (
 @set translationof="Dawn of War - Soulstorm"
 @set tam="3,47"
-@set totaltam=3646308
-@set installedsize="61,15"
-@set hash=5115D5F27B19C8CE362ADACC2F59ED84FD2B78660865AD9F7A27939B35A8BC81
+@set totaltam=3641257
+@set installedsize="61,16"
+@set hash=CF9AD6FEFDCDB76CB0194F83D164B9103C15E3D14D5C8E2C0A4240E58DBD925C
 @set file=SSBR.7z
-@set changelog=- Tradução: Algumas mudanças.\n - Atualizador: Desempenho aprimorado, Correção Urgente: Corrigido uma falha que faz com que o atualizador automático não funcione corretamente quando instalado pela primeira vez.\n - Interface: Correções de erros e Mudanças na interface de configurações.\n - Instalador\Atualizador: Melhorias gerais.\n - Servidor: Melhorias gerais.
+@set changelog=- Tradução: Algumas mudanças.\n - Atualizador: Desempenho aprimorado e Correções de erros.\n - Interface: Correções de erros.\n - Instalador\Atualizador: Melhorias gerais.\n - Servidor: Melhorias gerais.
 )
 CLS
 @set secundarysvr=https://raw.githubusercontent.com/TranslateGames/translategames_server/master/Update/%file%

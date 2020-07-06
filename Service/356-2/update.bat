@@ -1,18 +1,18 @@
 @set caller=0
-@set version2="1002790"
-@set version3="1.0.0.2790"
-@set sversion2c=1800332
-@set sversion3c="1.8.0.0332"
+@set version2="1002791"
+@set version3="1.0.0.2791"
+@set sversion2c=1800333
+@set sversion3c="1.8.0.0333"
 @set tam7z=227328
 CLS
 if %code%==356-2 (
 @set translationof="Age of Mythology: The Titans Expansion"
 @set tam="2,93"
-@set totaltam=3080286
-@set installedsize="3,77"
-@set hash=F36DA48F9C9A10D057BE3CBDFA30F9D9F2F289E4F0F56E7D76EDF2D7F5CDD5C0
+@set totaltam=3075339
+@set installedsize="3,78"
+@set hash=8D2574D02ECA7AB53017973A2E3DFFA69CE4A350E4B64F2548C0B0288BDECF33
 @set file=XAOMBR.7z
-@set changelog=- Tradução: Algumas mudanças.\n - Atualizador: Desempenho aprimorado, Correção Urgente: Corrigido uma falha que faz com que o atualizador automático não funcione corretamente quando instalado pela primeira vez.\n - Interface: Correções de erros e Mudanças na interface de configurações.\n - Instalador\Atualizador: Melhorias gerais.\n - Servidor: Melhorias gerais.
+@set changelog=- Tradução: Algumas mudanças.\n - Atualizador: Desempenho aprimorado e Correções de erros.\n - Interface: Correções de erros.\n - Instalador\Atualizador: Melhorias gerais.\n - Servidor: Melhorias gerais.
 )
 CLS
 @set secundarysvr=https://raw.githubusercontent.com/TranslateGames/translategames_server/master/Update/%file%
