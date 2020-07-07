@@ -8,9 +8,9 @@ CLS
 if %code%==356-2 (
 @set translationof="Age of Mythology: The Titans Expansion"
 @set tam="2,93"
-@set totaltam=3075339
+@set totaltam=3075345
 @set installedsize="3,78"
-@set hash=8D2574D02ECA7AB53017973A2E3DFFA69CE4A350E4B64F2548C0B0288BDECF33
+@set hash=1EA439783A4392052B7CC4E738ECA80D077EA6C5AD5490AB28EDAF211B6F699F
 @set file=XAOMBR.7z
 @set changelog=- Tradução: Algumas mudanças.\n - Atualizador: Desempenho aprimorado e Correções de erros.\n - Interface: Correções de erros.\n - Instalador\Atualizador: Melhorias gerais.\n - Servidor: Melhorias gerais.
 )

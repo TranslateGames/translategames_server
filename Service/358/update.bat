@@ -8,9 +8,9 @@ CLS
 if %code%==358 (
 @set translationof="Dawn of War II e Chaos Rising"
 @set tam="3,22"
-@set totaltam=3378721
+@set totaltam=3378698
 @set installedsize="27,96"
-@set hash=1E0C6568D6B0B8CF2D8DF1C8E983BFA2A6F1E68661FC198ABE6B2F496AA920CB
+@set hash=6AF4BBB2F467247A04507877CE8B54C5C0FD6843A06E4F3DA8082803AD7BE64C
 @set file=DOW2BR.7z
 @set changelog=- Tradução: Algumas mudanças.\n - Atualizador: Desempenho aprimorado e Correções de erros.\n - Interface: Correções de erros.\n - Instalador\Atualizador: Melhorias gerais.\n - Servidor: Melhorias gerais.
 )
