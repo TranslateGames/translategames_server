@@ -8,9 +8,9 @@ CLS
 if %code%==356 (
 @set translationof="Age of Mythology"
 @set tam="2,95"
-@set totaltam=3094131
+@set totaltam=3094271
 @set installedsize="3,76"
-@set hash=DBDD262DA578CC360E02B1AB1E6F4DAF5ADD92F9ED67DDAC605CBD290E456E10
+@set hash=CD3D3E48F461A42F2ABA412CA70FD0BC4385C346FB47ABFABCF6CF0B74017B94
 @set file=AOMBR.7z
 @set changelog=- Tradução: Algumas mudanças.\n - Atualizador: Desempenho aprimorado e Correções de erros.\n - Interface: Correções de erros.\n - Instalador\Atualizador: Melhorias gerais.\n - Servidor: Melhorias gerais.
 )
