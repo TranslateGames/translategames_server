@@ -1,16 +1,16 @@
 @set caller=0
-@set version2="1002791"
-@set version3="1.0.0.2791"
+@set version2="1002792"
+@set version3="1.0.0.2792"
 @set sversion2c=1800333
 @set sversion3c="1.8.0.0333"
 @set tam7z=227328
 CLS
 if %code%==356 (
 @set translationof="Age of Mythology"
-@set tam="2,94"
-@set totaltam=3092843
+@set tam="2,95"
+@set totaltam=3094131
 @set installedsize="3,76"
-@set hash=53EAAA0A4B496564D40C4EAC04861622AD8595EEB40006AAB7ECCC2DC871C5B4
+@set hash=DBDD262DA578CC360E02B1AB1E6F4DAF5ADD92F9ED67DDAC605CBD290E456E10
 @set file=AOMBR.7z
 @set changelog=- Tradução: Algumas mudanças.\n - Atualizador: Desempenho aprimorado e Correções de erros.\n - Interface: Correções de erros.\n - Instalador\Atualizador: Melhorias gerais.\n - Servidor: Melhorias gerais.
 )
