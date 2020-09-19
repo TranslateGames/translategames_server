@@ -1,16 +1,16 @@
 @set caller=0
-@set version2="60012448"
-@set version3="6.0.0.12448"
-@set sversion2c=1800333
-@set sversion3c="1.8.0.0333"
+@set version2="60012449"
+@set version3="6.0.0.12449"
+@set sversion2c=1800334
+@set sversion3c="1.8.0.0334"
 @set tam7z=227328
 CLS
 if %code%==350 (
 @set translationof="Dawn of War e Winter Assault"
 @set tam="3,81"
-@set totaltam=3999822
+@set totaltam=3998890
 @set installedsize="20,35"
-@set hash=1EEEBC7AD794E824F1129403C7E5757BE5AEEC1A016C97F7A59C78FA65C103EB
+@set hash=D2E08B9AB66485B76E511DAB48739523A38E473D97D54F33B115D7E3A8AD8438
 @set file=W4BR.7z
 @set changelog=- Tradução: Algumas mudanças.\n - Atualizador: Compatibilidade com multitarefa e correções de erros.\n - Interface: Correções de erros.\n - Instalador\Atualizador: Melhorias gerais.\n - Servidor: Melhorias gerais.
 )
@@ -172,6 +172,7 @@ del error.temp
 del HashF.temp
 del HashV.temp
 del InterfaceMaintainer.temp
+del PostInstall.temp
 del ProgressData.temp
 del ImageData.temp
 del UpdaterUI.temp
@@ -186,6 +187,9 @@ move Hash.vbs HashV.temp
 )
 if exist "InterfaceMaintainer.vbs" (
 move InterfaceMaintainer.vbs InterfaceMaintainer.temp
+)
+if exist "PostInstall.vbs" (
+move PostInstall.vbs PostInstall.temp
 )
 if exist "ProgressData.tgpd" (
 move ProgressData.tgpd ProgressData.temp
@@ -235,6 +239,12 @@ set /a ERROS=ERROS+FATOR
 move InterfaceMaintainer.temp InterfaceMaintainer.vbs
 ) else (
 del InterfaceMaintainer.temp
+)
+if not exist "PostInstall.vbs" (
+set /a ERROS=ERROS+FATOR
+move PostInstall.temp PostInstall.vbs
+) else (
+del PostInstall.temp
 )
 if not exist "ImageData.tmp" (
 set /a ERROS=ERROS+FATOR
@@ -1015,12 +1025,17 @@ echo Extraindo Pacotes...
 CLS
 del HashF.temp
 del HashV.temp
+del ..\PostInstall.temp
 if exist "Hash.exe" (
 move Hash.exe HashF.temp
 )
 if exist "Hash.vbs" (
 move Hash.vbs HashV.temp
 )
+if exist "..\PostInstall.vbs" (
+move ..\PostInstall.vbs ..\PostInstall.temp
+)
+del PostInstall.vbs
 del ExtractSize.vbs
 del Hash.tmp
 CLS
@@ -1039,6 +1054,13 @@ set /a ERROS=ERROS+FATOR
 move HashV.temp Hash.vbs
 ) else (
 del HashV.temp
+)
+if not exist "PostInstall.vbs" (
+set /a ERROS=ERROS+FATOR
+move ..\PostInstall.temp ..\PostInstall.vbs
+) else (
+move PostInstall.vbs ..\PostInstall.vbs
+del ..\PostInstall.temp
 )
 if %ERROS% gtr 0 (
 CLS
