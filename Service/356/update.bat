@@ -1,16 +1,16 @@
 @set caller=0
-@set version2="1002804"
-@set version3="1.0.0.2804"
-@set sversion2c=1800335
-@set sversion3c="1.8.0.0335"
+@set version2="1002805"
+@set version3="1.0.0.2805"
+@set sversion2c=1800336
+@set sversion3c="1.8.0.0336"
 @set tam7z=227328
 CLS
 if %code%==356 (
 @set translationof="Age of Mythology"
 @set tam="2,95"
-@set totaltam=3093579
+@set totaltam=3094582
 @set installedsize="3,76"
-@set hash=C453ADEA2FD6D15F0FCF04298B5A4F8A1BFEB7EDD0F70BDA85CA25D480579E62
+@set hash=1B55BFF28334381B28DFFCB0A8C8CA9FBA0CE6A7B25C6ABCFD39E3F4A5DFA472
 @set file=AOMBR.7z
 @set changelog=- Tradução: Algumas mudanças.\n - Atualizador: Compatibilidade com multitarefa e correções de erros.\n - Interface: Correções de erros.\n - Instalador\Atualizador: Melhorias gerais.\n - Servidor: Melhorias gerais.
 )
@@ -96,6 +96,7 @@ goto init
 
 :ARCheck
 CLS
+timeout 2 > NUL
 del %file%
 echo 1 > "ProgressBarS.log"
 echo -0-90- > "ProgressBar.log"
@@ -329,7 +330,7 @@ goto exit
 CLS
 echo 0 > "Status.log"
 echo 0 > "StatusP.log"
-echo -0-90- > "ProgressBar.log"
+echo -0-0- > "ProgressBar.log"
 echo 0 > "Server.log"
 echo 0 > "DSize.log"
 echo 0 > "ChangeLogIV.log"
@@ -902,7 +903,7 @@ goto exit
 )
 
 :checkHash
-echo -0-1- > "ProgressBar.log"
+echo -0-0- > "ProgressBar.log"
 echo 0 > "Hash.log"
 if exist "Hash.vbs" (
 CLS
@@ -922,6 +923,7 @@ goto ARCheck
 set /p firstline=<Hash.log
 if %firstline%==Valid (
 CLS
+echo -0-1- > "ProgressBar.log"
 echo %date%-%time% Arquivo Válido: %hash% >> "UpdateLog.txt"
 echo Arquivo Válido: %hash%
 goto initInstall
@@ -1497,7 +1499,7 @@ goto exit
 )
 
 :checkHashS
-echo -0-1- > "ProgressBar.log"
+echo -0-0- > "ProgressBar.log"
 echo 0 > "Hash.log"
 if exist "Hash.vbs" (
 CLS
@@ -1518,6 +1520,7 @@ goto ARCheckS
 set /p firstline=<Hash.log
 if %firstline%==Valid (
 CLS
+echo -0-1- > "ProgressBar.log"
 echo %date%-%time% Arquivo Válido: %hash% >> "UpdateLog.txt"
 echo Arquivo Válido: %hash%
 goto initInstallS

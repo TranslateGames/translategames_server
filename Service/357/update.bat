@@ -1,16 +1,16 @@
 @set caller=0
-@set version2="1001468"
-@set version3="1.0.0.1468"
-@set sversion2c=1800335
-@set sversion3c="1.8.0.0335"
+@set version2="1001469"
+@set version3="1.0.0.1469"
+@set sversion2c=1800336
+@set sversion3c="1.8.0.0336"
 @set tam7z=227328
 CLS
 if %code%==357 (
 @set translationof="Dawn of War II - Retribution"
 @set tam="3,39"
-@set totaltam=3562869
+@set totaltam=3561528
 @set installedsize="36,18"
-@set hash=A6E32098EF210BF14E055C2CF95F5A859AD6D04F591C4C1FE54613B1D11B25E7
+@set hash=A4D922C6322643F9B1AD07A351DEF47A3FB07BB398403813516113295E097BCB
 @set file=DOW2RBR.7z
 @set changelog=- Tradução: Algumas mudanças.\n - Atualizador: Compatibilidade com multitarefa e correções de erros.\n - Interface: Correções de erros.\n - Instalador\Atualizador: Melhorias gerais.\n - Servidor: Melhorias gerais.
 )
@@ -96,6 +96,7 @@ goto init
 
 :ARCheck
 CLS
+timeout 2 > NUL
 del %file%
 echo 1 > "ProgressBarS.log"
 echo -0-90- > "ProgressBar.log"
@@ -329,7 +330,7 @@ goto exit
 CLS
 echo 0 > "Status.log"
 echo 0 > "StatusP.log"
-echo -0-90- > "ProgressBar.log"
+echo -0-0- > "ProgressBar.log"
 echo 0 > "Server.log"
 echo 0 > "DSize.log"
 echo 0 > "ChangeLogIV.log"
@@ -902,7 +903,7 @@ goto exit
 )
 
 :checkHash
-echo -0-1- > "ProgressBar.log"
+echo -0-0- > "ProgressBar.log"
 echo 0 > "Hash.log"
 if exist "Hash.vbs" (
 CLS
@@ -922,6 +923,7 @@ goto ARCheck
 set /p firstline=<Hash.log
 if %firstline%==Valid (
 CLS
+echo -0-1- > "ProgressBar.log"
 echo %date%-%time% Arquivo Válido: %hash% >> "UpdateLog.txt"
 echo Arquivo Válido: %hash%
 goto initInstall
@@ -1497,7 +1499,7 @@ goto exit
 )
 
 :checkHashS
-echo -0-1- > "ProgressBar.log"
+echo -0-0- > "ProgressBar.log"
 echo 0 > "Hash.log"
 if exist "Hash.vbs" (
 CLS
@@ -1518,6 +1520,7 @@ goto ARCheckS
 set /p firstline=<Hash.log
 if %firstline%==Valid (
 CLS
+echo -0-1- > "ProgressBar.log"
 echo %date%-%time% Arquivo Válido: %hash% >> "UpdateLog.txt"
 echo Arquivo Válido: %hash%
 goto initInstallS
