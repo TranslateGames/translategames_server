@@ -10,7 +10,7 @@ if %code%==350-4 (
 @set tam="3,47"
 @set totaltam=3640972
 @set installedsize="61,16"
-@set hash=811AC26DF50D544D85144896C7086B8AD1326D7F07D86A73E9221E37E61C0F44
+@set hash=FF32E3B1266007A3F11E2BBFE285E123EAA820BED49366492180FDE7B7B980C9
 @set file=SSBR.7z
 @set changelog=- Tradução: Algumas mudanças.\n - Atualizador: Compatibilidade com multitarefa e correções de erros.\n - Interface: Correções de erros.\n - Instalador\Atualizador: Melhorias gerais.\n - Servidor: Melhorias gerais.
 )
@@ -409,8 +409,8 @@ echo Set objRead = Nothing >> "Hash.vbs"
 echo WScript.Quit >> "Hash.vbs"
 echo End If >> "Hash.vbs"
 echo Dim clean(5) >> "Hash.vbs"
-echo clean(0)="@echo off" >> "Hash.vbs"
-echo clean(1)="@set verifica=^%1t" >> "Hash.vbs"
+echo clean(0)="^@echo off" >> "Hash.vbs"
+echo clean(1)="^@set verifica=^%1t" >> "Hash.vbs"
 echo clean(2)="if ^%verifica^%==Initt (" >> "Hash.vbs"
 echo clean(3)="Hash.exe "^&File^&" > output.txt" >> "Hash.vbs"
 echo clean(4)=")" >> "Hash.vbs"
@@ -1210,8 +1210,8 @@ echo Set objRead = Nothing >> "Hash.vbs"
 echo WScript.Quit >> "Hash.vbs"
 echo End If >> "Hash.vbs"
 echo Dim clean(5) >> "Hash.vbs"
-echo clean(0)="@echo off" >> "Hash.vbs"
-echo clean(1)="@set verifica=^%1t" >> "Hash.vbs"
+echo clean(0)="^@echo off" >> "Hash.vbs"
+echo clean(1)="^@set verifica=^%1t" >> "Hash.vbs"
 echo clean(2)="if ^%verifica^%==Initt (" >> "Hash.vbs"
 echo clean(3)="Hash.exe "^&File^&" > output.txt" >> "Hash.vbs"
 echo clean(4)=")" >> "Hash.vbs"
