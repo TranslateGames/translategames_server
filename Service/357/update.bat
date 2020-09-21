@@ -1,6 +1,6 @@
 @set caller=0
-@set version2="1001467"
-@set version3="1.0.0.1467"
+@set version2="1001468"
+@set version3="1.0.0.1468"
 @set sversion2c=1800335
 @set sversion3c="1.8.0.0335"
 @set tam7z=227328
@@ -8,9 +8,9 @@ CLS
 if %code%==357 (
 @set translationof="Dawn of War II - Retribution"
 @set tam="3,39"
-@set totaltam=3563224
+@set totaltam=3562869
 @set installedsize="36,18"
-@set hash=F0130B899F3FA4CE3204CAD355292774C598B62AA429C068A2A90087553A3D4C
+@set hash=A6E32098EF210BF14E055C2CF95F5A859AD6D04F591C4C1FE54613B1D11B25E7
 @set file=DOW2RBR.7z
 @set changelog=- Tradução: Algumas mudanças.\n - Atualizador: Compatibilidade com multitarefa e correções de erros.\n - Interface: Correções de erros.\n - Instalador\Atualizador: Melhorias gerais.\n - Servidor: Melhorias gerais.
 )
@@ -182,9 +182,6 @@ move error.png error.temp
 if exist "Hash.exe" (
 move Hash.exe HashF.temp
 )
-if exist "Hash.vbs" (
-move Hash.vbs HashV.temp
-)
 if exist "InterfaceMaintainer.vbs" (
 move InterfaceMaintainer.vbs InterfaceMaintainer.temp
 )
@@ -204,6 +201,7 @@ del Progress.hta
 del Progress.bat
 del Progress.vbs
 del ProgressData.tgpd
+del Hash.vbs
 del tg.png
 del db.png
 del App.tmp
@@ -227,12 +225,6 @@ move HashF.temp Hash.exe
 ) else (
 move Hash.tmp Hash.exe
 del HashF.temp
-)
-if not exist "Hash.vbs" (
-set /a ERROS=ERROS+FATOR
-move HashV.temp Hash.vbs
-) else (
-del HashV.temp
 )
 if not exist "InterfaceMaintainer.vbs" (
 set /a ERROS=ERROS+FATOR
@@ -390,6 +382,71 @@ echo objRead.WriteLine(D2dataR) >> "ExtractSize.vbs"
 echo End If >> "ExtractSize.vbs"
 echo Set objFSO = Nothing >> "ExtractSize.vbs"
 echo Set objRead = Nothing >> "ExtractSize.vbs"
+CLS
+echo On Error Resume Next > "Hash.vbs"
+echo Set fso = CreateObject("Scripting.FileSystemObject") >> "Hash.vbs"
+echo Set objArgs = WScript.Arguments.Named >> "Hash.vbs"
+echo Set objWsh = CreateObject("WScript.Shell") >> "Hash.vbs"
+echo If NOT (IsEmpty(objArgs.Item("file"))) Then >> "Hash.vbs"
+echo File = objArgs.Item("file") >> "Hash.vbs"
+echo Else >> "Hash.vbs"
+echo WScript.Quit >> "Hash.vbs"
+echo End If >> "Hash.vbs"
+echo If NOT (IsEmpty(objArgs.Item("hash"))) Then >> "Hash.vbs"
+echo Hash = objArgs.Item("hash") >> "Hash.vbs"
+echo Hash = UCASE(Hash) >> "Hash.vbs"
+echo Else >> "Hash.vbs"
+echo WScript.Quit >> "Hash.vbs"
+echo End If >> "Hash.vbs"
+echo If fso.Fileexists("output.txt") Then fso.DeleteFile "output.txt" >> "Hash.vbs"
+echo If fso.Fileexists("hash.bat") Then fso.DeleteFile "hash.bat" >> "Hash.vbs"
+echo If NOT fso.Fileexists("Hash.exe") Then >> "Hash.vbs"
+echo Set objFSO = CreateObject("Scripting.FileSystemObject") >> "Hash.vbs"
+echo Set objRead = objFSO.OpenTextFile("Hash.log", 2, True) >> "Hash.vbs"
+echo objRead.WriteLine("MissingFile") >> "Hash.vbs"
+echo Set objFSO = Nothing >> "Hash.vbs"
+echo Set objRead = Nothing >> "Hash.vbs"
+echo WScript.Quit >> "Hash.vbs"
+echo End If >> "Hash.vbs"
+echo Dim clean(5) >> "Hash.vbs"
+echo clean(0)="@echo off" >> "Hash.vbs"
+echo clean(1)="@set verifica="^&Chr(37)^&"1t" >> "Hash.vbs"
+echo clean(2)="if "^&Chr(37)^&"verifica"^&Chr(37)^&"==Initt (" >> "Hash.vbs"
+echo clean(3)="Hash.exe "^&File^&" > output.txt" >> "Hash.vbs"
+echo clean(4)=")" >> "Hash.vbs"
+echo clean(5)="exit" >> "Hash.vbs"
+echo Set objFSO = CreateObject("Scripting.FileSystemObject") >> "Hash.vbs"
+echo Set objRead = objFSO.OpenTextFile("hash.bat", 2, True) >> "Hash.vbs"
+echo For Each cleanT In clean >> "Hash.vbs"
+echo objRead.WriteLine(cleanT) >> "Hash.vbs"
+echo Next >> "Hash.vbs"
+echo Set objFSO = Nothing >> "Hash.vbs"
+echo Set objRead = Nothing >> "Hash.vbs"
+echo If (fso.FileExists("hash.bat")) Then >> "Hash.vbs"
+echo objWsh.Run "hash.bat Init", 0, 1 >> "Hash.vbs"
+echo End If >> "Hash.vbs"
+echo Separator = Chr(32)^&Chr(32) >> "Hash.vbs"
+echo Set objFSO = CreateObject("Scripting.FileSystemObject") >> "Hash.vbs"
+echo Set objRead = objFSO.OpenTextFile("output.txt", 1, False) >> "Hash.vbs"
+echo D1 = objRead.ReadLine >> "Hash.vbs"
+echo D1c = Split(D1, Separator) >> "Hash.vbs"
+echo For i = 1 to (Ubound(D1c)) >> "Hash.vbs"
+echo D1 = D1c(0) >> "Hash.vbs"
+echo Next >> "Hash.vbs"
+echo D1 = UCASE(D1) >> "Hash.vbs"
+echo Set objFSO = Nothing >> "Hash.vbs"
+echo Set objRead = Nothing >> "Hash.vbs"
+echo If fso.Fileexists("output.txt") Then fso.DeleteFile "output.txt" >> "Hash.vbs"
+echo If fso.Fileexists("hash.bat") Then fso.DeleteFile "hash.bat" >> "Hash.vbs"
+echo Set objFSO = CreateObject("Scripting.FileSystemObject") >> "Hash.vbs"
+echo Set objRead = objFSO.OpenTextFile("Hash.log", 2, True) >> "Hash.vbs"
+echo If D1 = Hash Then >> "Hash.vbs"
+echo objRead.WriteLine("Valid") >> "Hash.vbs"
+echo Else >> "Hash.vbs"
+echo objRead.WriteLine("Invalid") >> "Hash.vbs"
+echo End If >> "Hash.vbs"
+echo Set objFSO = Nothing >> "Hash.vbs"
+echo Set objRead = Nothing >> "Hash.vbs"
 CLS
 if %version%==%version2% (
 title Atualizador%code%t
@@ -883,6 +940,7 @@ echo %date%-%time% Falha na validação da atualização! >> "UpdateLog.txt"
 goto exit
 ) else if %firstline%==MissingFile (
 CLS
+echo %date%-%time% Arquivo necessário não encontrado! Reiniciando... >> "UpdateLog.txt"
 goto ARCheck
 ) else (
 timeout 1 > NUL
@@ -1029,14 +1087,12 @@ del ..\PostInstall.temp
 if exist "Hash.exe" (
 move Hash.exe HashF.temp
 )
-if exist "Hash.vbs" (
-move Hash.vbs HashV.temp
-)
 if exist "..\PostInstall.vbs" (
 move ..\PostInstall.vbs ..\PostInstall.temp
 )
 del PostInstall.vbs
 del ExtractSize.vbs
+del Hash.vbs
 del Hash.tmp
 CLS
 7z.exe e SilentScript.7z -o.\
@@ -1048,12 +1104,6 @@ move HashF.temp Hash.exe
 ) else (
 move Hash.tmp Hash.exe
 del HashF.temp
-)
-if not exist "Hash.vbs" (
-set /a ERROS=ERROS+FATOR
-move HashV.temp Hash.vbs
-) else (
-del HashV.temp
 )
 if not exist "PostInstall.vbs" (
 set /a ERROS=ERROS+FATOR
@@ -1133,6 +1183,71 @@ echo objRead.WriteLine(D2dataR) >> "ExtractSize.vbs"
 echo End If >> "ExtractSize.vbs"
 echo Set objFSO = Nothing >> "ExtractSize.vbs"
 echo Set objRead = Nothing >> "ExtractSize.vbs"
+CLS
+echo On Error Resume Next > "Hash.vbs"
+echo Set fso = CreateObject("Scripting.FileSystemObject") >> "Hash.vbs"
+echo Set objArgs = WScript.Arguments.Named >> "Hash.vbs"
+echo Set objWsh = CreateObject("WScript.Shell") >> "Hash.vbs"
+echo If NOT (IsEmpty(objArgs.Item("file"))) Then >> "Hash.vbs"
+echo File = objArgs.Item("file") >> "Hash.vbs"
+echo Else >> "Hash.vbs"
+echo WScript.Quit >> "Hash.vbs"
+echo End If >> "Hash.vbs"
+echo If NOT (IsEmpty(objArgs.Item("hash"))) Then >> "Hash.vbs"
+echo Hash = objArgs.Item("hash") >> "Hash.vbs"
+echo Hash = UCASE(Hash) >> "Hash.vbs"
+echo Else >> "Hash.vbs"
+echo WScript.Quit >> "Hash.vbs"
+echo End If >> "Hash.vbs"
+echo If fso.Fileexists("output.txt") Then fso.DeleteFile "output.txt" >> "Hash.vbs"
+echo If fso.Fileexists("hash.bat") Then fso.DeleteFile "hash.bat" >> "Hash.vbs"
+echo If NOT fso.Fileexists("Hash.exe") Then >> "Hash.vbs"
+echo Set objFSO = CreateObject("Scripting.FileSystemObject") >> "Hash.vbs"
+echo Set objRead = objFSO.OpenTextFile("Hash.log", 2, True) >> "Hash.vbs"
+echo objRead.WriteLine("MissingFile") >> "Hash.vbs"
+echo Set objFSO = Nothing >> "Hash.vbs"
+echo Set objRead = Nothing >> "Hash.vbs"
+echo WScript.Quit >> "Hash.vbs"
+echo End If >> "Hash.vbs"
+echo Dim clean(5) >> "Hash.vbs"
+echo clean(0)="@echo off" >> "Hash.vbs"
+echo clean(1)="@set verifica="^&Chr(37)^&"1t" >> "Hash.vbs"
+echo clean(2)="if "^&Chr(37)^&"verifica"^&Chr(37)^&"==Initt (" >> "Hash.vbs"
+echo clean(3)="Hash.exe "^&File^&" > output.txt" >> "Hash.vbs"
+echo clean(4)=")" >> "Hash.vbs"
+echo clean(5)="exit" >> "Hash.vbs"
+echo Set objFSO = CreateObject("Scripting.FileSystemObject") >> "Hash.vbs"
+echo Set objRead = objFSO.OpenTextFile("hash.bat", 2, True) >> "Hash.vbs"
+echo For Each cleanT In clean >> "Hash.vbs"
+echo objRead.WriteLine(cleanT) >> "Hash.vbs"
+echo Next >> "Hash.vbs"
+echo Set objFSO = Nothing >> "Hash.vbs"
+echo Set objRead = Nothing >> "Hash.vbs"
+echo If (fso.FileExists("hash.bat")) Then >> "Hash.vbs"
+echo objWsh.Run "hash.bat Init", 0, 1 >> "Hash.vbs"
+echo End If >> "Hash.vbs"
+echo Separator = Chr(32)^&Chr(32) >> "Hash.vbs"
+echo Set objFSO = CreateObject("Scripting.FileSystemObject") >> "Hash.vbs"
+echo Set objRead = objFSO.OpenTextFile("output.txt", 1, False) >> "Hash.vbs"
+echo D1 = objRead.ReadLine >> "Hash.vbs"
+echo D1c = Split(D1, Separator) >> "Hash.vbs"
+echo For i = 1 to (Ubound(D1c)) >> "Hash.vbs"
+echo D1 = D1c(0) >> "Hash.vbs"
+echo Next >> "Hash.vbs"
+echo D1 = UCASE(D1) >> "Hash.vbs"
+echo Set objFSO = Nothing >> "Hash.vbs"
+echo Set objRead = Nothing >> "Hash.vbs"
+echo If fso.Fileexists("output.txt") Then fso.DeleteFile "output.txt" >> "Hash.vbs"
+echo If fso.Fileexists("hash.bat") Then fso.DeleteFile "hash.bat" >> "Hash.vbs"
+echo Set objFSO = CreateObject("Scripting.FileSystemObject") >> "Hash.vbs"
+echo Set objRead = objFSO.OpenTextFile("Hash.log", 2, True) >> "Hash.vbs"
+echo If D1 = Hash Then >> "Hash.vbs"
+echo objRead.WriteLine("Valid") >> "Hash.vbs"
+echo Else >> "Hash.vbs"
+echo objRead.WriteLine("Invalid") >> "Hash.vbs"
+echo End If >> "Hash.vbs"
+echo Set objFSO = Nothing >> "Hash.vbs"
+echo Set objRead = Nothing >> "Hash.vbs"
 CLS
 if %version%==%version2% (
 CLS
@@ -1442,6 +1557,7 @@ start InitUpdate.vbs /silent:silent
 exit
 ) else if %firstline%==MissingFile (
 CLS
+echo %date%-%time% Arquivo necessário não encontrado! Reiniciando... >> "UpdateLog.txt"
 goto ARCheckS
 ) else (
 goto checkHashS2
