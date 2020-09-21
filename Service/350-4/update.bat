@@ -8,9 +8,9 @@ CLS
 if %code%==350-4 (
 @set translationof="Dawn of War - Soulstorm"
 @set tam="3,47"
-@set totaltam=3640971
+@set totaltam=3640972
 @set installedsize="61,16"
-@set hash=B51ED68EB2F6B6FE552EB5B2B81C5B57B52A251D84CD36D23D07BE595B7345A7
+@set hash=8241178A03C02443D6C4A82D4748B2262DED8A811E8FB2C369E67E3A5AEA25BA
 @set file=SSBR.7z
 @set changelog=- Tradução: Algumas mudanças.\n - Atualizador: Compatibilidade com multitarefa e correções de erros.\n - Interface: Correções de erros.\n - Instalador\Atualizador: Melhorias gerais.\n - Servidor: Melhorias gerais.
 )
@@ -329,7 +329,7 @@ goto exit
 CLS
 echo 0 > "Status.log"
 echo 0 > "StatusP.log"
-echo -0-90- > "ProgressBar.log"
+echo -0-0- > "ProgressBar.log"
 echo 0 > "Server.log"
 echo 0 > "DSize.log"
 echo 0 > "ChangeLogIV.log"
@@ -902,7 +902,7 @@ goto exit
 )
 
 :checkHash
-echo -0-1- > "ProgressBar.log"
+echo -0-0- > "ProgressBar.log"
 echo 0 > "Hash.log"
 if exist "Hash.vbs" (
 CLS
@@ -922,6 +922,7 @@ goto ARCheck
 set /p firstline=<Hash.log
 if %firstline%==Valid (
 CLS
+echo -0-1- > "ProgressBar.log"
 echo %date%-%time% Arquivo Válido: %hash% >> "UpdateLog.txt"
 echo Arquivo Válido: %hash%
 goto initInstall
@@ -1497,7 +1498,7 @@ goto exit
 )
 
 :checkHashS
-echo -0-1- > "ProgressBar.log"
+echo -0-0- > "ProgressBar.log"
 echo 0 > "Hash.log"
 if exist "Hash.vbs" (
 CLS
@@ -1518,6 +1519,7 @@ goto ARCheckS
 set /p firstline=<Hash.log
 if %firstline%==Valid (
 CLS
+echo -0-1- > "ProgressBar.log"
 echo %date%-%time% Arquivo Válido: %hash% >> "UpdateLog.txt"
 echo Arquivo Válido: %hash%
 goto initInstallS
