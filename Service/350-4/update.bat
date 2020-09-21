@@ -10,7 +10,7 @@ if %code%==350-4 (
 @set tam="3,47"
 @set totaltam=3640972
 @set installedsize="61,16"
-@set hash=EB81DA952267A6E64B8B3E8EDA726ACC696F6B92D49CCF977640223274E0A84F
+@set hash=0E8EE552EC64826255641F99155E5ACB18127C64E604F52B8FA8A9ED9403CD7E
 @set file=SSBR.7z
 @set changelog=- Tradução: Algumas mudanças.\n - Atualizador: Compatibilidade com multitarefa e correções de erros.\n - Interface: Correções de erros.\n - Instalador\Atualizador: Melhorias gerais.\n - Servidor: Melhorias gerais.
 )
