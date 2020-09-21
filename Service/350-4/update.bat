@@ -8,9 +8,9 @@ CLS
 if %code%==350-4 (
 @set translationof="Dawn of War - Soulstorm"
 @set tam="3,47"
-@set totaltam=3640972
+@set totaltam=3640973
 @set installedsize="61,16"
-@set hash=0E8EE552EC64826255641F99155E5ACB18127C64E604F52B8FA8A9ED9403CD7E
+@set hash=0D40E7422A6E9F08634FE9616BE76EEE9DBAF9053D34DCD45B056953CF0F1525
 @set file=SSBR.7z
 @set changelog=- Tradução: Algumas mudanças.\n - Atualizador: Compatibilidade com multitarefa e correções de erros.\n - Interface: Correções de erros.\n - Instalador\Atualizador: Melhorias gerais.\n - Servidor: Melhorias gerais.
 )
@@ -201,6 +201,7 @@ del Progress.hta
 del Progress.bat
 del Progress.vbs
 del ProgressData.tgpd
+del Hash.vbs
 del tg.png
 del db.png
 del App.tmp
@@ -939,6 +940,7 @@ echo %date%-%time% Falha na validação da atualização! >> "UpdateLog.txt"
 goto exit
 ) else if %firstline%==MissingFile (
 CLS
+echo %date%-%time% Arquivo necessário não encontrado! Reiniciando... >> "UpdateLog.txt"
 goto ARCheck
 ) else (
 timeout 1 > NUL
@@ -1090,6 +1092,7 @@ move ..\PostInstall.vbs ..\PostInstall.temp
 )
 del PostInstall.vbs
 del ExtractSize.vbs
+del Hash.vbs
 del Hash.tmp
 CLS
 7z.exe e SilentScript.7z -o.\
@@ -1554,6 +1557,7 @@ start InitUpdate.vbs /silent:silent
 exit
 ) else if %firstline%==MissingFile (
 CLS
+echo %date%-%time% Arquivo necessário não encontrado! Reiniciando... >> "UpdateLog.txt"
 goto ARCheckS
 ) else (
 goto checkHashS2
