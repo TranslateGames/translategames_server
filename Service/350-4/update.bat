@@ -8,9 +8,9 @@ CLS
 if %code%==350-4 (
 @set translationof="Dawn of War - Soulstorm"
 @set tam="3,47"
-@set totaltam=3640974
+@set totaltam=3640972
 @set installedsize="61,16"
-@set hash=80D12A2FF3FD370774E79BC72E22D5FF42BF331232977B19170550F182560084
+@set hash=E238C7ACE1B5DEC749B9F3A2D45C4CF2B71B8974F7AF2675D84D8847877ADDD5
 @set file=SSBR.7z
 @set changelog=- Tradução: Algumas mudanças.\n - Atualizador: Compatibilidade com multitarefa e correções de erros.\n - Interface: Correções de erros.\n - Instalador\Atualizador: Melhorias gerais.\n - Servidor: Melhorias gerais.
 )
@@ -97,9 +97,9 @@ goto init
 :ARCheck
 CLS
 del %file%
-timeout 2 > NUL
 echo 1 > "ProgressBarS.log"
 echo -0-90- > "ProgressBar.log"
+timeout 2 > NUL
 @set showcl=0%caller%
 @set sversion=1%caller%
 CLS
