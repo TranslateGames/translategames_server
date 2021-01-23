@@ -1,6 +1,6 @@
 @set caller=0
-@set version2="60012453"
-@set version3="6.0.0.12453"
+@set version2="60012454"
+@set version3="6.0.0.12454"
 @set sversion2c=1800337
 @set sversion3c="1.8.0.0337"
 @set tam7z=227328
@@ -10,7 +10,7 @@ if %code%==350-4 (
 @set tam="3,47"
 @set totaltam=3641032
 @set installedsize="61,16"
-@set hash=09994DCE70A5E41BD89A3DC335C043E96CCA47C85F2A42EC6159098A1A0E23FE
+@set hash=108ED4F9AECEFAF1F65C544BE8AB27BA086CD291445BBA29FD1C30B2CD6C2493
 @set file=SSBR.7z
 @set changelog=- Tradução: Algumas mudanças.\n - Atualizador: Compatibilidade com multitarefa e correções de erros.\n - Interface: Correções de erros.\n - Instalador\Atualizador: Melhorias gerais.\n - Servidor: Melhorias gerais.
 )

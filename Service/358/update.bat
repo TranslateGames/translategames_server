@@ -1,16 +1,16 @@
 @set caller=0
-@set version2="1001122"
-@set version3="1.0.0.1122"
-@set sversion2c=1800336
-@set sversion3c="1.8.0.0336"
+@set version2="1001123"
+@set version3="1.0.0.1123"
+@set sversion2c=1800337
+@set sversion3c="1.8.0.0337"
 @set tam7z=227328
 CLS
 if %code%==358 (
 @set translationof="Dawn of War II e Chaos Rising"
 @set tam="3,22"
-@set totaltam=3379610
+@set totaltam=3378524
 @set installedsize="27,96"
-@set hash=9362E41975B1B8BA0E11CECEA3EA01A7E7B634E01E00E8938A09D6751E2E9940
+@set hash=F6A9DEED658B1859FBE9090DD559032E7E8939B3265AB4BC971EF2FE8AADDE2A
 @set file=DOW2BR.7z
 @set changelog=- Tradução: Algumas mudanças.\n - Atualizador: Compatibilidade com multitarefa e correções de erros.\n - Interface: Correções de erros.\n - Instalador\Atualizador: Melhorias gerais.\n - Servidor: Melhorias gerais.
 )
@@ -114,16 +114,22 @@ del 7z.dll
 FOR %%a in (dir "7z.exe") do (set /a tamanho=%%~za)
 if not exist "7z.exe" (
 echo 2 > "ProgressBarS.log"
+echo %date%-%time% Atualização do 7-Zip necessária! >> "UpdateLog.txt"
+echo %date%-%time% Baixando... >> "UpdateLog.txt"
 wget.exe https://raw.githubusercontent.com/TranslateGames/translategames_server/master/Service/7z.temp --user-agent=%useragentstring% --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=10 --tries=2
 title Atualizador%code%t
 echo 90 > "ProgressBarS.log"
 ) else if %tamanho% lss %tam7z% (
 echo 2 > "ProgressBarS.log"
+echo %date%-%time% Atualização do 7-Zip necessária! >> "UpdateLog.txt"
+echo %date%-%time% Baixando... >> "UpdateLog.txt"
 wget.exe https://raw.githubusercontent.com/TranslateGames/translategames_server/master/Service/7z.temp --user-agent=%useragentstring% --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=10 --tries=2
 title Atualizador%code%t
 echo 90 > "ProgressBarS.log"
 ) else if %tamanho% gtr %tam7z% (
 echo 2 > "ProgressBarS.log"
+echo %date%-%time% Atualização do 7-Zip necessária! >> "UpdateLog.txt"
+echo %date%-%time% Baixando... >> "UpdateLog.txt"
 wget.exe https://raw.githubusercontent.com/TranslateGames/translategames_server/master/Service/7z.temp --user-agent=%useragentstring% --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=10 --tries=2
 title Atualizador%code%t
 echo 90 > "ProgressBarS.log"
@@ -140,6 +146,8 @@ del 7z.exe
 move 7z.temp 7z.exe
 CLS
 )
+echo %date%-%time% Atualização Concluída! >> "UpdateLog.txt"
+echo %date%-%time% Continuando... >> "UpdateLog.txt"
 )
 echo 90 > "ProgressBarS.log"
 if %sversion% lss %sversion2% (
@@ -152,7 +160,7 @@ CLS
 echo %date%-%time% Atualização de complementos do Atualizador encontrada! Versão: %sversion3c% >> "UpdateLog.txt"
 echo Atualização de complementos do Atualizador encontrada!
 CLS
-echo %date%-%time% Baixando complementos... >> "UpdateLog.txt"
+echo %date%-%time% Baixando... >> "UpdateLog.txt"
 echo Baixando complementos...
 wget.exe https://raw.githubusercontent.com/TranslateGames/translategames_server/master/Service/UpScript.temp --user-agent=%useragentstring% --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=10 --tries=2
 title Atualizador%code%t
@@ -336,7 +344,7 @@ echo 0 > "DSize.log"
 echo 0 > "ChangeLogIV.log"
 echo 0 > "UpdateMode.log"
 echo 0 > "ServerP.log"
-echo 0 > "UpCoreFCE.log"
+echo -%sversion3%- > "UpCoreFCE.log"
 echo 0 > "Result.txt"
 if exist "InterfaceMaintainer.log" (
 del InterfaceMaintainer.log
@@ -667,7 +675,7 @@ echo %date%-%time% Baixando Atualização... >> "UpdateLog.txt"
 echo Baixando Update...
 )
 echo 1 > "ServerP.log"
-wget.exe %primarysvr% --output-document=%file% --user-agent=%useragentstring% --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=20 --tries=1
+wget.exe -c %primarysvr% --output-document=%file% --user-agent=%useragentstring% --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=20 --tries=1
 title Atualizador%code%t
 set /p firstline=<Status.log
 if %firstline%==cancelar (
@@ -705,10 +713,13 @@ goto check
 ) else (
 CLS
 echo %date%-%time% Falha ao baixar do servidor primário! >> "UpdateLog.txt"
+CLS
+timeout 1 > NUL
+CLS
 echo %date%-%time% Baixando de outro Servidor... >> "UpdateLog.txt"
 echo Baixando de outro Servidor...
 echo 2 > "ServerP.log"
-wget.exe %secundarysvr% --output-document=%file% --user-agent=%useragentstring% --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=15 --tries=1
+wget.exe -c %secundarysvr% --output-document=%file% --user-agent=%useragentstring% --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=15 --tries=1
 title Atualizador%code%t
 set /p firstline=<Status.log
 if %firstline%==cancelar (
@@ -776,6 +787,7 @@ goto checkHash
 CLS
 title Atualizador%code%t
 CLS
+timeout 1 > NUL
 echo 0 > "StatusP.log"
 CLS
 echo %date%-%time% Baixando Atualização... >> "UpdateLog.txt"
@@ -848,6 +860,7 @@ goto checkHash
 CLS
 title Atualizador%code%t
 CLS
+timeout 1 > NUL
 echo 0 > "StatusP.log"
 CLS
 echo %date%-%time% Baixando Atualização... >> "UpdateLog.txt"
@@ -1331,7 +1344,7 @@ echo Update Encontrado!
 CLS
 echo %date%-%time% Baixando Atualização... >> "UpdateLog.txt"
 echo Baixando Update...
-wget.exe %primarysvrS% --output-document=%file% --user-agent=%useragentstring% --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=20 --tries=1
+wget.exe -c %primarysvrS% --output-document=%file% --user-agent=%useragentstring% --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=20 --tries=1
 title UpSilent%code%t
 CLS
 if exist "%file%" (
@@ -1343,9 +1356,12 @@ goto secundaryDS
 :secundaryDS
 CLS
 echo %date%-%time% Falha ao baixar do servidor primário! >> "UpdateLog.txt"
+CLS
+timeout 1 > NUL
+CLS
 echo %date%-%time% Baixando de outro Servidor... >> "UpdateLog.txt"
 echo Baixando de outro Servidor...
-wget.exe %secundarysvrS% --output-document=%file% --user-agent=%useragentstring% --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=15 --tries=1
+wget.exe -c %secundarysvrS% --output-document=%file% --user-agent=%useragentstring% --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=15 --tries=1
 title UpSilent%code%t
 CLS
 if exist "%file%" (
@@ -1406,6 +1422,8 @@ goto checkHashS
 :initDST
 CLS
 title UpSilent%code%t
+CLS
+timeout 1 > NUL
 CLS
 echo %date%-%time% Baixando Atualização... >> "UpdateLog.txt"
 echo Baixando Update...
@@ -1471,6 +1489,8 @@ goto checkHashS
 CLS
 title UpSilent%code%t
 CLS
+timeout 1 > NUL
+CLS
 echo %date%-%time% Baixando Atualização... >> "UpdateLog.txt"
 echo Baixando Update...
 wget.exe -c %primarysvrS% --output-document=%file% --user-agent=%useragentstring% --no-check-certificate%Slimit% --append-output=UpdateLog.txt --timeout=20 --tries=2
@@ -1514,7 +1534,6 @@ goto checkHashS2
 CLS
 goto ARCheckS
 )
-
 
 :checkHashS2
 set /p firstline=<Hash.log
