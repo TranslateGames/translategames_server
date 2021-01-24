@@ -1,16 +1,16 @@
 @set caller=0
-@set version2="1001123"
-@set version3="1.0.0.1123"
-@set sversion2c=1800337
-@set sversion3c="1.8.0.0337"
+@set version2="1001125"
+@set version3="1.0.0.1125"
+@set sversion2c=1800338
+@set sversion3c="1.8.0.0338"
 @set tam7z=227328
 CLS
 if %code%==358 (
 @set translationof="Dawn of War II e Chaos Rising"
 @set tam="3,22"
-@set totaltam=3378524
+@set totaltam=3378638
 @set installedsize="27,96"
-@set hash=F6A9DEED658B1859FBE9090DD559032E7E8939B3265AB4BC971EF2FE8AADDE2A
+@set hash=2CCE8A763E09BEAF7C8ED0C7913380E348F609B35FEAC155CD0D12105773080C
 @set file=DOW2BR.7z
 @set changelog=- Tradução: Algumas mudanças.\n - Atualizador: Compatibilidade com multitarefa e correções de erros.\n - Interface: Correções de erros.\n - Instalador\Atualizador: Melhorias gerais.\n - Servidor: Melhorias gerais.
 )
