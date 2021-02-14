@@ -1,16 +1,16 @@
 @set caller=0
-@set version2="60012455"
-@set version3="6.0.0.12455"
-@set sversion2c=1800338
-@set sversion3c="1.8.0.0338"
+@set version2="60012456"
+@set version3="6.0.0.12456"
+@set sversion2c=1800339
+@set sversion3c="1.8.0.0339"
 @set tam7z=227328
 CLS
 if %code%==350 (
 @set translationof="Dawn of War e Winter Assault"
 @set tam="3,81"
-@set totaltam=3999059
+@set totaltam=3999443
 @set installedsize="20,35"
-@set hash=EE2BA8EBC08B060CB3DE3F655294F106FF1F8D51297E3C90ADB3639FCF93592E
+@set hash=74AA2157416D72E8F6519EB8A330E011221F06CB15730C201726060181517C47
 @set file=W4BR.7z
 @set changelog=- Tradução: Algumas mudanças.\n - Atualizador: Compatibilidade com multitarefa e correções de erros.\n - Interface: Correções de erros.\n - Instalador\Atualizador: Melhorias gerais.\n - Servidor: Melhorias gerais.
 )
