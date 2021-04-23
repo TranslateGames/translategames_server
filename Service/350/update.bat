@@ -1,18 +1,18 @@
 @set caller=0
-@set version2="60012457"
-@set version3="6.0.0.12457"
-@set sversion2c=1800340
-@set sversion3c="1.8.0.0340"
+@set version2="60012458"
+@set version3="6.0.0.12458"
+@set sversion2c=1800341
+@set sversion3c="1.8.0.0341"
 @set tam7z=227328
 CLS
 if %code%==350 (
 @set translationof="Dawn of War e Winter Assault"
-@set tam="3,81"
-@set totaltam=4001352
-@set installedsize="20,35"
-@set hash=0D081E85DD79991C60327474991516C4EDA9F637EF7A9134C7EDFB64A8491DA1
+@set tam="3,82"
+@set totaltam=4010570
+@set installedsize="20,36"
+@set hash=B2619ABB79EB79A72932CD64A337B311DFC42172047623D5E00608C40DC17DEE
 @set file=W4BR.7z
-@set changelog=- Tradução: Algumas mudanças.\n - Atualizador: Compatibilidade com multitarefa e correções de erros.\n - Interface: Correções de erros.\n - Instalador\Atualizador: Melhorias gerais.\n - Servidor: Melhorias gerais.
+@set changelog=- Tradução: Algumas mudanças.\n - Atualizador: Correções de erros.\n - Interface: Algumas mudanças visuais, Corrigido um problema com escalas superiores a 100\p\ no Windows 10, a interface do atualizador se ajusta automaticamente à escala\in\Experimental\out\.\n - Instalador\Atualizador: Melhorias gerais.\n - Servidor: Melhorias gerais.
 )
 CLS
 @set secundarysvr=https://raw.githubusercontent.com/TranslateGames/translategames_server/master/Update/%file%

@@ -1,18 +1,18 @@
 @set caller=0
-@set version2="60012457"
-@set version3="6.0.0.12457"
-@set sversion2c=1800340
-@set sversion3c="1.8.0.0340"
+@set version2="60012458"
+@set version3="6.0.0.12458"
+@set sversion2c=1800341
+@set sversion3c="1.8.0.0341"
 @set tam7z=227328
 CLS
 if %code%==350-3 (
 @set translationof="Dawn of War - Dark Crusade"
-@set tam="3,33"
-@set totaltam=3494881
-@set installedsize="36,05"
-@set hash=0E26DEBF858FBAD9EDD17387168B9E5CB5CB0CE9813BE07F1765013AFCA6CF9E
+@set tam="3,34"
+@set totaltam=3504046
+@set installedsize="36,06"
+@set hash=1B483065FC72A0A76BE05552DBA5BB9FAB5655DCA1D2FEF29496BE0D4E51432C
 @set file=DCBR.7z
-@set changelog=- Tradução: Algumas mudanças.\n - Atualizador: Compatibilidade com multitarefa e correções de erros.\n - Interface: Correções de erros.\n - Instalador\Atualizador: Melhorias gerais.\n - Servidor: Melhorias gerais.
+@set changelog=- Tradução: Algumas mudanças.\n - Atualizador: Correções de erros.\n - Interface: Algumas mudanças visuais, Corrigido um problema com escalas superiores a 100\p\ no Windows 10, a interface do atualizador se ajusta automaticamente à escala\in\Experimental\out\.\n - Instalador\Atualizador: Melhorias gerais.\n - Servidor: Melhorias gerais.
 )
 CLS
 @set secundarysvr=https://raw.githubusercontent.com/TranslateGames/translategames_server/master/Update/%file%

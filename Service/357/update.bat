@@ -1,18 +1,18 @@
 @set caller=0
-@set version2="1001473"
-@set version3="1.0.0.1473"
-@set sversion2c=1800340
-@set sversion3c="1.8.0.0340"
+@set version2="1001474"
+@set version3="1.0.0.1474"
+@set sversion2c=1800341
+@set sversion3c="1.8.0.0341"
 @set tam7z=227328
 CLS
 if %code%==357 (
 @set translationof="Dawn of War II - Retribution"
-@set tam="3,39"
-@set totaltam=3564024
-@set installedsize="36,18"
-@set hash=B1A7DA7FAE2DC68725F3BDFB095C5AC6D0B76C210EC8CF5BE6517CD169E3C4A6
+@set tam="3,40"
+@set totaltam=3574278
+@set installedsize="36,19"
+@set hash=DB846E5646E16D99BC5F8C90649F2A5AE9832D14DAC27832DE7CC9B51DD1E82D
 @set file=DOW2RBR.7z
-@set changelog=- Tradução: Algumas mudanças.\n - Atualizador: Compatibilidade com multitarefa e correções de erros.\n - Interface: Correções de erros.\n - Instalador\Atualizador: Melhorias gerais.\n - Servidor: Melhorias gerais.
+@set changelog=- Tradução: Algumas mudanças.\n - Atualizador: Correções de erros.\n - Interface: Algumas mudanças visuais, Corrigido um problema com escalas superiores a 100\p\ no Windows 10, a interface do atualizador se ajusta automaticamente à escala\in\Experimental\out\.\n - Instalador\Atualizador: Melhorias gerais.\n - Servidor: Melhorias gerais.
 )
 CLS
 @set secundarysvr=https://raw.githubusercontent.com/TranslateGames/translategames_server/master/Update/%file%

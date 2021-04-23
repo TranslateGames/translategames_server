@@ -1,18 +1,18 @@
 @set caller=0
-@set version2="1001127"
-@set version3="1.0.0.1127"
-@set sversion2c=1800340
-@set sversion3c="1.8.0.0340"
+@set version2="1001128"
+@set version3="1.0.0.1128"
+@set sversion2c=1800341
+@set sversion3c="1.8.0.0341"
 @set tam7z=227328
 CLS
 if %code%==358 (
 @set translationof="Dawn of War II e Chaos Rising"
-@set tam="3,22"
-@set totaltam=3380822
-@set installedsize="27,96"
-@set hash=84EAB248CF995E95FD9EE7FC56F20E008FBF12314A373C151AF7380CAFC808FB
+@set tam="3,23"
+@set totaltam=3390074
+@set installedsize="27,97"
+@set hash=5DB512C4D2D9ED644448DC07995D6A66017498981E436D535678A62CD82D93F2
 @set file=DOW2BR.7z
-@set changelog=- Tradução: Algumas mudanças.\n - Atualizador: Compatibilidade com multitarefa e correções de erros.\n - Interface: Correções de erros.\n - Instalador\Atualizador: Melhorias gerais.\n - Servidor: Melhorias gerais.
+@set changelog=- Tradução: Algumas mudanças.\n - Atualizador: Correções de erros.\n - Interface: Algumas mudanças visuais, Corrigido um problema com escalas superiores a 100\p\ no Windows 10, a interface do atualizador se ajusta automaticamente à escala\in\Experimental\out\.\n - Instalador\Atualizador: Melhorias gerais.\n - Servidor: Melhorias gerais.
 )
 CLS
 @set secundarysvr=https://raw.githubusercontent.com/TranslateGames/translategames_server/master/Update/%file%
