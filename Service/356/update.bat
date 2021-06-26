@@ -1,6 +1,6 @@
 @set caller=0
-@set version2="1002810"
-@set version3="1.0.0.2810"
+@set version2="1002811"
+@set version3="1.0.0.2811"
 @set sversion2c=1800341
 @set sversion3c="1.8.0.0341"
 @set tam7z=227328
@@ -8,9 +8,9 @@ CLS
 if %code%==356 (
 @set translationof="Age of Mythology"
 @set tam="2,96"
-@set totaltam=3105235
+@set totaltam=3105305
 @set installedsize="3,77"
-@set hash=854AF6EFA911C83A0F8487BF93129083266C27EEF0645739C6C3227E30F15096
+@set hash=8DB2C85B972052C37D1D4CD4003A0252FC0AD9EF434702CFF3994A87BFABD662
 @set file=AOMBR.7z
 @set changelog=- Tradução: Algumas mudanças.\n - Atualizador: Correções de erros.\n - Interface: Algumas mudanças visuais, Corrigido um problema com escalas superiores a 100\p\ no Windows 10, a interface do atualizador se ajusta automaticamente à escala\in\Experimental\out\.\n - Instalador\Atualizador: Melhorias gerais.\n - Servidor: Melhorias gerais.
 )
