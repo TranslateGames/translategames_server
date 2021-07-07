@@ -1,6 +1,6 @@
 @set caller=0
-@set version2="1001129"
-@set version3="1.0.0.1129"
+@set version2="1001130"
+@set version3="1.0.0.1130"
 @set sversion2c=1800341
 @set sversion3c="1.8.0.0341"
 @set tam7z=227328
@@ -8,9 +8,9 @@ CLS
 if %code%==358 (
 @set translationof="Dawn of War II e Chaos Rising"
 @set tam="3,23"
-@set totaltam=3390142
+@set totaltam=3390700
 @set installedsize="27,97"
-@set hash=5BC32069CA4FFCF0CC695020DBC86D146E6940BF1894A53DBE3D439015BCB35D
+@set hash=54464A1F2656169AAABFF4E9BCBFB77A639C0339203B30B21EB14C47CD7BFC15
 @set file=DOW2BR.7z
 @set changelog=- Tradução: Algumas mudanças.\n - Atualizador: Correções de erros.\n - Interface: Algumas mudanças visuais, Corrigido um problema com escalas superiores a 100\p\ no Windows 10, a interface do atualizador se ajusta automaticamente à escala\in\Experimental\out\.\n - Instalador\Atualizador: Melhorias gerais.\n - Servidor: Melhorias gerais.
 )

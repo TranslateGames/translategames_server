@@ -1,6 +1,6 @@
 @set caller=0
-@set version2="1002811"
-@set version3="1.0.0.2811"
+@set version2="1002812"
+@set version3="1.0.0.2812"
 @set sversion2c=1800341
 @set sversion3c="1.8.0.0341"
 @set tam7z=227328
@@ -8,9 +8,9 @@ CLS
 if %code%==356-2 (
 @set translationof="Age of Mythology: The Titans Expansion"
 @set tam="2,94"
-@set totaltam=3086632
+@set totaltam=3087133
 @set installedsize="3,79"
-@set hash=467B205C7211F23E8AE8D5FC451449D127C30A25E0BB0910F102DE902F069A5F
+@set hash=69B2E0C6BF0AA593F1E63D7CE13E65FEC952DE71294F5C3B2FCA1E7F03DA3130
 @set file=XAOMBR.7z
 @set changelog=- Tradução: Algumas mudanças.\n - Atualizador: Correções de erros.\n - Interface: Algumas mudanças visuais, Corrigido um problema com escalas superiores a 100\p\ no Windows 10, a interface do atualizador se ajusta automaticamente à escala\in\Experimental\out\.\n - Instalador\Atualizador: Melhorias gerais.\n - Servidor: Melhorias gerais.
 )

@@ -1,6 +1,6 @@
 @set caller=0
-@set version2="1001475"
-@set version3="1.0.0.1475"
+@set version2="1001476"
+@set version3="1.0.0.1476"
 @set sversion2c=1800341
 @set sversion3c="1.8.0.0341"
 @set tam7z=227328
@@ -8,9 +8,9 @@ CLS
 if %code%==357 (
 @set translationof="Dawn of War II - Retribution"
 @set tam="3,40"
-@set totaltam=3574293
+@set totaltam=3574919
 @set installedsize="36,19"
-@set hash=D3A7B30462A9D357AC2A81A2F235323E3C1970B89C0B029B7413243E18665DD0
+@set hash=CB0A5CE62A38E38659AB78B55AB5AB11854C249CAAB68C293E7940141BE48D94
 @set file=DOW2RBR.7z
 @set changelog=- Tradução: Algumas mudanças.\n - Atualizador: Correções de erros.\n - Interface: Algumas mudanças visuais, Corrigido um problema com escalas superiores a 100\p\ no Windows 10, a interface do atualizador se ajusta automaticamente à escala\in\Experimental\out\.\n - Instalador\Atualizador: Melhorias gerais.\n - Servidor: Melhorias gerais.
 )

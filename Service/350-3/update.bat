@@ -1,6 +1,6 @@
 @set caller=0
-@set version2="60012459"
-@set version3="6.0.0.12459"
+@set version2="60012460"
+@set version3="6.0.0.12460"
 @set sversion2c=1800341
 @set sversion3c="1.8.0.0341"
 @set tam7z=227328
@@ -8,9 +8,9 @@ CLS
 if %code%==350-3 (
 @set translationof="Dawn of War - Dark Crusade"
 @set tam="3,34"
-@set totaltam=3504088
+@set totaltam=3504629
 @set installedsize="36,06"
-@set hash=E73063FB70DC10873622DAFD7C337831D14925E0299938CC97CC4414828296EB
+@set hash=E606128E2F3782D5AFC628B58A996E547D440AF36D220CBFBDAABE4EBF77E7A1
 @set file=DCBR.7z
 @set changelog=- Tradução: Algumas mudanças.\n - Atualizador: Correções de erros.\n - Interface: Algumas mudanças visuais, Corrigido um problema com escalas superiores a 100\p\ no Windows 10, a interface do atualizador se ajusta automaticamente à escala\in\Experimental\out\.\n - Instalador\Atualizador: Melhorias gerais.\n - Servidor: Melhorias gerais.
 )

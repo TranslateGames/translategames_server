@@ -1,6 +1,6 @@
 @set caller=0
-@set version2="60012459"
-@set version3="6.0.0.12459"
+@set version2="60012460"
+@set version3="6.0.0.12460"
 @set sversion2c=1800341
 @set sversion3c="1.8.0.0341"
 @set tam7z=227328
@@ -8,9 +8,9 @@ CLS
 if %code%==350 (
 @set translationof="Dawn of War e Winter Assault"
 @set tam="3,82"
-@set totaltam=4011147
+@set totaltam=4011162
 @set installedsize="20,36"
-@set hash=75EE83ABBC0337E44515CDF1DC8A516802F22061B85541E7FEC567E57E149545
+@set hash=E8B3363B1EDE0C4012C21C25DC45C113081DAF2235476A313148A14AA9528494
 @set file=W4BR.7z
 @set changelog=- Tradução: Algumas mudanças.\n - Atualizador: Correções de erros.\n - Interface: Algumas mudanças visuais, Corrigido um problema com escalas superiores a 100\p\ no Windows 10, a interface do atualizador se ajusta automaticamente à escala\in\Experimental\out\.\n - Instalador\Atualizador: Melhorias gerais.\n - Servidor: Melhorias gerais.
 )
