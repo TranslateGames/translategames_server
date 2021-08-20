@@ -8,9 +8,9 @@ CLS
 if %code%==350-4 (
 @set translationof="Dawn of War - Soulstorm"
 @set tam="3,48"
-@set totaltam=3655201
-@set installedsize="61,17"
-@set hash=1C240C8B5B1B06A699493E85B0AD2897547D80EEAD409427B9153F551C5999A8
+@set totaltam=3655203
+@set installedsize="61,22"
+@set hash=D4726E752D9CA242F6B4ED3FE3E0A57D844FE18CF4C944DBD4FF1AF68267E1E4
 @set file=SSBR.7z
 @set changelog=- Tradução: Algumas mudanças.\n - Atualizador: Correções de erros.\n - Interface: Algumas mudanças visuais, Corrigido um problema com escalas superiores a 100\p\ no Windows 10, a interface do atualizador se ajusta automaticamente à escala\in\Experimental\out\.\n - Instalador\Atualizador: Melhorias gerais.\n - Servidor: Melhorias gerais.
 )
